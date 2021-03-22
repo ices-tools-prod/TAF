@@ -1,27 +1,27 @@
-[![Build Status](https://travis-ci.org/ices-tools-prod/icesTAF.svg?branch=master)](https://travis-ci.org/ices-tools-prod/icesTAF)
-[![CRAN Status](https://r-pkg.org/badges/version/icesTAF)](https://cran.r-project.org/package=icesTAF)
-[![CRAN Monthly](https://cranlogs.r-pkg.org/badges/icesTAF)](https://cran.r-project.org/package=icesTAF)
-[![CRAN Total](https://cranlogs.r-pkg.org/badges/grand-total/icesTAF)](https://cran.r-project.org/package=icesTAF)
+[![Build Status](https://travis-ci.org/ices-tools-prod/icesTAF.svg?branch=master)](https://travis-ci.org/ices-tools-prod/TAF)
+[![CRAN Status](https://r-pkg.org/badges/version/icesTAF)](https://cran.r-project.org/package=TAF)
+[![CRAN Monthly](https://cranlogs.r-pkg.org/badges/icesTAF)](https://cran.r-project.org/package=TAF)
+[![CRAN Total](https://cranlogs.r-pkg.org/badges/grand-total/icesTAF)](https://cran.r-project.org/package=TAF)
 
 [<img align="right" alt="ICES Logo" width="17%" height="17%" src="https://ices.dk/_layouts/15/1033/images/icesimg/iceslogo.png">](https://ices.dk)
 
-icesTAF
+TAF
 =======
 
-icesTAF provides functions to support the [ICES](https://ices.dk)
+TAF provides functions to support the [ICES](https://ices.dk)
 [Transparent Assessment Framework](https://taf.ices.dk) to organize data,
 methods, and results used in ICES assessments.
 
-icesTAF is implemented as an [R](https://www.r-project.org) package and
+TAF is implemented as an [R](https://www.r-project.org) package and
 available on [CRAN](https://cran.r-project.org/package=icesTAF).
 
 Installation
 ------------
 
-icesTAF can be installed from CRAN using the `install.packages` command:
+TAF can be installed from CRAN using the `install.packages` command:
 
 ```R
-install.packages("icesTAF")
+install.packages("TAF")
 ```
 
 Usage
@@ -30,8 +30,8 @@ Usage
 For a summary of the package:
 
 ```R
-library(icesTAF)
-?icesTAF
+library(TAF)
+?TAF
 ```
 
 References
@@ -44,10 +44,10 @@ Development
 -----------
 
 icesTAF is developed openly on
-[GitHub](https://github.com/ices-tools-prod/icesTAF).
+[GitHub](https://github.com/ices-tools-prod/TAF).
 
 Feel free to open an
-[issue](https://github.com/ices-tools-prod/icesTAF/issues) there if you
+[issue](https://github.com/ices-tools-prod/TAF/issues) there if you
 encounter problems or have suggestions for future versions.
 
 The current development version can be installed using:

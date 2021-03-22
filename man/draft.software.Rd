@@ -71,12 +71,12 @@ example.
 \examples{
 \donttest{
 # Print in console
-draft.software("icesTAF")
+draft.software("TAF")
 }
 
 \dontrun{
 # Export to file
-draft.software("icesTAF", file=TRUE)
+draft.software("TAF", file=TRUE)
 }
 
 }

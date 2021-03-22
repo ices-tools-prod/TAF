@@ -1,3 +1,8 @@
+# TAF 4.0.0 (2021-03-22)
+
+* package renamed and focus changed to providing general support for the
+  ICES Transparent Assessment Framework.
+
 # icesTAF 3.6.0 (2020-10-19)
 
 * add taf.boot.path() function to simplify access to boot folder
