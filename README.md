@@ -43,7 +43,7 @@ https://taf.ices.dk
 Development
 -----------
 
-icesTAF is developed openly on
+TAF is developed openly on
 [GitHub](https://github.com/ices-tools-prod/TAF).
 
 Feel free to open an
