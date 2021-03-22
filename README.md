@@ -1,7 +1,7 @@
-[![Build Status](https://travis-ci.org/ices-tools-prod/icesTAF.svg?branch=master)](https://travis-ci.org/ices-tools-prod/TAF)
-[![CRAN Status](https://r-pkg.org/badges/version/icesTAF)](https://cran.r-project.org/package=TAF)
-[![CRAN Monthly](https://cranlogs.r-pkg.org/badges/icesTAF)](https://cran.r-project.org/package=TAF)
-[![CRAN Total](https://cranlogs.r-pkg.org/badges/grand-total/icesTAF)](https://cran.r-project.org/package=TAF)
+[![Build Status](https://travis-ci.org/ices-tools-prod/TAF.svg?branch=master)](https://travis-ci.org/ices-tools-prod/TAF)
+[![CRAN Status](https://r-pkg.org/badges/version/TAF)](https://cran.r-project.org/package=TAF)
+[![CRAN Monthly](https://cranlogs.r-pkg.org/badges/TAF)](https://cran.r-project.org/package=TAF)
+[![CRAN Total](https://cranlogs.r-pkg.org/badges/grand-total/TAF)](https://cran.r-project.org/package=TAF)
 
 [<img align="right" alt="ICES Logo" width="17%" height="17%" src="https://ices.dk/_layouts/15/1033/images/icesimg/iceslogo.png">](https://ices.dk)
 
