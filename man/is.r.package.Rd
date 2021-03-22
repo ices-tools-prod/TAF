@@ -27,8 +27,8 @@ repository.
 }
 \examples{
 \dontrun{
-is.r.package("bootstrap/software/SAM.tar.gz")
-is.r.package("bootstrap/software/stockassessment.tar.gz")
+is.r.package(taf.software.path("SAM.tar.gz"))
+is.r.package(taf.software.path("stockassessment.tar.gz"))
 }
 
 }

@@ -8,7 +8,7 @@
 #'
 #' @note
 #' TAF scripts that will be run if they exist: \verb{utilities.R}
-#' \verb{data.R}, \verb{model.R}, \verb{output.R}, and \verb{report.R}.
+#' \verb{data.R}, \verb{method.R}, \verb{output.R}, and \verb{report.R}.
 #'
 #' @seealso
 #' \code{\link{sourceTAF}} runs a TAF script.
@@ -28,7 +28,7 @@
 
 sourceAll <- function(...)
 {
-  scripts <- c("utilities.R", "data.R", "model.R", "output.R", "report.R")
+  scripts <- c("utilities.R", paste0(unlist(taf.constants$taf.sections), ".R"))
   scripts <- scripts[file.exists(scripts)]
 
   out <- sapply(scripts, sourceTAF, ...)

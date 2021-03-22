@@ -17,7 +17,7 @@ The resulting vector of file paths.
 Add TAF library to the search path for R packages.
 }
 \note{
-Specifically, this function sets \code{"bootstrap/library"} as the first
+Specifically, this function sets \code{"boot/library"} as the first
 element of \code{.libPaths()}. This is rarely beneficial in TAF scripts, but
 can be useful when using the \pkg{sessioninfo} package, for example.
 }
@@ -25,8 +25,8 @@ can be useful when using the \pkg{sessioninfo} package, for example.
 
 An unwanted side effect of having the TAF library as the first element in the
 search path is that \code{install.packages} will then install packages inside
-\verb{bootstrap/library}. This is not a serious side effect, since a
-subsequent call to \code{taf.bootstrap} or  \code{clean.library} will remove
+\verb{boot/library}. This is not a serious side effect, since a
+subsequent call to \code{taf.boot} or  \code{clean.library} will remove
 packages from the TAF library that are not declared in the
 \file{SOFTWARE.bib} file.
 }
@@ -42,7 +42,7 @@ taf.libPaths(remove=TRUE)
 \code{\link{.libPaths}} is the underlying function to modify the search path
 for R packages.
 
-\code{\link{taf.library}} loads a package from \verb{bootstrap/library}.
+\code{\link{taf.library}} loads a package from \verb{boot/library}.
 
 \code{\link{icesTAF-package}} gives an overview of the package.
 }

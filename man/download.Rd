@@ -25,12 +25,12 @@ file has no filename extension).}
 \item{\dots}{passed to \code{download.file}.}
 }
 \description{
-Download a file in binary mode, e.g. a model executable.
+Download a file in binary mode, e.g. a method executable.
 }
 \details{
 With the default mode \code{"wb"} the file is downloaded in binary mode (see
 \code{\link{download.file}}), to prevent R from adding \verb{^M} at line
-ends. This is particularly relevant for Windows model executables, while the
+ends. This is particularly relevant for Windows method executables, while the
 \code{chmod} switch is useful when downloading Linux executables.
 
 This function can be convenient for downloading any file, including text
@@ -46,14 +46,14 @@ If \code{destfile} contains a question mark it is removed from the
 In general, TAF scripts do not access the internet using
 \code{download} or similar functions. Instead, data and software are declared
 in DATA.bib and SOFTWARE.bib and then downloaded using
-\code{\link{taf.bootstrap}}. The exception is when a bootstrap script is used
+\code{\link{taf.boot}}. The exception is when a boot script is used
 to fetch files from a web service (see
 \href{https://github.com/ices-taf/doc/wiki/Bib-entries}{TAF Wiki}).
 }
 \examples{
 \dontrun{
 url <- paste0("https://github.com/ices-taf/2015_had-iceg/raw/master/",
-              "bootstrap/initial/software/catageysa.exe")
+              "boot/initial/software/catageysa.exe")
 download(url)
 }
 

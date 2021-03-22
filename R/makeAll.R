@@ -7,7 +7,7 @@
 #' @return Logical vector indicating which scripts were run.
 #'
 #' @note
-#' TAF scripts that will be run as needed: \verb{data.R}, \verb{model.R},
+#' TAF scripts that will be run as needed: \verb{data.R}, \verb{method.R},
 #' \verb{output.R}, and \verb{report.R}.
 #'
 #' @seealso
@@ -30,7 +30,7 @@
 
 makeAll <- function(...)
 {
-  scripts <- c("data.R", "model.R", "output.R", "report.R")
+  scripts <- paste0(unlist(taf.constants$taf.sections), ".R")
   scripts <- scripts[file.exists(scripts)]
 
   out <- sapply(scripts, makeTAF, ...)

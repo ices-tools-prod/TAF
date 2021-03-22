@@ -3,7 +3,6 @@
 #' Selectively remove software from the local TAF software folder if not listed
 #' in \verb{SOFTWARE.bib}.
 #'
-#' @param folder location of local TAF software folder.
 #' @param quiet whether to suppress messages about removed software.
 #' @param force whether to remove the local TAF software folder, regardless of
 #'        how it compares to \verb{SOFTWARE.bib} entries.
@@ -18,21 +17,21 @@
 #' \item File is not listed in \verb{SOFTWARE.bib} - remove.
 #' }
 #'
-#' The \code{taf.bootstrap} procedure cleans the TAF software folder, without
+#' The \code{taf.boot} procedure cleans the TAF software folder, without
 #' requiring the user to run \code{clean.software}. The main reason for a TAF
 #' user to run \code{clean.software} directly is to experiment with installing
 #' and removing different versions of software without modifying the
 #' \verb{SOFTWARE.bib} file.
 #'
 #' @seealso
-#' \code{\link{taf.bootstrap}} calls \code{clean.software} as part of the
-#' default bootstrap procedure.
+#' \code{\link{taf.boot}} calls \code{clean.software} as part of the
+#' default boot procedure.
 #'
 #' \code{\link{download.github}} downloads a GitHub repository.
 #'
 #' \code{\link{clean.library}} cleans the local TAF library.
 #'
-#' \code{\link{clean.data}} cleans the \verb{bootstrap/data} folder.
+#' \code{\link{clean.data}} cleans the \verb{boot/data} folder.
 #'
 #' \code{\link{icesTAF-package}} gives an overview of the package.
 #'
@@ -43,9 +42,10 @@
 #'
 #' @export
 
-clean.software <- function(folder="bootstrap/software", quiet=FALSE,
-                           force=FALSE)
+clean.software <- function(quiet=FALSE, force=FALSE)
 {
+  folder <- taf.boot.path(taf.constants$boot.software)
+
   if(!file.exists(file.path(folder, "../SOFTWARE.bib")) || force)
   {
     unlink(folder, recursive=TRUE)
@@ -55,7 +55,7 @@ clean.software <- function(folder="bootstrap/software", quiet=FALSE,
     bib <- read.bib(file.path(folder, "../SOFTWARE.bib"))
     for(file in dir(folder, full.names=TRUE))
     {
-      ## Check if filename looks like GitHub software, e.g. model_13579bd.tar.gz
+      ## Check if filename looks like GitHub software, e.g. method_13579bd.tar.gz
       if(grepl("_[a-f0-9]{7}\\.tar\\.gz", substring(file, nchar(file)-14)))
       {
         ## Read sha.file, the SHA for a software file
@@ -75,7 +75,7 @@ clean.software <- function(folder="bootstrap/software", quiet=FALSE,
         ## If software file is either a mismatch or not listed, then remove it
         delete <- sha.file != sha.bib
       }
-      else  # filename is either a folder or plain file, e.g. model or model.exe
+      else  # filename is either a folder or plain file, e.g. method or method.exe
       {
         delete <- !(basename(file) %in% names(bib))
       }
