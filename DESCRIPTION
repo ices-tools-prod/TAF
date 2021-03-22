@@ -11,7 +11,7 @@ Authors@R:
     person("Ibrahim", "Umar", role = "ctb"),
     person("Hjalte", "Parner", role = "ctb")
   )
-Imports: grDevices, lattice, stats, tools, utils, jsonlite
+Imports: grDevices, lattice, stats, tools, utils
 LazyData: yes
 Description: Functions to support the ICES Transparent Assessment Framework
   <https://taf.ices.dk> to organize data, methods, and results used in ICES

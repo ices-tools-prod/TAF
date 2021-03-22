@@ -24,16 +24,21 @@
 #'
 #' \code{\link{icesTAF-package}} gives an overview of the package.
 #'
-#' @importFrom jsonlite parse_json
 #' @export
 
 read.bib <- function(file) {
   x <- readLines(file, warn = FALSE)
 
-  # remove comments
-  x <- paste(x[!grepl("^\\s*[%#].*$", x)], collapse = "")
+  # remove comments (# or %)
+  x <- x[!grepl("^\\s*[%#].*$", x)]
+  # remove empty lines
+  x <- trimws(x)
+  x <- x[nzchar(x)]
+
   # split into entiries
-  x <- paste0("@", strsplit(x, "\\}\\s*@")[[1]], "}")
+  x <- paste(c("}", x), collapse = "")
+  x <- paste0("@", strsplit(x, "\\}@")[[1]][-1], "}")
+
   # convert key and bibtype entry
   x <- gsub(
     "@+([a-zA-Z]+)[{]([^,]+),",
@@ -45,15 +50,15 @@ read.bib <- function(file) {
     sapply(
       x,
       function(y) {
-        y <- gsub("\\s*=\\s*\\{\\s*", "\":\"", y)
+        y <- gsub("\\s*=\\s*\\{\\s*", "\" = \"", y)
         y <- gsub("[}]+", "", y)
         y <- y[nzchar(y)]
-        paste0("{", paste(paste0("\"", y, "\""), collapse = ","), "}")
+        paste0("list(", paste(paste0("\"", y, "\""), collapse = ","), ")")
       }
     )
-  x <- paste0("[", paste(x, collapse = ","), "]")
+  x <- paste0("list(", paste(x, collapse = ","), ")")
 
-  bib <- jsonlite::parse_json(x)
+  bib <- eval(parse(text = x))
   names(bib) <- sapply(bib, "[[", "key")
 
   bib
