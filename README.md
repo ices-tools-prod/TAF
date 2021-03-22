@@ -54,5 +54,5 @@ The current development version can be installed using:
 
 ```R
 library(remotes)
-install_github("ices-tools-prod/icesTAF")
+install_github("ices-tools-prod/TAF")
 ```
