@@ -17,7 +17,7 @@ taf.sources <- function(type) {
   # check type arg
   type = match.arg(type, c("data", "software", "both"))
 
-  bibfile <- file.path("bootstrap", paste0(toupper(type), ".bib"))
+  bibfile <- file.path(taf.constants$boot, paste0(toupper(type), ".bib"))
   sources <- read.bib(bibfile)
 
   # check for duplicates

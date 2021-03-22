@@ -26,7 +26,7 @@ whether a script \verb{data.R} should be run, this function checks whether
 }
 \examples{
 \dontrun{
-makeTAF("model.R")
+makeTAF("method.R")
 }
 
 }

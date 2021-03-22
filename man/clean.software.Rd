@@ -4,11 +4,9 @@
 \alias{clean.software}
 \title{Clean TAF Software}
 \usage{
-clean.software(folder = "bootstrap/software", quiet = FALSE, force = FALSE)
+clean.software(quiet = FALSE, force = FALSE)
 }
 \arguments{
-\item{folder}{location of local TAF software folder.}
-
 \item{quiet}{whether to suppress messages about removed software.}
 
 \item{force}{whether to remove the local TAF software folder, regardless of
@@ -28,7 +26,7 @@ procedure selects between three cases:
 \item File is not listed in \verb{SOFTWARE.bib} - remove.
 }
 
-The \code{taf.bootstrap} procedure cleans the TAF software folder, without
+The \code{taf.boot} procedure cleans the TAF software folder, without
 requiring the user to run \code{clean.software}. The main reason for a TAF
 user to run \code{clean.software} directly is to experiment with installing
 and removing different versions of software without modifying the
@@ -41,14 +39,14 @@ clean.software()
 
 }
 \seealso{
-\code{\link{taf.bootstrap}} calls \code{clean.software} as part of the
-default bootstrap procedure.
+\code{\link{taf.boot}} calls \code{clean.software} as part of the
+default boot procedure.
 
 \code{\link{download.github}} downloads a GitHub repository.
 
 \code{\link{clean.library}} cleans the local TAF library.
 
-\code{\link{clean.data}} cleans the \verb{bootstrap/data} folder.
+\code{\link{clean.data}} cleans the \verb{boot/data} folder.
 
 \code{\link{icesTAF-package}} gives an overview of the package.
 }

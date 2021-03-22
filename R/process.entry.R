@@ -7,7 +7,7 @@
 ## Process bib entry
 
 process.entry <- function(bib, quiet = FALSE, force = FALSE, clean = FALSE) {
-  owd <- setwd("bootstrap")
+  owd <- setwd(taf.boot.path())
   on.exit(setwd(owd))
 
   key <- bib$key
@@ -81,7 +81,7 @@ process.entry <- function(bib, quiet = FALSE, force = FALSE, clean = FALSE) {
     }
   }
 
-  ## Case 3: R script in bootstrap directory
+  ## Case 3: R script in boot directory
   else if (bib$source[1] == "script") {
     script <- tools::file_path_as_absolute(paste0(key, ".R"))
     if (clean) {

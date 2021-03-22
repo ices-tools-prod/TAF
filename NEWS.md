@@ -1,3 +1,7 @@
+# TAF 4.1.0 (2021-03-22)
+
+* change name bootstrap -> boot, and model -> method in all documentation.
+* move hard coded directory names to taf.constants.
 # TAF 4.0.0 (2021-03-22)
 
 * package renamed and focus changed to providing general support for the

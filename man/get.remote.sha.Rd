@@ -30,7 +30,7 @@ get.remote.sha("ices-tools-prod", "icesTAF", "3.0-0", seven=FALSE)
 
 }
 \seealso{
-\code{\link{taf.bootstrap}} uses \code{get.remote.sha} to determine whether
+\code{\link{taf.boot}} uses \code{get.remote.sha} to determine whether
 it is necessary to remove or download files, via \code{\link{clean.library}},
 \code{\link{clean.software}}, and \code{\link{download.github}}.
 

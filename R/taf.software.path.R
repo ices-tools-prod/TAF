@@ -1,6 +1,6 @@
-#' Construct Path to a TAF boot data file
+#' Construct path to the TAF boot software folder
 #'
-#' Construct the path to a file in the TAF boot data folder
+#' Construct the path to the TAF boot library folder
 #' from components in a platform-independent way.  This function
 #' checks to see if R is running in the boot folder - i.e.
 #' `taf.boot()` is running, and adjusts the path accordingly.
@@ -19,6 +19,6 @@
 #'
 #' @return character
 #' @export
-taf.data.path <- function(..., fsep = .Platform$file.sep) {
-  taf.boot.path(taf.constants$boot.data, ...)
+taf.software.path <- function(..., fsep = .Platform$file.sep) {
+  taf.boot.path(taf.constants$boot.software, ...)
 }

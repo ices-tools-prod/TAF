@@ -35,16 +35,18 @@ taf.skeleton <- function(path = ".", force = FALSE)
   on.exit(setwd(owd))
 
   # create initial directories
-  mkdir("bootstrap/initial/data")
+  mkdir(file.path(taf.constants$boot, "initial", "data"))
 
   # define headers
   template <- paste0("## %s\n\n## Before:\n## After:\n\n",
-                     "library(icesTAF)\n\nmkdir(\"%s\")\n\n")
+                     "library(TAF)\n\nmkdir(\"%s\")\n\n")
   headers <- list(
-    data = "Preprocess data, write TAF data tables",
-    model = "Run analysis, write model results",
-    output = "Extract results of interest, write TAF output tables",
-    report = "Prepare plots and tables for report")
+    "Preprocess data, write TAF data tables",
+    "Run analysis, write method results",
+    "Extract results of interest, write TAF output tables",
+    "Prepare plots and tables for report"
+  )
+  names(headers) <- unlist(taf.constants$taf.sections)
 
   # create TAF scripts
   for (section in names(headers)) {

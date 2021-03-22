@@ -27,7 +27,7 @@
 #'
 #' @examples
 #' \dontrun{
-#' makeTAF("model.R")
+#' makeTAF("method.R")
 #' }
 #'
 #' @export
