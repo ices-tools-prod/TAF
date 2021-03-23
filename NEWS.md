@@ -1,27 +1,37 @@
-# TAF 4.0.0 (2021-03-22)
+# TAF 4.0.0 (2021-03-23)
 
-* package renamed and focus changed to providing general support for the
-  ICES Transparent Assessment Framework.
+* Package renamed and focus changed to providing general support for the ICES
+  Transparent Assessment Framework.
+
+* Removed all non-base package dependencies.
+
+* Changed sourceAll() and makeAll() so they start by sourcing utilities.R. Code
+  contributed by Hjalte Parner.
+
+
+
 
 # icesTAF 3.6.0 (2020-10-19)
 
-* add taf.boot.path() function to simplify access to boot folder
+* Added function draft.data.script() to create R script template for downloading
+  data with metadata.
 
-* add function draft.data.script() to create R script template for downloading
-  data with metadata
+* Added function read.bib(), removing 'bibtex' package dependency.
 
-* add local read.bib() function
+* Added function taf.boot.path() to simplify access to boot folder.
 
-* fix taf2long so it works on tibbles
+* Added function taf.data.path() to provide path to bootstrap data.
 
-* add taf.roxygenise() to build DATA.bib file from roxygen documentation
+* Added function taf.roxygenise() to build DATA.bib file from Roxygen
+  documentation.
 
-* add function taf.sources() to extract data and software sources used in a
-  project
+* Added function taf.sources() to extract data and software sources used in a
+  project.
 
-* move all bib entry processing to process.bib
+* Improved taf2long() so it works on tibbles.
 
-* add function taf.data.path() to provide path to bootstrap data
+* Moved all bib entry processing to process.bib().
+
 
 
 

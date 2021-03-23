@@ -1,16 +1,13 @@
 Package: TAF
 Version: 4.0.0
-Date: 2021-03-22
+Date: 2021-03-23
 Title: Functions to Support the ICES Transparent Assessment Framework
-Authors@R:
-  c(
-    person("Arni", "Magnusson", role = c("aut", "cre"), email = "thisisarni@gmail.com"),
-    person("Colin", "Millar", role = "aut"),
-    person("Alexandros", "Kokkalis", role = "ctb"),
-    person("Iago", "Mosqueira", role = "ctb"),
-    person("Ibrahim", "Umar", role = "ctb"),
-    person("Hjalte", "Parner", role = "ctb")
-  )
+Authors@R: c(person("Arni", "Magnusson", role=c("aut","cre"), email="thisisarni@gmail.com"),
+             person("Colin", "Millar", role="aut"),
+             person("Alexandros", "Kokkalis", role="ctb"),
+             person("Iago", "Mosqueira", role="ctb"),
+             person("Ibrahim", "Umar", role="ctb"),
+             person("Hjalte", "Parner", role="ctb"))
 Imports: grDevices, lattice, stats, tools, utils
 LazyData: yes
 Description: Functions to support the ICES Transparent Assessment Framework
