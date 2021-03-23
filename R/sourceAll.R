@@ -7,7 +7,7 @@
 #' @return Logical vector, indicating which scripts ran without errors.
 #'
 #' @note
-#' TAF scripts that will be run if they exist: \verb{utilities.R}
+#' TAF scripts that will be run if they exist: \verb{utilities.R},
 #' \verb{data.R}, \verb{model.R}, \verb{output.R}, and \verb{report.R}.
 #'
 #' @seealso

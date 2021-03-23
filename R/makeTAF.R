@@ -36,6 +36,7 @@ makeTAF <- function(script, ...)
 {
   script <- basename(script)
   out <- switch(script,
+                utilities.R=sourceTAF("utilities.R"),
                 data.R=make("data.R",
                             dir(pattern="^data_.*\\.R$"),
                             "data", engine=sourceTAF, ...),
