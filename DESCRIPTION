@@ -4,7 +4,7 @@ Date: 2021-03-22
 Title: Functions to Support the ICES Transparent Assessment Framework
 Authors@R:
   c(
-    person("Arni", "Magnusson", role = c("aut", "cre"), email = "arni.magnusson@fao.org"),
+    person("Arni", "Magnusson", role = c("aut", "cre"), email = "thisisarni@gmail.com"),
     person("Colin", "Millar", role = "aut"),
     person("Alexandros", "Kokkalis", role = "ctb"),
     person("Iago", "Mosqueira", role = "ctb"),
