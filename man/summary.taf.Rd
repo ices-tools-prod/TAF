@@ -28,10 +28,11 @@ Data frame containing 16 columns:
 }
 }
 \source{
-ICES (2016) Report of the working group on the assessment of demersal stocks
-in the North Sea and Skagerrak (WGNSSK).
-\href{https://doi.org/10.17895/ices.pub.5329}{\emph{ICES CM 2016/ACOM:14}},
-p. 673.
+ICES (2016).
+Report of the working group on the assessment of demersal stocks in the North
+Sea and Skagerrak (WGNSSK).
+\emph{ICES CM 2016/ACOM:14}, p. 673.
+\doi{10.17895/ices.pub.5329}.
 }
 \usage{
 summary.taf
