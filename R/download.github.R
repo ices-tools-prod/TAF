@@ -26,7 +26,7 @@
 #'
 #' \code{\link{taf.install}} installs a package in \verb{tar.gz} format.
 #'
-#' \code{\link{icesTAF-package}} gives an overview of the package.
+#' \code{\link{TAF-package}} gives an overview of the package.
 #'
 #' @examples
 #' \dontrun{
@@ -89,7 +89,7 @@ download.github <- function(repo, dir=".", quiet=FALSE)
   invisible(outfile)
 }
 
-#' @rdname icesTAF-internal
+#' @rdname TAF-internal
 #'
 #' @importFrom utils packageDescription untar
 #'
@@ -118,7 +118,7 @@ extract.subdir <- function(targz, subtargz, subdir)
   }
 }
 
-#' @rdname icesTAF-internal
+#' @rdname TAF-internal
 #'
 #' @importFrom utils tar untar
 #'

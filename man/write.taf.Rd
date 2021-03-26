@@ -68,5 +68,5 @@ file.
 
 \code{\link{read.taf}} reads a TAF table from a file into a data frame.
 
-\code{\link{icesTAF-package}} gives an overview of the package.
+\code{\link{TAF-package}} gives an overview of the package.
 }

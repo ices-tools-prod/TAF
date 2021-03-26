@@ -91,5 +91,5 @@ draft.data("WGEF", 2015, file=TRUE)
 
 \code{\link{taf.bootstrap}} reads and processes metadata entries.
 
-\code{\link{icesTAF-package}} gives an overview of the package.
+\code{\link{TAF-package}} gives an overview of the package.
 }

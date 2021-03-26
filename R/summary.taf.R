@@ -48,7 +48,7 @@
 #' @seealso
 #' \code{\link{div}} and \code{\link{rnd}} can modify a large number of columns.
 #'
-#' \code{\link{icesTAF-package}} gives an overview of the package.
+#' \code{\link{TAF-package}} gives an overview of the package.
 #'
 #' @examples
 #' summary.taf

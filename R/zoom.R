@@ -39,7 +39,7 @@
 #'
 #' \code{\link{taf.png}} opens a PNG graphics device.
 #'
-#' \code{\link{icesTAF-package}} gives an overview of the package.
+#' \code{\link{TAF-package}} gives an overview of the package.
 #'
 #' @examples
 #' library(lattice)

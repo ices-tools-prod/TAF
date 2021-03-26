@@ -46,5 +46,5 @@ file.
 
 \code{\link{write.taf}} writes a TAF table to a file.
 
-\code{\link{icesTAF-package}} gives an overview of the package.
+\code{\link{TAF-package}} gives an overview of the package.
 }

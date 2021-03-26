@@ -9,7 +9,7 @@
 #' @return A vector of length two, which can be used as axis limits.
 #'
 #' @seealso
-#' \code{\link{icesTAF-package}} gives an overview of the package.
+#' \code{\link{TAF-package}} gives an overview of the package.
 #'
 #' @examples
 #' plot(precip)

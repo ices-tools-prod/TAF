@@ -40,5 +40,5 @@ directories.
 
 \code{\link{clean}} can be used to remove non-empty directories.
 
-\code{\link{icesTAF-package}} gives an overview of the package.
+\code{\link{TAF-package}} gives an overview of the package.
 }

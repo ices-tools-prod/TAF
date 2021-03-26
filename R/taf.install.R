@@ -37,7 +37,7 @@
 #' \code{\link{install.packages}} is the underlying base function to install a
 #' package.
 #'
-#' \code{\link{icesTAF-package}} gives an overview of the package.
+#' \code{\link{TAF-package}} gives an overview of the package.
 #'
 #' @examples
 #' \dontrun{
@@ -77,7 +77,7 @@ taf.install <- function(targz=NULL, lib="bootstrap/library", quiet=FALSE)
   }
 }
 
-#' @rdname icesTAF-internal
+#' @rdname TAF-internal
 #'
 #' @importFrom utils packageDescription
 #'

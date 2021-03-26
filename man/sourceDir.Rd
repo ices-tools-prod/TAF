@@ -44,5 +44,5 @@ sourceDir("bootstrap/software/utilities")
 \seealso{
 \code{\link{source}} is the base function to read R code from a file.
 
-\code{\link{icesTAF-package}} gives an overview of the package.
+\code{\link{TAF-package}} gives an overview of the package.
 }

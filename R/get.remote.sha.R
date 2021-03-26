@@ -14,7 +14,7 @@
 #' it is necessary to remove or download files, via \code{\link{clean.library}},
 #' \code{\link{clean.software}}, and \code{\link{download.github}}.
 #'
-#' \code{\link{icesTAF-package}} gives an overview of the package.
+#' \code{\link{TAF-package}} gives an overview of the package.
 #'
 #' @examples
 #' \dontrun{

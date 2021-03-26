@@ -25,7 +25,7 @@
 #' @seealso
 #' \code{\link{installed.packages}}, \code{\link{available.packages}}.
 #'
-#' \code{\link{icesTAF-package}} gives an overview of the package.
+#' \code{\link{TAF-package}} gives an overview of the package.
 #'
 #' @examples
 #' \dontrun{

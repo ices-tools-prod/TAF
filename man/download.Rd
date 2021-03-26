@@ -64,5 +64,5 @@ files.
 
 \code{\link{download.github}} downloads a GitHub repository.
 
-\code{\link{icesTAF-package}} gives an overview of the package.
+\code{\link{TAF-package}} gives an overview of the package.
 }

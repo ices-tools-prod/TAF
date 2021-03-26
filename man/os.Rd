@@ -50,5 +50,5 @@ os.windows()
 \code{\link{Sys.info}} is the underlying function used to extract the
 operating system name.
 
-\code{\link{icesTAF-package}} gives an overview of the package.
+\code{\link{TAF-package}} gives an overview of the package.
 }

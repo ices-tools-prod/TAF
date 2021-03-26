@@ -1,4 +1,4 @@
-#' @rdname icesTAF-internal
+#' @rdname TAF-internal
 #'
 #' @importFrom tools file_path_as_absolute
 #'
@@ -23,7 +23,7 @@ process.entry <- function(bib, quiet = FALSE, force = FALSE, clean = FALSE) {
   ## Check if access matches allowed values
   access <- bib$access
   if (!is.null(access)) {
-    ## icesTAF:::access.vocab is a string vector of allowed 'access' values
+    ## TAF:::access.vocab is a string vector of allowed 'access' values
     if (!is.character(access) || !(access %in% access.vocab)) {
       stop(
         "'access' values must be \"",
@@ -83,7 +83,7 @@ process.entry <- function(bib, quiet = FALSE, force = FALSE, clean = FALSE) {
 
   ## Case 3: R script in bootstrap directory
   else if (bib$source[1] == "script") {
-    script <- tools::file_path_as_absolute(paste0(key, ".R"))
+    script <- file_path_as_absolute(paste0(key, ".R"))
     if (clean) {
       unlink(dir, recursive = TRUE)
       mkdir(dir)

@@ -47,5 +47,5 @@ data repositories.
 
 \code{\link{taf.install}} installs a package in \verb{tar.gz} format.
 
-\code{\link{icesTAF-package}} gives an overview of the package.
+\code{\link{TAF-package}} gives an overview of the package.
 }

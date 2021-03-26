@@ -72,5 +72,5 @@ The \code{summary} method for \code{sam} objects produces a summary table
 with some key quantities of interest, containing duplicated column names
 (\verb{Low}, \verb{High}) and rounded values.
 
-\code{\link{icesTAF-package}} gives an overview of the package.
+\code{\link{TAF-package}} gives an overview of the package.
 }

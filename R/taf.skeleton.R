@@ -11,7 +11,7 @@
 #' @seealso
 #' \code{\link{package.skeleton}} creates an empty template for a new R package.
 #'
-#' \code{\link{icesTAF-package}} gives an overview of the package.
+#' \code{\link{TAF-package}} gives an overview of the package.
 #'
 #' @examples
 #' \dontrun{
@@ -39,7 +39,7 @@ taf.skeleton <- function(path = ".", force = FALSE)
 
   # define headers
   template <- paste0("## %s\n\n## Before:\n## After:\n\n",
-                     "library(icesTAF)\n\nmkdir(\"%s\")\n\n")
+                     "library(TAF)\n\nmkdir(\"%s\")\n\n")
   headers <- list(
     data = "Preprocess data, write TAF data tables",
     model = "Run analysis, write model results",

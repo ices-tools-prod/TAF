@@ -30,7 +30,7 @@
 #'
 #' \code{\link{file.rename}} is the base function to rename files.
 #'
-#' \code{\link{icesTAF-package}} gives an overview of the package.
+#' \code{\link{TAF-package}} gives an overview of the package.
 #'
 #' @examples
 #' \dontrun{

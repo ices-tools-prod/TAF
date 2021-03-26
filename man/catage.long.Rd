@@ -40,5 +40,5 @@ table formats.
 
 \code{\link{long2taf}} converts a long table to TAF format.
 
-\code{\link{icesTAF-package}} gives an overview of the package.
+\code{\link{TAF-package}} gives an overview of the package.
 }

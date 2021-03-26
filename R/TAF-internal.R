@@ -1,4 +1,4 @@
-#' @name icesTAF-internal
+#' @name TAF-internal
 #'
 #' @title Various TAF Helper Functions
 #'
@@ -7,7 +7,7 @@
 #' documented in the user-level functions.
 #'
 #' @seealso
-#' \code{\link{icesTAF-package}} gives an overview of the package.
+#' \code{\link{TAF-package}} gives an overview of the package.
 #'
 #' @keywords internal
 

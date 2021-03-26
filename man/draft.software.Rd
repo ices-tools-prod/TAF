@@ -89,5 +89,5 @@ underlying functions to access information about installed R packages.
 
 \code{\link{taf.bootstrap}} reads and processes metadata entries.
 
-\code{\link{icesTAF-package}} gives an overview of the package.
+\code{\link{TAF-package}} gives an overview of the package.
 }

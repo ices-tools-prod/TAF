@@ -13,7 +13,7 @@
 #' \code{\link{long2taf}} and \code{\link{taf2xtab}} are the underlying
 #' functions that perform the conversion.
 #'
-#' \code{\link{icesTAF-package}} gives an overview of the package.
+#' \code{\link{TAF-package}} gives an overview of the package.
 #'
 #' @examples
 #' long2xtab(catage.long)

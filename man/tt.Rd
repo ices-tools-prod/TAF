@@ -39,5 +39,5 @@ tt(catage.taf, "Custom")
 \code{\link{taf2xtab}} converts a TAF table to crosstab format, without
 transposing.
 
-\code{\link{icesTAF-package}} gives an overview of the package.
+\code{\link{TAF-package}} gives an overview of the package.
 }

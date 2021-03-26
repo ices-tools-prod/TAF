@@ -17,7 +17,7 @@
 #' \code{\link{as.data.frame}} is a method provided by the \pkg{FLCore} package
 #' to convert \code{FLQuant} tables to a 7-column long format.
 #'
-#' \code{\link{icesTAF-package}} gives an overview of the package.
+#' \code{\link{TAF-package}} gives an overview of the package.
 #'
 #' @examples
 #' x <- array(t(catage.xtab), dim=c(4,8,1,1,1,1))

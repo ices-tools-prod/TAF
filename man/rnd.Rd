@@ -63,7 +63,7 @@ x4 <- rnd(x4, 14:16, 3)
 \code{\link{div}} is a similar function that divides columns with a common
 number.
 
-\code{\link{icesTAF-package}} gives an overview of the package.
+\code{\link{TAF-package}} gives an overview of the package.
 
 The \pkg{icesAdvice} package provides the \code{\link[icesAdvice]{icesRound}}
 function to round values for ICES advice sheets.

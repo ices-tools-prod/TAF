@@ -41,7 +41,7 @@
 #'
 #' \code{\link{sourceAll}} runs all TAF scripts in a directory.
 #'
-#' \code{\link{icesTAF-package}} gives an overview of the package.
+#' \code{\link{TAF-package}} gives an overview of the package.
 #'
 #' @examples
 #' \dontrun{

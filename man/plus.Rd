@@ -33,5 +33,5 @@ names(catage)[names(catage)=="4"] <- "4+"
 \seealso{
 \code{\link{names}} is the underlying function to rename columns.
 
-\code{\link{icesTAF-package}} gives an overview of the package.
+\code{\link{TAF-package}} gives an overview of the package.
 }

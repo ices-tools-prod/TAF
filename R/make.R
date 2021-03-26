@@ -40,7 +40,7 @@
 #' similar to the \code{source} functions, except they avoid repeating tasks
 #' that have already been run.
 #'
-#' \code{\link{icesTAF-package}} gives an overview of the package.
+#' \code{\link{TAF-package}} gives an overview of the package.
 #'
 #' @examples
 #' \dontrun{

@@ -25,5 +25,5 @@ plot(precip, ylim=lim(precip), yaxs="i")
 
 }
 \seealso{
-\code{\link{icesTAF-package}} gives an overview of the package.
+\code{\link{TAF-package}} gives an overview of the package.
 }

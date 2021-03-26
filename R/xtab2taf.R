@@ -18,7 +18,7 @@
 #'
 #' \code{\link{taf2xtab}} converts a TAF table to crosstab format.
 #'
-#' \code{\link{icesTAF-package}} gives an overview of the package.
+#' \code{\link{TAF-package}} gives an overview of the package.
 #'
 #' @examples
 #' xtab2taf(catage.xtab)

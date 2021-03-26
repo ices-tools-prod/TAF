@@ -46,5 +46,5 @@ clean()
 \code{\link{mkdir}} and \code{\link{rmdir}} create and remove empty
 directories.
 
-\code{\link{icesTAF-package}} gives an overview of the package.
+\code{\link{TAF-package}} gives an overview of the package.
 }

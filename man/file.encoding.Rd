@@ -46,5 +46,5 @@ file.encoding(file.nlme)
 
 \code{\link{line.endings}} examines line endings.
 
-\code{\link{icesTAF-package}} gives an overview of the package.
+\code{\link{TAF-package}} gives an overview of the package.
 }

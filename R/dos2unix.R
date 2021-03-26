@@ -10,7 +10,7 @@
 #' \code{\link{write.taf}} uses \code{unix2dos} to ensure that the resulting
 #' files have Dos line endings.
 #'
-#' \code{\link{icesTAF-package}} gives an overview of the package.
+#' \code{\link{TAF-package}} gives an overview of the package.
 #'
 #' @examples
 #' \dontrun{

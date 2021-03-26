@@ -44,5 +44,5 @@ TAF library, via the \verb{SOFTWARE.bib} metadata file.
 
 \code{\link{detach.packages}} detaches all packages.
 
-\code{\link{icesTAF-package}} gives an overview of the package.
+\code{\link{TAF-package}} gives an overview of the package.
 }

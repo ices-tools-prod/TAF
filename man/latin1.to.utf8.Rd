@@ -34,5 +34,5 @@ latin1.to.utf8("data.txt")
 
 \code{\link{file.encoding}} examines the encoding of a file.
 
-\code{\link{icesTAF-package}} gives an overview of the package.
+\code{\link{TAF-package}} gives an overview of the package.
 }

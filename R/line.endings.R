@@ -11,11 +11,11 @@
 #'
 #' \code{\link{dos2unix}} and \code{\link{unix2dos}} convert line endings.
 #'
-#' \code{\link{icesTAF-package}} gives an overview of the package.
+#' \code{\link{TAF-package}} gives an overview of the package.
 #'
 #' @examples
 #' \dontrun{
-#' file <- system.file(package="icesTAF", "DESCRIPTION")
+#' file <- system.file(package="TAF", "DESCRIPTION")
 #' line.endings(file)
 #' }
 #'

@@ -24,7 +24,7 @@
 #'
 #' \code{\link{rnd}} is a similar function that rounds columns.
 #'
-#' \code{\link{icesTAF-package}} gives an overview of the package.
+#' \code{\link{TAF-package}} gives an overview of the package.
 #'
 #' @examples
 #' # These are equivalent:

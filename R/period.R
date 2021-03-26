@@ -22,7 +22,7 @@
 #'
 #' \code{\link{draft.data}} has an argument called \code{period}.
 #'
-#' \code{\link{icesTAF-package}} gives an overview of the package.
+#' \code{\link{TAF-package}} gives an overview of the package.
 #'
 #' @examples
 #' period(1963, 1970)

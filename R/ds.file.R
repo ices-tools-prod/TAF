@@ -1,4 +1,4 @@
-#' @rdname icesTAF-internal
+#' @rdname TAF-internal
 #'
 #' @importFrom tools file_path_sans_ext
 #'

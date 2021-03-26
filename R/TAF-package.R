@@ -1,8 +1,8 @@
 #' @docType package
 #'
-#' @name icesTAF-package
+#' @name TAF-package
 #'
-#' @aliases icesTAF
+#' @aliases TAF
 #'
 #' @title Functions to Support the ICES Transparent Assessment Framework
 #'

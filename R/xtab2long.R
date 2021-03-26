@@ -14,7 +14,7 @@
 #' \code{\link{xtab2taf}} and \code{\link{taf2long}} are the underlying
 #' functions that perform the conversion.
 #'
-#' \code{\link{icesTAF-package}} gives an overview of the package.
+#' \code{\link{TAF-package}} gives an overview of the package.
 #'
 #' @examples
 #' xtab2long(catage.xtab, names=c("Year","Age","Catch"))

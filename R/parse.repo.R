@@ -1,4 +1,4 @@
-#' @rdname icesTAF-internal
+#' @rdname TAF-internal
 #'
 #' @importFrom utils head tail
 #'

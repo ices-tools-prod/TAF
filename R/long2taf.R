@@ -17,7 +17,7 @@
 #'
 #' \code{\link{taf2long}} converts a TAF table to long format.
 #'
-#' \code{\link{icesTAF-package}} gives an overview of the package.
+#' \code{\link{TAF-package}} gives an overview of the package.
 #'
 #' @examples
 #' long2taf(catage.long)

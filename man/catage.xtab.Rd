@@ -41,5 +41,5 @@ table formats.
 
 \code{\link{xtab2taf}} converts a crosstab table to TAF format.
 
-\code{\link{icesTAF-package}} gives an overview of the package.
+\code{\link{TAF-package}} gives an overview of the package.
 }

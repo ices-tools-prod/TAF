@@ -44,5 +44,5 @@ taf.unzip("bootstrap/software/archive.zip", files=exefile, exdir="model")
 \seealso{
 \code{\link{unzip}} is the base function to unzip files.
 
-\code{\link{icesTAF-package}} gives an overview of the package.
+\code{\link{TAF-package}} gives an overview of the package.
 }

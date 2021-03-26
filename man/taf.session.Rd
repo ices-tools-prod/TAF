@@ -31,5 +31,5 @@ taf.session(details=TRUE)
 information, but do not indicate clearly packages that were loaded from the
 local TAF library.
 
-\code{\link{icesTAF-package}} gives an overview of the package.
+\code{\link{TAF-package}} gives an overview of the package.
 }

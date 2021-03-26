@@ -60,7 +60,7 @@
 #'
 #' \code{\link{taf.bootstrap}} reads and processes metadata entries.
 #'
-#' \code{\link{icesTAF-package}} gives an overview of the package.
+#' \code{\link{TAF-package}} gives an overview of the package.
 #'
 #' @examples
 #' \dontrun{
@@ -79,7 +79,7 @@ draft.data <- function(originator=NULL, year=format(Sys.time(),"%Y"),
                        data.files=dir("bootstrap/initial/data"),
                        data.scripts=dir("bootstrap",pattern="\\.R$"))
 {
-  ## icesTAF:::access.vocab is a string vector of allowed 'access' values
+  ## TAF:::access.vocab is a string vector of allowed 'access' values
   if(!is.character(access) || !all(as.character(access) %in% access.vocab))
     stop("'access' values must be \"",
          paste(access.vocab, collapse="\", \""), "\"")
