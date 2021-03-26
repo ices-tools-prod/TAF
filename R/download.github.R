@@ -31,10 +31,10 @@
 #' @examples
 #' \dontrun{
 #' # Specify release tag
-#' download.github("ices-tools-prod/icesTAF@2.0-0")
+#' download.github("ices-tools-prod/icesAdvice@1.3-0")
 #'
 #' # Specify SHA reference code
-#' download.github("ices-tools-prod/icesTAF@d5a8947")
+#' download.github("ices-tools-prod/icesAdvice@4271797")
 #' }
 #'
 #' @importFrom utils tar untar

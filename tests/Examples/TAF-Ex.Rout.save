@@ -453,10 +453,10 @@ Type 'q()' to quit R.
 > 
 > ## Not run: 
 > ##D # Specify release tag
-> ##D download.github("ices-tools-prod/icesTAF@2.0-0")
+> ##D download.github("ices-tools-prod/icesAdvice@1.3-0")
 > ##D 
 > ##D # Specify SHA reference code
-> ##D download.github("ices-tools-prod/icesTAF@d5a8947")
+> ##D download.github("ices-tools-prod/icesAdvice@4271797")
 > ## End(Not run)
 > 
 > 
@@ -592,9 +592,9 @@ Type 'q()' to quit R.
 > ### ** Examples
 > 
 > ## Not run: 
-> ##D get.remote.sha("ices-tools-prod", "icesTAF", "master")
-> ##D get.remote.sha("ices-tools-prod", "icesTAF", "3.0-0")
-> ##D get.remote.sha("ices-tools-prod", "icesTAF", "3.0-0", seven=FALSE)
+> ##D get.remote.sha("ices-tools-prod", "icesAdvice", "master")
+> ##D get.remote.sha("ices-tools-prod", "icesAdvice", "1.3-0")
+> ##D get.remote.sha("ices-tools-prod", "icesAdvice", "1.3-0", seven=FALSE)
 > ## End(Not run)
 > 
 > 
@@ -1594,7 +1594,7 @@ detaching ‘package:lattice’
 
 > options(digits = 7L)
 > base::cat("Time elapsed: ", proc.time() - base::get("ptime", pos = 'CheckExEnv'),"\n")
-Time elapsed:  0.412 0.02 0.432 0 0 
+Time elapsed:  0.397 0.02 0.416 0 0 
 > grDevices::dev.off()
 null device 
           1 
