@@ -13,7 +13,7 @@ TAF provides functions to support the [ICES](https://ices.dk)
 methods, and results used in ICES assessments.
 
 TAF is implemented as an [R](https://www.r-project.org) package and
-available on [CRAN](https://cran.r-project.org/package=icesTAF).
+available on [CRAN](https://cran.r-project.org/package=TAF).
 
 Installation
 ------------
