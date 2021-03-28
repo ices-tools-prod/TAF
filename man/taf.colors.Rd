@@ -22,8 +22,7 @@ Predefined colors that can be useful in TAF plots.
 \examples{
 taf.green
 
-par(mfrow=c(3,1))
-
+opar <- par(mfrow=c(3,1))
 barplot(5:1, main="Five",
         col=c(taf.green, taf.orange, taf.blue, taf.dark, taf.light))
 
@@ -32,6 +31,7 @@ barplot(6:1, main="Six", col=c(taf.green, taf.orange, taf.blue,
 
 barplot(7:1, main="Seven", col=c("black", taf.dark, taf.light,
                                  taf.green, taf.orange, taf.blue, "white"))
+par(opar)
 }
 \seealso{
 \code{\link{TAF-package}} gives an overview of the package.

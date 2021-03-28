@@ -21,8 +21,7 @@
 #' @examples
 #' taf.green
 #'
-#' par(mfrow=c(3,1))
-#'
+#' opar <- par(mfrow=c(3,1))
 #' barplot(5:1, main="Five",
 #'         col=c(taf.green, taf.orange, taf.blue, taf.dark, taf.light))
 #'
@@ -31,5 +30,6 @@
 #'
 #' barplot(7:1, main="Seven", col=c("black", taf.dark, taf.light,
 #'                                  taf.green, taf.orange, taf.blue, "white"))
+#' par(opar)
 
 NA
