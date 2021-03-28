@@ -24,6 +24,9 @@ file has no filename extension).}
 
 \item{\dots}{passed to \code{download.file}.}
 }
+\value{
+No return value, called for side effects.
+}
 \description{
 Download a file in binary mode, e.g. a model executable.
 }

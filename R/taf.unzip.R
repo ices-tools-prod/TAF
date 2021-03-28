@@ -13,6 +13,8 @@
 #' program in Unix-compatible operating systems, but an internal method in
 #' Windows. For additional information, see the \code{\link{unzip}} help page.
 #'
+#' @return No return value, called for side effects.
+#'
 #' @note
 #' One shortcoming of the base \code{unzip} function is that the default
 #' \code{"internal"} method resets file permissions, so Linux and macOS

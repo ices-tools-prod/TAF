@@ -9,6 +9,9 @@ msg(...)
 \arguments{
 \item{\dots}{passed to \code{message}.}
 }
+\value{
+No return value, called for side effects.
+}
 \description{
 Show a message, as well as the current time.
 }

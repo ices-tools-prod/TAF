@@ -9,6 +9,9 @@ detach.packages(quiet = FALSE)
 \arguments{
 \item{quiet}{whether to suppress messages.}
 }
+\value{
+Names of detached packages.
+}
 \description{
 Detach all non-base packages that have been attached using \code{library} or
 \code{taf.library}.

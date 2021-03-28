@@ -16,6 +16,9 @@ utf8.to.latin1(file, force = FALSE)
 encoding cannot be verified with \code{\link{file.encoding}}. Not
 recommended.}
 }
+\value{
+No return value, called for side effects.
+}
 \description{
 Convert file encoding between \verb{"latin1"} and \verb{"UTF-8"}.
 }

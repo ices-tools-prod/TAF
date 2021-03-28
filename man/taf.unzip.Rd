@@ -17,6 +17,9 @@ taf.unzip(zipfile, files = NULL, exdir = ".", unzip = NULL, ...)
 
 \item{\dots}{passed to \code{\link{unzip}}.}
 }
+\value{
+No return value, called for side effects.
+}
 \description{
 Extract files from a zip archive, retaining executable file permissions.
 }

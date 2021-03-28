@@ -12,6 +12,9 @@ unix2dos(file)
 \arguments{
 \item{file}{a filename.}
 }
+\value{
+No return value, called for side effects.
+}
 \description{
 Convert line endings in a text file between Dos (CRLF) and Unix (LF) format.
 }

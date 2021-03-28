@@ -22,6 +22,8 @@
 #' This automatic filename manipulation can be bypassed by using the \code{png}
 #' function directly.
 #'
+#' @return No return value, called for side effects.
+#'
 #' @note
 #' A simple convenience function to shorten
 #' \preformatted{png("report/plot.png", width=1600, height=1200, res=200)}

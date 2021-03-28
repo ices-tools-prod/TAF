@@ -7,6 +7,8 @@
 #'        encoding cannot be verified with \code{\link{file.encoding}}. Not
 #'        recommended.
 #'
+#' @return No return value, called for side effects.
+#'
 #' @note
 #' In TAF, text files that have non-ASCII characters must be encoded as UTF-8.
 #'

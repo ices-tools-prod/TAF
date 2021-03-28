@@ -13,6 +13,9 @@ taf.install(targz = NULL, lib = "bootstrap/library", quiet = FALSE)
 
 \item{quiet}{whether to suppress messages.}
 }
+\value{
+No return value, called for side effects.
+}
 \description{
 Install packages in \file{tar.gz} format in local TAF library.
 }

@@ -8,6 +8,8 @@
 #' @param force whether to remove \verb{folder}, regardless of how it compares
 #'        to \verb{DATA.bib} entries.
 #'
+#' @return No return value, called for side effects.
+#'
 #' @note
 #' For each data file or subfolder, the cleaning procedure selects between two
 #' cases:

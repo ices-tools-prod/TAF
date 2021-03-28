@@ -4,6 +4,8 @@
 #'
 #' @param \dots passed to \code{message}.
 #'
+#' @return No return value, called for side effects.
+#'
 #' @seealso
 #' \code{\link{message}} is the base function to show messages, without the
 #' current time.

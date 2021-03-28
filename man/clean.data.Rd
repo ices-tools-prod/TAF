@@ -14,6 +14,9 @@ clean.data(folder = "bootstrap/data", quiet = FALSE, force = FALSE)
 \item{force}{whether to remove \verb{folder}, regardless of how it compares
 to \verb{DATA.bib} entries.}
 }
+\value{
+No return value, called for side effects.
+}
 \description{
 Selectively remove data from the \verb{bootstrap/data} folder if not listed
 in \verb{DATA.bib}.

@@ -25,6 +25,8 @@
 #' The special value \code{file = ""} prints the data frame in the console,
 #' similar to \code{write.csv}.
 #'
+#' @return No return value, called for side effects.
+#'
 #' @note
 #' The resulting CSV file has Dos line endings, as specified in the RFC 4180
 #' standard (IETF 2005).

@@ -4,6 +4,8 @@
 #'
 #' @param file a filename.
 #'
+#' @return No return value, called for side effects.
+#'
 #' @seealso
 #' \code{\link{line.endings}} examines line endings.
 #'

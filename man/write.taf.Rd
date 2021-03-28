@@ -25,6 +25,9 @@ write.taf(x, file = NULL, dir = NULL, quote = FALSE, row.names = FALSE,
 
 \item{\dots}{passed to \code{write.csv}.}
 }
+\value{
+No return value, called for side effects.
+}
 \description{
 Write a TAF table to a file.
 }

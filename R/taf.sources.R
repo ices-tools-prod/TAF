@@ -7,6 +7,8 @@
 #'
 #' @param type one of "data", "software" or "both"
 #'
+#' @return List of metadata entries.
+#'
 #' @seealso
 #' \link{process.entry} to process one of the entries returned by
 #' `taf.sources`.

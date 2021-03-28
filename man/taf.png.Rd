@@ -19,6 +19,9 @@ size, etc.}
 
 \item{\dots}{passed to \code{png}.}
 }
+\value{
+No return value, called for side effects.
+}
 \description{
 Open PNG graphics device to export a plot into the TAF \verb{report} folder.
 }

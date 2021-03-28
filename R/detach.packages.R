@@ -5,6 +5,8 @@
 #'
 #' @param quiet whether to suppress messages.
 #'
+#' @return Names of detached packages.
+#'
 #' @seealso
 #' \code{\link{detach}} is the underlying base function to detach a package.
 #'

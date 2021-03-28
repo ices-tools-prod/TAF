@@ -7,6 +7,8 @@
 #' @param force passed to \code{software} and \code{clean.library} if any of the
 #'        \code{dirs} is \code{"bootstrap"}.
 #'
+#' @return No return value, called for side effects.
+#'
 #' @note
 #' The purpose of removing the directories is to make sure that subsequent TAF
 #' scripts start by creating new empty directories.

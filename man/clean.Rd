@@ -12,6 +12,9 @@ clean(dirs = c("data", "model", "output", "report"), force = FALSE)
 \item{force}{passed to \code{software} and \code{clean.library} if any of the
 \code{dirs} is \code{"bootstrap"}.}
 }
+\value{
+No return value, called for side effects.
+}
 \description{
 Remove working TAF directories (\verb{data}, \verb{model}, \verb{output},
 \verb{report}), \verb{bootstrap}, or other directories.

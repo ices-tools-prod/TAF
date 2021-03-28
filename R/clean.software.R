@@ -8,6 +8,8 @@
 #' @param force whether to remove the local TAF software folder, regardless of
 #'        how it compares to \verb{SOFTWARE.bib} entries.
 #'
+#' @return No return value, called for side effects.
+#'
 #' @note
 #' For each file (and subdirectory) in the software folder, the cleaning
 #' procedure selects between three cases:

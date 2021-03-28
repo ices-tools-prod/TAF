@@ -14,6 +14,9 @@ clean.software(folder = "bootstrap/software", quiet = FALSE, force = FALSE)
 \item{force}{whether to remove the local TAF software folder, regardless of
 how it compares to \verb{SOFTWARE.bib} entries.}
 }
+\value{
+No return value, called for side effects.
+}
 \description{
 Selectively remove software from the local TAF software folder if not listed
 in \verb{SOFTWARE.bib}.

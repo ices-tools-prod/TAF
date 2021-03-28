@@ -23,6 +23,8 @@
 #' memory using \code{read.table}, \code{read.taf} or similar functions, without
 #' writing to the file system.
 #'
+#' @return No return value, called for side effects.
+#'
 #' @note
 #' If \code{destfile} contains a question mark it is removed from the
 #' \code{destfile} filename. Similarly, if \code{destfile} contains spaces or

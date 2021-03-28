@@ -15,6 +15,8 @@
 #' alphabetical order. When the installation order matters because of
 #' dependencies, the user can specify a vector of package filenames to install.
 #'
+#' @return No return value, called for side effects.
+#'
 #' @note
 #' The \code{taf.bootstrap} procedure downloads and installs R packages, without
 #' requiring the user to run \code{taf.install}. The main reason for a TAF user

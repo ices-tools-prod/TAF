@@ -9,6 +9,9 @@ taf.sources(type)
 \arguments{
 \item{type}{one of "data", "software" or "both"}
 }
+\value{
+List of metadata entries.
+}
 \description{
 Extract a list of sources from a TAF *.bib file (i.e. DATA.bib or
 SOFTWARE.bib). This allows the user to print the lisst of sources

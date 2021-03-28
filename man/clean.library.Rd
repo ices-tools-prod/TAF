@@ -14,6 +14,9 @@ clean.library(folder = "bootstrap/library", quiet = FALSE, force = FALSE)
 \item{force}{whether to remove the local TAF library, regardless of how it
 compares to \verb{SOFTWARE.bib} entries.}
 }
+\value{
+No return value, called for side effects.
+}
 \description{
 Selectively remove packages from the local TAF library if not listed in
 \verb{SOFTWARE.bib}.
