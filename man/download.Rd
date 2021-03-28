@@ -56,7 +56,7 @@ to fetch files from a web service (see
 \examples{
 \dontrun{
 url <- paste0("https://github.com/ices-taf/2015_had-iceg/raw/master/",
-              "bootstrap/initial/software/catageysa.exe")
+              "bootstrap/initial/software/catageysa/catageysa.exe")
 download(url)
 }
 
