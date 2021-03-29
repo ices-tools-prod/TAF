@@ -34,8 +34,6 @@
 #' taf.library(that)
 #' }
 #'
-#' @importFrom utils installed.packages
-#'
 #' @export
 
 taf.library <- function(package, messages=FALSE, warnings=FALSE)
