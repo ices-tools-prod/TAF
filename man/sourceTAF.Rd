@@ -36,7 +36,8 @@ Run a TAF script and return to the original directory.
 \details{
 The default value of \code{rm = FALSE} is to protect users from accidental
 loss of work, but the TAF server always runs with \code{rm = TRUE} to make
-sure that only files, not objects, are carried over between scripts.
+sure that only files, not objects in memory, are carried over between
+scripts.
 
 Likewise, the TAF server runs with \code{clean = TRUE} to make sure that the
 script starts with a clean directory. The target directory of a TAF script
