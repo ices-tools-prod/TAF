@@ -1,4 +1,4 @@
-# TAF 4.0.0 (2021-03-23)
+# TAF 4.0.0 (2021-04-06)
 
 * Package renamed and focus changed to providing general support for the ICES
   Transparent Assessment Framework.
