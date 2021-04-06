@@ -1,5 +1,5 @@
 
-R version 4.0.4 (2021-02-15) -- "Lost Library Book"
+R version 4.0.5 (2021-03-31) -- "Shake and Throw"
 Copyright (C) 2021 The R Foundation for Statistical Computing
 Platform: x86_64-pc-linux-gnu (64-bit)
 
@@ -432,7 +432,7 @@ Type 'q()' to quit R.
 > 
 > ## Not run: 
 > ##D url <- paste0("https://github.com/ices-taf/2015_had-iceg/raw/master/",
-> ##D               "bootstrap/initial/software/catageysa.exe")
+> ##D               "bootstrap/initial/software/catageysa/catageysa.exe")
 > ##D download(url)
 > ## End(Not run)
 > 
@@ -1167,8 +1167,7 @@ Type 'q()' to quit R.
 > taf.green
 [1] "#80d090"
 > 
-> par(mfrow=c(3,1))
-> 
+> opar <- par(mfrow=c(3,1))
 > barplot(5:1, main="Five",
 +         col=c(taf.green, taf.orange, taf.blue, taf.dark, taf.light))
 > 
@@ -1177,6 +1176,7 @@ Type 'q()' to quit R.
 > 
 > barplot(7:1, main="Seven", col=c("black", taf.dark, taf.light,
 +                                  taf.green, taf.orange, taf.blue, "white"))
+> par(opar)
 > 
 > 
 > 
@@ -1594,7 +1594,7 @@ detaching ‘package:lattice’
 
 > options(digits = 7L)
 > base::cat("Time elapsed: ", proc.time() - base::get("ptime", pos = 'CheckExEnv'),"\n")
-Time elapsed:  0.397 0.02 0.416 0 0 
+Time elapsed:  0.39 0.028 0.417 0 0 
 > grDevices::dev.off()
 null device 
           1 
