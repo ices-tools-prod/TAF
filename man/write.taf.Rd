@@ -45,9 +45,6 @@ The special value \code{file = ""} prints the data frame in the console,
 similar to \code{write.csv}.
 }
 \note{
-The resulting CSV file has Dos line endings, as specified in the RFC 4180
-standard (IETF 2005).
-
 This function gives a warning when column names are duplicated, unless the
 target directory name is \verb{report}.
 }
@@ -60,10 +57,6 @@ write.taf(catage)
 file.remove("catage.csv")
 }
 
-}
-\references{
-IETF (2005) Common format and Mime type for Comma-Separated Values (CSV)
-files. \href{https://tools.ietf.org/html/rfc4180}{\emph{IETF RFC} 4180}.
 }
 \seealso{
 \code{\link{write.csv}} is the underlying function used to write a table to a
