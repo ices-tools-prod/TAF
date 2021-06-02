@@ -6,7 +6,7 @@
 [<img align="right" alt="ICES Logo" width="17%" height="17%" src="https://ices.dk/_layouts/15/1033/images/icesimg/iceslogo.png">](https://ices.dk)
 
 TAF
-=======
+===
 
 TAF provides functions to support the [ICES](https://ices.dk)
 [Transparent Assessment Framework](https://taf.ices.dk) to organize data,
