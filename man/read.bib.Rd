@@ -2,34 +2,30 @@
 % Please edit documentation in R/read.bib.R
 \name{read.bib}
 \alias{read.bib}
-\title{bibtex parser}
+\title{Bibtex Parser}
 \usage{
 read.bib(file)
 }
 \arguments{
-\item{file}{bib file to parse}
+\item{file}{\file{*.bib} file to parse.}
 }
 \value{
-TRUE if successfull, FALSE otherwise
+List containing Bibtex entries.
 }
 \description{
-Parser for bibliography databases written in the bib format.
-}
-\details{
-Upload a table of F at age to the ICES TAF results database.
-The \code{data} and \code{assessment_info} will be checked against
-a schema, and any errors reported back to the user as attributes to
-the FALSE return value.
+Parser for Bibtex entries.
 }
 \note{
-The \code{data} argument expects a data.frame with the first
-column named "year" as described in the help for
-\code{\link{xtab2taf}}.
+This parser is similar to the \code{\link[bibtex]{read.bib}} function in the
+\pkg{bibtex} package, except:
+\itemize{
+\item It returns a plain list instead of class \code{bibentry}.
+\item The fields \code{bibtype} and \code{key} are stored as plain list
+      elements instead of attributes.
+}
 }
 \seealso{
-The \code{\link{xtab2taf}} function is to create a data.frame
-
-\code{\link{taf.png}} opens a PNG graphics device.
+\code{\link{taf.sources}} calls this function to import metadata entries.
 
 \code{\link{TAF-package}} gives an overview of the package.
 }
