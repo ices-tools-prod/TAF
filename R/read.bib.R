@@ -30,18 +30,18 @@ read.bib <- function(file) {
   x <- readLines(file, warn = FALSE)
 
   # remove comments (# or %)
-  x <- x[!grepl("^\\s*[%#].*$", x)]
+  x <- x[!grepl("^\\s*[%#]", x)]
   # remove empty lines
   x <- trimws(x)
   x <- x[nzchar(x)]
 
-  # split into entiries
+  # split into entries
   x <- paste(c("}", x), collapse = "")
   x <- paste0("@", strsplit(x, "\\}@")[[1]][-1], "}")
 
   # convert key and bibtype entry
   x <- gsub(
-    "@+([a-zA-Z]+)[{]([^,]+),",
+    "@+([a-zA-Z]+)\\{([^,]+),",
     "bibtype = {\\1}, key = {\\2}, ",
     x
   )
