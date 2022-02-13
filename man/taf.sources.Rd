@@ -27,6 +27,7 @@ also useful when organizing a larger TAF project.
 \dontrun{
 taf.sources("data")
 taf.sources("software")
+taf.sources("both")
 }
 
 }

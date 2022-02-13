@@ -26,6 +26,7 @@
 #' \dontrun{
 #' taf.sources("data")
 #' taf.sources("software")
+#' taf.sources("both")
 #' }
 #'
 #' @export
@@ -33,6 +34,10 @@
 taf.sources <- function(type) {
   # check type arg
   type <- match.arg(type, c("data", "software", "both"))
+
+  # handle "both" with a recursive early return
+  if (type == "both")
+    return(c(taf.sources("data"), taf.sources("software")))
 
   bibfile <- file.path("bootstrap", paste0(toupper(type), ".bib"))
   sources <- read.bib(bibfile)
