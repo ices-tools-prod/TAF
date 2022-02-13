@@ -1,5 +1,5 @@
 
-R version 4.0.5 (2021-03-31) -- "Shake and Throw"
+R version 4.1.2 (2021-11-01) -- "Bird Hippie"
 Copyright (C) 2021 The R Foundation for Statistical Computing
 Platform: x86_64-pc-linux-gnu (64-bit)
 
@@ -900,6 +900,26 @@ Type 'q()' to quit R.
 > 
 > 
 > cleanEx()
+> nameEx("read.bib")
+> ### * read.bib
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: read.bib
+> ### Title: BibTeX Parser
+> ### Aliases: read.bib
+> 
+> ### ** Examples
+> 
+> ## Not run: 
+> ##D bib <- read.bib("DATA.bib")
+> ##D str(bib)
+> ## End(Not run)
+> 
+> 
+> 
+> 
+> cleanEx()
 > nameEx("read.taf")
 > ### * read.taf
 > 
@@ -1594,7 +1614,7 @@ detaching ‘package:lattice’
 
 > options(digits = 7L)
 > base::cat("Time elapsed: ", proc.time() - base::get("ptime", pos = 'CheckExEnv'),"\n")
-Time elapsed:  0.39 0.028 0.417 0 0 
+Time elapsed:  0.199 0.008 0.207 0 0 
 > grDevices::dev.off()
 null device 
           1 
