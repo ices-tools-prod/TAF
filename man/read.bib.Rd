@@ -36,5 +36,8 @@ str(bib)
 \seealso{
 \code{\link{taf.bootstrap}} reads and processes metadata entries.
 
+\code{\link{taf.sources}} reads metadata entries and adds a \code{type}
+field.
+
 \code{\link{TAF-package}} gives an overview of the package.
 }

@@ -20,7 +20,8 @@ The functionality is similar to \code{read.bib}, with the addition of a
 \code{type} field, indicating whether an entry is \code{data}
 \code{software}.
 
-This function is especially useful for organizing larger analyses.
+This function is used internally by the \code{taf.bootstrap} process and is
+also useful when organizing a larger TAF project.
 }
 \examples{
 \dontrun{
@@ -30,8 +31,10 @@ taf.sources("software")
 
 }
 \seealso{
-\code{\link{read.bib}} reads metadata entries.
+\code{\link{taf.bootstrap}} reads and processes metadata entries.
+
+\code{\link{read.bib}} is the underlying function to read metadata entries.
 
 \code{\link{process.entry}} processes a single metadata entry, in the list
-format returned by \code{read.bib} and \code{taf.sources}.
+format returned by \code{taf.sources}.
 }
