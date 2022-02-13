@@ -2,23 +2,36 @@
 % Please edit documentation in R/taf.sources.R
 \name{taf.sources}
 \alias{taf.sources}
-\title{Extract sources from TAF *.bib file}
+\title{List Sources}
 \usage{
 taf.sources(type)
 }
 \arguments{
-\item{type}{one of "data", "software" or "both"}
+\item{type}{one of \code{"data"}, \code{"software"} or \code{"both"}.}
 }
 \value{
 List of metadata entries.
 }
 \description{
-Extract a list of sources from a TAF *.bib file (i.e. DATA.bib or
-SOFTWARE.bib). This allows the user to print the lisst of sources
-but also to process them individualy, giving more flexibiulity when
-developing larger projects.
+List metadata entries from \code{DATA.bib}, \code{SOFTWARE.bib}, or both.
+}
+\note{
+The functionality is similar to \code{read.bib}, with the addition of a
+\code{type} field, indicating whether an entry is \code{data}
+\code{software}.
+
+This function is especially useful for organizing larger analyses.
+}
+\examples{
+\dontrun{
+taf.sources("data")
+taf.sources("software")
+}
+
 }
 \seealso{
-\link{process.entry} to process one of the entries returned by
-`taf.sources`.
+\code{\link{read.bib}} reads metadata entries.
+
+\code{\link{process.entry}} processes a single metadata entry, in the list
+format returned by \code{read.bib} and \code{taf.sources}.
 }
