@@ -906,7 +906,7 @@ Type 'q()' to quit R.
 > flush(stderr()); flush(stdout())
 > 
 > ### Name: read.bib
-> ### Title: BibTeX Parser
+> ### Title: Read Metadata Entries
 > ### Aliases: read.bib
 > 
 > ### ** Examples
@@ -1154,6 +1154,26 @@ Type 'q()' to quit R.
 > 
 > 
 > cleanEx()
+> nameEx("taf.boot.path")
+> ### * taf.boot.path
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: taf.boot.path
+> ### Title: Construct Bootstrap Path
+> ### Aliases: taf.boot.path
+> 
+> ### ** Examples
+> 
+> taf.boot.path()
+[1] "bootstrap"
+> taf.boot.path("software")
+[1] "bootstrap/software"
+> 
+> 
+> 
+> 
+> cleanEx()
 > nameEx("taf.bootstrap")
 > ### * taf.bootstrap
 > 
@@ -1201,6 +1221,26 @@ Type 'q()' to quit R.
 > 
 > 
 > graphics::par(get("par.postscript", pos = 'CheckExEnv'))
+> cleanEx()
+> nameEx("taf.data.path")
+> ### * taf.data.path
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: taf.data.path
+> ### Title: Construct Bootstrap Data Path
+> ### Aliases: taf.data.path
+> 
+> ### ** Examples
+> 
+> taf.data.path()
+[1] "bootstrap/data"
+> taf.data.path("example.dat")
+[1] "bootstrap/data/example.dat"
+> 
+> 
+> 
+> 
 > cleanEx()
 > nameEx("taf.install")
 > ### * taf.install
@@ -1614,7 +1654,7 @@ detaching ‘package:lattice’
 
 > options(digits = 7L)
 > base::cat("Time elapsed: ", proc.time() - base::get("ptime", pos = 'CheckExEnv'),"\n")
-Time elapsed:  0.199 0.008 0.207 0 0 
+Time elapsed:  0.206 0.004 0.21 0 0 
 > grDevices::dev.off()
 null device 
           1 
