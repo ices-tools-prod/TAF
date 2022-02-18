@@ -43,9 +43,9 @@ read.taf <- function(file, check.names=FALSE, stringsAsFactors=FALSE,
                      fileEncoding="UTF-8", ...)
 {
   ## Ensure file is either single dirname or only filenames
-  if(any(dir.exists(file)) && length(file)>1)
+  if(length(file) > 1 && any(dir.exists(file)))
     stop("'file' must be of length 1 when it is a directory name")
-  if(dir.exists(file))
+  if(length(file) == 1 && dir.exists(file))
   {
     file <- dir(file, pattern="\\.csv$", full.names=TRUE)
     ## Ensure file is not a dirname without CSV files
