@@ -8,6 +8,10 @@
 #' @param available whether to include available packages in the output.
 #' @param list whether to return packages in list format, split by script.
 #'
+#' @details
+#' The files analyzed are those with the file extensions \code{.R}, \code{.r},
+#' \code{.Rmd}, and \code{.rmd}.
+#'
 #' @return
 #' Names of packages as a vector, or in list format if \code{list=TRUE}. If no
 #' dependencies are found, the return value is \code{NULL}.
@@ -49,8 +53,10 @@
 deps <- function(path=".", base=FALSE, installed=TRUE, available=TRUE,
                  list=FALSE)
 {
-  files <- if(dir.exists(path)) dir(path, pattern="\\.[Rr]$", full.names=TRUE)
-           else path
+  files <- if(dir.exists(path))
+             dir(path, pattern="\\.(R|Rmd|r|rmd)$", full.names=TRUE)
+           else
+             path
   code <- lapply(files, readLines)
   names(code) <- basename(files)
 
