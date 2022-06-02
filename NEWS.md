@@ -1,3 +1,12 @@
+# TAF 4.0.1 (2022-06-02)
+
+* Improved deps() to include Rmd files.
+
+* Changed write.taf() so it no longer enforces Dos line endings.
+
+
+
+
 # TAF 4.0.0 (2021-04-06)
 
 * Package renamed and focus changed to providing general support for the ICES
