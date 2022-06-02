@@ -50,7 +50,7 @@ file.encoding <- function(file)
   ## Return latin1, UTF-8, unknown, or NA
   out <- if(grepl(":.*ISO-8859",info)) "latin1"
          else if(grepl(":.*UTF-8",info)) "UTF-8"
-         else if(class(info) == "try-error") NA_character_
+         else if(inherits(info, "try-error")) NA_character_
          else "unknown"
   out
 }
