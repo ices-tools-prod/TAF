@@ -2,7 +2,8 @@
 
 * Improved deps() to include Rmd files.
 
-* Changed write.taf() so it no longer enforces Dos line endings.
+* Improved read.taf() and write.taf() to warn when column names are missing or
+  duplicated. Changed write.taf() so it no longer enforces Dos line endings.
 
 
 

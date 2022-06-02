@@ -17,6 +17,9 @@
 #' A data frame in TAF format, or a list of data frames if \code{file} is a
 #' directory or a vector of filenames.
 #'
+#' @note
+#' This function gives a warning when column names are missing or duplicated.
+#'
 #' @seealso
 #' \code{\link{read.csv}} is the underlying function used to read a table from a
 #' file.
@@ -60,11 +63,19 @@ read.taf <- function(file, check.names=FALSE, stringsAsFactors=FALSE,
                   stringsAsFactors=stringsAsFactors,
                   fileEncoding=fileEncoding, ...)
     names(out) <- basename(file_path_sans_ext(file))
-    out
   }
   else
   {
-    read.csv(file, check.names=check.names, stringsAsFactors=stringsAsFactors,
-             fileEncoding=fileEncoding, ...)
+    out <- read.csv(file, check.names=check.names,
+                    stringsAsFactors=stringsAsFactors,
+                    fileEncoding=fileEncoding, ...)
+    if(any(names(out) == ""))
+    {
+      warning("column ", which(names(out)=="")[1], " in '", basename(file),
+              "' has no name")
+    }
+    if(any(duplicated(names(out))))
+      warning("duplicated column name: ", names(out)[duplicated(names(out))][1])
   }
+  out
 }

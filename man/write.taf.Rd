@@ -45,8 +45,8 @@ The special value \code{file = ""} prints the data frame in the console,
 similar to \code{write.csv}.
 }
 \note{
-This function gives a warning when column names are duplicated, unless the
-target directory name is \verb{report}.
+This function gives a warning when column names are missing or duplicated,
+unless the target directory name is \verb{report}.
 }
 \examples{
 \dontrun{

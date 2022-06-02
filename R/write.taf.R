@@ -28,8 +28,8 @@
 #' @return No return value, called for side effects.
 #'
 #' @note
-#' This function gives a warning when column names are duplicated, unless the
-#' target directory name is \verb{report}.
+#' This function gives a warning when column names are missing or duplicated,
+#' unless the target directory name is \verb{report}.
 #'
 #' @seealso
 #' \code{\link{write.csv}} is the underlying function used to write a table to a
@@ -78,7 +78,7 @@ write.taf <- function(x, file=NULL, dir=NULL, quote=FALSE, row.names=FALSE,
     x <- get(x, envir=.GlobalEnv)
   }
   if(is.null(x))
-    stop("x should be a data frame, not NULL")
+    stop("x should be a data frame (or a list of data frames), not NULL")
 
   ## 3  Prepare file path
   if(is.null(file))
@@ -92,8 +92,10 @@ write.taf <- function(x, file=NULL, dir=NULL, quote=FALSE, row.names=FALSE,
     file <- file.path(sub("[/\\]+$","",dir), file)  # remove trailing slash
 
   ## 4  Check column names and data entries
+  if(any(names(x)=="") && dirname(file)!="report")
+    warning("column ", which(names(x)=="")[1], " has no name")
   if(any(duplicated(names(x))) && dirname(file)!="report")
-    warning("duplicated column names")
+    warning("duplicated column name: ", names(x)[duplicated(names(x))][1])
   comma <- sapply(x, grepl, pattern=",")
   if(!quote && any(comma))
   {

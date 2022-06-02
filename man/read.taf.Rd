@@ -30,6 +30,9 @@ Read a TAF table from a file into a data frame.
 Alternatively, \code{file} can be a directory or a vector of filenames, to
 read many tables in one call.
 }
+\note{
+This function gives a warning when column names are missing or duplicated.
+}
 \examples{
 \dontrun{
 write.taf(catage.taf, "catage.csv")
