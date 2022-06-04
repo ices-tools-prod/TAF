@@ -15,8 +15,11 @@ lim(x, mult = 1.1)
 A vector of length two, which can be used as axis limits.
 }
 \description{
-Compute axis limits. The lower limit is 0 and the upper limit is determined
-by the highest data value, times a multiplier.
+Compute reasonable axis limits for plotting non-negative numbers.
+}
+\note{
+The lower limit is set to 0, and the upper limit is determined by the highest
+data value, times a multiplier.
 }
 \examples{
 plot(precip)
