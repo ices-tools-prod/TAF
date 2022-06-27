@@ -3,7 +3,8 @@
 * Improved deps() to include Rmd files.
 
 * Improved read.taf() and write.taf() to warn when column names are missing or
-  duplicated. Changed write.taf() so it no longer enforces Dos line endings.
+  duplicated and also when a data frame has zero rows. Changed write.taf() so it
+  no longer enforces Dos line endings.
 
 
 

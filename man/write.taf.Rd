@@ -46,7 +46,8 @@ similar to \code{write.csv}.
 }
 \note{
 This function gives a warning when column names are missing or duplicated,
-unless the target directory name is \verb{report}.
+unless the target directory name is \verb{report}. It also gives a warning if
+the data frame has zero rows.
 }
 \examples{
 \dontrun{

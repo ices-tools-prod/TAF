@@ -18,7 +18,8 @@
 #' directory or a vector of filenames.
 #'
 #' @note
-#' This function gives a warning when column names are missing or duplicated.
+#' This function gives a warning when column names are missing or duplicated. It
+#' also gives a warning if the data frame has zero rows.
 #'
 #' @seealso
 #' \code{\link{read.csv}} is the underlying function used to read a table from a
@@ -76,6 +77,8 @@ read.taf <- function(file, check.names=FALSE, stringsAsFactors=FALSE,
     }
     if(any(duplicated(names(out))))
       warning("duplicated column name: ", names(out)[duplicated(names(out))][1])
+    if(nrow(out) == 0)
+      warning("data frame has zero rows")
   }
   out
 }

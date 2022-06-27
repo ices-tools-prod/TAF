@@ -29,7 +29,8 @@
 #'
 #' @note
 #' This function gives a warning when column names are missing or duplicated,
-#' unless the target directory name is \verb{report}.
+#' unless the target directory name is \verb{report}. It also gives a warning if
+#' the data frame has zero rows.
 #'
 #' @seealso
 #' \code{\link{write.csv}} is the underlying function used to write a table to a
@@ -97,7 +98,9 @@ write.taf <- function(x, file=NULL, dir=NULL, quote=FALSE, row.names=FALSE,
   if(any(duplicated(names(x))) && dirname(file)!="report")
     warning("duplicated column name: ", names(x)[duplicated(names(x))][1])
   comma <- sapply(x, grepl, pattern=",")
-  if(!quote && any(comma))
+  if(nrow(x) == 0)
+    warning("data frame has zero rows")
+  if(nrow(x)>0 && !quote && any(comma))
   {
     row <- which(apply(comma, 1, any))[1]
     stop("unexpected comma in row ", row, ", consider quote=TRUE")
