@@ -4,7 +4,8 @@
 \alias{clean.software}
 \title{Clean TAF Software}
 \usage{
-clean.software(folder = "bootstrap/software", quiet = FALSE, force = FALSE)
+clean.software(folder = "bootstrap/software", quiet = FALSE,
+  force = FALSE)
 }
 \arguments{
 \item{folder}{location of local TAF software folder.}
