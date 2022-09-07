@@ -68,7 +68,12 @@ clean.software <- function(folder="bootstrap/software", quiet=FALSE,
         {
           repo <- bib[[pkg]]$source
           spec <- parse.repo(repo)
-          sha.bib <- get.remote.sha(spec$username, spec$repo, spec$ref)
+          # check if spec is a SHA othewise get SHA from github api
+          if (grepl("[a-f0-9]{7}", spec$ref)) {
+            sha.bib <- spec$ref
+          } else {
+            sha.bib <- get.remote.sha(spec$username, spec$repo, spec$ref)
+          }
         }
         else
         {
