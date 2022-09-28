@@ -55,8 +55,10 @@ process.entry <- function(bib, quiet = FALSE, force = FALSE, clean = FALSE) {
     if (dir == "software") {
       spec <- parse.repo(bib$source[1])
       ## is.r.package was already called in download.github, so don't warn again
-      if (is.r.package(file.path("software", targz), spec = spec, warn = FALSE)) {
-        taf.install(file.path("software", targz), lib = "library", quiet = quiet)
+      if (is.r.package(file.path("software", targz),
+                       spec = spec, warn = FALSE)) {
+        taf.install(file.path("software", targz), lib = "library",
+                    quiet = quiet)
       }
     }
   }
@@ -106,7 +108,7 @@ process.entry <- function(bib, quiet = FALSE, force = FALSE, clean = FALSE) {
   else {
     ## Warn if entry looks like GitHub without a @reference
     if (grepl("/", bib$source) && # source entry includes /
-      sub("/.*", "", bib$source) != "initial" && # but does not start with initial
+      sub("/.*", "", bib$source) != "initial" && # does not start with initial
       !grepl("@", bib$source)) { # and does not include @
       warning(
         "'", key,

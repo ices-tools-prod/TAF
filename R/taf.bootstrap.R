@@ -108,7 +108,8 @@ taf.bootstrap <- function(software=TRUE, data=TRUE, clean=TRUE, force=FALSE,
 
   ## 1  Process software
   if(software && file.exists("bootstrap/SOFTWARE.bib"))
-    out[["SOFTWARE.bib"]] <- process.bibfile("software", clean=clean, quiet=quiet)
+    out[["SOFTWARE.bib"]] <-
+      process.bibfile("software", clean=clean, quiet=quiet)
 
   ## 2  Process data
   if(data && file.exists("bootstrap/DATA.bib"))
