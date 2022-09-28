@@ -105,7 +105,7 @@ extract.subdir <- function(targz, subtargz, subdir)
   ## Sometimes the repo and subdir have the same name
   if(repdir != subdir)  # if repdir == subdir, then we have already
   {                     # downloaded this package and extracted the subdir
-    untar(targz, file.path(repdir, subdir)) # extract subdir
+    untar(targz, file.path(repdir, subdir))  # extract subdir
     file.remove(targz)
 
     ## Move bootstrap/software/repdir/subdir to bootstrap/software/subdir

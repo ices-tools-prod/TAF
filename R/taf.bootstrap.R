@@ -78,29 +78,28 @@
 taf.bootstrap <- function(software=TRUE, data=TRUE, clean=TRUE, force=FALSE,
                           taf=NULL, quiet=FALSE)
 {
-  if (isTRUE(taf))
+  if(isTRUE(taf))
     software <- data <- clean <- force <- TRUE
 
-  if (!dir.exists("bootstrap")) {
-    warning(
-      "'bootstrap' folder does not exists.\n",
-      "Are you sure you are in the correct working directory?"
-    )
-    return(invisible(NULL)) # nothing to do
+  if(!dir.exists("bootstrap"))
+  {
+    warning("'bootstrap' folder does not exists.\n",
+            "Are you sure you are in the correct working directory?")
+    return(invisible(NULL))  # nothing to do
   }
 
-  if (!quiet)
+  if(!quiet)
     msg("Bootstrap procedure running...")
 
-  if (force)
+  if(force)
     clean(c("bootstrap/software", "bootstrap/library", "bootstrap/data"))
 
-  out <- list(SOFTWARE.bib = FALSE, DATA.bib = FALSE)
+  out <- list(SOFTWARE.bib=FALSE, DATA.bib=FALSE)
 
   ## 0  Process config
-  if (dir.exists("bootstrap/initial/config"))
+  if(dir.exists("bootstrap/initial/config"))
   {
-    if (clean)
+    if(clean)
       clean("config")
     warning("'bootstrap/initial/config' is deprecated.\n",
             "Use DATA.bib entry instead.")
@@ -108,30 +107,17 @@ taf.bootstrap <- function(software=TRUE, data=TRUE, clean=TRUE, force=FALSE,
   }
 
   ## 1  Process software
-  if (software && file.exists("bootstrap/SOFTWARE.bib"))
-  {
-    out[["SOFTWARE.bib"]] <-
-      process.bibfile(
-        "software",
-        clean = clean,
-        quiet = quiet
-      )
-  }
+  if(software && file.exists("bootstrap/SOFTWARE.bib"))
+    out[["SOFTWARE.bib"]] <- process.bibfile("software", clean=clean, quiet=quiet)
 
   ## 2  Process data
-  if (data && file.exists("bootstrap/DATA.bib"))
-  {
-    out[["DATA.bib"]] <-
-      process.bibfile(
-        "data",
-        clean = clean,
-        quiet = quiet
-      )
-  }
+  if(data && file.exists("bootstrap/DATA.bib"))
+    out[["DATA.bib"]] <- process.bibfile("data", clean=clean, quiet=quiet)
 
   ## Remove empty folders
-  rmdir(c("bootstrap/data", "bootstrap/library", "bootstrap/software"), recursive = TRUE)
-  rmdir("bootstrap/library:", recursive = TRUE) # this directory name can appear in Linux
+  rmdir(c("bootstrap/data", "bootstrap/library", "bootstrap/software"),
+        recursive=TRUE)
+  rmdir("bootstrap/library:", recursive=TRUE)  # this dir can appear in Linux
 
   if (!quiet)
     msg("Bootstrap procedure done")
