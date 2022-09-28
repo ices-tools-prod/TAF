@@ -6,6 +6,9 @@
   duplicated and also when a data frame has zero rows. Changed write.taf() so it
   no longer enforces Dos line endings.
 
+* Improved taf.bootstrap() so it only connects to GitHub when necessary to look
+  up SHA codes.
+
 
 
 
