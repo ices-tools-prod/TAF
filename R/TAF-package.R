@@ -54,6 +54,7 @@
 #'   \code{\link{plus}}      \tab rename plus group column\cr
 #'   \code{\link{rnd}}       \tab round column values\cr
 #'   \code{\link{sam2taf}}   \tab convert SAM to TAF\cr
+#'   \code{\link{taf2html}}  \tab convert TAF to HTML\cr
 #'   \code{\link{taf2long}}  \tab convert TAF to long format\cr
 #'   \code{\link{taf2xtab}}  \tab convert TAF to crosstab\cr
 #'   \code{\link{tt}}        \tab transpose TAF table\cr

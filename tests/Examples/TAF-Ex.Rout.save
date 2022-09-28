@@ -1,5 +1,5 @@
 
-R version 4.2.0 (2022-04-22) -- "Vigorous Calisthenics"
+R version 4.2.1 (2022-06-23) -- "Funny-Looking Kid"
 Copyright (C) 2022 The R Foundation for Statistical Computing
 Platform: x86_64-pc-linux-gnu (64-bit)
 
@@ -1412,6 +1412,52 @@ Type 'q()' to quit R.
 > 
 > 
 > cleanEx()
+> nameEx("taf2html")
+> ### * taf2html
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: taf2html
+> ### Title: Convert TAF Table to HTML
+> ### Aliases: taf2html
+> 
+> ### ** Examples
+> 
+> taf2html(catage.taf)
+<table>
+  <tr><th>Year<th>1<th>2<th>3<th>4
+  <tr><td>1963<td>19.347<td>62.280<td>7.028<td>3.519
+  <tr><td>1964<td>13.052<td>28.541<td>20.118<td>4.285
+  <tr><td>1965<td>113.655<td>58.227<td>17.646<td>9.135
+  <tr><td>1966<td>126.508<td>84.327<td>29.766<td>6.153
+  <tr><td>1967<td>60.962<td>95.275<td>32.689<td>11.205
+  <tr><td>1968<td>36.915<td>106.373<td>42.569<td>12.330
+  <tr><td>1969<td>5.434<td>32.840<td>31.532<td>13.641
+  <tr><td>1970<td>107.177<td>42.403<td>18.547<td>13.272
+</table>
+> taf2html(catage.taf, align=c("L","R","R","R","R"))
+<table>
+  <tr><th style="text-align:left">Year<th style="text-align:right">1<th style="text-align:right">2<th style="text-align:right">3<th style="text-align:right">4
+  <tr><td style="text-align:left">1963<td style="text-align:right">19.347<td style="text-align:right">62.280<td style="text-align:right">7.028<td style="text-align:right">3.519
+  <tr><td style="text-align:left">1964<td style="text-align:right">13.052<td style="text-align:right">28.541<td style="text-align:right">20.118<td style="text-align:right">4.285
+  <tr><td style="text-align:left">1965<td style="text-align:right">113.655<td style="text-align:right">58.227<td style="text-align:right">17.646<td style="text-align:right">9.135
+  <tr><td style="text-align:left">1966<td style="text-align:right">126.508<td style="text-align:right">84.327<td style="text-align:right">29.766<td style="text-align:right">6.153
+  <tr><td style="text-align:left">1967<td style="text-align:right">60.962<td style="text-align:right">95.275<td style="text-align:right">32.689<td style="text-align:right">11.205
+  <tr><td style="text-align:left">1968<td style="text-align:right">36.915<td style="text-align:right">106.373<td style="text-align:right">42.569<td style="text-align:right">12.330
+  <tr><td style="text-align:left">1969<td style="text-align:right">5.434<td style="text-align:right">32.840<td style="text-align:right">31.532<td style="text-align:right">13.641
+  <tr><td style="text-align:left">1970<td style="text-align:right">107.177<td style="text-align:right">42.403<td style="text-align:right">18.547<td style="text-align:right">13.272
+</table>
+> 
+> ## Not run: 
+> ##D taf2html(catage.taf, "catage.html")
+> ##D taf2html(catage.taf, "catage.html", align=c("L","R","R","R","R"),
+> ##D          append=TRUE)
+> ## End(Not run)
+> 
+> 
+> 
+> 
+> cleanEx()
 > nameEx("taf2long")
 > ### * taf2long
 > 
@@ -1675,7 +1721,7 @@ detaching ‘package:lattice’
 
 > options(digits = 7L)
 > base::cat("Time elapsed: ", proc.time() - base::get("ptime", pos = 'CheckExEnv'),"\n")
-Time elapsed:  0.212 0.008 0.22 0 0 
+Time elapsed:  0.224 0.001 0.224 0 0 
 > grDevices::dev.off()
 null device 
           1 

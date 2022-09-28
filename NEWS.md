@@ -1,4 +1,6 @@
-# TAF 4.0.1 (2022-06-02)
+# TAF 4.1.0 (2022-09-28)
+
+* Added function taf2html() to convert a TAF table to HTML code.
 
 * Improved deps() to include Rmd files.
 

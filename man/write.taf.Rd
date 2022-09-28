@@ -65,5 +65,7 @@ file.
 
 \code{\link{read.taf}} reads a TAF table from a file into a data frame.
 
+\code{\link{taf2html}} converts TAF table to HTML.
+
 \code{\link{TAF-package}} gives an overview of the package.
 }
