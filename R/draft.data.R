@@ -69,6 +69,9 @@
 #'
 #' # Export to file
 #' draft.data("WGEF", 2015, file=TRUE)
+#'
+#' # Empty entry, to complete by hand
+#' draft.data(data.files="")
 #' }
 #'
 #' @export
