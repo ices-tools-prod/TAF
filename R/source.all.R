@@ -21,12 +21,12 @@
 #'
 #' @examples
 #' \dontrun{
-#' sourceAll()
+#' source.all()
 #' }
 #'
 #' @export
 
-sourceAll <- function(...)
+source.all <- function(...)
 {
   scripts <- c("utilities.R", "data.R", "model.R", "output.R", "report.R")
   scripts <- scripts[file.exists(scripts)]
@@ -36,4 +36,13 @@ sourceAll <- function(...)
     out <- logical(0)
 
   invisible(out)
+}
+
+#' @export
+
+## Equivalent spelling
+
+sourceAll <- function(...)
+{
+  source.all(...)
 }

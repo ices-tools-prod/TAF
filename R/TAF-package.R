@@ -26,7 +26,7 @@
 #'   \code{\link{make.all}}   \tab run all TAF scripts as needed\cr
 #'   \code{\link{make.taf}}   \tab run TAF script if needed\cr
 #'   \code{\link{msg}}        \tab show message\cr
-#'   \code{\link{sourceAll}}  \tab run all TAF scripts\cr
+#'   \code{\link{source.all}} \tab run all TAF scripts\cr
 #'   \code{\link{source.taf}} \tab run TAF script
 #' }
 #' \emph{File management:}

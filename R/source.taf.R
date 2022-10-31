@@ -40,7 +40,7 @@
 #'
 #' \code{\link{make.taf}} runs a TAF script if needed.
 #'
-#' \code{\link{sourceAll}} runs all TAF scripts in a directory.
+#' \code{\link{source.all}} runs all TAF scripts in a directory.
 #'
 #' \code{\link{TAF-package}} gives an overview of the package.
 #'
