@@ -100,8 +100,10 @@ data, methods, and results used in ICES assessments.
 }
 }
 \examples{
+\dontrun{
 taf.boot()
 source.all()
+}
 }
 \references{
 ICES Transparent Assessment Framework: \url{https://taf.ices.dk}.

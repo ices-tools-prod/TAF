@@ -113,7 +113,9 @@
 #' help resources.
 #'
 #' @examples
+#' \dontrun{
 #' taf.boot()
 #' source.all()
+#' }
 
 NA
