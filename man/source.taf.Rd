@@ -2,6 +2,7 @@
 % Please edit documentation in R/source.taf.R
 \name{source.taf}
 \alias{source.taf}
+\alias{sourceTAF}
 \title{Run TAF Script}
 \usage{
 source.taf(script, rm = FALSE, clean = TRUE, detach = FALSE,

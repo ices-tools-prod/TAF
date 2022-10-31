@@ -30,6 +30,8 @@
 #' make.taf("model.R")
 #' }
 #'
+#' @aliases makeTAF
+#'
 #' @export
 
 make.taf <- function(script, ...)

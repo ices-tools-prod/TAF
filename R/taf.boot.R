@@ -73,6 +73,8 @@
 #' taf.boot()
 #' }
 #'
+#' @aliases taf.bootstrap
+#'
 #' @export
 
 taf.boot <- function(software=TRUE, data=TRUE, clean=TRUE, force=FALSE,

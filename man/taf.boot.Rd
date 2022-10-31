@@ -2,6 +2,7 @@
 % Please edit documentation in R/taf.boot.R
 \name{taf.boot}
 \alias{taf.boot}
+\alias{taf.bootstrap}
 \title{Bootstrap TAF Analysis}
 \usage{
 taf.boot(software = TRUE, data = TRUE, clean = TRUE, force = FALSE,

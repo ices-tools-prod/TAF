@@ -2,6 +2,7 @@
 % Please edit documentation in R/make.all.R
 \name{make.all}
 \alias{make.all}
+\alias{makeAll}
 \title{Run All TAF Scripts as Needed}
 \usage{
 make.all(...)

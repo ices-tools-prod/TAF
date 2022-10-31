@@ -2,6 +2,7 @@
 % Please edit documentation in R/source.dir.R
 \name{source.dir}
 \alias{source.dir}
+\alias{sourceDir}
 \title{Source Directory}
 \usage{
 source.dir(dir, pattern = "\\\\.[r|R]$", all.files = FALSE,

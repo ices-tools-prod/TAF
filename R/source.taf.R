@@ -54,6 +54,8 @@
 #'
 #' @importFrom tools file_path_sans_ext
 #'
+#' @aliases sourceTAF
+#'
 #' @export
 
 source.taf <- function(script, rm=FALSE, clean=TRUE, detach=FALSE, taf=NULL,

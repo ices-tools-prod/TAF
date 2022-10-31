@@ -30,6 +30,8 @@
 #' source.dir("bootstrap/software/utilities")
 #' }
 #'
+#' @aliases sourceDir
+#'
 #' @export
 
 source.dir <- function(dir, pattern="\\.[r|R]$", all.files=FALSE,

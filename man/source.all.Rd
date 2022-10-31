@@ -2,6 +2,7 @@
 % Please edit documentation in R/source.all.R
 \name{source.all}
 \alias{source.all}
+\alias{sourceAll}
 \title{Run All TAF Scripts}
 \usage{
 source.all(...)

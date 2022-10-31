@@ -2,6 +2,7 @@
 % Please edit documentation in R/make.taf.R
 \name{make.taf}
 \alias{make.taf}
+\alias{makeTAF}
 \title{Run TAF Script If Needed}
 \usage{
 make.taf(script, ...)

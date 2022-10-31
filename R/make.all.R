@@ -26,6 +26,8 @@
 #' make.all()
 #' }
 #'
+#' @aliases makeAll
+#'
 #' @export
 
 make.all <- function(...)

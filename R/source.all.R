@@ -24,6 +24,8 @@
 #' source.all()
 #' }
 #'
+#' @aliases sourceAll
+#'
 #' @export
 
 source.all <- function(...)
