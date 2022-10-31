@@ -4,7 +4,7 @@
 #' older than the directory of the previous TAF step.
 #'
 #' @param script TAF script filename.
-#' @param \dots passed to \code{\link{make}} and \code{\link{sourceTAF}}.
+#' @param \dots passed to \code{\link{make}} and \code{\link{source.taf}}.
 #'
 #' @return \code{TRUE} or \code{FALSE}, indicating whether the script was run.
 #'
@@ -15,7 +15,7 @@
 #' \verb{data_foo.R} and \verb{data_bar.R} have been recently modified.
 #'
 #' @seealso
-#' \code{\link{source}} runs any R script, \code{\link{sourceTAF}} is more
+#' \code{\link{source}} runs any R script, \code{\link{source.taf}} is more
 #' convenient for running a TAF script, and \code{\link{sourceAll}} runs all TAF
 #' scripts.
 #'
@@ -36,29 +36,28 @@ make.taf <- function(script, ...)
 {
   script <- basename(script)
   out <- switch(script,
-                utilities.R=sourceTAF("utilities.R"),
+                utilities.R=source.taf("utilities.R"),
                 data.R=make("data.R",
                             dir(pattern="^data_.*\\.R$"),
-                            "data", engine=sourceTAF, ...),
+                            "data", engine=source.taf, ...),
                 model.R=make("model.R",
                              c("data",dir(pattern="^model_.*\\.R$")),
-                             "model", engine=sourceTAF, ...),
+                             "model", engine=source.taf, ...),
                 output.R=make("output.R",
                               c("model",dir(pattern="^output_.*\\.R$")),
-                              "output", engine=sourceTAF, ...),
+                              "output", engine=source.taf, ...),
                 report.R=make("report.R",
                               c("output",dir(pattern="^report_.*\\.R$")),
-                              "report", engine=sourceTAF, ...),
+                              "report", engine=source.taf, ...),
                 FALSE)
   invisible(out)
 }
 
 #' @export
 
-## Older spelling, probably support forever
+## Equivalent spelling
 
 makeTAF <- function(...)
 {
-  ## .Deprecated("makeTAF")
   make.taf(...)
 }

@@ -11,7 +11,7 @@
 #' \verb{model.R}, \verb{output.R}, and \verb{report.R}.
 #'
 #' @seealso
-#' \code{\link{source}} runs any R script, \code{\link{sourceTAF}} is more
+#' \code{\link{source}} runs any R script, \code{\link{source.taf}} is more
 #' convenient for running a TAF script, and \code{\link{sourceAll}} runs all TAF
 #' scripts.
 #'
@@ -42,10 +42,9 @@ make.all <- function(...)
 
 #' @export
 
-## Older spelling, probably support forever
+## Equivalent spelling
 
 makeAll <- function(...)
 {
-  ## .Deprecated("makeAll")
   make.all(...)
 }

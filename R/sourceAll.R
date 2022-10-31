@@ -2,7 +2,7 @@
 #'
 #' Run core TAF scripts in current directory.
 #'
-#' @param \dots passed to \code{\link{sourceTAF}}.
+#' @param \dots passed to \code{\link{source.taf}}.
 #'
 #' @return Logical vector, indicating which scripts ran without errors.
 #'
@@ -11,7 +11,7 @@
 #' \verb{data.R}, \verb{model.R}, \verb{output.R}, and \verb{report.R}.
 #'
 #' @seealso
-#' \code{\link{sourceTAF}} runs a TAF script.
+#' \code{\link{source.taf}} runs a TAF script.
 #'
 #' \code{\link{make.all}} runs all TAF scripts as needed.
 #'
@@ -31,7 +31,7 @@ sourceAll <- function(...)
   scripts <- c("utilities.R", "data.R", "model.R", "output.R", "report.R")
   scripts <- scripts[file.exists(scripts)]
 
-  out <- sapply(scripts, sourceTAF, ...)
+  out <- sapply(scripts, source.taf, ...)
   if(length(out) == 0)
     out <- logical(0)
 

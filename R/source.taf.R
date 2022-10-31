@@ -32,7 +32,7 @@
 #'
 #' @note
 #' Commands within a script (such as \code{setwd}) may change the working
-#' directory, but \code{sourceTAF} guarantees that the working directory
+#' directory, but \code{source.taf} guarantees that the working directory
 #' reported by \code{getwd()} is the same before and after running a script.
 #'
 #' @seealso
@@ -48,7 +48,7 @@
 #' \dontrun{
 #' write("print(pi)", "script.R")
 #' source("script.R")
-#' sourceTAF("script.R")
+#' source.taf("script.R")
 #' file.remove("script.R")
 #' }
 #'
@@ -56,8 +56,8 @@
 #'
 #' @export
 
-sourceTAF <- function(script, rm=FALSE, clean=TRUE, detach=FALSE, taf=NULL,
-                      quiet=FALSE)
+source.taf <- function(script, rm=FALSE, clean=TRUE, detach=FALSE, taf=NULL,
+                       quiet=FALSE)
 {
   if(isTRUE(taf))
     rm <- clean <- detach <- TRUE
@@ -83,4 +83,13 @@ sourceTAF <- function(script, rm=FALSE, clean=TRUE, detach=FALSE, taf=NULL,
     rm(list=ls(.GlobalEnv), pos=.GlobalEnv)
 
   invisible(out)
+}
+
+#' @export
+
+## Equivalent spelling
+
+sourceTAF <- function(...)
+{
+  source.taf(...)
 }

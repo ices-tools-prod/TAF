@@ -32,7 +32,7 @@
 #' manual}}.
 #'
 #' @seealso
-#' \code{\link{source}} runs any R script, \code{\link{sourceTAF}} is more
+#' \code{\link{source}} runs any R script, \code{\link{source.taf}} is more
 #' convenient for running a TAF script, and \code{\link{sourceAll}} runs all TAF
 #' scripts.
 #'
