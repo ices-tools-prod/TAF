@@ -38,7 +38,7 @@
 #'   \code{\link{os.macos}}       \tab operating system\cr
 #'   \code{\link{os.windows}}     \tab operating system\cr
 #'   \code{\link{read.taf}}       \tab read TAF table from file\cr
-#'   \code{\link{sourceDir}}      \tab read all \code{*.R} files\cr
+#'   \code{\link{source.dir}}     \tab read all \code{*.R} files\cr
 #'   \code{\link{taf.boot.path}}  \tab construct path to bootstrap folder\cr
 #'   \code{\link{taf.data.path}}  \tab construct path to bootstrap data files\cr
 #'   \code{\link{taf.library}}    \tab load package from TAF library\cr

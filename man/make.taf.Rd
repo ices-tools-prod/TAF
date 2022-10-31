@@ -9,7 +9,7 @@ make.taf(script, ...)
 \arguments{
 \item{script}{TAF script filename.}
 
-\item{\dots}{passed to \code{\link{make}} and \code{\link{sourceTAF}}.}
+\item{\dots}{passed to \code{\link{make}} and \code{\link{source.taf}}.}
 }
 \value{
 \code{TRUE} or \code{FALSE}, indicating whether the script was run.
@@ -31,9 +31,9 @@ make.taf("model.R")
 
 }
 \seealso{
-\code{\link{source}} runs any R script, \code{\link{sourceTAF}} is more
-convenient for running a TAF script, and \code{\link{sourceAll}} runs all TAF
-scripts.
+\code{\link{source}} runs any R script, \code{\link{source.taf}} is more
+convenient for running a TAF script, and \code{\link{source.all}} runs all
+TAF scripts.
 
 \code{\link{make}}, \code{\link{make.taf}}, and \code{\link{make.all}} are
 similar to the \code{source} functions, except they avoid repeating tasks

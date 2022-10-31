@@ -20,13 +20,13 @@ data, methods, and results used in ICES assessments.
 }
 \emph{Running scripts:}
 \tabular{ll}{
-  \code{\link{clean}}     \tab clean TAF directories\cr
-  \code{\link{make}}      \tab run R script if needed\cr
-  \code{\link{make.all}}  \tab run all TAF scripts as needed\cr
-  \code{\link{make.taf}}  \tab run TAF script if needed\cr
-  \code{\link{msg}}       \tab show message\cr
-  \code{\link{sourceAll}} \tab run all TAF scripts\cr
-  \code{\link{sourceTAF}} \tab run TAF script
+  \code{\link{clean}}      \tab clean TAF directories\cr
+  \code{\link{make}}       \tab run R script if needed\cr
+  \code{\link{make.all}}   \tab run all TAF scripts as needed\cr
+  \code{\link{make.taf}}   \tab run TAF script if needed\cr
+  \code{\link{msg}}        \tab show message\cr
+  \code{\link{source.all}} \tab run all TAF scripts\cr
+  \code{\link{source.taf}} \tab run TAF script
 }
 \emph{File management:}
 \tabular{ll}{
@@ -37,7 +37,7 @@ data, methods, and results used in ICES assessments.
   \code{\link{os.macos}}       \tab operating system\cr
   \code{\link{os.windows}}     \tab operating system\cr
   \code{\link{read.taf}}       \tab read TAF table from file\cr
-  \code{\link{sourceDir}}      \tab read all \code{*.R} files\cr
+  \code{\link{source.dir}}     \tab read all \code{*.R} files\cr
   \code{\link{taf.boot.path}}  \tab construct path to bootstrap folder\cr
   \code{\link{taf.data.path}}  \tab construct path to bootstrap data files\cr
   \code{\link{taf.library}}    \tab load package from TAF library\cr
