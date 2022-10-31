@@ -15,7 +15,7 @@
 #' convenient for running a TAF script, and \code{\link{sourceAll}} runs all TAF
 #' scripts.
 #'
-#' \code{\link{make}}, \code{\link{makeTAF}}, and \code{\link{makeAll}} are
+#' \code{\link{make}}, \code{\link{makeTAF}}, and \code{\link{make.all}} are
 #' similar to the \code{source} functions, except they avoid repeating tasks
 #' that have already been run.
 #'
@@ -23,12 +23,12 @@
 #'
 #' @examples
 #' \dontrun{
-#' makeAll()
+#' make.all()
 #' }
 #'
 #' @export
 
-makeAll <- function(...)
+make.all <- function(...)
 {
   scripts <- c("utilities.R", "data.R", "model.R", "output.R", "report.R")
   scripts <- scripts[file.exists(scripts)]
@@ -38,4 +38,14 @@ makeAll <- function(...)
     out <- logical(0)
 
   invisible(out)
+}
+
+#' @export
+
+## Older spelling, probably support forever
+
+makeAll <- function(...)
+{
+  ## .Deprecated("taf.png")
+  make.all(...)
 }

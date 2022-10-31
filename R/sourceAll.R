@@ -13,7 +13,7 @@
 #' @seealso
 #' \code{\link{sourceTAF}} runs a TAF script.
 #'
-#' \code{\link{makeAll}} runs all TAF scripts as needed.
+#' \code{\link{make.all}} runs all TAF scripts as needed.
 #'
 #' \code{\link{clean}} cleans TAF directories.
 #'
