@@ -25,6 +25,25 @@ Type 'q()' to quit R.
 > base::assign(".oldSearch", base::search(), pos = 'CheckExEnv')
 > base::assign(".old_wd", base::getwd(), pos = 'CheckExEnv')
 > cleanEx()
+> nameEx("TAF-package")
+> ### * TAF-package
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: TAF-package
+> ### Title: Functions to Support the ICES Transparent Assessment Framework
+> ### Aliases: TAF-package TAF
+> 
+> ### ** Examples
+> 
+> ## Not run: 
+> ##D taf.boot()
+> ##D source.all()
+> ## End(Not run)
+> 
+> 
+> 
+> cleanEx()
 > nameEx("catage.long")
 > ### * catage.long
 > 
@@ -754,38 +773,38 @@ Type 'q()' to quit R.
 > 
 > 
 > cleanEx()
-> nameEx("makeAll")
-> ### * makeAll
+> nameEx("make.all")
+> ### * make.all
 > 
 > flush(stderr()); flush(stdout())
 > 
-> ### Name: makeAll
+> ### Name: make.all
 > ### Title: Run All TAF Scripts as Needed
-> ### Aliases: makeAll
+> ### Aliases: make.all makeAll
 > 
 > ### ** Examples
 > 
 > ## Not run: 
-> ##D makeAll()
+> ##D make.all()
 > ## End(Not run)
 > 
 > 
 > 
 > 
 > cleanEx()
-> nameEx("makeTAF")
-> ### * makeTAF
+> nameEx("make.taf")
+> ### * make.taf
 > 
 > flush(stderr()); flush(stdout())
 > 
-> ### Name: makeTAF
+> ### Name: make.taf
 > ### Title: Run TAF Script If Needed
-> ### Aliases: makeTAF
+> ### Aliases: make.taf makeTAF
 > 
 > ### ** Examples
 > 
 > ## Not run: 
-> ##D makeTAF("model.R")
+> ##D make.taf("model.R")
 > ## End(Not run)
 > 
 > 
@@ -1066,59 +1085,59 @@ Type 'q()' to quit R.
 > 
 > 
 > cleanEx()
-> nameEx("sourceAll")
-> ### * sourceAll
+> nameEx("source.all")
+> ### * source.all
 > 
 > flush(stderr()); flush(stdout())
 > 
-> ### Name: sourceAll
+> ### Name: source.all
 > ### Title: Run All TAF Scripts
-> ### Aliases: sourceAll
+> ### Aliases: source.all sourceAll
 > 
 > ### ** Examples
 > 
 > ## Not run: 
-> ##D sourceAll()
+> ##D source.all()
 > ## End(Not run)
 > 
 > 
 > 
 > 
 > cleanEx()
-> nameEx("sourceDir")
-> ### * sourceDir
+> nameEx("source.dir")
+> ### * source.dir
 > 
 > flush(stderr()); flush(stdout())
 > 
-> ### Name: sourceDir
+> ### Name: source.dir
 > ### Title: Source Directory
-> ### Aliases: sourceDir
+> ### Aliases: source.dir sourceDir
 > 
 > ### ** Examples
 > 
 > ## Not run: 
-> ##D sourceDir("bootstrap/software/utilities")
+> ##D source.dir("bootstrap/software/utilities")
 > ## End(Not run)
 > 
 > 
 > 
 > 
 > cleanEx()
-> nameEx("sourceTAF")
-> ### * sourceTAF
+> nameEx("source.taf")
+> ### * source.taf
 > 
 > flush(stderr()); flush(stdout())
 > 
-> ### Name: sourceTAF
+> ### Name: source.taf
 > ### Title: Run TAF Script
-> ### Aliases: sourceTAF
+> ### Aliases: source.taf sourceTAF
 > 
 > ### ** Examples
 > 
 > ## Not run: 
 > ##D write("print(pi)", "script.R")
 > ##D source("script.R")
-> ##D sourceTAF("script.R")
+> ##D source.taf("script.R")
 > ##D file.remove("script.R")
 > ## End(Not run)
 > 
@@ -1157,13 +1176,32 @@ Type 'q()' to quit R.
 > 
 > 
 > cleanEx()
+> nameEx("taf.boot")
+> ### * taf.boot
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: taf.boot
+> ### Title: Bootstrap TAF Analysis
+> ### Aliases: taf.boot taf.bootstrap
+> 
+> ### ** Examples
+> 
+> ## Not run: 
+> ##D taf.boot()
+> ## End(Not run)
+> 
+> 
+> 
+> 
+> cleanEx()
 > nameEx("taf.boot.path")
 > ### * taf.boot.path
 > 
 > flush(stderr()); flush(stdout())
 > 
 > ### Name: taf.boot.path
-> ### Title: Construct Bootstrap Path
+> ### Title: Construct Boot Path
 > ### Aliases: taf.boot.path
 > 
 > ### ** Examples
@@ -1172,25 +1210,6 @@ Type 'q()' to quit R.
 [1] "bootstrap"
 > taf.boot.path("software")
 [1] "bootstrap/software"
-> 
-> 
-> 
-> 
-> cleanEx()
-> nameEx("taf.bootstrap")
-> ### * taf.bootstrap
-> 
-> flush(stderr()); flush(stdout())
-> 
-> ### Name: taf.bootstrap
-> ### Title: Bootstrap TAF Analysis
-> ### Aliases: taf.bootstrap
-> 
-> ### ** Examples
-> 
-> ## Not run: 
-> ##D taf.bootstrap()
-> ## End(Not run)
 > 
 > 
 > 
@@ -1231,7 +1250,7 @@ Type 'q()' to quit R.
 > flush(stderr()); flush(stdout())
 > 
 > ### Name: taf.data.path
-> ### Title: Construct Bootstrap Data Path
+> ### Title: Construct Boot Data Path
 > ### Aliases: taf.data.path
 > 
 > ### ** Examples
@@ -1724,7 +1743,7 @@ detaching ‘package:lattice’
 
 > options(digits = 7L)
 > base::cat("Time elapsed: ", proc.time() - base::get("ptime", pos = 'CheckExEnv'),"\n")
-Time elapsed:  0.218 0.001 0.226 0 0 
+Time elapsed:  0.512 0.028 0.54 0 0 
 > grDevices::dev.off()
 null device 
           1 
