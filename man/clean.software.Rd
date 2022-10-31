@@ -32,7 +32,7 @@ procedure selects between three cases:
 \item File is not listed in \verb{SOFTWARE.bib} - remove.
 }
 
-The \code{taf.bootstrap} procedure cleans the TAF software folder, without
+The \code{taf.boot} procedure cleans the TAF software folder, without
 requiring the user to run \code{clean.software}. The main reason for a TAF
 user to run \code{clean.software} directly is to experiment with installing
 and removing different versions of software without modifying the
@@ -45,8 +45,8 @@ clean.software()
 
 }
 \seealso{
-\code{\link{taf.bootstrap}} calls \code{clean.software} as part of the
-default bootstrap procedure.
+\code{\link{taf.boot}} calls \code{clean.software} as part of the default
+boot procedure.
 
 \code{\link{download.github}} downloads a GitHub repository.
 

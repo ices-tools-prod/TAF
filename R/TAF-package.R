@@ -16,7 +16,7 @@
 #'   \code{\link{draft.data}}     \tab draft DATA.bib file\cr
 #'   \code{\link{draft.software}} \tab draft SOFTWARE.bib file\cr
 #'   \code{\link{period}}         \tab paste period string for DATA.bib\cr
-#'   \code{\link{taf.bootstrap}}  \tab set up data files and software\cr
+#'   \code{\link{taf.boot}}       \tab set up data files and software\cr
 #'   \code{\link{taf.skeleton}}   \tab create empty TAF template
 #' }
 #' \emph{Running scripts:}
@@ -39,8 +39,8 @@
 #'   \code{\link{os.windows}}     \tab operating system\cr
 #'   \code{\link{read.taf}}       \tab read TAF table from file\cr
 #'   \code{\link{source.dir}}     \tab read all \code{*.R} files\cr
-#'   \code{\link{taf.boot.path}}  \tab construct path to bootstrap folder\cr
-#'   \code{\link{taf.data.path}}  \tab construct path to bootstrap data files\cr
+#'   \code{\link{taf.boot.path}}  \tab construct path to boot folder\cr
+#'   \code{\link{taf.data.path}}  \tab construct path to boot data files\cr
 #'   \code{\link{taf.library}}    \tab load package from TAF library\cr
 #'   \code{\link{taf.unzip}}      \tab unzip file\cr
 #'   \code{\link{write.taf}}      \tab write TAF table to file
@@ -77,7 +77,7 @@
 #' }
 #' \emph{Administrative tools, rarely used in scripts:}
 #' \tabular{ll}{
-#'   \code{\link{clean.data}}      \tab clean bootstrap data\cr
+#'   \code{\link{clean.data}}      \tab clean boot data\cr
 #'   \code{\link{clean.library}}   \tab clean TAF library\cr
 #'   \code{\link{clean.software}}  \tab clean TAF software\cr
 #'   \code{\link{deps}}            \tab list dependencies\cr
@@ -111,5 +111,9 @@
 #'
 #' The \href{https://github.com/ices-taf/doc/wiki}{TAF Wiki} provides additional
 #' help resources.
+#'
+#' @examples
+#' taf.boot()
+#' source.all()
 
 NA

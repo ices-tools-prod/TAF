@@ -2,7 +2,7 @@
 % Please edit documentation in R/taf.data.path.R
 \name{taf.data.path}
 \alias{taf.data.path}
-\title{Construct Bootstrap Data Path}
+\title{Construct Boot Data Path}
 \usage{
 taf.data.path(..., fsep = .Platform$file.sep)
 }
@@ -20,7 +20,7 @@ regardless of whether the current working directory is the TAF root, the
 \code{bootstrap} folder, or a subfolder inside \code{bootstrap}.
 }
 \note{
-This function is especially useful in bootstrap scripts.
+This function is especially useful in boot scripts.
 }
 \examples{
 taf.data.path()

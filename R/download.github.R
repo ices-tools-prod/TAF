@@ -12,13 +12,13 @@
 #' In general, TAF scripts do not access the internet using
 #' \code{download.github} or similar functions. Instead, data and software are
 #' declared in \verb{DATA.bib} and \verb{SOFTWARE.bib} and then downloaded using
-#' \code{\link{taf.bootstrap}}. The exception is when a bootstrap script is used
-#' to fetch files from a web service (see
+#' \code{\link{taf.boot}}. The exception is when a boot script is used to fetch
+#' files from a web service (see
 #' \href{https://github.com/ices-taf/doc/wiki/Bib-entries}{TAF Wiki}).
 #'
 #' @seealso
-#' \code{\link{taf.bootstrap}} uses \code{download.github} to fetch software and
-#' data repositories.
+#' \code{\link{taf.boot}} uses \code{download.github} to fetch software and data
+#' repositories.
 #'
 #' \code{\link{download}} downloads a file.
 #'

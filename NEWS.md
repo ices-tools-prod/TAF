@@ -11,6 +11,13 @@
 * Improved taf.bootstrap() so it only connects to GitHub when necessary to look
   up SHA codes.
 
+* Provided alternative spelling variations for several functions:
+  - source.taf() is equivalent to sourceTAF()
+  - source.all() is equivalent to sourceAll()
+  - source.dir() is equivalent to sourceDir()
+  - make.taf() is equivalent to makeTAF()
+  - make.all() is equivalent to makeAll()
+
 
 
 

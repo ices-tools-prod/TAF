@@ -2,7 +2,7 @@
 % Please edit documentation in R/taf.boot.path.R
 \name{taf.boot.path}
 \alias{taf.boot.path}
-\title{Construct Bootstrap Path}
+\title{Construct Boot Path}
 \usage{
 taf.boot.path(..., fsep = .Platform$file.sep)
 }
@@ -20,7 +20,7 @@ whether the current working is the TAF root, the \code{bootstrap} folder, or
 a subfolder inside \code{bootstrap}.
 }
 \note{
-This function is especially useful in bootstrap scripts.
+This function is especially useful in boot scripts.
 }
 \examples{
 taf.boot.path()

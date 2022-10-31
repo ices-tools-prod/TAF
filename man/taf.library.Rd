@@ -39,8 +39,8 @@ taf.library(that)
 \code{\link{library}} is the underlying base function to load and attach a
 package.
 
-\code{\link{taf.bootstrap}} is the procedure to install packages into a local
-TAF library, via the \verb{SOFTWARE.bib} metadata file.
+\code{\link{taf.boot}} is the procedure to install packages into a local TAF
+library, via the \verb{SOFTWARE.bib} metadata file.
 
 \code{\link{detach.packages}} detaches all packages.
 

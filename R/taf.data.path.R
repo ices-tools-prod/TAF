@@ -1,4 +1,4 @@
-#' Construct Bootstrap Data Path
+#' Construct Boot Data Path
 #'
 #' Construct a relative path to data files in the \code{bootstrap} data folder,
 #' regardless of whether the current working directory is the TAF root, the
@@ -9,7 +9,7 @@
 #'
 #' @return Relative path, or a vector of paths.
 #'
-#' @note This function is especially useful in bootstrap scripts.
+#' @note This function is especially useful in boot scripts.
 #'
 #' @seealso
 #' \link{file.path} is the underlying function used to construct the path.

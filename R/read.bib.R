@@ -18,7 +18,7 @@
 #' \href{https://github.com/ices-taf/doc/wiki/Bib-entries}{bib entries}.
 #'
 #' @seealso
-#' \code{\link{taf.bootstrap}} reads and processes metadata entries.
+#' \code{\link{taf.boot}} reads and processes metadata entries.
 #'
 #' \code{\link{taf.sources}} reads metadata entries and adds a \code{type}
 #' field.

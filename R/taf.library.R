@@ -16,8 +16,8 @@
 #' \code{\link{library}} is the underlying base function to load and attach a
 #' package.
 #'
-#' \code{\link{taf.bootstrap}} is the procedure to install packages into a local
-#' TAF library, via the \verb{SOFTWARE.bib} metadata file.
+#' \code{\link{taf.boot}} is the procedure to install packages into a local TAF
+#' library, via the \verb{SOFTWARE.bib} metadata file.
 #'
 #' \code{\link{detach.packages}} detaches all packages.
 #'
@@ -38,8 +38,8 @@
 
 taf.library <- function(package, messages=FALSE, warnings=FALSE)
 {
-  ## If taf.library() is called from bootstrap data script, the working
-  ## directory is root/bootstrap/data/scriptname; change to root temporarily
+  ## If taf.library() is called from boot data script, the working directory is
+  ## root/bootstrap/data/scriptname; change to root temporarily
   if(basename(dirname(dirname(getwd()))) == "bootstrap")
   {
     owd <- setwd("../../.."); on.exit(setwd(owd))

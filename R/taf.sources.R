@@ -11,11 +11,11 @@
 #' \code{type} field, indicating whether an entry is \code{data}
 #' \code{software}.
 #'
-#' This function is used internally by the \code{taf.bootstrap} process and is
+#' This function is used internally by the \code{taf.boot} procedure and is
 #' also useful when organizing a larger TAF project.
 #'
 #' @seealso
-#' \code{\link{taf.bootstrap}} reads and processes metadata entries.
+#' \code{\link{taf.boot}} reads and processes metadata entries.
 #'
 #' \code{\link{read.bib}} is the underlying function to read metadata entries.
 #'

@@ -26,7 +26,7 @@ can be useful when using the \pkg{sessioninfo} package, for example.
 An unwanted side effect of having the TAF library as the first element in the
 search path is that \code{install.packages} will then install packages inside
 \verb{bootstrap/library}. This is not a serious side effect, since a
-subsequent call to \code{taf.bootstrap} or  \code{clean.library} will remove
+subsequent call to \code{taf.boot} or  \code{clean.library} will remove
 packages from the TAF library that are not declared in the
 \file{SOFTWARE.bib} file.
 }
