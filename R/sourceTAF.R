@@ -38,7 +38,7 @@
 #' @seealso
 #' \code{\link{source}} is the base function to run R scripts.
 #'
-#' \code{\link{makeTAF}} runs a TAF script if needed.
+#' \code{\link{make.taf}} runs a TAF script if needed.
 #'
 #' \code{\link{sourceAll}} runs all TAF scripts in a directory.
 #'

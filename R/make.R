@@ -36,7 +36,7 @@
 #' convenient for running a TAF script, and \code{\link{sourceAll}} runs all TAF
 #' scripts.
 #'
-#' \code{\link{make}}, \code{\link{makeTAF}}, and \code{\link{make.all}} are
+#' \code{\link{make}}, \code{\link{make.taf}}, and \code{\link{make.all}} are
 #' similar to the \code{source} functions, except they avoid repeating tasks
 #' that have already been run.
 #'

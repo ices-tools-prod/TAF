@@ -2,7 +2,7 @@
 #'
 #' Run core TAF scripts that have changed, or if previous steps were rerun.
 #'
-#' @param \dots passed to \code{\link{makeTAF}}.
+#' @param \dots passed to \code{\link{make.taf}}.
 #'
 #' @return Logical vector indicating which scripts were run.
 #'
@@ -15,7 +15,7 @@
 #' convenient for running a TAF script, and \code{\link{sourceAll}} runs all TAF
 #' scripts.
 #'
-#' \code{\link{make}}, \code{\link{makeTAF}}, and \code{\link{make.all}} are
+#' \code{\link{make}}, \code{\link{make.taf}}, and \code{\link{make.all}} are
 #' similar to the \code{source} functions, except they avoid repeating tasks
 #' that have already been run.
 #'
@@ -33,7 +33,7 @@ make.all <- function(...)
   scripts <- c("utilities.R", "data.R", "model.R", "output.R", "report.R")
   scripts <- scripts[file.exists(scripts)]
 
-  out <- sapply(scripts, makeTAF, ...)
+  out <- sapply(scripts, make.taf, ...)
   if(length(out) == 0)
     out <- logical(0)
 
@@ -46,6 +46,6 @@ make.all <- function(...)
 
 makeAll <- function(...)
 {
-  ## .Deprecated("taf.png")
+  ## .Deprecated("makeAll")
   make.all(...)
 }
