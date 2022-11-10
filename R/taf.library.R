@@ -12,6 +12,11 @@
 #' The purpose of the TAF library is to retain R packages that are not commonly
 #' used (and not on CRAN), to support long-term reproducibility of TAF analyses.
 #'
+#' If a package has dependencies that are also in the TAF library, they will be
+#' loaded in preferance of any version that may be instaled on the users own 
+#' library.  To force the use of a dependency from outside of the TAF library
+#' call \verb{library(package)} prior to the call to \verb{taf.library}.
+#' 
 #' @seealso
 #' \code{\link{library}} is the underlying base function to load and attach a
 #' package.
@@ -55,6 +60,13 @@ taf.library <- function(package, messages=FALSE, warnings=FALSE)
   package <- as.character(substitute(package))
   if(!(package %in% installed))
     stop("there is no package '", package, "' in bootstrap/library")
+
+  ## add bootstrap/library to lib paths so that any dependencies that 
+  ## may also be in bootstrap/library are used and not a version
+  ## that may be in the users system library
+  op <- .libPaths()
+  .libPaths(c("bootstrap/library", op))
+  on.exit(.libPaths(op))
 
   supM <- if(messages) identity else suppressMessages
   supW <- if(warnings) identity else suppressWarnings
