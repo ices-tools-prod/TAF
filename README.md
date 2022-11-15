@@ -38,7 +38,8 @@ References
 ----------
 
 ICES Transparent Assessment Framework:
-https://taf.ices.dk
+* https://taf.ices.dk
+* https://github.com/ices-taf/doc
 
 Development
 -----------
