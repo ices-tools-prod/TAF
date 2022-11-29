@@ -70,7 +70,7 @@ taf.install <- function(targz=NULL, lib="bootstrap/library", quiet=FALSE)
 
     if(!already.in.taf.library(tgz, lib))
     {
-      install.packages(tgz, lib=lib, repos=NULL, quiet=quiet)
+      install.packages(tgz, lib=lib, repos=NULL, type="source", quiet=quiet)
     }
     else if(!quiet)
     {
