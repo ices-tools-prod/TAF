@@ -61,12 +61,10 @@ taf.library <- function(package, messages=FALSE, warnings=FALSE)
   if(!(package %in% installed))
     stop("there is no package '", package, "' in bootstrap/library")
 
-  ## Add bootstrap/library to lib paths so that any dependencies that
-  ## may also be in bootstrap/library are used and not a version
-  ## that may be in the system or user library.
-  op <- .libPaths()
-  .libPaths(c("bootstrap/library", op))
-  on.exit(.libPaths(op))
+  ## Add bootstrap/library to lib path, using that rather than external library
+  opath <- .libPaths()
+  .libPaths(c("bootstrap/library", opath))
+  on.exit(.libPaths(opath))
 
   supM <- if(messages) identity else suppressMessages
   supW <- if(warnings) identity else suppressWarnings
