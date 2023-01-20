@@ -1,5 +1,6 @@
 Package: TAF
 Version: 4.1.0
+Date: 2023-01-20
 Title: Functions to Support the ICES Transparent Assessment Framework
 Authors@R: c(person("Arni", "Magnusson", role=c("aut","cre"), email="thisisarni@gmail.com"),
              person("Colin", "Millar", role="aut"),

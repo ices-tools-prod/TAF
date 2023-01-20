@@ -1,4 +1,4 @@
-# TAF 4.1.0 (2022-09-28)
+# TAF 4.1.0 (2023-01-20)
 
 * Added function taf2html() to convert a TAF table to HTML code.
 
