@@ -14,11 +14,11 @@
   up SHA codes.
 
 * Provided alternative spelling variations for several functions:
-  - source.taf() is equivalent to sourceTAF()
+  - make.all() is equivalent to makeAll()
+  - make.taf() is equivalent to makeTAF()
   - source.all() is equivalent to sourceAll()
   - source.dir() is equivalent to sourceDir()
-  - make.taf() is equivalent to makeTAF()
-  - make.all() is equivalent to makeAll()
+  - source.taf() is equivalent to sourceTAF()
   - taf.boot() is equivalent to taf.bootstrap()
 
 
