@@ -43,7 +43,7 @@ taf.skeleton <- function(path = ".", force = FALSE, packages = "TAF")
   template <-
     paste0(
       "## %s\n\n## Before:\n## After:\n\n",
-      paste("library(", base_packages, ")", collapse = "\n", sep = ""),
+      paste("library(", packages, ")", collapse = "\n", sep = ""),
       "\n\nmkdir(\"%s\")\n\n"
     )
   headers <- list(
