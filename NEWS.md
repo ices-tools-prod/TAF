@@ -2,6 +2,8 @@
 
 * Added function taf2html() to convert a TAF table to HTML code.
 
+* Added argument 'packages' to taf.skeleton().
+
 * Improved deps() to include Rmd files.
 
 * Improved read.taf() and write.taf() to warn when column names are missing or
