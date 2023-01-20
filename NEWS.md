@@ -19,6 +19,7 @@
   - source.dir() is equivalent to sourceDir()
   - make.taf() is equivalent to makeTAF()
   - make.all() is equivalent to makeAll()
+  - taf.boot() is equivalent to taf.bootstrap()
 
 
 
