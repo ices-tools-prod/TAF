@@ -2,7 +2,7 @@
 
 * Added function taf2html() to convert a TAF table to HTML code.
 
-* Added argument 'packages' to taf.skeleton().
+* Added argument 'pkgs' to taf.skeleton().
 
 * Improved deps() to include Rmd files.
 

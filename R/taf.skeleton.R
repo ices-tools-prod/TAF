@@ -5,8 +5,8 @@
 #' @param path where to create initial directories and R scripts. The default is
 #'        the current working directory.
 #' @param force whether to overwrite existing scripts.
-#' @param packages the packages to load at the start of each script. The default
-#'        is the TAF package, i.e. \code{library(TAF)}.
+#' @param pkgs packages to load at the start of each script. The default is the
+#'        TAF package, i.e. \code{library(TAF)}.
 #'
 #' @return Full path to analysis directory.
 #'
@@ -22,7 +22,7 @@
 #'
 #' @export
 
-taf.skeleton <- function(path = ".", force = FALSE, packages = "TAF")
+taf.skeleton <- function(path = ".", force = FALSE, pkgs = "TAF")
 {
   # only overwrite files if force = TRUE
   safe.cat <- function(..., file, force) {
@@ -43,7 +43,7 @@ taf.skeleton <- function(path = ".", force = FALSE, packages = "TAF")
   template <-
     paste0(
       "## %s\n\n## Before:\n## After:\n\n",
-      paste("library(", packages, ")", collapse = "\n", sep = ""),
+      paste("library(", pkgs, ")", collapse = "\n", sep = ""),
       "\n\nmkdir(\"%s\")\n\n"
     )
   headers <- list(
