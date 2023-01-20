@@ -21,7 +21,7 @@
 #' @param append whether to append metadata entries to an existing file.
 #' @param data.files data files to consider. The default is all folders and
 #'        files inside \verb{bootstrap/initial/data}.
-#' @param data.scripts bootstrap data scripts to consider. The default is all
+#' @param data.scripts boot data scripts to consider. The default is all
 #'        \verb{*.R} files in the \verb{bootstrap} folder.
 #'
 #' @details
@@ -58,7 +58,7 @@
 #' \code{\link{draft.software}} creates an initial draft version of a
 #' \verb{SOFTWARE.bib} metadata file.
 #'
-#' \code{\link{taf.bootstrap}} reads and processes metadata entries.
+#' \code{\link{taf.boot}} reads and processes metadata entries.
 #'
 #' \code{\link{TAF-package}} gives an overview of the package.
 #'
@@ -69,6 +69,9 @@
 #'
 #' # Export to file
 #' draft.data("WGEF", 2015, file=TRUE)
+#'
+#' # Empty entry, to complete by hand
+#' draft.data(data.files="")
 #' }
 #'
 #' @export

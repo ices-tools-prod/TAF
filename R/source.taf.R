@@ -32,15 +32,15 @@
 #'
 #' @note
 #' Commands within a script (such as \code{setwd}) may change the working
-#' directory, but \code{sourceTAF} guarantees that the working directory
+#' directory, but \code{source.taf} guarantees that the working directory
 #' reported by \code{getwd()} is the same before and after running a script.
 #'
 #' @seealso
 #' \code{\link{source}} is the base function to run R scripts.
 #'
-#' \code{\link{makeTAF}} runs a TAF script if needed.
+#' \code{\link{make.taf}} runs a TAF script if needed.
 #'
-#' \code{\link{sourceAll}} runs all TAF scripts in a directory.
+#' \code{\link{source.all}} runs all TAF scripts in a directory.
 #'
 #' \code{\link{TAF-package}} gives an overview of the package.
 #'
@@ -48,16 +48,18 @@
 #' \dontrun{
 #' write("print(pi)", "script.R")
 #' source("script.R")
-#' sourceTAF("script.R")
+#' source.taf("script.R")
 #' file.remove("script.R")
 #' }
 #'
 #' @importFrom tools file_path_sans_ext
 #'
+#' @aliases sourceTAF
+#'
 #' @export
 
-sourceTAF <- function(script, rm=FALSE, clean=TRUE, detach=FALSE, taf=NULL,
-                      quiet=FALSE)
+source.taf <- function(script, rm=FALSE, clean=TRUE, detach=FALSE, taf=NULL,
+                       quiet=FALSE)
 {
   if(isTRUE(taf))
     rm <- clean <- detach <- TRUE
@@ -83,4 +85,13 @@ sourceTAF <- function(script, rm=FALSE, clean=TRUE, detach=FALSE, taf=NULL,
     rm(list=ls(.GlobalEnv), pos=.GlobalEnv)
 
   invisible(out)
+}
+
+#' @export
+
+## Equivalent spelling
+
+sourceTAF <- function(...)
+{
+  source.taf(...)
 }

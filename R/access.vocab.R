@@ -1,1 +1,2 @@
-access.vocab <- c("OSPAR", "Public", "Restricted")  # vocab.ices.dk/?ref=1435
+## ICES-specific, could be removed from the general TAF package at some point
+access.vocab <- c("OSPAR", "Public", "Restricted")

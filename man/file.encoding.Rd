@@ -12,10 +12,8 @@ file.encoding(file)
 \value{
 \code{"latin1"}, \code{"UTF-8"}, \code{"unknown"}, or \code{NA}.
 
-This function requires the \command{file} shell command. If the
-\command{file} utility is not found in the path, this function looks for it
-inside \verb{c:/Rtools/bin}. If the required software is not installed, this
-function returns \code{NA}.
+This function requires the \command{file} shell command to be in the path.
+Otherwise, this function returns \code{NA}.
 }
 \description{
 Examine file encoding.

@@ -1,3 +1,29 @@
+# TAF 4.1.0 (2023-01-20)
+
+* Added function taf2html() to convert a TAF table to HTML code.
+
+* Added argument 'pkgs' to taf.skeleton().
+
+* Improved deps() to include Rmd files.
+
+* Improved read.taf() and write.taf() to warn when column names are missing or
+  duplicated and also when a data frame has zero rows. Changed write.taf() so it
+  no longer enforces Dos line endings.
+
+* Improved taf.bootstrap() so it only connects to GitHub when necessary to look
+  up SHA codes.
+
+* Provided alternative spelling variations for several functions:
+  - make.all() is equivalent to makeAll()
+  - make.taf() is equivalent to makeTAF()
+  - source.all() is equivalent to sourceAll()
+  - source.dir() is equivalent to sourceDir()
+  - source.taf() is equivalent to sourceTAF()
+  - taf.boot() is equivalent to taf.bootstrap()
+
+
+
+
 # TAF 4.0.0 (2021-04-06)
 
 * Package renamed and focus changed to providing general support for the ICES

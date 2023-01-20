@@ -27,13 +27,15 @@
 #'
 #' @examples
 #' \dontrun{
-#' sourceDir("bootstrap/software/utilities")
+#' source.dir("bootstrap/software/utilities")
 #' }
+#'
+#' @aliases sourceDir
 #'
 #' @export
 
-sourceDir <- function(dir, pattern="\\.[r|R]$", all.files=FALSE,
-                      recursive=FALSE, quiet=TRUE, ...)
+source.dir <- function(dir, pattern="\\.[r|R]$", all.files=FALSE,
+                       recursive=FALSE, quiet=TRUE, ...)
 {
   files <- if(!dir.exists(dir[1])) dir
            else dir(dir, full.names=TRUE, pattern=pattern,
@@ -47,4 +49,13 @@ sourceDir <- function(dir, pattern="\\.[r|R]$", all.files=FALSE,
   })
 
   invisible(files)
+}
+
+#' @export
+
+## Equivalent spelling
+
+sourceDir <- function(...)
+{
+  source.dir(...)
 }

@@ -20,15 +20,15 @@
 #' \item File is not listed in \verb{SOFTWARE.bib} - remove.
 #' }
 #'
-#' The \code{taf.bootstrap} procedure cleans the TAF software folder, without
+#' The \code{taf.boot} procedure cleans the TAF software folder, without
 #' requiring the user to run \code{clean.software}. The main reason for a TAF
 #' user to run \code{clean.software} directly is to experiment with installing
 #' and removing different versions of software without modifying the
 #' \verb{SOFTWARE.bib} file.
 #'
 #' @seealso
-#' \code{\link{taf.bootstrap}} calls \code{clean.software} as part of the
-#' default bootstrap procedure.
+#' \code{\link{taf.boot}} calls \code{clean.software} as part of the default
+#' boot procedure.
 #'
 #' \code{\link{download.github}} downloads a GitHub repository.
 #'
@@ -68,7 +68,9 @@ clean.software <- function(folder="bootstrap/software", quiet=FALSE,
         {
           repo <- bib[[pkg]]$source
           spec <- parse.repo(repo)
-          sha.bib <- get.remote.sha(spec$username, spec$repo, spec$ref)
+          # Look up SHA on GitHub if we don't have it
+          sha.bib <- if(grepl("[a-f0-9]{7}", spec$ref)) spec$ref
+                     else get.remote.sha(spec$username, spec$repo, spec$ref)
         }
         else
         {

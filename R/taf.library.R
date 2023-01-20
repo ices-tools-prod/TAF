@@ -12,12 +12,17 @@
 #' The purpose of the TAF library is to retain R packages that are not commonly
 #' used (and not on CRAN), to support long-term reproducibility of TAF analyses.
 #'
+#' If a package has dependencies that are also in the TAF library, they will be
+#' loaded in preference of any version that may be installed in the system or
+#' user library. To force the use of a dependency from outside of the TAF
+#' library call \verb{library(package)} prior to the call to \verb{taf.library}.
+#'
 #' @seealso
 #' \code{\link{library}} is the underlying base function to load and attach a
 #' package.
 #'
-#' \code{\link{taf.bootstrap}} is the procedure to install packages into a local
-#' TAF library, via the \verb{SOFTWARE.bib} metadata file.
+#' \code{\link{taf.boot}} is the procedure to install packages into a local TAF
+#' library, via the \verb{SOFTWARE.bib} metadata file.
 #'
 #' \code{\link{detach.packages}} detaches all packages.
 #'
@@ -38,8 +43,8 @@
 
 taf.library <- function(package, messages=FALSE, warnings=FALSE)
 {
-  ## If taf.library() is called from bootstrap data script, the working
-  ## directory is root/bootstrap/data/scriptname; change to root temporarily
+  ## If taf.library() is called from boot data script, the working directory is
+  ## root/bootstrap/data/scriptname; change to root temporarily
   if(basename(dirname(dirname(getwd()))) == "bootstrap")
   {
     owd <- setwd("../../.."); on.exit(setwd(owd))
@@ -55,6 +60,11 @@ taf.library <- function(package, messages=FALSE, warnings=FALSE)
   package <- as.character(substitute(package))
   if(!(package %in% installed))
     stop("there is no package '", package, "' in bootstrap/library")
+
+  ## Add bootstrap/library to lib path, using that rather than external library
+  opath <- .libPaths()
+  .libPaths(c("bootstrap/library", opath))
+  on.exit(.libPaths(opath))
 
   supM <- if(messages) identity else suppressMessages
   supW <- if(warnings) identity else suppressWarnings

@@ -1,28 +1,35 @@
-#' bibtex parser
+#' Read Metadata Entries
 #'
-#' Parser for bibliography databases written in the bib format.
+#' Read metadata entries written in the BibTeX format.
 #'
-#' @param file bib file to parse
+#' @param file bib file to parse.
 #'
-#' @details
-#' Upload a table of F at age to the ICES TAF results database.
-#' The \code{data} and \code{assessment_info} will be checked against
-#' a schema, and any errors reported back to the user as attributes to
-#' the FALSE return value.
-#'
-#' @return TRUE if successfull, FALSE otherwise
+#' @return List of metadata entries.
 #'
 #' @note
-#' The \code{data} argument expects a data.frame with the first
-#' column named "year" as described in the help for
-#' \code{\link{xtab2taf}}.
+#' Inspired by (and roughly equivalent to) the \code{read.bib} function in the
+#' \pkg{bibtex} package.
+#'
+#' This function was created when the \pkg{bibtex} package was temporarily
+#' removed from CRAN. The current implementation reduces the \pkg{TAF} package
+#' dependencies to base R and nothing else.
+#'
+#' See the TAF Wiki page on
+#' \href{https://github.com/ices-taf/doc/wiki/Bib-entries}{bib entries}.
 #'
 #' @seealso
-#' The \code{\link{xtab2taf}} function is to create a data.frame
+#' \code{\link{taf.boot}} reads and processes metadata entries.
 #'
-#' \code{\link{taf.png}} opens a PNG graphics device.
+#' \code{\link{taf.sources}} reads metadata entries and adds a \code{type}
+#' field.
 #'
 #' \code{\link{TAF-package}} gives an overview of the package.
+#'
+#' @examples
+#' \dontrun{
+#' bib <- read.bib("DATA.bib")
+#' str(bib)
+#' }
 #'
 #' @export
 

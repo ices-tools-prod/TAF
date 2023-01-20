@@ -19,15 +19,15 @@
 #' \item Installed package is not listed in \verb{SOFTWARE.bib} - remove.
 #' }
 #'
-#' The \code{taf.bootstrap} procedure cleans the TAF library, without requiring
-#' the user to run \code{clean.library}. The main reason for a TAF user to run
+#' The \code{taf.boot} procedure cleans the TAF library, without requiring the
+#' user to run \code{clean.library}. The main reason for a TAF user to run
 #' \code{clean.library} directly is to experiment with installing and removing
 #' different versions of software without modifying the \verb{SOFTWARE.bib}
 #' file.
 #'
 #' @seealso
-#' \code{\link{taf.bootstrap}} calls \code{clean.library} as part of the default
-#' bootstrap procedure.
+#' \code{\link{taf.boot}} calls \code{clean.library} as part of the default
+#' boot procedure.
 #'
 #' \code{\link{taf.install}} installs a package in the local TAF library.
 #'
@@ -58,16 +58,17 @@ clean.library <- function(folder="bootstrap/library", quiet=FALSE, force=FALSE)
     for(pkg in dir(folder))
     {
       ## Read sha.inst, the SHA for an installed package
-      sha.inst <- packageDescription(pkg, lib.loc = folder)$RemoteSha
-      if (is.null(sha.inst)) {
+      sha.inst <- packageDescription(pkg, lib.loc=folder)$RemoteSha
+      if(is.null(sha.inst))
         sha.inst <- "Not listed"
-      }
       ## Read sha.bib, the corresponding SHA from SOFTWARE.bib
       if(pkg %in% names(bib))
       {
         repo <- bib[[pkg]]$source
         spec <- parse.repo(repo)
-        sha.bib <- get.remote.sha(spec$username, spec$repo, spec$ref)
+        # Look up SHA on GitHub if we don't have it
+        sha.bib <- if(grepl("[a-f0-9]{7}", spec$ref)) spec$ref
+                   else get.remote.sha(spec$username, spec$repo, spec$ref)
         sha.inst <- substring(sha.inst, 1, nchar(sha.bib))  # same length
       }
       else

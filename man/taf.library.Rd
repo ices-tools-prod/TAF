@@ -22,6 +22,11 @@ Load and attach package from local TAF library.
 \note{
 The purpose of the TAF library is to retain R packages that are not commonly
 used (and not on CRAN), to support long-term reproducibility of TAF analyses.
+
+If a package has dependencies that are also in the TAF library, they will be
+loaded in preference of any version that may be installed in the system or
+user library. To force the use of a dependency from outside of the TAF
+library call \verb{library(package)} prior to the call to \verb{taf.library}.
 }
 \examples{
 \dontrun{
@@ -39,8 +44,8 @@ taf.library(that)
 \code{\link{library}} is the underlying base function to load and attach a
 package.
 
-\code{\link{taf.bootstrap}} is the procedure to install packages into a local
-TAF library, via the \verb{SOFTWARE.bib} metadata file.
+\code{\link{taf.boot}} is the procedure to install packages into a local TAF
+library, via the \verb{SOFTWARE.bib} metadata file.
 
 \code{\link{detach.packages}} detaches all packages.
 

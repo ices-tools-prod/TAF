@@ -2,32 +2,36 @@
 % Please edit documentation in R/taf.data.path.R
 \name{taf.data.path}
 \alias{taf.data.path}
-\title{Construct Path to a TAF bootstrap data file}
+\title{Construct Boot Data Path}
 \usage{
 taf.data.path(..., fsep = .Platform$file.sep)
 }
 \arguments{
-\item{...}{character vectors. Long vectors are not supported.}
+\item{...}{filenames inside \code{bootstrap/data}.}
 
-\item{fsep}{the path separator to use (assumed to be ASCII).}
+\item{fsep}{path separator to use instead of the default forward slash.}
 }
 \value{
-character
+Relative path, or a vector of paths.
 }
 \description{
-Construct the path to a file in the TAF bootstrap data folder
-from components in a platform-independent way.  This function
-checks to see if R is running in the bootstrap folder - i.e.
-`taf.bootstrap()` is running, and adjusts the path accordingly.
+Construct a relative path to data files in the \code{bootstrap} data folder,
+regardless of whether the current working directory is the TAF root, the
+\code{bootstrap} folder, or a subfolder inside \code{bootstrap}.
 }
-\details{
-This function, simplifies the construction of file paths to
-inintial data files gathered during the TAF bootstrapping step.
-In addition, this function is useful when developing scripts used
-in the bootstrap procedure, as these scripts are run with the
-working directory set to the bootstrap folder, and hence make it
-to develop and debug.
+\note{
+This function is especially useful in boot scripts.
+}
+\examples{
+taf.data.path()
+taf.data.path("example.dat")
+
 }
 \seealso{
-\link{file.path}
+\link{file.path} is the underlying function used to construct the path.
+
+\code{\link{taf.boot.path}} constructs the path to the \code{bootstrap}
+folder.
+
+\code{\link{TAF-package}} gives an overview of the package.
 }

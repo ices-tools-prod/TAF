@@ -1,6 +1,6 @@
 
-R version 4.0.5 (2021-03-31) -- "Shake and Throw"
-Copyright (C) 2021 The R Foundation for Statistical Computing
+R version 4.2.1 (2022-06-23) -- "Funny-Looking Kid"
+Copyright (C) 2022 The R Foundation for Statistical Computing
 Platform: x86_64-pc-linux-gnu (64-bit)
 
 R is free software and comes with ABSOLUTELY NO WARRANTY.
@@ -24,6 +24,25 @@ Type 'q()' to quit R.
 > 
 > base::assign(".oldSearch", base::search(), pos = 'CheckExEnv')
 > base::assign(".old_wd", base::getwd(), pos = 'CheckExEnv')
+> cleanEx()
+> nameEx("TAF-package")
+> ### * TAF-package
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: TAF-package
+> ### Title: Functions to Support the ICES Transparent Assessment Framework
+> ### Aliases: TAF-package TAF
+> 
+> ### ** Examples
+> 
+> ## Not run: 
+> ##D taf.boot()
+> ##D source.all()
+> ## End(Not run)
+> 
+> 
+> 
 > cleanEx()
 > nameEx("catage.long")
 > ### * catage.long
@@ -480,6 +499,9 @@ Type 'q()' to quit R.
 > ##D 
 > ##D # Export to file
 > ##D draft.data("WGEF", 2015, file=TRUE)
+> ##D 
+> ##D # Empty entry, to complete by hand
+> ##D draft.data(data.files="")
 > ## End(Not run)
 > 
 > 
@@ -751,38 +773,38 @@ Type 'q()' to quit R.
 > 
 > 
 > cleanEx()
-> nameEx("makeAll")
-> ### * makeAll
+> nameEx("make.all")
+> ### * make.all
 > 
 > flush(stderr()); flush(stdout())
 > 
-> ### Name: makeAll
+> ### Name: make.all
 > ### Title: Run All TAF Scripts as Needed
-> ### Aliases: makeAll
+> ### Aliases: make.all makeAll
 > 
 > ### ** Examples
 > 
 > ## Not run: 
-> ##D makeAll()
+> ##D make.all()
 > ## End(Not run)
 > 
 > 
 > 
 > 
 > cleanEx()
-> nameEx("makeTAF")
-> ### * makeTAF
+> nameEx("make.taf")
+> ### * make.taf
 > 
 > flush(stderr()); flush(stdout())
 > 
-> ### Name: makeTAF
+> ### Name: make.taf
 > ### Title: Run TAF Script If Needed
-> ### Aliases: makeTAF
+> ### Aliases: make.taf makeTAF
 > 
 > ### ** Examples
 > 
 > ## Not run: 
-> ##D makeTAF("model.R")
+> ##D make.taf("model.R")
 > ## End(Not run)
 > 
 > 
@@ -895,6 +917,26 @@ Type 'q()' to quit R.
 > 
 > # Shorter and less error-prone than
 > names(catage)[names(catage)=="4"] <- "4+"
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("read.bib")
+> ### * read.bib
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: read.bib
+> ### Title: Read Metadata Entries
+> ### Aliases: read.bib
+> 
+> ### ** Examples
+> 
+> ## Not run: 
+> ##D bib <- read.bib("DATA.bib")
+> ##D str(bib)
+> ## End(Not run)
 > 
 > 
 > 
@@ -1043,59 +1085,59 @@ Type 'q()' to quit R.
 > 
 > 
 > cleanEx()
-> nameEx("sourceAll")
-> ### * sourceAll
+> nameEx("source.all")
+> ### * source.all
 > 
 > flush(stderr()); flush(stdout())
 > 
-> ### Name: sourceAll
+> ### Name: source.all
 > ### Title: Run All TAF Scripts
-> ### Aliases: sourceAll
+> ### Aliases: source.all sourceAll
 > 
 > ### ** Examples
 > 
 > ## Not run: 
-> ##D sourceAll()
+> ##D source.all()
 > ## End(Not run)
 > 
 > 
 > 
 > 
 > cleanEx()
-> nameEx("sourceDir")
-> ### * sourceDir
+> nameEx("source.dir")
+> ### * source.dir
 > 
 > flush(stderr()); flush(stdout())
 > 
-> ### Name: sourceDir
+> ### Name: source.dir
 > ### Title: Source Directory
-> ### Aliases: sourceDir
+> ### Aliases: source.dir sourceDir
 > 
 > ### ** Examples
 > 
 > ## Not run: 
-> ##D sourceDir("bootstrap/software/utilities")
+> ##D source.dir("bootstrap/software/utilities")
 > ## End(Not run)
 > 
 > 
 > 
 > 
 > cleanEx()
-> nameEx("sourceTAF")
-> ### * sourceTAF
+> nameEx("source.taf")
+> ### * source.taf
 > 
 > flush(stderr()); flush(stdout())
 > 
-> ### Name: sourceTAF
+> ### Name: source.taf
 > ### Title: Run TAF Script
-> ### Aliases: sourceTAF
+> ### Aliases: source.taf sourceTAF
 > 
 > ### ** Examples
 > 
 > ## Not run: 
 > ##D write("print(pi)", "script.R")
 > ##D source("script.R")
-> ##D sourceTAF("script.R")
+> ##D source.taf("script.R")
 > ##D file.remove("script.R")
 > ## End(Not run)
 > 
@@ -1134,20 +1176,40 @@ Type 'q()' to quit R.
 > 
 > 
 > cleanEx()
-> nameEx("taf.bootstrap")
-> ### * taf.bootstrap
+> nameEx("taf.boot")
+> ### * taf.boot
 > 
 > flush(stderr()); flush(stdout())
 > 
-> ### Name: taf.bootstrap
+> ### Name: taf.boot
 > ### Title: Bootstrap TAF Analysis
-> ### Aliases: taf.bootstrap
+> ### Aliases: taf.boot taf.bootstrap
 > 
 > ### ** Examples
 > 
 > ## Not run: 
-> ##D taf.bootstrap()
+> ##D taf.boot()
 > ## End(Not run)
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("taf.boot.path")
+> ### * taf.boot.path
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: taf.boot.path
+> ### Title: Construct Boot Path
+> ### Aliases: taf.boot.path
+> 
+> ### ** Examples
+> 
+> taf.boot.path()
+[1] "bootstrap"
+> taf.boot.path("software")
+[1] "bootstrap/software"
 > 
 > 
 > 
@@ -1181,6 +1243,26 @@ Type 'q()' to quit R.
 > 
 > 
 > graphics::par(get("par.postscript", pos = 'CheckExEnv'))
+> cleanEx()
+> nameEx("taf.data.path")
+> ### * taf.data.path
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: taf.data.path
+> ### Title: Construct Boot Data Path
+> ### Aliases: taf.data.path
+> 
+> ### ** Examples
+> 
+> taf.data.path()
+[1] "bootstrap/data"
+> taf.data.path("example.dat")
+[1] "bootstrap/data/example.dat"
+> 
+> 
+> 
+> 
 > cleanEx()
 > nameEx("taf.install")
 > ### * taf.install
@@ -1312,6 +1394,27 @@ Type 'q()' to quit R.
 > 
 > 
 > cleanEx()
+> nameEx("taf.sources")
+> ### * taf.sources
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: taf.sources
+> ### Title: List Sources
+> ### Aliases: taf.sources
+> 
+> ### ** Examples
+> 
+> ## Not run: 
+> ##D taf.sources("data")
+> ##D taf.sources("software")
+> ##D taf.sources("both")
+> ## End(Not run)
+> 
+> 
+> 
+> 
+> cleanEx()
 > nameEx("taf.unzip")
 > ### * taf.unzip
 > 
@@ -1327,6 +1430,52 @@ Type 'q()' to quit R.
 > ##D exefile <- if(os.unix()) "run" else "run.exe"
 > ##D taf.unzip("bootstrap/software/archive.zip", files=exefile, exdir="model")
 > ## End(Not run)
+> 
+> 
+> 
+> cleanEx()
+> nameEx("taf2html")
+> ### * taf2html
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: taf2html
+> ### Title: Convert TAF Table to HTML
+> ### Aliases: taf2html
+> 
+> ### ** Examples
+> 
+> taf2html(catage.taf)
+<table>
+  <tr><th>Year<th>1<th>2<th>3<th>4
+  <tr><td>1963<td>19.347<td>62.280<td>7.028<td>3.519
+  <tr><td>1964<td>13.052<td>28.541<td>20.118<td>4.285
+  <tr><td>1965<td>113.655<td>58.227<td>17.646<td>9.135
+  <tr><td>1966<td>126.508<td>84.327<td>29.766<td>6.153
+  <tr><td>1967<td>60.962<td>95.275<td>32.689<td>11.205
+  <tr><td>1968<td>36.915<td>106.373<td>42.569<td>12.330
+  <tr><td>1969<td>5.434<td>32.840<td>31.532<td>13.641
+  <tr><td>1970<td>107.177<td>42.403<td>18.547<td>13.272
+</table>
+> taf2html(catage.taf, align=c("L","R","R","R","R"))
+<table>
+  <tr><th style="text-align:left">Year<th style="text-align:right">1<th style="text-align:right">2<th style="text-align:right">3<th style="text-align:right">4
+  <tr><td style="text-align:left">1963<td style="text-align:right">19.347<td style="text-align:right">62.280<td style="text-align:right">7.028<td style="text-align:right">3.519
+  <tr><td style="text-align:left">1964<td style="text-align:right">13.052<td style="text-align:right">28.541<td style="text-align:right">20.118<td style="text-align:right">4.285
+  <tr><td style="text-align:left">1965<td style="text-align:right">113.655<td style="text-align:right">58.227<td style="text-align:right">17.646<td style="text-align:right">9.135
+  <tr><td style="text-align:left">1966<td style="text-align:right">126.508<td style="text-align:right">84.327<td style="text-align:right">29.766<td style="text-align:right">6.153
+  <tr><td style="text-align:left">1967<td style="text-align:right">60.962<td style="text-align:right">95.275<td style="text-align:right">32.689<td style="text-align:right">11.205
+  <tr><td style="text-align:left">1968<td style="text-align:right">36.915<td style="text-align:right">106.373<td style="text-align:right">42.569<td style="text-align:right">12.330
+  <tr><td style="text-align:left">1969<td style="text-align:right">5.434<td style="text-align:right">32.840<td style="text-align:right">31.532<td style="text-align:right">13.641
+  <tr><td style="text-align:left">1970<td style="text-align:right">107.177<td style="text-align:right">42.403<td style="text-align:right">18.547<td style="text-align:right">13.272
+</table>
+> 
+> ## Not run: 
+> ##D taf2html(catage.taf, "catage.html")
+> ##D taf2html(catage.taf, "catage.html", align=c("L","R","R","R","R"),
+> ##D          append=TRUE)
+> ## End(Not run)
+> 
 > 
 > 
 > 
@@ -1594,7 +1743,7 @@ detaching ‘package:lattice’
 
 > options(digits = 7L)
 > base::cat("Time elapsed: ", proc.time() - base::get("ptime", pos = 'CheckExEnv'),"\n")
-Time elapsed:  0.39 0.028 0.417 0 0 
+Time elapsed:  0.512 0.028 0.54 0 0 
 > grDevices::dev.off()
 null device 
           1 

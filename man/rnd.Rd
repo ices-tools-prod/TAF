@@ -65,6 +65,6 @@ number.
 
 \code{\link{TAF-package}} gives an overview of the package.
 
-The \pkg{icesAdvice} package provides the \code{\link[icesAdvice]{icesRound}}
-function to round values for ICES advice sheets.
+The \pkg{icesAdvice} package provides the \code{icesRound} function to round
+values for ICES advice sheets.
 }

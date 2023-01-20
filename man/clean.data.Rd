@@ -29,7 +29,7 @@ cases:
 \item Data entry is not listed in \verb{DATA.bib} - remove.
 }
 
-The \code{taf.bootstrap} procedure cleans the \verb{bootstrap/data} folder,
+The \code{taf.boot} procedure cleans the \verb{bootstrap/data} folder,
 without requiring the user to run \code{clean.data}.
 }
 \examples{
@@ -39,8 +39,8 @@ clean.data()
 
 }
 \seealso{
-\code{\link{taf.bootstrap}} calls \code{clean.data} as part of the default
-bootstrap procedure.
+\code{\link{taf.boot}} calls \code{clean.data} as part of the default boot
+procedure.
 
 \code{\link{clean.software}} cleans the local TAF software folder.
 

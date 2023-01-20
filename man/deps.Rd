@@ -25,6 +25,10 @@ dependencies are found, the return value is \code{NULL}.
 \description{
 Search R scripts for packages that are required.
 }
+\details{
+The files analyzed are those with the file extensions \code{.R}, \code{.r},
+\code{.Rmd}, and \code{.rmd}.
+}
 \note{
 Package names are matched based on four patterns:\preformatted{
 library(*)

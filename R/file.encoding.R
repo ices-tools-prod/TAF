@@ -6,10 +6,8 @@
 #'
 #' @return \code{"latin1"}, \code{"UTF-8"}, \code{"unknown"}, or \code{NA}.
 #'
-#' This function requires the \command{file} shell command. If the
-#' \command{file} utility is not found in the path, this function looks for it
-#' inside \verb{c:/Rtools/bin}. If the required software is not installed, this
-#' function returns \code{NA}.
+#' This function requires the \command{file} shell command to be in the path.
+#' Otherwise, this function returns \code{NA}.
 #'
 #' @note
 #' The encoding \code{"unknown"} indicates that the file is an ASCII text file
@@ -49,15 +47,10 @@ file.encoding <- function(file)
   info <- try(system(paste("file", shQuote(file)), intern=TRUE,
                      ignore.stderr=TRUE), silent=TRUE)
 
-  ## If that didn't work, try Rtools
-  if(class(info) == "try-error")
-    info <- try(system(paste("c:/Rtools/bin/file", file), intern=TRUE,
-                       ignore.stderr=TRUE), silent=TRUE)
-
   ## Return latin1, UTF-8, unknown, or NA
   out <- if(grepl(":.*ISO-8859",info)) "latin1"
          else if(grepl(":.*UTF-8",info)) "UTF-8"
-         else if(class(info) == "try-error") NA_character_
+         else if(inherits(info, "try-error")) NA_character_
          else "unknown"
   out
 }

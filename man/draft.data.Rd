@@ -38,7 +38,7 @@ filename, special value \code{"file"}, or special value
 \item{data.files}{data files to consider. The default is all folders and
 files inside \verb{bootstrap/initial/data}.}
 
-\item{data.scripts}{bootstrap data scripts to consider. The default is all
+\item{data.scripts}{boot data scripts to consider. The default is all
 \verb{*.R} files in the \verb{bootstrap} folder.}
 }
 \value{
@@ -80,6 +80,9 @@ draft.data("WGEF", 2015)
 
 # Export to file
 draft.data("WGEF", 2015, file=TRUE)
+
+# Empty entry, to complete by hand
+draft.data(data.files="")
 }
 
 }
@@ -89,7 +92,7 @@ draft.data("WGEF", 2015, file=TRUE)
 \code{\link{draft.software}} creates an initial draft version of a
 \verb{SOFTWARE.bib} metadata file.
 
-\code{\link{taf.bootstrap}} reads and processes metadata entries.
+\code{\link{taf.boot}} reads and processes metadata entries.
 
 \code{\link{TAF-package}} gives an overview of the package.
 }

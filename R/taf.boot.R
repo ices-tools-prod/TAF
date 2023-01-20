@@ -5,11 +5,11 @@
 #'
 #' @param software whether to process \verb{SOFTWARE.bib}.
 #' @param data whether to process \verb{DATA.bib}.
-#' @param clean whether to \code{\link{clean}} directories during the bootstrap
+#' @param clean whether to \code{\link{clean}} directories during the boot
 #'        procedure.
 #' @param force whether to remove existing \verb{bootstrap/data},
 #'        \verb{bootstrap/library}, and \verb{bootstrap/software} directories
-#'        before the bootstrap procedure.
+#'        before the boot procedure.
 #' @param taf a convenience flag where \code{taf = TRUE} sets \code{software},
 #'        \code{data}, \code{clean}, and \code{force} to \code{TRUE}, as is done
 #'        on the TAF server. Any other value of \code{taf} is ignored.
@@ -23,10 +23,10 @@
 #' \item \code{\link{clean.data}} is run if \file{DATA.bib} is processed.
 #' }
 #'
-#' The default behavior of \code{taf.bootstrap} is to skip downloading of remote
-#' files (GitHub resources, URLs, bootstrap scripts) and also skip installing R
+#' The default behavior of \code{taf.boot} is to skip downloading of remote
+#' files (GitHub resources, URLs, boot scripts) and also skip installing R
 #' packages from GitHub if the files seem to be already in place. This is done
-#' to speed up the bootstrap procedure as much as possible. To override this and
+#' to speed up the boot procedure as much as possible. To override this and
 #' guarantee that all data and software files are updated, pass \code{force =
 #' TRUE} to download and install everything declared in \verb{SOFTWARE.bib} and
 #' \verb{DATA.bib}.
@@ -38,15 +38,15 @@
 #' looks for a directory called \file{bootstrap} and prepares data files and
 #' software according to metadata specifications.
 #'
-#' The bootstrap procedure consists of the following steps:
+#' The boot procedure consists of the following steps:
 #' \enumerate{
 #' \item If a \verb{bootstrap/SOFTWARE.bib} metadata file exists, it is
 #'       processed.
 #' \item If a \verb{bootstrap/DATA.bib} metadata file exists, it is processed.
 #' }
 #'
-#' After the bootstrap procedure, software and data have been documented and
-#' are ready to be used in the subsequent analysis. Specifically, the procedure
+#' After the boot procedure, software and data have been documented and are
+#' ready to be used in the subsequent analysis. Specifically, the procedure
 #' populates up to three new directories:
 #' \itemize{
 #' \item \verb{bootstrap/data} with data files.
@@ -70,37 +70,38 @@
 #'
 #' @examples
 #' \dontrun{
-#' taf.bootstrap()
+#' taf.boot()
 #' }
+#'
+#' @aliases taf.bootstrap
 #'
 #' @export
 
-taf.bootstrap <- function(software=TRUE, data=TRUE, clean=TRUE, force=FALSE,
+taf.boot <- function(software=TRUE, data=TRUE, clean=TRUE, force=FALSE,
                           taf=NULL, quiet=FALSE)
 {
-  if (isTRUE(taf))
+  if(isTRUE(taf))
     software <- data <- clean <- force <- TRUE
 
-  if (!dir.exists("bootstrap")) {
-    warning(
-      "'bootstrap' folder does not exists.\n",
-      "Are you sure you are in the correct working directory?"
-    )
-    return(invisible(NULL)) # nothing to do
+  if(!dir.exists("bootstrap"))
+  {
+    warning("'bootstrap' folder does not exists.\n",
+            "Are you sure you are in the correct working directory?")
+    return(invisible(NULL))  # nothing to do
   }
 
-  if (!quiet)
-    msg("Bootstrap procedure running...")
+  if(!quiet)
+    msg("Boot procedure running...")
 
-  if (force)
+  if(force)
     clean(c("bootstrap/software", "bootstrap/library", "bootstrap/data"))
 
-  out <- list(SOFTWARE.bib = FALSE, DATA.bib = FALSE)
+  out <- list(SOFTWARE.bib=FALSE, DATA.bib=FALSE)
 
   ## 0  Process config
-  if (dir.exists("bootstrap/initial/config"))
+  if(dir.exists("bootstrap/initial/config"))
   {
-    if (clean)
+    if(clean)
       clean("config")
     warning("'bootstrap/initial/config' is deprecated.\n",
             "Use DATA.bib entry instead.")
@@ -108,33 +109,30 @@ taf.bootstrap <- function(software=TRUE, data=TRUE, clean=TRUE, force=FALSE,
   }
 
   ## 1  Process software
-  if (software && file.exists("bootstrap/SOFTWARE.bib"))
-  {
+  if(software && file.exists("bootstrap/SOFTWARE.bib"))
     out[["SOFTWARE.bib"]] <-
-      process.bibfile(
-        "software",
-        clean = clean,
-        quiet = quiet
-      )
-  }
+      process.bibfile("software", clean=clean, quiet=quiet)
 
   ## 2  Process data
-  if (data && file.exists("bootstrap/DATA.bib"))
-  {
-    out[["DATA.bib"]] <-
-      process.bibfile(
-        "data",
-        clean = clean,
-        quiet = quiet
-      )
-  }
+  if(data && file.exists("bootstrap/DATA.bib"))
+    out[["DATA.bib"]] <- process.bibfile("data", clean=clean, quiet=quiet)
 
   ## Remove empty folders
-  rmdir(c("bootstrap/data", "bootstrap/library", "bootstrap/software"), recursive = TRUE)
-  rmdir("bootstrap/library:", recursive = TRUE) # this directory name can appear in Linux
+  rmdir(c("bootstrap/data", "bootstrap/library", "bootstrap/software"),
+        recursive=TRUE)
+  rmdir("bootstrap/library:", recursive=TRUE)  # this dir can appear in Linux
 
   if (!quiet)
-    msg("Bootstrap procedure done")
+    msg("Boot procedure done")
 
   invisible(out)
+}
+
+#' @export
+
+## Equivalent spelling
+
+taf.bootstrap <- function(...)
+{
+  taf.boot(...)
 }

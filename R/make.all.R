@@ -2,7 +2,7 @@
 #'
 #' Run core TAF scripts that have changed, or if previous steps were rerun.
 #'
-#' @param \dots passed to \code{\link{makeTAF}}.
+#' @param \dots passed to \code{\link{make.taf}}.
 #'
 #' @return Logical vector indicating which scripts were run.
 #'
@@ -11,11 +11,11 @@
 #' \verb{model.R}, \verb{output.R}, and \verb{report.R}.
 #'
 #' @seealso
-#' \code{\link{source}} runs any R script, \code{\link{sourceTAF}} is more
-#' convenient for running a TAF script, and \code{\link{sourceAll}} runs all TAF
-#' scripts.
+#' \code{\link{source}} runs any R script, \code{\link{source.taf}} is more
+#' convenient for running a TAF script, and \code{\link{source.all}} runs all
+#' TAF scripts.
 #'
-#' \code{\link{make}}, \code{\link{makeTAF}}, and \code{\link{makeAll}} are
+#' \code{\link{make}}, \code{\link{make.taf}}, and \code{\link{make.all}} are
 #' similar to the \code{source} functions, except they avoid repeating tasks
 #' that have already been run.
 #'
@@ -23,19 +23,30 @@
 #'
 #' @examples
 #' \dontrun{
-#' makeAll()
+#' make.all()
 #' }
+#'
+#' @aliases makeAll
 #'
 #' @export
 
-makeAll <- function(...)
+make.all <- function(...)
 {
   scripts <- c("utilities.R", "data.R", "model.R", "output.R", "report.R")
   scripts <- scripts[file.exists(scripts)]
 
-  out <- sapply(scripts, makeTAF, ...)
+  out <- sapply(scripts, make.taf, ...)
   if(length(out) == 0)
     out <- logical(0)
 
   invisible(out)
+}
+
+#' @export
+
+## Equivalent spelling
+
+makeAll <- function(...)
+{
+  make.all(...)
 }

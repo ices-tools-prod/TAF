@@ -18,17 +18,17 @@
 #' @return No return value, called for side effects.
 #'
 #' @note
-#' The \code{taf.bootstrap} procedure downloads and installs R packages, without
+#' The \code{taf.boot} procedure downloads and installs R packages, without
 #' requiring the user to run \code{taf.install}. The main reason for a TAF user
 #' to run \code{taf.install} directly is to initialize and run a TAF analysis
-#' without running the bootstrap procedure, e.g. to avoid updating the
-#' underlying datasets and software.
+#' without running the boot procedure, e.g. to avoid updating the underlying
+#' datasets and software.
 #'
 #' After installing the package, this function writes the remote SHA reference
 #' code into the package files \verb{DESCRIPTION} and \verb{Meta/package.rds}.
 #'
 #' @seealso
-#' \code{\link{taf.bootstrap}} calls \code{\link{download.github}} and
+#' \code{\link{taf.boot}} calls \code{\link{download.github}} and
 #' \code{taf.install} to download and install R packages.
 #'
 #' \code{\link{taf.library}} loads a package from \verb{bootstrap/library}.

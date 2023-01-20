@@ -10,7 +10,7 @@
 #' \code{\link{message}} is the base function to show messages, without the
 #' current time.
 #'
-#' \code{\link{sourceTAF}} reports progress using \code{msg}.
+#' \code{\link{source.taf}} reports progress using \code{msg}.
 #'
 #' \code{\link{TAF-package}} gives an overview of the package.
 #'

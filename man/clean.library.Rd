@@ -30,8 +30,8 @@ For each package, the cleaning procedure selects between three cases:
 \item Installed package is not listed in \verb{SOFTWARE.bib} - remove.
 }
 
-The \code{taf.bootstrap} procedure cleans the TAF library, without requiring
-the user to run \code{clean.library}. The main reason for a TAF user to run
+The \code{taf.boot} procedure cleans the TAF library, without requiring the
+user to run \code{clean.library}. The main reason for a TAF user to run
 \code{clean.library} directly is to experiment with installing and removing
 different versions of software without modifying the \verb{SOFTWARE.bib}
 file.
@@ -43,8 +43,8 @@ clean.library()
 
 }
 \seealso{
-\code{\link{taf.bootstrap}} calls \code{clean.library} as part of the default
-bootstrap procedure.
+\code{\link{taf.boot}} calls \code{clean.library} as part of the default
+boot procedure.
 
 \code{\link{taf.install}} installs a package in the local TAF library.
 

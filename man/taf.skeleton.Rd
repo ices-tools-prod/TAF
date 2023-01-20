@@ -4,13 +4,16 @@
 \alias{taf.skeleton}
 \title{TAF Skeleton}
 \usage{
-taf.skeleton(path = ".", force = FALSE)
+taf.skeleton(path = ".", force = FALSE, pkgs = "TAF")
 }
 \arguments{
 \item{path}{where to create initial directories and R scripts. The default is
 the current working directory.}
 
 \item{force}{whether to overwrite existing scripts.}
+
+\item{pkgs}{packages to load at the start of each script. The default is the
+TAF package, i.e. \code{library(TAF)}.}
 }
 \value{
 Full path to analysis directory.
