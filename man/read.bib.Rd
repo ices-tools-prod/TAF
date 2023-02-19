@@ -7,21 +7,26 @@
 read.bib(file)
 }
 \arguments{
-\item{file}{bib file to parse.}
+\item{file}{\file{*.bib} file to parse.}
 }
 \value{
 List of metadata entries.
 }
 \description{
-Read metadata entries written in the BibTeX format.
+Read metadata entries written in BibTeX format.
 }
 \note{
-Inspired by (and roughly equivalent to) the \code{read.bib} function in the
-\pkg{bibtex} package.
-
 This function was created when the \pkg{bibtex} package was temporarily
 removed from CRAN. The current implementation reduces the \pkg{TAF} package
 dependencies to base R and nothing else.
+
+This parser is similar to the \code{read.bib} function in the \pkg{bibtex}
+package, except:
+\itemize{
+\item It returns a plain list instead of class \code{bibentry}.
+\item The fields \code{bibtype} and \code{key} are stored as list elements
+      instead of attributes.
+}
 
 See the TAF Wiki page on
 \href{https://github.com/ices-taf/doc/wiki/Bib-entries}{bib entries}.
