@@ -8,9 +8,15 @@
 TAF
 ===
 
-TAF provides functions to support the [ICES](https://ices.dk)
-[Transparent Assessment Framework](https://taf.ices.dk) to organize data,
-methods, and results used in ICES assessments.
+TAF provides functions to support the [ICES](https://ices.dk) [Transparent
+Assessment Framework](https://taf.ices.dk) to organize data, methods, and
+results used in ICES assessments.
+
+This package is the core foundation for the
+[icesTAF](https://cran.r-project.org/package=icesTAF) package. The TAF package
+can also be used by itself, especially for applications outside of ICES. With a
+focus on stability and reproducible analyses, it is designed to have no package
+dependencies.
 
 TAF is implemented as an [R](https://www.r-project.org) package and
 available on [CRAN](https://cran.r-project.org/package=TAF).

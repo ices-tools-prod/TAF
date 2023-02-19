@@ -8,6 +8,12 @@
 \description{
 Functions to support the ICES Transparent Assessment Framework, to organize
 data, methods, and results used in ICES assessments.
+
+This package is the core foundation for the
+[icesTAF](https://cran.r-project.org/package=icesTAF) package. The TAF
+package can also be used by itself, especially for applications outside of
+ICES. With a focus on stability and reproducible analyses, it is designed to
+have no package dependencies.
 }
 \details{
 \emph{Initial TAF steps:}
