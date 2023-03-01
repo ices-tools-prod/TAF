@@ -64,7 +64,7 @@ taf.library <- function(package, messages=FALSE, warnings=FALSE)
   ## Add bootstrap/library to lib path, using that rather than external library
   opath <- .libPaths()
   .libPaths(c("bootstrap/library", opath))
-  on.exit(.libPaths(opath))
+  on.exit(.libPaths(opath), add = TRUE)
 
   supM <- if(messages) identity else suppressMessages
   supW <- if(warnings) identity else suppressWarnings
