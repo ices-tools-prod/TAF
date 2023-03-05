@@ -1,7 +1,7 @@
 Package: TAF
 Version: 4.1.0
 Date: 2023-01-20
-Title: Functions to Support the ICES Transparent Assessment Framework
+Title: Transparent Assessment Framework for Reproducible Research
 Authors@R: c(person("Arni", "Magnusson", role=c("aut","cre"), email="thisisarni@gmail.com"),
              person("Colin", "Millar", role="aut"),
              person("Alexandros", "Kokkalis", role="ctb"),
@@ -10,12 +10,16 @@ Authors@R: c(person("Arni", "Magnusson", role=c("aut","cre"), email="thisisarni@
              person("Hjalte", "Parner", role="ctb"))
 Imports: grDevices, lattice, stats, tools, utils
 LazyData: yes
-Description: Functions to support the ICES Transparent Assessment Framework
-  <https://taf.ices.dk> to organize data, methods, and results used in ICES
-  assessments. ICES is an organization facilitating international collaboration
-  in marine science.
+Description: Functions to organize data, methods, and results used in scientific
+  analyses. A TAF analysis consists of four scripts (data.R, model.R, output.R,
+  report.R) that are run sequentially. Each script starts by reading files from
+  a previous step and ends with writing out files for the next step. Convenience
+  functions are provided to version control the required data and software, run
+  analyses, clean residues from previous runs, manage files, manipulate tables,
+  and produce figures. TAF forms a base layer for the icesTAF package and other
+  scientific applications.
 License: GPL-3
-URL: https://taf.ices.dk
+URL: https://github.com/ices-tools-prod/TAF
 Encoding: UTF-8
 RoxygenNote: 7.2.3
 Roxygen: list(old_usage=TRUE)
