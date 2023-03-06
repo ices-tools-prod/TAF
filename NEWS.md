@@ -1,3 +1,11 @@
+# TAF 4.1.1 (2023-03-06)
+
+* Added argument 'imports' to taf.session().
+
+
+
+
+
 # TAF 4.1.0 (2023-01-20)
 
 * Added function taf2html() to convert a TAF table to HTML code.
