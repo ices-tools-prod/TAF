@@ -20,6 +20,7 @@
 #' \donttest{
 #' taf.session()
 #' taf.session(sort=TRUE)
+#' taf.session(imports=FALSE)
 #' taf.session(details=TRUE)
 #' }
 #'
@@ -66,7 +67,6 @@ taf.session <- function(sort=FALSE, imports=TRUE, details=FALSE)
     running <- sessionInfo()$running
     arch <- R.version$arch
     user <- Sys.info()[["user"]]
-    stringsAsFactors <- getOption("stringsAsFactors")
     encoding <- unlist(l10n_info())
     locale <- unlist(strsplit(Sys.getlocale(), ";"))
     locale <- strsplit(locale, "=")

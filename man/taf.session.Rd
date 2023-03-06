@@ -24,6 +24,7 @@ packages were loaded from the local TAF library.
 \donttest{
 taf.session()
 taf.session(sort=TRUE)
+taf.session(imports=FALSE)
 taf.session(details=TRUE)
 }
 

@@ -1,5 +1,5 @@
 
-R version 4.2.1 (2022-06-23) -- "Funny-Looking Kid"
+R version 4.2.2 (2022-10-31) -- "Innocent and Trusting"
 Copyright (C) 2022 The R Foundation for Statistical Computing
 Platform: x86_64-pc-linux-gnu (64-bit)
 
@@ -31,7 +31,7 @@ Type 'q()' to quit R.
 > flush(stderr()); flush(stdout())
 > 
 > ### Name: TAF-package
-> ### Title: Functions to Support the ICES Transparent Assessment Framework
+> ### Title: Transparent Assessment Framework for Reproducible Research
 > ### Aliases: TAF-package TAF
 > 
 > ### ** Examples
@@ -1743,7 +1743,7 @@ detaching ‘package:lattice’
 
 > options(digits = 7L)
 > base::cat("Time elapsed: ", proc.time() - base::get("ptime", pos = 'CheckExEnv'),"\n")
-Time elapsed:  0.512 0.028 0.54 0 0 
+Time elapsed:  0.266 0.117 1.368 0 0 
 > grDevices::dev.off()
 null device 
           1 
