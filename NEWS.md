@@ -1,6 +1,9 @@
-# TAF 4.1.1 (2023-03-06)
+# TAF 4.1.1 (2023-03-07)
 
 * Added argument 'imports' to taf.session().
+
+* Improved taf.library() to ensure it returns to the previous working directory.
+  Code contributed by Alexandros Kokkalis.
 
 
 
