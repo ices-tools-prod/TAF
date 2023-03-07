@@ -1,4 +1,11 @@
-# TAF 4.1.1 (2023-03-07)
+# TAF 4.2.0 (2023-03-07)
+
+* The word 'boot' is now a preferred term for what used to be called
+  'bootstrap', mainly to avoid confusion with statistical bootstrap. All help
+  pages now refer to 'boot', but all TAF functions fully support existing
+  analyses that have a 'bootstrap' folder.
+
+* Added function boot.dir() to clean the boot directory.
 
 * Added argument 'imports' to taf.session().
 

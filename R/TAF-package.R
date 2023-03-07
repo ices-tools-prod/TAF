@@ -34,6 +34,7 @@
 #' \emph{Running scripts:}
 #' \tabular{ll}{
 #'   \code{\link{clean}}      \tab clean TAF directories\cr
+#'   \code{\link{clean.boot}} \tab clean boot directory\cr
 #'   \code{\link{make}}       \tab run R script if needed\cr
 #'   \code{\link{make.all}}   \tab run all TAF scripts as needed\cr
 #'   \code{\link{make.taf}}   \tab run TAF script if needed\cr

@@ -23,28 +23,19 @@ Remove TAF directories (\verb{data}, \verb{model}, \verb{output},
 The purpose of removing the directories is to make sure that subsequent TAF
 scripts start by creating new empty directories.
 
-If any of the \code{dirs} is \code{"boot"} it is treated specially. Instead
-of completely removing the \verb{boot} directory, only the subdirectories
-\verb{data} is removed, while \code{clean.software} and \code{clean.library}
-are used to clean the \verb{boot/software} and \verb{boot/library}
-subdirectories. This protects the subdirectory \verb{boot/initial} and
-\verb{*.bib} metadata files from being accidentally deleted.
+If any of the \code{dirs} is \code{"boot"}, it is treated specially and
+\code{clean.boot} is called to clean the \verb{boot/data},
+\verb{boot/library}, and \verb{boot/software} subdirectories.
 }
 \examples{
 \dontrun{
 clean()
-clean("boot")
+clean.boot()
 }
 
 }
 \seealso{
-\code{\link{clean.software}} selectively removes software from
-\verb{boot/software}.
-
-\code{\link{clean.library}} selectively removes packages from
-\verb{boot/library}.
-
-\code{\link{clean.data}} selectively removes data from \verb{boot/data}.
+\code{\link{clean.boot}} cleans the boot directory.
 
 \code{\link{mkdir}} and \code{\link{rmdir}} create and remove empty
 directories.

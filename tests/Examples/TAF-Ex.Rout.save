@@ -221,7 +221,27 @@ Type 'q()' to quit R.
 > 
 > ## Not run: 
 > ##D clean()
-> ##D clean("boot")
+> ##D clean.boot()
+> ## End(Not run)
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("clean.boot")
+> ### * clean.boot
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: clean.boot
+> ### Title: Clean Boot Directory
+> ### Aliases: clean.boot
+> 
+> ### ** Examples
+> 
+> ## Not run: 
+> ##D clean()
+> ##D clean.boot()
 > ## End(Not run)
 > 
 > 
@@ -1745,7 +1765,7 @@ detaching 'package:lattice'
 
 > options(digits = 7L)
 > base::cat("Time elapsed: ", proc.time() - base::get("ptime", pos = 'CheckExEnv'),"\n")
-Time elapsed:  0.36 0.06 0.43 NA NA 
+Time elapsed:  0.32 0.03 0.36 NA NA 
 > grDevices::dev.off()
 null device 
           1 
