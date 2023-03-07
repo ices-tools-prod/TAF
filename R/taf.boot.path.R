@@ -32,7 +32,7 @@ taf.boot.path <- function(..., fsep = .Platform$file.sep) {
   } else if (basename(dirname(getwd())) %in% c("boot", "bootstrap")) {
     args <- list("..")
   } else {
-    args <- if(is.null(boot.dir())) list("boot") else list(boot.dir())
+    args <- list(boot.dir())
   }
   do.call(file.path, c(args, ..., fsep = fsep))
 }

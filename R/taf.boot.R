@@ -80,7 +80,7 @@ taf.boot <- function(software=TRUE, data=TRUE, clean=TRUE, force=FALSE,
 {
   if(isTRUE(taf))
     software <- data <- clean <- force <- TRUE
-  if(is.null(boot.dir()))
+  if(!boot.exists())
   {
     warning("'boot' folder not found in the current working directory")
     return(invisible(NULL))  # nothing to do
