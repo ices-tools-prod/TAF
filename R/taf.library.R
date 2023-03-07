@@ -2,7 +2,7 @@
 #'
 #' Load and attach package from local TAF library.
 #'
-#' @param package name of a package found in \verb{bootstrap/library}.
+#' @param package name of a package found in \verb{boot/library}.
 #' @param messages whether to show messages when package loads.
 #' @param warnings whether to show warnings when package loads.
 #'
@@ -44,29 +44,30 @@
 taf.library <- function(package, messages=FALSE, warnings=FALSE)
 {
   ## If taf.library() is called from boot data script, the working directory is
-  ## root/bootstrap/data/scriptname; change to root temporarily
-  if(basename(dirname(dirname(getwd()))) == "bootstrap")
+  ## root/boot/data/scriptname; change to root temporarily
+  if(basename(dirname(dirname(getwd()))) %in% c("boot","bootstrap"))
   {
     owd <- setwd("../../.."); on.exit(setwd(owd))
   }
 
-  if(!dir.exists("bootstrap/library"))
-    stop("directory 'bootstrap/library' not found")
+  if(is.null(boot.dir()) || !dir.exists(file.path(boot.dir(),"library")))
+    stop("directory 'boot/library' not found")
 
-  installed <- dir("bootstrap/library")
+  installed <- dir(file.path(boot.dir(), "library"))
   if(missing(package))
     return(installed)
 
   package <- as.character(substitute(package))
   if(!(package %in% installed))
-    stop("there is no package '", package, "' in bootstrap/library")
+    stop("there is no package '", package, "' in boot/library")
 
   ## Add bootstrap/library to lib path, using that rather than external library
   opath <- .libPaths()
-  .libPaths(c("bootstrap/library", opath))
+  .libPaths(c(file.path(boot.dir(),"library"), opath))
   on.exit(.libPaths(opath), add=TRUE)
 
   supM <- if(messages) identity else suppressMessages
   supW <- if(warnings) identity else suppressWarnings
-  supW(supM(library(package, lib.loc="bootstrap/library", character.only=TRUE)))
+  supW(supM(library(package, lib.loc=file.path(boot.dir(),"library"),
+                    character.only=TRUE)))
 }

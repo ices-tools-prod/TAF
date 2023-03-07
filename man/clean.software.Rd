@@ -4,8 +4,7 @@
 \alias{clean.software}
 \title{Clean TAF Software}
 \usage{
-clean.software(folder = "bootstrap/software", quiet = FALSE,
-  force = FALSE)
+clean.software(folder = "boot/software", quiet = FALSE, force = FALSE)
 }
 \arguments{
 \item{folder}{location of local TAF software folder.}
@@ -52,7 +51,7 @@ boot procedure.
 
 \code{\link{clean.library}} cleans the local TAF library.
 
-\code{\link{clean.data}} cleans the \verb{bootstrap/data} folder.
+\code{\link{clean.data}} cleans the \verb{boot/data} folder.
 
 \code{\link{TAF-package}} gives an overview of the package.
 }

@@ -37,15 +37,12 @@ taf.skeleton <- function(path = ".", force = FALSE, pkgs = "TAF")
   on.exit(setwd(owd))
 
   # create initial directories
-  mkdir("bootstrap/initial/data")
+  mkdir("boot/initial/data")
 
   # define headers
-  template <-
-    paste0(
-      "## %s\n\n## Before:\n## After:\n\n",
-      paste("library(", pkgs, ")", collapse = "\n", sep = ""),
-      "\n\nmkdir(\"%s\")\n\n"
-    )
+  template <- paste0("## %s\n\n## Before:\n## After:\n\n",
+                     paste0("library(", pkgs, ")", collapse = "\n"),
+                     "\n\nmkdir(\"%s\")\n\n")
   headers <- list(
     data = "Preprocess data, write TAF data tables",
     model = "Run analysis, write model results",

@@ -4,7 +4,7 @@
 \alias{clean.library}
 \title{Clean TAF Library}
 \usage{
-clean.library(folder = "bootstrap/library", quiet = FALSE, force = FALSE)
+clean.library(folder = "boot/library", quiet = FALSE, force = FALSE)
 }
 \arguments{
 \item{folder}{location of local TAF library.}
@@ -43,14 +43,14 @@ clean.library()
 
 }
 \seealso{
-\code{\link{taf.boot}} calls \code{clean.library} as part of the default
-boot procedure.
+\code{\link{taf.boot}} calls \code{clean.library} as part of the default boot
+procedure.
 
 \code{\link{taf.install}} installs a package in the local TAF library.
 
 \code{\link{clean.software}} cleans the local TAF software folder.
 
-\code{\link{clean.data}} cleans the \verb{bootstrap/data} folder.
+\code{\link{clean.data}} cleans the \verb{boot/data} folder.
 
 \code{\link{TAF-package}} gives an overview of the package.
 }

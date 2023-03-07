@@ -39,7 +39,7 @@ taf.sources <- function(type) {
   if (type == "both")
     return(c(taf.sources("data"), taf.sources("software")))
 
-  bibfile <- file.path("bootstrap", paste0(toupper(type), ".bib"))
+  bibfile <- file.path(boot.dir(), paste0(toupper(type), ".bib"))
   sources <- read.bib(bibfile)
 
   # check for duplicates

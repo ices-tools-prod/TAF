@@ -7,7 +7,7 @@
 taf.data.path(..., fsep = .Platform$file.sep)
 }
 \arguments{
-\item{...}{filenames inside \code{bootstrap/data}.}
+\item{\dots}{filenames inside \code{boot/data}.}
 
 \item{fsep}{path separator to use instead of the default forward slash.}
 }
@@ -15,9 +15,9 @@ taf.data.path(..., fsep = .Platform$file.sep)
 Relative path, or a vector of paths.
 }
 \description{
-Construct a relative path to data files in the \code{bootstrap} data folder,
+Construct a relative path to data files in the \code{boot} data folder,
 regardless of whether the current working directory is the TAF root, the
-\code{bootstrap} folder, or a subfolder inside \code{bootstrap}.
+\code{boot} folder, or a subfolder inside \code{boot}.
 }
 \note{
 This function is especially useful in boot scripts.
@@ -30,8 +30,7 @@ taf.data.path("example.dat")
 \seealso{
 \link{file.path} is the underlying function used to construct the path.
 
-\code{\link{taf.boot.path}} constructs the path to the \code{bootstrap}
-folder.
+\code{\link{taf.boot.path}} constructs the path to the \code{boot} folder.
 
 \code{\link{TAF-package}} gives an overview of the package.
 }

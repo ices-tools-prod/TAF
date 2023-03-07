@@ -7,7 +7,7 @@
 #' @param quiet whether to suppress messages.
 #'
 #' @details
-#' If \verb{targz = NULL}, all packages found in \verb{bootstrap/software} are
+#' If \verb{targz = NULL}, all packages found in \verb{boot/software} are
 #' installed, as long as they have filenames of the form
 #' \verb{package_sha.tar.gz} containing a 7-character SHA reference code.
 #'
@@ -31,7 +31,7 @@
 #' \code{\link{taf.boot}} calls \code{\link{download.github}} and
 #' \code{taf.install} to download and install R packages.
 #'
-#' \code{\link{taf.library}} loads a package from \verb{bootstrap/library}.
+#' \code{\link{taf.library}} loads a package from \verb{boot/library}.
 #'
 #' \code{\link{clean.library}} selectively removes packages from the local TAF
 #' library.
@@ -44,9 +44,9 @@
 #' @examples
 #' \dontrun{
 #' # Install one package
-#' taf.install("bootstrap/software/FLAssess_f1e5acb.tar.gz")
+#' taf.install("boot/software/FLAssess_f1e5acb.tar.gz")
 #'
-#' # Install all packages found in bootstrap/software
+#' # Install all packages found in boot/software
 #' taf.install()
 #' }
 #'
@@ -55,11 +55,11 @@
 #'
 #' @export
 
-taf.install <- function(targz=NULL, lib="bootstrap/library", quiet=FALSE)
+taf.install <- function(targz=NULL, lib="boot/library", quiet=FALSE)
 {
   if(is.null(targz))
-    targz <- dir("bootstrap/software", pattern="_[0-9a-f]{7}\\.tar\\.gz",
-                 full.names=TRUE)
+    targz <- dir(file.path(boot.dir(), "software"),
+                 pattern="_[0-9a-f]{7}\\.tar\\.gz", full.names=TRUE)
 
   mkdir(lib)
 
@@ -70,7 +70,7 @@ taf.install <- function(targz=NULL, lib="bootstrap/library", quiet=FALSE)
 
     if(!already.in.taf.library(tgz, lib))
     {
-      install.packages(tgz, lib=lib, repos=NULL, type="source", quiet=quiet)
+      install.packages(tgz, lib=lib, repos=NULL, quiet=quiet)
     }
     else if(!quiet)
     {

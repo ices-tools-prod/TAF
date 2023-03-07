@@ -27,7 +27,7 @@
 #'
 #' @examples
 #' \dontrun{
-#' source.dir("bootstrap/software/utilities")
+#' source.dir("boot/software/utilities")
 #' }
 #'
 #' @aliases sourceDir

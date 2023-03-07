@@ -10,7 +10,7 @@
 #' @seealso
 #' \code{\link{detach}} is the underlying base function to detach a package.
 #'
-#' \code{\link{taf.library}} loads a package from \verb{bootstrap/library}.
+#' \code{\link{taf.library}} loads a package from \verb{boot/library}.
 #'
 #' \code{\link{TAF-package}} gives an overview of the package.
 #'

@@ -3,7 +3,7 @@
 \name{taf.boot}
 \alias{taf.boot}
 \alias{taf.bootstrap}
-\title{Bootstrap TAF Analysis}
+\title{Boot TAF Analysis}
 \usage{
 taf.boot(software = TRUE, data = TRUE, clean = TRUE, force = FALSE,
   taf = NULL, quiet = FALSE)
@@ -16,9 +16,9 @@ taf.boot(software = TRUE, data = TRUE, clean = TRUE, force = FALSE,
 \item{clean}{whether to \code{\link{clean}} directories during the boot
 procedure.}
 
-\item{force}{whether to remove existing \verb{bootstrap/data},
-\verb{bootstrap/library}, and \verb{bootstrap/software} directories
-before the boot procedure.}
+\item{force}{whether to remove existing \verb{boot/data},
+\verb{boot/library}, and \verb{boot/software} directories before the
+boot procedure.}
 
 \item{taf}{a convenience flag where \code{taf = TRUE} sets \code{software},
 \code{data}, \code{clean}, and \code{force} to \code{TRUE}, as is done
@@ -51,24 +51,22 @@ TRUE} to download and install everything declared in \verb{SOFTWARE.bib} and
 }
 \note{
 This function should be called from the top directory of a TAF analysis. It
-looks for a directory called \file{bootstrap} and prepares data files and
-software according to metadata specifications.
+looks for a directory called \file{boot} and prepares data files and software
+according to metadata specifications.
 
 The boot procedure consists of the following steps:
 \enumerate{
-\item If a \verb{bootstrap/SOFTWARE.bib} metadata file exists, it is
-      processed.
-\item If a \verb{bootstrap/DATA.bib} metadata file exists, it is processed.
+\item If a \verb{boot/SOFTWARE.bib} metadata file exists, it is processed.
+\item If a \verb{boot/DATA.bib} metadata file exists, it is processed.
 }
 
 After the boot procedure, software and data have been documented and are
 ready to be used in the subsequent analysis. Specifically, the procedure
 populates up to three new directories:
 \itemize{
-\item \verb{bootstrap/data} with data files.
-\item \verb{bootstrap/library} with R packages compiled for the local
-      platform.
-\item \verb{bootstrap/software} with software files, such as R packages in
+\item \verb{boot/data} with data files.
+\item \verb{boot/library} with R packages compiled for the local platform.
+\item \verb{boot/software} with software files, such as R packages in
       \verb{tar.gz} source code format.
 }
 
@@ -86,7 +84,7 @@ taf.boot()
 create initial draft versions of \file{DATA.bib} and \file{SOFTWARE.bib}
 metadata files.
 
-\code{\link{taf.library}} loads a package from \verb{bootstrap/library}.
+\code{\link{taf.library}} loads a package from \verb{boot/library}.
 
 \code{\link{TAF-package}} gives an overview of the package.
 }
