@@ -24,4 +24,6 @@ process.bibfile <- function(type, clean=TRUE, quiet=FALSE)
 
   entries <- taf.sources(type)
   sapply(entries, process.entry, quiet=quiet)
+
+  invisible(TRUE)
 }
