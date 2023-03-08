@@ -12,6 +12,8 @@
 * Improved taf.library() to ensure it returns to the previous working directory.
   Code contributed by Alexandros Kokkalis.
 
+* Improved taf.boot() so it returns a logical vector, as documented.
+
 * Fixed a taf.boot() bug introduced in 4.1.0, checking GitHub references.
 
 
