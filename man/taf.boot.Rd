@@ -70,6 +70,13 @@ populates up to three new directories:
       \verb{tar.gz} source code format.
 }
 
+From version 4.2 onwards, the term \emph{boot} is preferred for what used to
+be called \emph{bootstrap}, mainly to avoid confusion with statistical
+bootstrap. To \code{taf.boot()} is similar to booting a computer, readying
+the components required for subsequent computations. Help pages now refer to
+\code{boot}, but all TAF functions fully support existing analyses that have
+a legacy \code{bootstrap} folder.
+
 Model settings and configuration files can be set up within \verb{DATA.bib},
 see \href{https://github.com/ices-taf/doc/wiki/Bib-entries}{TAF Wiki}.
 }
