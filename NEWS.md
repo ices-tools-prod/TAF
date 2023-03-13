@@ -6,9 +6,15 @@
   computations. Help pages now refer to 'boot', but all TAF functions fully
   support existing analyses that have a legacy 'bootstrap' folder.
 
-* Added function boot.dir() to clean the boot directory.
+* The filename method.R is now an alternative to the default filename model.R
+  script. The method.R filename can be used in analyses where the term 'model'
+  would be misleading or ambiguous.
+
+* Added function clean.boot() to clean the boot directory.
 
 * Added argument 'imports' to taf.session().
+
+* Added argument 'model.script' to taf.skeleton().
 
 * Improved taf.library() to ensure it returns to the previous working directory.
   Code contributed by Alexandros Kokkalis.

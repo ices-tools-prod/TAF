@@ -7,6 +7,8 @@
 #' @param force whether to overwrite existing scripts.
 #' @param pkgs packages to load at the start of each script. The default is the
 #'        TAF package, i.e. \code{library(TAF)}.
+#' @param model.script model script filename, either \code{model.R} (default) or
+#'        \code{method.R}.
 #'
 #' @return Full path to analysis directory.
 #'
@@ -22,7 +24,8 @@
 #'
 #' @export
 
-taf.skeleton <- function(path = ".", force = FALSE, pkgs = "TAF")
+taf.skeleton <- function(path = ".", force = FALSE, pkgs = "TAF",
+                         model.script = "model.R")
 {
   # only overwrite files if force = TRUE
   safe.cat <- function(..., file, force) {
@@ -48,6 +51,9 @@ taf.skeleton <- function(path = ".", force = FALSE, pkgs = "TAF")
     model = "Run analysis, write model results",
     output = "Extract results of interest, write TAF output tables",
     report = "Prepare plots and tables for report")
+  if (model.script %in% c("method", "method.R")) {
+    names(headers)[2] <- "method"
+  }
 
   # create TAF scripts
   for (section in names(headers)) {
