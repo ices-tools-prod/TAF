@@ -6,6 +6,7 @@
 \name{TAF-internal}
 \alias{TAF-internal}
 \alias{boot.dir}
+\alias{boot.dir.inside}
 \alias{boot.exists}
 \alias{extract.subdir}
 \alias{stamp.description}
@@ -20,6 +21,8 @@
 \title{Various TAF Helper Functions}
 \usage{
 boot.dir()
+
+boot.dir.inside(inside = ".")
 
 boot.exists()
 
