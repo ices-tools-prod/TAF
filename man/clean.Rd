@@ -4,13 +4,13 @@
 \alias{clean}
 \title{Clean TAF Directories}
 \usage{
-clean(dirs = c("data", "model", "output", "report"), force = FALSE)
+clean(dirs = c("data", model.dir(), "output", "report"), force = FALSE)
 }
 \arguments{
 \item{dirs}{directories to delete.}
 
-\item{force}{passed to \code{clean.software}, \code{clean.library}, and
-\code{clean.data} if any of the \code{dirs} is \code{"boot"}.}
+\item{force}{passed to \code{clean.boot} if any of the \code{dirs} is
+\code{"boot"}.}
 }
 \value{
 No return value, called for side effects.
@@ -18,6 +18,10 @@ No return value, called for side effects.
 \description{
 Remove TAF directories (\verb{data}, \verb{model}, \verb{output},
 \verb{report}) and/or clean the \verb{boot} directory.
+}
+\details{
+The \verb{model} directory may also be named \verb{method} and is cleaned in
+the same way.
 }
 \note{
 The purpose of removing the directories is to make sure that subsequent TAF

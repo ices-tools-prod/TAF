@@ -7,8 +7,7 @@
   support existing analyses that have a legacy 'bootstrap' folder.
 
 * The filename method.R is now an alternative to the default filename model.R
-  script. The method.R filename can be used in analyses where the term 'model'
-  would be misleading or ambiguous.
+  script, for analyses where the term 'model' would be misleading or ambiguous.
 
 * Added function clean.boot() to clean the boot directory.
 

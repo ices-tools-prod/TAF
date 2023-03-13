@@ -4,8 +4,12 @@
 #' \verb{report}) and/or clean the \verb{boot} directory.
 #'
 #' @param dirs directories to delete.
-#' @param force passed to \code{clean.software}, \code{clean.library}, and
-#'        \code{clean.data} if any of the \code{dirs} is \code{"boot"}.
+#' @param force passed to \code{clean.boot} if any of the \code{dirs} is
+#'        \code{"boot"}.
+#'
+#' @details
+#' The \verb{model} directory may also be named \verb{method} and is cleaned in
+#' the same way.
 #'
 #' @return No return value, called for side effects.
 #'
@@ -33,7 +37,7 @@
 #'
 #' @export
 
-clean <- function(dirs=c("data", "model", "output", "report"), force=FALSE)
+clean <- function(dirs=c("data", model.dir(), "output", "report"), force=FALSE)
 {
   ## Convert "boot/" to "boot", so clean("boot/") doesn't go wild
   dirs <- sub("/$", "", dirs)
