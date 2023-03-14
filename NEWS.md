@@ -22,6 +22,9 @@
 
 * Fixed a taf.boot() bug introduced in 4.1.0, checking GitHub references.
 
+* New admin tools, mainly for use inside TAF functions: boot.dir(),
+  boot.dir.inside(), boot.exists(), model.dir(), and model.script().
+
 
 
 
