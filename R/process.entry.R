@@ -107,7 +107,9 @@ process.entry <- function(bib, quiet = FALSE, force = FALSE, clean = FALSE) {
   ## Case 4: File to copy
   else {
     ## Warn if entry looks like GitHub without a @reference
-    if (grepl("/", bib$source) &&           # source entry includes /
+    if (!file.exists(bib$source) &&         # file does not exist
+        grepl("/", bib$source) &&           # source entry includes /
+        !grepl("^\\.", bib$source) &&       # does not start with .
         !grepl("^/", bib$source) &&         # does not start with /
         !grepl("^initial/", bib$source) &&  # does not start with initial/
         !grepl("@", bib$source)) {          # and does not include @
