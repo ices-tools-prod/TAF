@@ -27,7 +27,7 @@ suppressed using \code{period = FALSE}.}
 \code{"Restricted"}.}
 
 \item{source}{where the data are copied/downloaded from. This can be a URL,
-filename, special value \code{"file"}, or special value
+filename, or a special value: \code{"file"}, \code{"folder"}, or
 \code{"script"}.}
 
 \item{file}{optional filename to save the draft metadata to a file. The value
@@ -55,8 +55,8 @@ draft.
 
 The data access codes come from \url{https://vocab.ices.dk/?ref=1435}.
 
-The special values \verb{source = "file"} and \verb{source = "script"} are
-described on the
+The special values \verb{source = "file"}, \verb{source = "folder"}, and
+\verb{source = "script"} are described on the
 \href{https://github.com/ices-taf/doc/wiki/Bib-entries}{TAF Wiki}, along with
 other metadata information.
 
