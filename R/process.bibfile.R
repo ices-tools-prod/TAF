@@ -11,12 +11,12 @@ process.bibfile <- function(type, clean=TRUE, quiet=FALSE)
 
   if (clean && type == "data")
   {
-    clean.data(quiet=quiet)
+    clean.data(file.path(boot.dir(), "data"), quiet=quiet)
   }
   if (clean && type == "software")
   {
-    clean.software(quiet=quiet)
-    clean.library(quiet=quiet)
+    clean.software(file.path(boot.dir(), "software"), quiet=quiet)
+    clean.library(file.path(boot.dir(), "library"), quiet=quiet)
   }
 
   if (!quiet)
@@ -24,4 +24,6 @@ process.bibfile <- function(type, clean=TRUE, quiet=FALSE)
 
   entries <- taf.sources(type)
   sapply(entries, process.entry, quiet=quiet)
+
+  invisible(TRUE)
 }

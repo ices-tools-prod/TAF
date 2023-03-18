@@ -9,7 +9,7 @@ draft.software(package, author = NULL, year = NULL, title = NULL,
 }
 \arguments{
 \item{package}{name of one or more R packages, or files/folders starting with
-the path \verb{bootstrap/initial/software}.}
+the path \verb{boot/initial/software}.}
 
 \item{author}{author(s) of the software.}
 
@@ -26,8 +26,7 @@ from. This can be a GitHub reference of the form
 \verb{owner/repo[/subdir]@ref}, URL, or a filename.}
 
 \item{file}{optional filename to save the draft metadata to a file. The value
-\code{TRUE} can be used as shorthand for
-\code{"bootstrap/SOFTWARE.bib"}.}
+\code{TRUE} can be used as shorthand for \code{"boot/SOFTWARE.bib"}.}
 
 \item{append}{whether to append metadata entries to an existing file.}
 }

@@ -1,6 +1,6 @@
 Package: TAF
-Version: 4.1.1
-Date: 2023-03-07
+Version: 4.2.0
+Date: 2023-03-18
 Title: Transparent Assessment Framework for Reproducible Research
 Authors@R: c(person("Arni", "Magnusson", role=c("aut","cre"), email="thisisarni@gmail.com"),
              person("Colin", "Millar", role="aut"),
@@ -16,8 +16,9 @@ Description: Functions to organize data, methods, and results used in scientific
   a previous step and ends with writing out files for the next step. Convenience
   functions are provided to version control the required data and software, run
   analyses, clean residues from previous runs, manage files, manipulate tables,
-  and produce figures. TAF forms a base layer for the icesTAF package and other
-  scientific applications.
+  and produce figures. With a focus on stability and reproducible analyses, TAF
+  is designed to have no package dependencies. TAF forms a base layer for the
+  icesTAF package and other scientific applications.
 License: GPL-3
 URL: https://github.com/ices-tools-prod/TAF
 Encoding: UTF-8

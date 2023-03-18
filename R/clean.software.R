@@ -34,7 +34,7 @@
 #'
 #' \code{\link{clean.library}} cleans the local TAF library.
 #'
-#' \code{\link{clean.data}} cleans the \verb{bootstrap/data} folder.
+#' \code{\link{clean.data}} cleans the \verb{boot/data} folder.
 #'
 #' \code{\link{TAF-package}} gives an overview of the package.
 #'
@@ -45,8 +45,7 @@
 #'
 #' @export
 
-clean.software <- function(folder="bootstrap/software", quiet=FALSE,
-                           force=FALSE)
+clean.software <- function(folder="boot/software", quiet=FALSE, force=FALSE)
 {
   if(!file.exists(file.path(folder, "../SOFTWARE.bib")) || force)
   {

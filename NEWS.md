@@ -1,9 +1,29 @@
-# TAF 4.1.1 (2023-03-07)
+# TAF 4.2.0 (2023-03-18)
+
+* The term 'boot' is now preferred for what used to be called 'bootstrap',
+  mainly to avoid confusion with statistical bootstrap. To taf.boot() is similar
+  to booting a computer, readying the components required for subsequent
+  computations. Help pages now refer to 'boot', but all TAF functions fully
+  support existing analyses that have a legacy 'bootstrap' folder.
+
+* The filename method.R is now an alternative to the default filename model.R
+  script, for analyses where the term 'model' would be misleading or ambiguous.
+
+* Added function clean.boot() to clean the boot directory.
 
 * Added argument 'imports' to taf.session().
 
+* Added argument 'model.script' to taf.skeleton().
+
 * Improved taf.library() to ensure it returns to the previous working directory.
   Code contributed by Alexandros Kokkalis.
+
+* Improved taf.boot() so it returns a logical vector, as documented.
+
+* Fixed a taf.boot() bug introduced in 4.1.0, checking GitHub references.
+
+* New admin tools, mainly for use inside TAF functions: boot.dir(),
+  boot.dir.inside(), boot.exists(), model.dir(), and model.script().
 
 
 

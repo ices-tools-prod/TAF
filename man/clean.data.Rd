@@ -4,10 +4,10 @@
 \alias{clean.data}
 \title{Clean Data}
 \usage{
-clean.data(folder = "bootstrap/data", quiet = FALSE, force = FALSE)
+clean.data(folder = "boot/data", quiet = FALSE, force = FALSE)
 }
 \arguments{
-\item{folder}{location of \verb{bootstrap/data}.}
+\item{folder}{location of \verb{boot/data}.}
 
 \item{quiet}{whether to suppress messages about removed data.}
 
@@ -18,8 +18,8 @@ to \verb{DATA.bib} entries.}
 No return value, called for side effects.
 }
 \description{
-Selectively remove data from the \verb{bootstrap/data} folder if not listed
-in \verb{DATA.bib}.
+Selectively remove data from the \verb{boot/data} folder if not listed in
+\verb{DATA.bib}.
 }
 \note{
 For each data file or subfolder, the cleaning procedure selects between two
@@ -29,8 +29,8 @@ cases:
 \item Data entry is not listed in \verb{DATA.bib} - remove.
 }
 
-The \code{taf.boot} procedure cleans the \verb{bootstrap/data} folder,
-without requiring the user to run \code{clean.data}.
+The \code{taf.boot} procedure cleans the \verb{boot/data} folder, without
+requiring the user to run \code{clean.data}.
 }
 \examples{
 \dontrun{

@@ -43,7 +43,7 @@
 
 download.github <- function(repo, dir=".", quiet=FALSE)
 {
-  mkdir(dir)  # bootstrap/software
+  mkdir(dir)  # boot/software
   owd <- setwd(dir); on.exit(setwd(owd))
 
   if(!grepl("@", repo))
@@ -108,7 +108,7 @@ extract.subdir <- function(targz, subtargz, subdir)
     untar(targz, file.path(repdir, subdir))  # extract subdir
     file.remove(targz)
 
-    ## Move bootstrap/software/repdir/subdir to bootstrap/software/subdir
+    ## Move boot/software/repdir/subdir to boot/software/subdir
     file.rename(file.path(repdir, subdir), subdir)
     rmdir(repdir)
 

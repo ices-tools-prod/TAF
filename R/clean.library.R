@@ -26,14 +26,14 @@
 #' file.
 #'
 #' @seealso
-#' \code{\link{taf.boot}} calls \code{clean.library} as part of the default
-#' boot procedure.
+#' \code{\link{taf.boot}} calls \code{clean.library} as part of the default boot
+#' procedure.
 #'
 #' \code{\link{taf.install}} installs a package in the local TAF library.
 #'
 #' \code{\link{clean.software}} cleans the local TAF software folder.
 #'
-#' \code{\link{clean.data}} cleans the \verb{bootstrap/data} folder.
+#' \code{\link{clean.data}} cleans the \verb{boot/data} folder.
 #'
 #' \code{\link{TAF-package}} gives an overview of the package.
 #'
@@ -46,7 +46,7 @@
 #'
 #' @export
 
-clean.library <- function(folder="bootstrap/library", quiet=FALSE, force=FALSE)
+clean.library <- function(folder="boot/library", quiet=FALSE, force=FALSE)
 {
   if(!file.exists(file.path(folder, "../SOFTWARE.bib")) || force)
   {

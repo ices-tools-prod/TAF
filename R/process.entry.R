@@ -7,7 +7,7 @@
 ## Process bib entry
 
 process.entry <- function(bib, quiet = FALSE, force = FALSE, clean = FALSE) {
-  owd <- setwd("bootstrap")
+  owd <- setwd(boot.dir())
   on.exit(setwd(owd))
 
   key <- bib$key
@@ -84,7 +84,7 @@ process.entry <- function(bib, quiet = FALSE, force = FALSE, clean = FALSE) {
     }
   }
 
-  ## Case 3: R script in bootstrap directory
+  ## Case 3: R script in boot directory
   else if (bib$source[1] == "script") {
     script <- file_path_as_absolute(paste0(key, ".R"))
     if (clean) {
@@ -107,10 +107,12 @@ process.entry <- function(bib, quiet = FALSE, force = FALSE, clean = FALSE) {
   ## Case 4: File to copy
   else {
     ## Warn if entry looks like GitHub without a @reference
-    if (grepl("/", bib$source) &&    # source entry includes /
-        !grepl("^/", bib$source) &&  # does not start with /
-        !grepl("^initial/") &&       # does not start with initial/
-        !grepl("@", bib$source)) {   # and does not include @
+    if (!file.exists(bib$source) &&         # file does not exist
+        grepl("/", bib$source) &&           # source entry includes /
+        !grepl("^\\.", bib$source) &&       # does not start with .
+        !grepl("^/", bib$source) &&         # does not start with /
+        !grepl("^initial/", bib$source) &&  # does not start with initial/
+        !grepl("@", bib$source)) {          # and does not include @
       warning(
         "'", key,
         "' entry might be a GitHub reference that is missing the '@'"

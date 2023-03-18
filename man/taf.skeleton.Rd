@@ -4,7 +4,8 @@
 \alias{taf.skeleton}
 \title{TAF Skeleton}
 \usage{
-taf.skeleton(path = ".", force = FALSE, pkgs = "TAF")
+taf.skeleton(path = ".", force = FALSE, pkgs = "TAF",
+  model.script = "model.R")
 }
 \arguments{
 \item{path}{where to create initial directories and R scripts. The default is
@@ -14,6 +15,9 @@ the current working directory.}
 
 \item{pkgs}{packages to load at the start of each script. The default is the
 TAF package, i.e. \code{library(TAF)}.}
+
+\item{model.script}{model script filename, either \code{model.R} (default) or
+\code{method.R}.}
 }
 \value{
 Full path to analysis directory.

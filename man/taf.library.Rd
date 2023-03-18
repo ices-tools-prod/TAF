@@ -7,7 +7,7 @@
 taf.library(package, messages = FALSE, warnings = FALSE)
 }
 \arguments{
-\item{package}{name of a package found in \verb{bootstrap/library}.}
+\item{package}{name of a package found in \verb{boot/library}.}
 
 \item{messages}{whether to show messages when package loads.}
 
