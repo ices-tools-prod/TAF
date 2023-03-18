@@ -13,7 +13,8 @@ from a previous step and ends with writing out files for the next step.
 
 Convenience functions are provided to version control the required data and
 software, run analyses, clean residues from previous runs, manage files,
-manipulate tables, and produce figures.
+manipulate tables, and produce figures. With a focus on stability and
+reproducible analyses, it is designed to have no package dependencies.
 
 TAF forms a base layer for the
 [icesTAF](https://cran.r-project.org/package=icesTAF) package and other
