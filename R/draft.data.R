@@ -79,8 +79,8 @@
 draft.data <- function(originator=NULL, year=format(Sys.time(),"%Y"),
                        title=NULL, period=NULL, access="Public", source=NULL,
                        file="", append=FALSE,
-                       data.files=dir("boot/initial/data"),
-                       data.scripts=dir("boot",pattern="\\.R$"))
+                       data.files=dir(taf.boot.path("initial/data")),
+                       data.scripts=dir(boot.dir(),pattern="\\.R$"))
 {
   ## TAF:::access.vocab is a string vector of allowed 'access' values
   if(!is.character(access) || !all(as.character(access) %in% access.vocab))

@@ -6,8 +6,9 @@
 \usage{
 draft.data(originator = NULL, year = format(Sys.time(), "\%Y"),
   title = NULL, period = NULL, access = "Public", source = NULL,
-  file = "", append = FALSE, data.files = dir("boot/initial/data"),
-  data.scripts = dir("boot", pattern = "\\\\.R$"))
+  file = "", append = FALSE,
+  data.files = dir(taf.boot.path("initial/data")),
+  data.scripts = dir(boot.dir(), pattern = "\\\\.R$"))
 }
 \arguments{
 \item{originator}{who prepared the data, e.g. a working group acronym.}
