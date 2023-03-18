@@ -14,7 +14,7 @@
 #' @param access data access code: \code{"OSPAR"}, \code{"Public"}, or
 #'        \code{"Restricted"}.
 #' @param source where the data are copied/downloaded from. This can be a URL,
-#'        filename, special value \code{"file"}, or special value
+#'        filename, or a special value: \code{"file"}, \code{"folder"}, or
 #'        \code{"script"}.
 #' @param file optional filename to save the draft metadata to a file. The value
 #'        \code{TRUE} can be used as shorthand for \code{"boot/DATA.bib"}.
@@ -32,8 +32,8 @@
 #'
 #' The data access codes come from \url{https://vocab.ices.dk/?ref=1435}.
 #'
-#' The special values \verb{source = "file"} and \verb{source = "script"} are
-#' described on the
+#' The special values \verb{source = "file"}, \verb{source = "folder"}, and
+#' \verb{source = "script"} are described on the
 #' \href{https://github.com/ices-taf/doc/wiki/Bib-entries}{TAF Wiki}, along with
 #' other metadata information.
 #'
@@ -79,8 +79,8 @@
 draft.data <- function(originator=NULL, year=format(Sys.time(),"%Y"),
                        title=NULL, period=NULL, access="Public", source=NULL,
                        file="", append=FALSE,
-                       data.files=dir("boot/initial/data"),
-                       data.scripts=dir("boot",pattern="\\.R$"))
+                       data.files=dir(taf.boot.path("initial/data")),
+                       data.scripts=dir(boot.dir(),pattern="\\.R$"))
 {
   ## TAF:::access.vocab is a string vector of allowed 'access' values
   if(!is.character(access) || !all(as.character(access) %in% access.vocab))
@@ -93,8 +93,13 @@ draft.data <- function(originator=NULL, year=format(Sys.time(),"%Y"),
     stop("no data (boot/initial/data/*) ",
          "or data scripts (boot/*.R) found")
   if(is.null(source))
+  {
     source <- rep(c("file","script"),
                   c(length(data.files),length(data.scripts)))
+    # Look for data.files that are actually folders
+    folder <- dir.exists(file.path(taf.boot.path("initial/data"), data.files))
+    source[folder] <- "folder"
+  }
 
   ## 1  Assemble metadata
   line1 <- paste0("@Misc{", entries, ",")

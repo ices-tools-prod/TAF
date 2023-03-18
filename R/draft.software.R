@@ -102,7 +102,8 @@ draft.software <- function(package, author=NULL, year=NULL, title=NULL,
   else if(grepl("@", package))
   {
     targz <- download.github(package, file.path(boot.dir(), "software"))
-    taf.install(file.path(boot.dir(), "software", targz))
+    taf.install(targz=file.path(boot.dir(), "software", targz),
+                lib=file.path(boot.dir(), "library"))
     spec <- parse.repo(package)
     package <- if(spec$subdir=="") spec$repo else spec$subdir
     ## Pass source=NULL, to get a GitHub reference instead of trunk name
