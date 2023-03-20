@@ -1,4 +1,4 @@
-# TAF 4.2.0 (2023-03-18)
+# TAF 4.2.0 (2023-03-20)
 
 * The term 'boot' is now preferred for what used to be called 'bootstrap',
   mainly to avoid confusion with statistical bootstrap. To taf.boot() is similar
