@@ -1,4 +1,3 @@
-[![Build Status](https://travis-ci.org/ices-tools-prod/TAF.svg?branch=master)](https://travis-ci.org/ices-tools-prod/TAF)
 [![CRAN Status](https://r-pkg.org/badges/version/TAF)](https://cran.r-project.org/package=TAF)
 [![CRAN Monthly](https://cranlogs.r-pkg.org/badges/TAF)](https://cran.r-project.org/package=TAF)
 [![CRAN Total](https://cranlogs.r-pkg.org/badges/grand-total/TAF)](https://cran.r-project.org/package=TAF)
