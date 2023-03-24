@@ -31,6 +31,8 @@ taf.boot.path <- function(..., fsep = .Platform$file.sep) {
     args <- list("..", "..")
   } else if (basename(dirname(getwd())) %in% c("boot", "bootstrap")) {
     args <- list("..")
+  } else if (basename(getwd()) %in% c("boot", "bootstrap")) {
+    args <- list(".")
   } else {
     args <- list(boot.dir())
   }
