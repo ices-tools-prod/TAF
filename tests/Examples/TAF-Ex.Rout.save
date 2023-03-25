@@ -1,6 +1,6 @@
 
-R version 4.2.2 (2022-10-31 ucrt) -- "Innocent and Trusting"
-Copyright (C) 2022 The R Foundation for Statistical Computing
+R version 4.2.3 (2023-03-15 ucrt) -- "Shortstop Beagle"
+Copyright (C) 2023 The R Foundation for Statistical Computing
 Platform: x86_64-w64-mingw32/x64 (64-bit)
 
 R is free software and comes with ABSOLUTELY NO WARRANTY.
@@ -789,6 +789,9 @@ Type 'q()' to quit R.
 > 
 > ## Not run: 
 > ##D make("model.R", "data/input.dat", "model/results.dat")
+> ##D 
+> ##D # Enclose in parentheses to print TRUE/FALSE output
+> ##D (make("model.R", "data/input.dat", "model/results.dat"))
 > ## End(Not run)
 > 
 > 
@@ -1765,7 +1768,7 @@ detaching 'package:lattice'
 
 > options(digits = 7L)
 > base::cat("Time elapsed: ", proc.time() - base::get("ptime", pos = 'CheckExEnv'),"\n")
-Time elapsed:  0.32 0.03 0.36 NA NA 
+Time elapsed:  0.27 0.03 0.33 NA NA 
 > grDevices::dev.off()
 null device 
           1 

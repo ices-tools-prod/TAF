@@ -45,6 +45,9 @@
 #' @examples
 #' \dontrun{
 #' make("model.R", "data/input.dat", "model/results.dat")
+#'
+#' # Enclose in parentheses to print TRUE/FALSE output
+#' (make("model.R", "data/input.dat", "model/results.dat"))
 #' }
 #'
 #' @export
