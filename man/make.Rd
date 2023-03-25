@@ -41,8 +41,8 @@ Run an R script if underlying files have changed, otherwise do nothing.
 This function provides functionality similar to makefile rules, to determine
 whether a script should be (re)run or not.
 
-If any \code{target} is missing or older than any \code{prereq}, then the
-script is run.
+If any \code{target} is either missing or is older than any \code{prereq},
+then the script is run.
 }
 \examples{
 \dontrun{

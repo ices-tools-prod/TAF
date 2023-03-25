@@ -23,8 +23,8 @@
 #' This function provides functionality similar to makefile rules, to determine
 #' whether a script should be (re)run or not.
 #'
-#' If any \code{target} is missing or older than any \code{prereq}, then the
-#' script is run.
+#' If any \code{target} is either missing or is older than any \code{prereq},
+#' then the script is run.
 #'
 #' @references
 #' Stallman, R. M. \emph{et al.} An introduction to makefiles. Chapter 2 in the
