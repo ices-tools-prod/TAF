@@ -8,7 +8,8 @@
 #' @param target one or more output files, produced by the script. Directory
 #'        names can also be used.
 #' @param include whether to automatically include the script itself as a
-#'        prerequisite file.
+#'        prerequisite file. This means that if the script file has been
+#'        modified, it should be run.
 #' @param engine function to source the script.
 #' @param debug whether to show a diagnostic table of files and time last
 #'        modified.
@@ -45,8 +46,10 @@
 #'
 #' @examples
 #' \dontrun{
+#' # Here, model.R uses input.dat, creating results.dat
 #' make("model.R", "data/input.dat", "model/results.dat")
 #' make("model.R", "data/input.dat", "model/results.dat", silent=FALSE)
+#' make("model.R", "data/input.dat", "model/results.dat", debug=TRUE)
 #' }
 #'
 #' @export

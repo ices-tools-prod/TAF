@@ -17,7 +17,8 @@ example, data files and/or scripts.}
 names can also be used.}
 
 \item{include}{whether to automatically include the script itself as a
-prerequisite file.}
+prerequisite file. This means that if the script file has been
+modified, it should be run.}
 
 \item{engine}{function to source the script.}
 
@@ -48,8 +49,10 @@ then the script is run.
 }
 \examples{
 \dontrun{
+# Here, model.R uses input.dat, creating results.dat
 make("model.R", "data/input.dat", "model/results.dat")
 make("model.R", "data/input.dat", "model/results.dat", silent=FALSE)
+make("model.R", "data/input.dat", "model/results.dat", debug=TRUE)
 }
 
 }
