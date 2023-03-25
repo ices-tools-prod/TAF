@@ -789,9 +789,6 @@ Type 'q()' to quit R.
 > 
 > ## Not run: 
 > ##D make("model.R", "data/input.dat", "model/results.dat")
-> ##D 
-> ##D # Enclose in parentheses to print TRUE/FALSE output
-> ##D (make("model.R", "data/input.dat", "model/results.dat"))
 > ## End(Not run)
 > 
 > 
@@ -1768,7 +1765,7 @@ detaching 'package:lattice'
 
 > options(digits = 7L)
 > base::cat("Time elapsed: ", proc.time() - base::get("ptime", pos = 'CheckExEnv'),"\n")
-Time elapsed:  0.23 0.02 0.25 NA NA 
+Time elapsed:  0.23 0.01 0.27 NA NA 
 > grDevices::dev.off()
 null device 
           1 
