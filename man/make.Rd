@@ -49,6 +49,7 @@ then the script is run.
 \examples{
 \dontrun{
 make("model.R", "data/input.dat", "model/results.dat")
+make("model.R", "data/input.dat", "model/results.dat", silent=FALSE)
 }
 
 }
