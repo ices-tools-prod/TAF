@@ -22,7 +22,7 @@
 #' write(pi, "A B.txt")
 #' convert.spaces("A B.txt")
 #'
-#' ## Many files
+#' # Many files
 #' convert.spaces("boot/initial/data/*")
 #' }
 #'

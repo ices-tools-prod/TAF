@@ -320,7 +320,7 @@ Type 'q()' to quit R.
 > ##D write(pi, "A B.txt")
 > ##D convert.spaces("A B.txt")
 > ##D 
-> ##D ## Many files
+> ##D # Many files
 > ##D convert.spaces("boot/initial/data/*")
 > ## End(Not run)
 > 
@@ -344,7 +344,7 @@ Type 'q()' to quit R.
 > ##D cp("A.txt", "B.txt")
 > ##D cp("A.txt", "B.txt", move=TRUE)
 > ##D 
-> ##D ## Copy directory tree
+> ##D # Copy directory tree
 > ##D cp(system.file(package="datasets"), ".")
 > ##D mkdir("everything")
 > ##D cp("datasets/*", "everything")
@@ -1064,14 +1064,14 @@ Type 'q()' to quit R.
 > 
 > ### ** Examples
 > 
-> ## Example objects
+> # Example objects
 > x <- as.matrix(summary.taf[grep("SSB", names(summary.taf))])
 > rec <- as.matrix(summary.taf[grep("Rec", names(summary.taf))])
 > tsb <- as.matrix(summary.taf[grep("TSB", names(summary.taf))])
 > dimnames(x) <- list(summary.taf$Year, c("Estimate", "Low", "High"))
 > dimnames(rec) <- dimnames(tsb) <- dimnames(x)
 > 
-> ## One SAM table, arbitrary object name
+> # One SAM table, arbitrary object name
 > sam2taf(x)
   Year Estimate Estimate_lo Estimate_hi
 1 1963 151903.4    116620.5    197861.0
@@ -1088,7 +1088,7 @@ Type 'q()' to quit R.
 2 163080.6 128014.7 207751.9
 3 199187.1 161241.7 246062.3
 > 
-> ## Many SAM tables, recognized names
+> # Many SAM tables, recognized names
 > sam2taf(rec)
   Year       Rec   Rec_lo    Rec_hi
 1 1963  487477.8 358326.5  663178.9
@@ -1102,7 +1102,7 @@ Type 'q()' to quit R.
 > 
 > ## Not run: 
 > ##D 
-> ##D ## Accessing tables from SAM fit object
+> ##D # Accessing tables from SAM fit object
 > ##D data.frame(sam2taf(rectable(fit)), sam2taf(tsbtable(fit), year=FALSE))
 > ## End(Not run)
 > 
@@ -1768,7 +1768,7 @@ detaching 'package:lattice'
 
 > options(digits = 7L)
 > base::cat("Time elapsed: ", proc.time() - base::get("ptime", pos = 'CheckExEnv'),"\n")
-Time elapsed:  0.27 0.03 0.33 NA NA 
+Time elapsed:  0.23 0.02 0.25 NA NA 
 > grDevices::dev.off()
 null device 
           1 

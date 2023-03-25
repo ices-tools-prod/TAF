@@ -27,7 +27,7 @@ This function treats \file{\%20} in filenames as a space and converts to
 write(pi, "A B.txt")
 convert.spaces("A B.txt")
 
-## Many files
+# Many files
 convert.spaces("boot/initial/data/*")
 }
 

@@ -38,25 +38,25 @@ matrix with columns \verb{Estimate}, \verb{Low}, and \verb{High}, while TAF
 tables are stored as data frames with a year column.
 }
 \examples{
-## Example objects
+# Example objects
 x <- as.matrix(summary.taf[grep("SSB", names(summary.taf))])
 rec <- as.matrix(summary.taf[grep("Rec", names(summary.taf))])
 tsb <- as.matrix(summary.taf[grep("TSB", names(summary.taf))])
 dimnames(x) <- list(summary.taf$Year, c("Estimate", "Low", "High"))
 dimnames(rec) <- dimnames(tsb) <- dimnames(x)
 
-## One SAM table, arbitrary object name
+# One SAM table, arbitrary object name
 sam2taf(x)
 sam2taf(x, "SSB")
 sam2taf(x, "SSB", year=FALSE)
 
-## Many SAM tables, recognized names
+# Many SAM tables, recognized names
 sam2taf(rec)
 data.frame(sam2taf(rec), sam2taf(tsb, year=FALSE))
 
 \dontrun{
 
-## Accessing tables from SAM fit object
+# Accessing tables from SAM fit object
 data.frame(sam2taf(rectable(fit)), sam2taf(tsbtable(fit), year=FALSE))
 }
 

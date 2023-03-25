@@ -38,7 +38,7 @@
 #' cp("A.txt", "B.txt")
 #' cp("A.txt", "B.txt", move=TRUE)
 #'
-#' ## Copy directory tree
+#' # Copy directory tree
 #' cp(system.file(package="datasets"), ".")
 #' mkdir("everything")
 #' cp("datasets/*", "everything")
