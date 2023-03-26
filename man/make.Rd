@@ -58,8 +58,7 @@ make("model.R", "data/input.dat", "model/results.dat", details=TRUE)
 }
 \references{
 Stallman, R. M. \emph{et al.} An introduction to makefiles. Chapter 2 in the
-\emph{\href{https://www.gnu.org/software/make/manual/make.pdf}{GNU Make
-manual}}.
+\emph{\href{https://www.gnu.org/software/make/manual/}{GNU Make manual}}.
 }
 \seealso{
 \code{\link{source}} runs any R script, \code{\link{source.taf}} is more
