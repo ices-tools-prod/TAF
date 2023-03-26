@@ -1,4 +1,4 @@
-#' Run TAF Script If Needed
+#' Run TAF Script if Needed
 #'
 #' Run a TAF script if the target directory is either older than the script, or
 #' older than the directory of the previous TAF step.

@@ -3,7 +3,7 @@
 \name{make.taf}
 \alias{make.taf}
 \alias{makeTAF}
-\title{Run TAF Script If Needed}
+\title{Run TAF Script if Needed}
 \usage{
 make.taf(script, ...)
 }
