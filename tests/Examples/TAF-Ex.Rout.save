@@ -782,7 +782,7 @@ Type 'q()' to quit R.
 > flush(stderr()); flush(stdout())
 > 
 > ### Name: make
-> ### Title: Run R Script If Needed
+> ### Title: Run R Script if Needed
 > ### Aliases: make
 > 
 > ### ** Examples
@@ -791,7 +791,7 @@ Type 'q()' to quit R.
 > ##D # Here, model.R uses input.dat, creating results.dat
 > ##D make("model.R", "data/input.dat", "model/results.dat")
 > ##D make("model.R", "data/input.dat", "model/results.dat", silent=FALSE)
-> ##D make("model.R", "data/input.dat", "model/results.dat", debug=TRUE)
+> ##D make("model.R", "data/input.dat", "model/results.dat", details=TRUE)
 > ## End(Not run)
 > 
 > 
@@ -823,7 +823,7 @@ Type 'q()' to quit R.
 > flush(stderr()); flush(stdout())
 > 
 > ### Name: make.taf
-> ### Title: Run TAF Script If Needed
+> ### Title: Run TAF Script if Needed
 > ### Aliases: make.taf makeTAF
 > 
 > ### ** Examples
@@ -1768,7 +1768,7 @@ detaching 'package:lattice'
 
 > options(digits = 7L)
 > base::cat("Time elapsed: ", proc.time() - base::get("ptime", pos = 'CheckExEnv'),"\n")
-Time elapsed:  0.24 0 0.24 NA NA 
+Time elapsed:  0.25 0.01 0.27 NA NA 
 > grDevices::dev.off()
 null device 
           1 

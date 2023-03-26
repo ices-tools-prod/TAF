@@ -5,7 +5,7 @@
 \title{Run R Script if Needed}
 \usage{
 make(recipe, prereq, target, include = TRUE, engine = source,
-  debug = FALSE, force = FALSE, recon = FALSE, silent = TRUE, ...)
+  details = FALSE, force = FALSE, recon = FALSE, silent = TRUE, ...)
 }
 \arguments{
 \item{recipe}{script filename.}
@@ -22,7 +22,7 @@ modified, it should be run.}
 
 \item{engine}{function to source the script.}
 
-\item{debug}{whether to show a diagnostic table of files and time last
+\item{details}{whether to show a diagnostic table of files and time last
 modified.}
 
 \item{force}{whether to run the R script unconditionally.}
@@ -52,7 +52,7 @@ then the script is run.
 # Here, model.R uses input.dat, creating results.dat
 make("model.R", "data/input.dat", "model/results.dat")
 make("model.R", "data/input.dat", "model/results.dat", silent=FALSE)
-make("model.R", "data/input.dat", "model/results.dat", debug=TRUE)
+make("model.R", "data/input.dat", "model/results.dat", details=TRUE)
 }
 
 }

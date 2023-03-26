@@ -11,7 +11,7 @@
 #'        prerequisite file. This means that if the script file has been
 #'        modified, it should be run.
 #' @param engine function to source the script.
-#' @param debug whether to show a diagnostic table of files and time last
+#' @param details whether to show a diagnostic table of files and time last
 #'        modified.
 #' @param force whether to run the R script unconditionally.
 #' @param recon whether to return \code{TRUE} or \code{FALSE}, without actually
@@ -49,17 +49,17 @@
 #' # Here, model.R uses input.dat, creating results.dat
 #' make("model.R", "data/input.dat", "model/results.dat")
 #' make("model.R", "data/input.dat", "model/results.dat", silent=FALSE)
-#' make("model.R", "data/input.dat", "model/results.dat", debug=TRUE)
+#' make("model.R", "data/input.dat", "model/results.dat", details=TRUE)
 #' }
 #'
 #' @export
 
 make <- function(recipe, prereq, target, include=TRUE, engine=source,
-                 debug=FALSE, force=FALSE, recon=FALSE, silent=TRUE, ...)
+                 details=FALSE, force=FALSE, recon=FALSE, silent=TRUE, ...)
 {
   if(include)
     prereq <- union(prereq, recipe)
-  if(debug)
+  if(details)
     print(data.frame(Object=c(rep("target",length(target)),
                               rep("prereq",length(prereq))),
                      File=c(target,prereq),
