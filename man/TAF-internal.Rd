@@ -40,7 +40,7 @@ model.script()
 
 parse.repo(repo)
 
-process.bibfile(type, clean = TRUE, quiet = FALSE)
+process.bibfile(type, clean = TRUE, quiet = FALSE, ...)
 
 process.entry(bib, quiet = FALSE, force = FALSE, clean = FALSE,
   comma.split = TRUE)

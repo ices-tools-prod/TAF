@@ -6,7 +6,7 @@
 \title{Boot TAF Analysis}
 \usage{
 taf.boot(software = TRUE, data = TRUE, clean = TRUE, force = FALSE,
-  taf = NULL, quiet = FALSE)
+  taf = NULL, quiet = FALSE, ...)
 }
 \arguments{
 \item{software}{whether to process \verb{SOFTWARE.bib}.}
@@ -25,6 +25,8 @@ boot procedure.}
 on the TAF server. Any other value of \code{taf} is ignored.}
 
 \item{quiet}{whether to suppress messages reporting progress.}
+
+\item{\dots}{passed to \code{process.entry}.}
 }
 \value{
 Logical vector indicating which metadata files were processed.

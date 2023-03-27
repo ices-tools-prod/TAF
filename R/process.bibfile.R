@@ -4,7 +4,7 @@
 
 ## Process *.bib file
 
-process.bibfile <- function(type, clean=TRUE, quiet=FALSE)
+process.bibfile <- function(type, clean=TRUE, quiet=FALSE, ...)
 {
   # check type arg
   type <- match.arg(type, c("data", "software"))
@@ -23,7 +23,7 @@ process.bibfile <- function(type, clean=TRUE, quiet=FALSE)
     message("Processing ", paste0(toupper(type), ".bib"))
 
   entries <- taf.sources(type)
-  sapply(entries, process.entry, quiet=quiet)
+  sapply(entries, process.entry, quiet=quiet, ...)
 
   invisible(TRUE)
 }
