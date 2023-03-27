@@ -6,8 +6,8 @@
 
 ## Process bib entry
 
-process.entry <- function(bib, quiet = FALSE, force = FALSE, clean = FALSE,
-                          comma.split = TRUE) {
+process.entry <- function(bib, clean = FALSE, comma.split = TRUE, force = FALSE,
+                          quiet = FALSE) {
   owd <- setwd(boot.dir())
   on.exit(setwd(owd))
 
