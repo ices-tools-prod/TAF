@@ -65,7 +65,8 @@ make <- function(recipe, prereq, target, include=TRUE, engine=source,
                      Modified=file.mtime(c(target,prereq))))
   if(!all(file.exists(prereq)))
     stop("missing prerequisite file '", prereq[!file.exists(prereq)][1], "'")
-  if(force || !all(file.exists(target)) ||
+  if(force ||
+     !all(file.exists(target)) ||
      min(file.mtime(target)) < max(file.mtime(prereq)))
   {
     if(!silent)
