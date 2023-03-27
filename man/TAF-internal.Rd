@@ -42,7 +42,8 @@ parse.repo(repo)
 
 process.bibfile(type, clean = TRUE, quiet = FALSE)
 
-process.entry(bib, quiet = FALSE, force = FALSE, clean = FALSE)
+process.entry(bib, quiet = FALSE, force = FALSE, clean = FALSE,
+  comma.split = TRUE)
 
 already.in.taf.library(targz, lib)
 }

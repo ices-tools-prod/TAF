@@ -6,7 +6,8 @@
 
 ## Process bib entry
 
-process.entry <- function(bib, quiet = FALSE, force = FALSE, clean = FALSE) {
+process.entry <- function(bib, quiet = FALSE, force = FALSE, clean = FALSE,
+                          comma.split = TRUE) {
   owd <- setwd(boot.dir())
   on.exit(setwd(owd))
 
@@ -15,11 +16,11 @@ process.entry <- function(bib, quiet = FALSE, force = FALSE, clean = FALSE) {
     msg("* ", key)
   }
 
-  ## If source contains multiple files then split into vector
-  bib$source <- gsub(" +", "\n", bib$source)  # treat space in source as newline
-  bib$source <- trimws(unlist(strsplit(bib$source, "\\n")))
-  bib$source <- sub(",$", "", bib$source)     # remove trailing comma
-  bib$source <- bib$source[bib$source != ""]  # remove empty strings
+  ## If source contains comma-separated files then split into vector
+  if (comma.split) {
+    bib$source <- trimws(unlist(strsplit(bib$source, ",")))
+    bib$source <- bib$source[bib$source != ""]  # remove empty strings
+  }
 
   ## Check if access matches allowed values
   access <- bib$access

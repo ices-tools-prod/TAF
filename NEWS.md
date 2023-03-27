@@ -2,6 +2,9 @@
 
 * Added argument 'silent' to make().
 
+* Changed taf.boot() so it handles multiple filenames/URLs in 'source' field,
+  separated by comma.
+
 
 
 
