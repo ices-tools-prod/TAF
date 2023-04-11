@@ -24,7 +24,8 @@ scientific applications.
 Installation
 ------------
 
-TAF can be installed from CRAN using the `install.packages` command:
+The package can be installed from [CRAN](https://cran.r-project.org/package=TAF)
+using the `install.packages` command:
 
 ```R
 install.packages("TAF")
@@ -50,7 +51,7 @@ ICES Transparent Assessment Framework:
 Development
 -----------
 
-TAF is developed openly on
+The package is developed openly on
 [GitHub](https://github.com/ices-tools-prod/TAF).
 
 Feel free to open an
