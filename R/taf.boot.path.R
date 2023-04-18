@@ -28,13 +28,13 @@
 
 taf.boot.path <- function(..., fsep = .Platform$file.sep) {
   if (basename(dirname(dirname(getwd()))) %in% c("boot", "bootstrap")) {
-    args <- list("..", "..")
+    args <- list("..", "..")  # we're in TAF/boot/subdir/subdir
   } else if (basename(dirname(getwd())) %in% c("boot", "bootstrap")) {
-    args <- list("..")
+    args <- list("..")        # we're in TAF/boot/subdir
   } else if (basename(getwd()) %in% c("boot", "bootstrap")) {
-    args <- list(".")
+    args <- list(".")         # we're in TAF/boot
   } else {
-    args <- list(boot.dir())
+    args <- list(boot.dir())  # we're in TAF
   }
   do.call(file.path, c(args, ..., fsep = fsep))
 }
