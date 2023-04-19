@@ -55,7 +55,7 @@
 #'
 #' @export
 
-taf.install <- function(targz=NULL, lib="boot/library", quiet=FALSE)
+taf.install <- function(targz=NULL, lib=taf.boot.path("library"), quiet=FALSE)
 {
   if(is.null(targz))
     targz <- dir(file.path(boot.dir(), "software"),

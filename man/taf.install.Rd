@@ -4,7 +4,7 @@
 \alias{taf.install}
 \title{TAF Install}
 \usage{
-taf.install(targz = NULL, lib = "boot/library", quiet = FALSE)
+taf.install(targz = NULL, lib = taf.boot.path("library"), quiet = FALSE)
 }
 \arguments{
 \item{targz}{a package filename, vector of filenames, or \code{NULL}.}
