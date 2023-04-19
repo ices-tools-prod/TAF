@@ -16,8 +16,8 @@ clean(dirs = c("data", model.dir(), "output", "report"), force = FALSE)
 No return value, called for side effects.
 }
 \description{
-Remove TAF directories (\verb{data}, \verb{model}, \verb{output},
-\verb{report}) and/or clean the \verb{boot} directory.
+Remove TAF directories: \verb{data}, \verb{model}, \verb{output}, and
+\verb{report}.
 }
 \details{
 The \verb{model} directory may also be named \verb{method} and is cleaned in
@@ -28,8 +28,11 @@ The purpose of removing the directories is to make sure that subsequent TAF
 scripts start by creating new empty directories.
 
 If any of the \code{dirs} is \code{"boot"}, it is treated specially and
-\code{clean.boot} is called to clean the \verb{boot/data},
-\verb{boot/library}, and \verb{boot/software} subdirectories.
+\code{clean.boot} is called to clean the \verb{boot} directory.
+
+In other words, \code{clean("boot")} and \code{clean.boot()} are
+interchangeable, the latter providing a slightly clearer interface that was
+introduced in version 4.2.0.
 }
 \examples{
 \dontrun{

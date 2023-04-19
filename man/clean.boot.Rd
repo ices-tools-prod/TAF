@@ -32,6 +32,9 @@ clean.boot()
 
 }
 \seealso{
+\code{\link{clean}} cleans TAF directories: \verb{data}, \verb{model},
+\verb{output}, and \verb{report}.
+
 \code{\link{clean.data}} selectively removes data from \verb{boot/data}.
 
 \code{\link{clean.library}} selectively removes packages from
