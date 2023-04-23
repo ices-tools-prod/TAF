@@ -1,7 +1,7 @@
 #' Clean TAF Directories
 #'
-#' Remove TAF directories (\verb{data}, \verb{model}, \verb{output},
-#' \verb{report}) and/or clean the \verb{boot} directory.
+#' Remove TAF directories: \verb{data}, \verb{model}, \verb{output}, and
+#' \verb{report}.
 #'
 #' @param dirs directories to delete.
 #' @param force passed to \code{clean.boot} if any of the \code{dirs} is
@@ -18,8 +18,11 @@
 #' scripts start by creating new empty directories.
 #'
 #' If any of the \code{dirs} is \code{"boot"}, it is treated specially and
-#' \code{clean.boot} is called to clean the \verb{boot/data},
-#' \verb{boot/library}, and \verb{boot/software} subdirectories.
+#' \code{clean.boot} is called to clean the \verb{boot} directory.
+#'
+#' In other words, \code{clean("boot")} and \code{clean.boot()} are
+#' interchangeable, the latter providing a slightly clearer interface that was
+#' introduced in version 4.2.0.
 #'
 #' @seealso
 #' \code{\link{clean.boot}} cleans the boot directory.
