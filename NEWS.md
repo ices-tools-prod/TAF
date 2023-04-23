@@ -1,9 +1,10 @@
 # TAF 4.2.1 (2023-03-26)
 
-* Added argument 'silent' to make().
+* Added argument 'silent' to make(). Renamed argument 'debug' to 'details'.
 
-* Changed taf.boot() so it handles multiple filenames/URLs in 'source' field,
-  separated by comma.
+* Improved taf.boot() so it is not affected by user option "pkgType". Changed
+  taf.boot() so it handles multiple filenames/URLs in 'source' field, separated
+  by comma.
 
 
 
