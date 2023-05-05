@@ -8,10 +8,10 @@
 #'
 #' @description
 #' General framework to organize data, methods, and results used in reproducible
-#' scientific analyses. A TAF analysis consists of four scripts (`data.R`,
-#' `model.R`, `output.R`, `report.R`) that are run sequentially. Each script
-#' starts by reading files from a previous step and ends with writing out files
-#' for the next step.
+#' scientific analyses. A TAF analysis consists of four scripts (\verb{data.R},
+#' \verb{model.R}, \verb{output.R}, \verb{report.R}) that are run sequentially.
+#' Each script starts by reading files from a previous step and ends with
+#' writing out files for the next step.
 #'
 #' Convenience functions are provided to version control the required data and
 #' software, run analyses, clean residues from previous runs, manage files,
@@ -19,7 +19,7 @@
 #' reproducible analyses, TAF is designed to have no package dependencies.
 #'
 #' TAF forms a base layer for the
-#' [icesTAF](https://cran.r-project.org/package=icesTAF) package and other
+#' \href{https://cran.r-project.org/package=icesTAF}{icesTAF} package and other
 #' scientific applications.
 #'
 #' @details
