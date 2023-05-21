@@ -26,10 +26,12 @@
 
 * Added argument 'model.script' to taf.skeleton().
 
-* Improved taf.library() to ensure it returns to the previous working directory.
-  Code contributed by Alexandros Kokkalis.
+* Improved draft.data() so it returns source = {folder} for folders.
 
 * Improved taf.boot() so it returns a logical vector, as documented.
+
+* Improved taf.library() to ensure it returns to the previous working directory.
+  Code contributed by Alexandros Kokkalis.
 
 * Fixed a taf.boot() bug introduced in 4.1.0, checking GitHub references.
 
