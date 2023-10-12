@@ -1,3 +1,11 @@
+# TAF 4.3.0 (2023-10-12)
+
+* Added function taf.libraries() to load all packages from TAF library. Code
+  contributed by Iago Mosqueira.
+
+
+
+
 # TAF 4.2.1 (2023-03-26)
 
 * Added argument 'silent' to make(). Renamed argument 'debug' to 'details'.
