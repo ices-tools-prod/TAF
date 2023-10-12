@@ -1,5 +1,7 @@
 # TAF 4.3.0 (2023-10-12)
 
+* Added function fdim() to show the dimensions of an FLR table.
+
 * Added function taf.libraries() to load all packages from TAF library. Code
   contributed by Iago Mosqueira.
 

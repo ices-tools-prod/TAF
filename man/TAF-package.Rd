@@ -54,13 +54,14 @@ scientific applications.
   \code{\link{taf.boot.path}}  \tab construct path to boot folder\cr
   \code{\link{taf.data.path}}  \tab construct path to boot data files\cr
   \code{\link{taf.library}}    \tab load package from TAF library\cr
-  \code{\link{taf.library}}    \tab load all packages from TAF library\cr
+  \code{\link{taf.libraries}}  \tab load all packages from TAF library\cr
   \code{\link{taf.unzip}}      \tab unzip file\cr
   \code{\link{write.taf}}      \tab write TAF table to file
 }
 \emph{Tables:}
 \tabular{ll}{
   \code{\link{div}}       \tab divide column values\cr
+  \code{\link{fdim}}      \tab show FLR dimensions\cr
   \code{\link{flr2taf}}   \tab convert FLR to TAF\cr
   \code{\link{long2taf}}  \tab convert long format to TAF\cr
   \code{\link{long2xtab}} \tab convert long format to crosstab\cr

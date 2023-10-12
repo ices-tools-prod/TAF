@@ -38,5 +38,7 @@ flr2taf(x1, "Juveniles")
 \code{\link{as.data.frame}} is a method provided by the \pkg{FLCore} package
 to convert \code{FLQuant} tables to a 7-column long format.
 
+\code{\link{fdim}} shows the dimensions of an FLR table.
+
 \code{\link{TAF-package}} gives an overview of the package.
 }

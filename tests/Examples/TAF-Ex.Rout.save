@@ -1,7 +1,7 @@
 
-R version 4.2.3 (2023-03-15 ucrt) -- "Shortstop Beagle"
+R version 4.3.1 (2023-06-16) -- "Beagle Scouts"
 Copyright (C) 2023 The R Foundation for Statistical Computing
-Platform: x86_64-w64-mingw32/x64 (64-bit)
+Platform: x86_64-pc-linux-gnu (64-bit)
 
 R is free software and comes with ABSOLUTELY NO WARRANTY.
 You are welcome to redistribute it under certain conditions.
@@ -20,7 +20,6 @@ Type 'q()' to quit R.
 > pkgname <- "TAF"
 > source(file.path(R.home("share"), "R", "examples-header.R"))
 > options(warn = 1)
-> options(pager = "console")
 > library('TAF')
 > 
 > base::assign(".oldSearch", base::search(), pos = 'CheckExEnv')
@@ -546,6 +545,43 @@ Type 'q()' to quit R.
 > ##D # Export to file
 > ##D draft.software("TAF", file=TRUE)
 > ## End(Not run)
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("fdim")
+> ### * fdim
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: fdim
+> ### Title: FLR Dimensions
+> ### Aliases: fdim
+> 
+> ### ** Examples
+> 
+> ## Not run: 
+> ##D library(FLCore)
+> ##D flq <- FLQuant(t(catage.xtab), dimnames=list(age=1:4, year=1963:1970))
+> ##D df <- as.data.frame(flq)
+> ##D fdim(flq)
+> ##D fdim(df)
+> ##D fdim(df, TRUE)
+> ## End(Not run)
+> # Any data frame where the last column is the measurement variable
+> fdim(catage.long)
+Year  Age 
+   8    4 
+> fdim(esoph[-5])
+agegp alcgp tobgp 
+    6     4     4 
+> fdim(rev(warpbreaks))
+tension    wool 
+      3       2 
+> fdim(rev(ToothGrowth))
+dose supp 
+   3    2 
 > 
 > 
 > 
@@ -1328,6 +1364,26 @@ Type 'q()' to quit R.
 > 
 > 
 > cleanEx()
+> nameEx("taf.libraries")
+> ### * taf.libraries
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: taf.libraries
+> ### Title: TAF Libraries
+> ### Aliases: taf.libraries
+> 
+> ### ** Examples
+> 
+> ## Not run: 
+> ##D # Load all packages in TAF library
+> ##D taf.libraries()
+> ## End(Not run)
+> 
+> 
+> 
+> 
+> cleanEx()
 > nameEx("taf.library")
 > ### * taf.library
 > 
@@ -1764,11 +1820,11 @@ Type 'q()' to quit R.
 > ###
 > cleanEx()
 
-detaching 'package:lattice'
+detaching ‘package:lattice’
 
 > options(digits = 7L)
 > base::cat("Time elapsed: ", proc.time() - base::get("ptime", pos = 'CheckExEnv'),"\n")
-Time elapsed:  0.25 0.01 0.27 NA NA 
+Time elapsed:  0.232 0.012 0.244 0 0 
 > grDevices::dev.off()
 null device 
           1 
