@@ -55,6 +55,7 @@
 #'   \code{\link{taf.boot.path}}  \tab construct path to boot folder\cr
 #'   \code{\link{taf.data.path}}  \tab construct path to boot data files\cr
 #'   \code{\link{taf.library}}    \tab load package from TAF library\cr
+#'   \code{\link{taf.library}}    \tab load all packages from TAF library\cr
 #'   \code{\link{taf.unzip}}      \tab unzip file\cr
 #'   \code{\link{write.taf}}      \tab write TAF table to file
 #' }
