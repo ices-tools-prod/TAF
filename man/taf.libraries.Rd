@@ -12,24 +12,25 @@ taf.libraries(messages = FALSE, warnings = FALSE)
 \item{warnings}{whether to show warnings when package loads.}
 }
 \value{
-TRUE (invisibly) if all packages loaded
+\code{TRUE} (invisibly) if all packages loaded.
 }
 \description{
 Load and attach all packages from local TAF library.
 }
 \note{
 Packages in the TAF library are loaded in the order in which they are
-listed in SOFTWARE.bib. Internal dependencies can in this way be respected.
+listed in \verb{SOFTWARE.bib}. Internal dependencies can in this way be
+respected.
 }
 \examples{
 \dontrun{
-
 # Load all packages in TAF library
 taf.libraries()
-
 }
 
 }
 \seealso{
 \code{\link{taf.library}} is the TAF function called for each found package.
+
+\code{\link{TAF-package}} gives an overview of the package.
 }
