@@ -32,6 +32,7 @@
 #' fdim(df)
 #' fdim(df, TRUE)
 #' }
+#'
 #' # Any data frame where the last column is the measurement variable
 #' fdim(catage.long)
 #' fdim(esoph[-5])
