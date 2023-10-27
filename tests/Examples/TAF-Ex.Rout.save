@@ -826,7 +826,7 @@ dose supp
 > ## Not run: 
 > ##D # Here, model.R uses input.dat, creating results.dat
 > ##D make("model.R", "data/input.dat", "model/results.dat")
-> ##D make("model.R", "data/input.dat", "model/results.dat", silent=FALSE)
+> ##D make("model.R", "data/input.dat", "model/results.dat", quiet=FALSE)
 > ##D make("model.R", "data/input.dat", "model/results.dat", details=TRUE)
 > ## End(Not run)
 > 
@@ -1824,7 +1824,7 @@ detaching ‘package:lattice’
 
 > options(digits = 7L)
 > base::cat("Time elapsed: ", proc.time() - base::get("ptime", pos = 'CheckExEnv'),"\n")
-Time elapsed:  0.232 0.012 0.244 0 0 
+Time elapsed:  0.243 0.004 0.25 0 0 
 > grDevices::dev.off()
 null device 
           1 

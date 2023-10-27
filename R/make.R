@@ -16,7 +16,7 @@
 #' @param force whether to run the R script unconditionally.
 #' @param recon whether to return \code{TRUE} or \code{FALSE}, without actually
 #'        running the R script.
-#' @param silent whether to suppress messages.
+#' @param quiet whether to suppress messages.
 #' @param \dots passed to \code{engine}.
 #'
 #' @return \code{TRUE} or \code{FALSE}, indicating whether the script was run.
@@ -47,14 +47,14 @@
 #' \dontrun{
 #' # Here, model.R uses input.dat, creating results.dat
 #' make("model.R", "data/input.dat", "model/results.dat")
-#' make("model.R", "data/input.dat", "model/results.dat", silent=FALSE)
+#' make("model.R", "data/input.dat", "model/results.dat", quiet=FALSE)
 #' make("model.R", "data/input.dat", "model/results.dat", details=TRUE)
 #' }
 #'
 #' @export
 
 make <- function(recipe, prereq, target, include=TRUE, engine=source,
-                 details=FALSE, force=FALSE, recon=FALSE, silent=TRUE, ...)
+                 details=FALSE, force=FALSE, recon=FALSE, quiet=TRUE, ...)
 {
   if(include)
     prereq <- union(prereq, recipe)
@@ -69,7 +69,7 @@ make <- function(recipe, prereq, target, include=TRUE, engine=source,
      !all(file.exists(target)) ||
      min(file.mtime(target)) < max(file.mtime(prereq)))
   {
-    if(!silent)
+    if(!quiet)
       message("Running ", recipe)
     if(!recon)
       engine(recipe, ...)
@@ -77,7 +77,7 @@ make <- function(recipe, prereq, target, include=TRUE, engine=source,
   }
   else
   {
-    if(!silent)
+    if(!quiet)
       message("Nothing to be done")
     out <- FALSE
   }

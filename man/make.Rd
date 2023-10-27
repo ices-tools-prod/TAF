@@ -5,7 +5,7 @@
 \title{Run R Script if Needed}
 \usage{
 make(recipe, prereq, target, include = TRUE, engine = source,
-  details = FALSE, force = FALSE, recon = FALSE, silent = TRUE, ...)
+  details = FALSE, force = FALSE, recon = FALSE, quiet = TRUE, ...)
 }
 \arguments{
 \item{recipe}{script filename.}
@@ -30,7 +30,7 @@ modified.}
 \item{recon}{whether to return \code{TRUE} or \code{FALSE}, without actually
 running the R script.}
 
-\item{silent}{whether to suppress messages.}
+\item{quiet}{whether to suppress messages.}
 
 \item{\dots}{passed to \code{engine}.}
 }
@@ -51,7 +51,7 @@ then the script is run.
 \dontrun{
 # Here, model.R uses input.dat, creating results.dat
 make("model.R", "data/input.dat", "model/results.dat")
-make("model.R", "data/input.dat", "model/results.dat", silent=FALSE)
+make("model.R", "data/input.dat", "model/results.dat", quiet=FALSE)
 make("model.R", "data/input.dat", "model/results.dat", details=TRUE)
 }
 
