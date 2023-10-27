@@ -39,12 +39,17 @@
 #' fdim(rev(warpbreaks))
 #' fdim(rev(ToothGrowth))
 #'
+#' @importFrom methods is
+#' @importFrom stats setNames
+#'
 #' @export
 
 fdim <- function(x, reduce=FALSE)
 {
-  x <- as.data.frame(x)
-  out <- sapply(x, function(x) length(unique(x)))[-ncol(x)]
+  out <- if(is(x, "FLQuant"))
+           setNames(dim(x), names(dimnames(x)))
+         else
+           sapply(x, function(col) length(unique(col)))[-ncol(x)]
   if(reduce)
     out <- out[out != 1]
   out

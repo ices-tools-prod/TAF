@@ -569,6 +569,7 @@ Type 'q()' to quit R.
 > ##D fdim(df)
 > ##D fdim(df, TRUE)
 > ## End(Not run)
+> 
 > # Any data frame where the last column is the measurement variable
 > fdim(catage.long)
 Year  Age 
@@ -1824,7 +1825,7 @@ detaching ‘package:lattice’
 
 > options(digits = 7L)
 > base::cat("Time elapsed: ", proc.time() - base::get("ptime", pos = 'CheckExEnv'),"\n")
-Time elapsed:  0.243 0.004 0.25 0 0 
+Time elapsed:  0.225 0.008 0.234 0 0 
 > grDevices::dev.off()
 null device 
           1 

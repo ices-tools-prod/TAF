@@ -8,7 +8,7 @@ Authors@R: c(person("Arni", "Magnusson", role=c("aut","cre"), email="thisisarni@
              person("Iago", "Mosqueira", role="ctb"),
              person("Ibrahim", "Umar", role="ctb"),
              person("Hjalte", "Parner", role="ctb"))
-Imports: grDevices, lattice, stats, tools, utils
+Imports: grDevices, lattice, methods, stats, tools, utils
 LazyData: yes
 Description: General framework to organize data, methods, and results used in
   reproducible scientific analyses. A TAF analysis consists of four scripts
