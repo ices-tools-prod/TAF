@@ -36,6 +36,7 @@ ds.package <- function(package, author, year, title, version, source)
   pkg <- packageDescription(package, lib.loc=c(file.path(boot.dir(), "library"),
                                                .libPaths()))
   repotype <- if(isTRUE(pkg$Repository == "CRAN")) "CRAN"
+              else if(isTRUE(grepl("r-universe", pkg$Repository))) "Runiverse"
               else if(isTRUE(pkg$RemoteType == "github")) "GitHub"
               else if(!is.null(pkg$Repository)) pkg$Repository
               else NA_character_
@@ -54,7 +55,11 @@ ds.package <- function(package, author, year, title, version, source)
                                    "/", pkg$GithubRepo,
                                    if(!is.null(pkg$GithubSubdir))
                                      paste0("/", pkg$GithubSubdir),
-                                   "@", substring(pkg$GithubSHA1, 1, 7)))
+                                   "@", substring(pkg$GithubSHA1, 1, 7)),
+                     Runiverse=paste0(
+        sub('.*.com\\/', '', packageDescription('mse')$RemoteUrl), "@",
+        substring(pkg$RemoteSha, 1, 7))
+    )
   }
   source <- paste0("  source = {", source, "},")
 
