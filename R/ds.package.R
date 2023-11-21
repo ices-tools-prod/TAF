@@ -56,10 +56,10 @@ ds.package <- function(package, author, year, title, version, source)
                                    if(!is.null(pkg$GithubSubdir))
                                      paste0("/", pkg$GithubSubdir),
                                    "@", substring(pkg$GithubSHA1, 1, 7)),
-                     Runiverse=paste0(
-        sub('.*.com\\/', '', packageDescription('mse')$RemoteUrl), "@",
-        substring(pkg$RemoteSha, 1, 7))
-    )
+                     Runiverse=paste0(sub("https://.*?/", "", pkg$RemoteUrl),
+                                      if(pkg$Package != basename(pkg$RemoteUrl))
+                                        paste0("/", pkg$Package),
+                                      "@", substring(pkg$RemoteSha, 1, 7)))
   }
   source <- paste0("  source = {", source, "},")
 

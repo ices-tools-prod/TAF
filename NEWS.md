@@ -1,8 +1,11 @@
-# TAF 4.3.0 (2023-10-27)
+# TAF 4.3.0 (2023-11-22)
 
 * Added function fdim() to show the dimensions of an FLR table.
 
 * Added function taf.libraries() to load all packages from TAF library. Code
+  contributed by Iago Mosqueira.
+
+* Improved draft.software() so it supports packages from r-universe. Code
   contributed by Iago Mosqueira.
 
 * Renamed the 'silent' argument to 'quiet' in make().
