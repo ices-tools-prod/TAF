@@ -9,6 +9,7 @@
 #'        TAF package, i.e. \code{library(TAF)}.
 #' @param model.script model script filename, either \code{model.R} (default) or
 #'        \code{method.R}.
+#' @param gitignore whether to write a \file{.gitignore} file.
 #'
 #' @return Full path to analysis directory.
 #'
@@ -25,7 +26,7 @@
 #' @export
 
 taf.skeleton <- function(path = ".", force = FALSE, pkgs = "TAF",
-                         model.script = "model.R")
+                         model.script = "model.R", gitignore=TRUE)
 {
   # only overwrite files if force = TRUE
   safe.cat <- function(..., file, force) {
@@ -60,6 +61,14 @@ taf.skeleton <- function(path = ".", force = FALSE, pkgs = "TAF",
     safe.cat(sprintf(template, headers[[section]], section),
              file = paste0(section, ".R"),
              force = force)
+  }
+
+  if (gitignore) {
+    ignore <- c("/boot/data", "/boot/software", "/data",
+                paste0("/", file_path_sans_ext(model.script)), "/output",
+                "/report", "*.Rproj", ".RData", ".Rhistory", ".Rproj.user",
+                ".Ruserdata")
+    write(ignore, ".gitignore")
   }
 
   invisible(getwd())

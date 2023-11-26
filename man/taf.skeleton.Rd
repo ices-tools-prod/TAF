@@ -5,7 +5,7 @@
 \title{TAF Skeleton}
 \usage{
 taf.skeleton(path = ".", force = FALSE, pkgs = "TAF",
-  model.script = "model.R")
+  model.script = "model.R", gitignore = TRUE)
 }
 \arguments{
 \item{path}{where to create initial directories and R scripts. The default is
@@ -18,6 +18,8 @@ TAF package, i.e. \code{library(TAF)}.}
 
 \item{model.script}{model script filename, either \code{model.R} (default) or
 \code{method.R}.}
+
+\item{gitignore}{whether to write a \file{.gitignore} file.}
 }
 \value{
 Full path to analysis directory.
