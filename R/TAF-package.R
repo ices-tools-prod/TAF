@@ -61,8 +61,8 @@
 #' }
 #' \emph{Tables:}
 #' \tabular{ll}{
+#'   \code{\link{ddim}}      \tab show data dimensions\cr
 #'   \code{\link{div}}       \tab divide column values\cr
-#'   \code{\link{fdim}}      \tab show FLR dimensions\cr
 #'   \code{\link{flr2taf}}   \tab convert FLR to TAF\cr
 #'   \code{\link{long2taf}}  \tab convert long format to TAF\cr
 #'   \code{\link{long2xtab}} \tab convert long format to crosstab\cr

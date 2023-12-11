@@ -1,5 +1,5 @@
 
-R version 4.3.1 (2023-06-16) -- "Beagle Scouts"
+R version 4.3.2 (2023-10-31) -- "Eye Holes"
 Copyright (C) 2023 The R Foundation for Statistical Computing
 Platform: x86_64-pc-linux-gnu (64-bit)
 
@@ -353,6 +353,37 @@ Type 'q()' to quit R.
 > 
 > 
 > cleanEx()
+> nameEx("ddim")
+> ### * ddim
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: ddim
+> ### Title: Data Dimensions
+> ### Aliases: ddim
+> 
+> ### ** Examples
+> 
+> # Long table format, 8 years and 4 ages
+> ddim(catage.long)
+Year  Age 
+   8    4 
+> 
+> # Some base R datasets
+> ddim(esoph[-5])
+agegp alcgp tobgp 
+    6     4     4 
+> ddim(rev(warpbreaks))
+tension    wool 
+      3       2 
+> ddim(rev(ToothGrowth))
+dose supp 
+   3    2 
+> 
+> 
+> 
+> 
+> cleanEx()
 > nameEx("deps")
 > ### * deps
 > 
@@ -545,44 +576,6 @@ Type 'q()' to quit R.
 > ##D # Export to file
 > ##D draft.software("TAF", file=TRUE)
 > ## End(Not run)
-> 
-> 
-> 
-> 
-> cleanEx()
-> nameEx("fdim")
-> ### * fdim
-> 
-> flush(stderr()); flush(stdout())
-> 
-> ### Name: fdim
-> ### Title: FLR Dimensions
-> ### Aliases: fdim
-> 
-> ### ** Examples
-> 
-> ## Not run: 
-> ##D library(FLCore)
-> ##D flq <- FLQuant(t(catage.xtab), dimnames=list(age=1:4, year=1963:1970))
-> ##D df <- as.data.frame(flq)
-> ##D fdim(flq)
-> ##D fdim(df)
-> ##D fdim(df, TRUE)
-> ## End(Not run)
-> 
-> # Any data frame where the last column is the measurement variable
-> fdim(catage.long)
-Year  Age 
-   8    4 
-> fdim(esoph[-5])
-agegp alcgp tobgp 
-    6     4     4 
-> fdim(rev(warpbreaks))
-tension    wool 
-      3       2 
-> fdim(rev(ToothGrowth))
-dose supp 
-   3    2 
 > 
 > 
 > 
@@ -1825,7 +1818,7 @@ detaching ‘package:lattice’
 
 > options(digits = 7L)
 > base::cat("Time elapsed: ", proc.time() - base::get("ptime", pos = 'CheckExEnv'),"\n")
-Time elapsed:  0.225 0.008 0.234 0 0 
+Time elapsed:  0.236 0.001 0.236 0 0 
 > grDevices::dev.off()
 null device 
           1 
