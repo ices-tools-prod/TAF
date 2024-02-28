@@ -1,6 +1,6 @@
 Package: TAF
 Version: 4.3.0
-Date: 2023-11-26
+Date: 2024-02-28
 Title: Transparent Assessment Framework for Reproducible Research
 Authors@R: c(person("Arni", "Magnusson", role=c("aut","cre"), email="thisisarni@gmail.com"),
              person("Colin", "Millar", role="aut"),

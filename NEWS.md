@@ -1,24 +1,17 @@
-# TAF 4.3.0 (2023-12-11)
+# TAF 4.3.0 (2024-02-28)
 
 * Added function ddim() to show the data dimensions of a table.
 
 * Added function taf.libraries() to load all packages from TAF library. Code
   contributed by Iago Mosqueira.
 
+* Added argument 'quiet' to make(). Renamed argument 'debug' to 'details'.
+
 * Added argument 'gitignore' to taf.skeleton() for writing a .gitignore file,
   enabled by default.
 
 * Improved draft.software() so it supports packages from r-universe. Code
   contributed by Iago Mosqueira.
-
-* Renamed the 'silent' argument to 'quiet' in make().
-
-
-
-
-# TAF 4.2.1 (2023-03-26)
-
-* Added argument 'silent' to make(). Renamed argument 'debug' to 'details'.
 
 * Improved taf.boot() so it is not affected by user option "pkgType". Changed
   taf.boot() so it handles multiple filenames/URLs in 'source' field, separated
