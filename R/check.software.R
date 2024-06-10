@@ -15,6 +15,10 @@
 #'
 #' @seealso [draft.software()]
 #' @keywords classes
+#'
+#' @importFrom utils compareVersion
+#' @importFrom utils packageVersion
+#'
 #' @export
 
 check.software <- function() {
