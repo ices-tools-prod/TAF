@@ -1,60 +1,85 @@
-#' Check versions with those in SOFTWARE.bib
+#' Check SOFTWARE.bib Against Global Packages
 #'
-#' Compare installed and required package versions
+#' Compare versions declared in \verb{SOFTWARE.bib} with packages installed in
+#' the global R library.
 #'
-#' @details
-#' A SOFTWARE.bib file can be use to record what package versions a certain
-#' analysis expects. Those available in the running session can be compared
-#' with those listed in the file. A warning is printed if the former are
-#' earlier that the later.
+#' @param full whether to return full data frame as output.
 #'
-#' @return TRUE or FALSE if available packages match those required or not.
+#' @return
+#' Logical vector (or data frame if \verb{full = TRUE}) indicating which
+#' installed packages are \dfn{ready}, i.e., at least as new as the version
+#' required in \verb{SOFTWARE.bib}.
 #'
-#' @name check.software
-#' @rdname check.software
+#' A warning is raised if any installed packages are older than required.
 #'
-#' @seealso [draft.software()]
-#' @keywords classes
+#' @note
+#' Generally, TAF installs R packages that are declared in \verb{SOFTWARE.bib}
+#' inside the TAF library (\verb{boot/library}). This guarantees that the right
+#' versions of packages are installed for the analysis. The \code{taf.library}
+#' function is then used to load packages from the TAF library.
+#'
+#' In special cases, however, it might be useful to compare the versions of
+#' packages declared in \verb{SOFTWARE.bib} against packages that are installed
+#' in the global R library, outside the TAF library.
+#'
+#' @seealso
+#' \code{\link{taf.boot}} and \code{\link{taf.library}} are the general tools to
+#' install and load packages of the correct version in the TAF library.
+#'
+#' \code{\link{update.packages}} can be used to update packages in the general R
+#' library to the newest version available on CRAN.
+#'
+#' @examples
+#' \dontrun{
+#' check.software()
+#' check.software(full)
+#' }
 #'
 #' @importFrom utils compareVersion
 #' @importFrom utils packageVersion
 #'
 #' @export
 
-check.software <- function() {
-
+check.software <- function(full=FALSE)
+{
   # GET bib file
-  bibfile <- (file.path(boot.dir(), "SOFTWARE.bib"))
+  bibfile <- file.path(boot.dir(), "SOFTWARE.bib")
 
   # CHECK file exists
   if(!file.exists(bibfile))
-    stop(paste0("File ", boot.dir(), "/SOFTWARE.bib does not exist"))
+    stop(paste0("file ", boot.dir(), "/SOFTWARE.bib does not exist"))
 
   # READ bib file
   entries <- taf.sources("software")
 
-  # EXTRACT versions
-  versions <- sapply(entries, '[[', 'version')
+  # EXTRACT required version
+  req <- sapply(entries, "[[", "version")
+  req <- gsub("[,; ].*", "", req)  # remove text after comma/semicolon/space
+  out <- data.frame(Package=names(req), Required=req, row.names=NULL)
 
-  # COMPARE with available in session: 0 if equal, -1 is too old, 1 if newer
-  comparison <- unlist(lapply(setNames(nm=names(versions)), function(x)
-    compareVersion(as.character(packageVersion(x)), versions[x])))
-
-  # FIND those too old
-  toold <- comparison == -1
-
-  # WARN if any SOFTWARE.bib:versions > available
-  if(any(toold)) {
-
-    msg <- lapply(names(toold)[toold], function(x)
-      paste0(x, ": ", packageVersion(x), " installed but ", versions[x],
-             " required\n"))
-
-    warning(strwrap(msg, prefix="; ", initial=""))
-
-    invisible(FALSE)
-
-  } else {
-    invisible(TRUE)
+  # COMPARE with installed version
+  out$Installed <- NA
+  out$Ready <- NA
+  for(i in seq_len(nrow(out)))
+  {
+    inst <- try(as.character(packageVersion(out$Package[i])), silent=TRUE)
+    out$Installed[i] <- if(inherits(inst, "try-error")) NA else inst
+    cmp <- compareVersion(out$Required[i], out$Installed[i])
+    out$Ready[i] <- if(is.na(out$Installed[i])) NA else cmp < 1
   }
+
+  # WARN if any packages are obsolete (Installed < Required)
+  obs <- which(!out$Ready)
+  if(length(obs) > 0)
+  {
+    txt <- paste(out$Package[obs], out$Installed[obs], "installed but",
+                 out$Required[obs], "required", collapse="; ")
+    warning(txt)
+  }
+
+  # RETURN data frame or vector
+  if(full)
+    out
+  else
+    invisible(setNames(out$Ready, out$Package))
 }

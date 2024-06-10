@@ -2,23 +2,45 @@
 % Please edit documentation in R/check.software.R
 \name{check.software}
 \alias{check.software}
-\title{Check versions with those in SOFTWARE.bib}
+\title{Check SOFTWARE.bib Against Global Packages}
 \usage{
-check.software()
+check.software(full = FALSE)
+}
+\arguments{
+\item{full}{whether to return full data frame as output.}
 }
 \value{
-TRUE or FALSE if available packages match those required or not.
+Logical vector (or data frame if \verb{full = TRUE}) indicating which
+installed packages are \dfn{ready}, i.e., at least as new as the version
+required in \verb{SOFTWARE.bib}.
+
+A warning is raised if any installed packages are older than required.
 }
 \description{
-Compare installed and required package versions
+Compare versions declared in \verb{SOFTWARE.bib} with packages installed in
+the global R library.
 }
-\details{
-A SOFTWARE.bib file can be use to record what package versions a certain
-analysis expects. Those available in the running session can be compared
-with those listed in the file. A warning is printed if the former are
-earlier that the later.
+\note{
+Generally, TAF installs R packages that are declared in \verb{SOFTWARE.bib}
+inside the TAF library (\verb{boot/library}). This guarantees that the right
+versions of packages are installed for the analysis. The \code{taf.library}
+function is then used to load packages from the TAF library.
+
+In special cases, however, it might be useful to compare the versions of
+packages declared in \verb{SOFTWARE.bib} against packages that are installed
+in the global R library, outside the TAF library.
+}
+\examples{
+\dontrun{
+check.software()
+check.software(full)
+}
+
 }
 \seealso{
-[draft.software()]
+\code{\link{taf.boot}} and \code{\link{taf.library}} are the general tools to
+install and load packages of the correct version in the TAF library.
+
+\code{\link{update.packages}} can be used to update packages in the general R
+library to the newest version available on CRAN.
 }
-\keyword{classes}

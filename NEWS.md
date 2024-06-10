@@ -1,4 +1,7 @@
-# TAF 4.3.0 (2024-02-28)
+# TAF 4.3.0 (2024-06-11)
+
+* Added function check.software() to check global package versions - an
+  administrative tool for special cases. Code contributed by Iago Mosqueira.
 
 * Added function ddim() to show the data dimensions of a table.
 

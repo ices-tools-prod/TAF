@@ -1,7 +1,7 @@
 
-R version 4.3.2 (2023-10-31) -- "Eye Holes"
-Copyright (C) 2023 The R Foundation for Statistical Computing
-Platform: x86_64-pc-linux-gnu (64-bit)
+R version 4.4.0 (2024-04-24) -- "Puppy Cup"
+Copyright (C) 2024 The R Foundation for Statistical Computing
+Platform: x86_64-pc-linux-gnu
 
 R is free software and comes with ABSOLUTELY NO WARRANTY.
 You are welcome to redistribute it under certain conditions.
@@ -203,6 +203,26 @@ Type 'q()' to quit R.
 6 1968  36.915 106.373 42.569 12.330
 7 1969   5.434  32.840 31.532 13.641
 8 1970 107.177  42.403 18.547 13.272
+> 
+> 
+> 
+> cleanEx()
+> nameEx("check.software")
+> ### * check.software
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: check.software
+> ### Title: Check SOFTWARE.bib Against Global Packages
+> ### Aliases: check.software
+> 
+> ### ** Examples
+> 
+> ## Not run: 
+> ##D check.software()
+> ##D check.software(full)
+> ## End(Not run)
+> 
 > 
 > 
 > 
@@ -1818,7 +1838,7 @@ detaching ‘package:lattice’
 
 > options(digits = 7L)
 > base::cat("Time elapsed: ", proc.time() - base::get("ptime", pos = 'CheckExEnv'),"\n")
-Time elapsed:  0.236 0.001 0.236 0 0 
+Time elapsed:  0.216 0.008 0.225 0 0 
 > grDevices::dev.off()
 null device 
           1 
