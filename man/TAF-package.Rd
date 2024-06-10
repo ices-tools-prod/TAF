@@ -132,6 +132,13 @@ To explore example TAF stock assessments, see the introductory
 The \href{https://github.com/ices-taf/doc/wiki}{TAF Wiki} provides additional
 help resources.
 }
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://github.com/ices-tools-prod/TAF}
+}
+
+}
 \author{
 Arni Magnusson and Colin Millar.
 }

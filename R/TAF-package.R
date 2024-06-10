@@ -1,5 +1,3 @@
-#' @docType package
-#'
 #' @name TAF-package
 #'
 #' @aliases TAF
@@ -135,4 +133,4 @@
 #' source.all()
 #' }
 
-NA
+"_PACKAGE"
