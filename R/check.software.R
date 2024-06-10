@@ -1,5 +1,5 @@
 #' Check versions with those in SOFTWARE.bib
-#' 
+#'
 #' Compare installed and required package versions
 #'
 #' @details
@@ -19,7 +19,7 @@
 
 check.software <- function() {
 
-  # GET bib file                         
+  # GET bib file
   bibfile <- (file.path(boot.dir(), "SOFTWARE.bib"))
 
   # CHECK file exists
@@ -44,16 +44,13 @@ check.software <- function() {
 
     msg <- lapply(names(toold)[toold], function(x)
       paste0(x, ": ", packageVersion(x), " installed but ", versions[x],
-      " required\n"))
+             " required\n"))
 
     warning(strwrap(msg, prefix="; ", initial=""))
-  
+
     invisible(FALSE)
 
   } else {
     invisible(TRUE)
   }
 }
-
-
-
