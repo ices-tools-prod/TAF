@@ -64,7 +64,7 @@ taf.skeleton <- function(path = ".", force = FALSE, pkgs = "TAF",
   }
 
   if (gitignore) {
-    ignore <- c("/boot/data", "/boot/software", "/data",
+    ignore <- c("/boot/data", "boot/library", "/boot/software", "/data",
                 paste0("/", file_path_sans_ext(model.script)), "/output",
                 "/report", "*.Rproj", ".RData", ".Rhistory", ".Rproj.user",
                 ".Ruserdata")
