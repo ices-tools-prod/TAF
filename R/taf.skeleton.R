@@ -26,7 +26,7 @@
 #' @export
 
 taf.skeleton <- function(path = ".", force = FALSE, pkgs = "TAF",
-                         model.script = "model.R", gitignore=TRUE)
+                         model.script = "model.R", gitignore = TRUE)
 {
   # only overwrite files if force = TRUE
   safe.cat <- function(..., file, force) {
