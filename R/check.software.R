@@ -32,7 +32,7 @@
 #' @examples
 #' \dontrun{
 #' check.software()
-#' check.software(full)
+#' check.software(full=TRUE)
 #' }
 #'
 #' @importFrom utils compareVersion
