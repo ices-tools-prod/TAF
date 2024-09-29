@@ -18,7 +18,7 @@
 
 * Improved taf.boot() so it is not affected by user option "pkgType". Changed
   taf.boot() so it handles multiple filenames/URLs in 'source' field, separated
-  by comma.
+  by comma. Handled by internal function process.entry().
 
 
 
