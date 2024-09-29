@@ -17,7 +17,7 @@ Description: General framework to organize data, methods, and results used in
   for the next step. Convenience functions are provided to version control the
   required data and software, run analyses, clean residues from previous runs,
   manage files, manipulate tables, and produce figures. With a focus on
-  stability and reproducible analyses, TAF is designed to have no package
+  stability and reproducible analyses, the TAF package comes with no
   dependencies. TAF forms a base layer for the 'icesTAF' package and other
   scientific applications.
 License: GPL-3
