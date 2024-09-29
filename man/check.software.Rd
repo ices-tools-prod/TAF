@@ -33,7 +33,7 @@ in the global R library, outside the TAF library.
 \examples{
 \dontrun{
 check.software()
-check.software(full)
+check.software(full=TRUE)
 }
 
 }
