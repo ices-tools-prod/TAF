@@ -14,7 +14,7 @@
 #' Convenience functions are provided to version control the required data and
 #' software, run analyses, clean residues from previous runs, manage files,
 #' manipulate tables, and produce figures. With a focus on stability and
-#' reproducible analyses, TAF is designed to have no package dependencies.
+#' reproducible analyses, the TAF package comes with no dependencies.
 #'
 #' TAF forms a base layer for the
 #' \href{https://cran.r-project.org/package=icesTAF}{icesTAF} package and other
