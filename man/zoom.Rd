@@ -52,9 +52,9 @@ object structure varies between plots. One solution is to pass
 The default values result in lattice plots that have similar text size as
 base plots, when using \code{taf.png}.
 
-This function ends with a \code{\link[=print.trellis]{print}} call, to make
-it easy to export the lattice plot to a file, without the need of an explicit
-\code{print}.
+This function ends with a \code{\link[lattice:print.trellis]{print}} call, to
+make it easy to export the lattice plot to a file, without the need of an
+explicit \code{print}.
 }
 \examples{
 library(lattice)
@@ -81,8 +81,8 @@ dev.off()
 
 }
 \seealso{
-\code{\link{Lattice}} plots are created using \code{\link{xyplot}} or related
-functions.
+\code{\link[lattice]{Lattice}} plots are created using
+\code{\link[lattice]{xyplot}} or related functions.
 
 \code{\link{taf.png}} opens a PNG graphics device.
 
