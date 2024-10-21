@@ -1,5 +1,5 @@
 
-R version 4.4.0 (2024-04-24) -- "Puppy Cup"
+R version 4.4.1 (2024-06-14) -- "Race for Your Life"
 Copyright (C) 2024 The R Foundation for Statistical Computing
 Platform: x86_64-pc-linux-gnu
 
@@ -220,7 +220,7 @@ Type 'q()' to quit R.
 > 
 > ## Not run: 
 > ##D check.software()
-> ##D check.software(full)
+> ##D check.software(full=TRUE)
 > ## End(Not run)
 > 
 > 
@@ -1838,7 +1838,7 @@ detaching ‘package:lattice’
 
 > options(digits = 7L)
 > base::cat("Time elapsed: ", proc.time() - base::get("ptime", pos = 'CheckExEnv'),"\n")
-Time elapsed:  0.216 0.008 0.225 0 0 
+Time elapsed:  0.176 0.005 0.185 0 0 
 > grDevices::dev.off()
 null device 
           1 
