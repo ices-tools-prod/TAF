@@ -36,8 +36,5 @@ file.remove(file)
 \seealso{
 \code{\link{line.endings}} examines line endings.
 
-\code{\link{write.taf}} uses \code{unix2dos} to ensure that the resulting
-files have Dos line endings.
-
 \code{\link{TAF-package}} gives an overview of the package.
 }
