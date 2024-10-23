@@ -8,10 +8,11 @@
 * Added function taf.libraries() to load all packages from TAF library. Code
   contributed by Iago Mosqueira.
 
+* Added argument 'force' to dos2unix() and unix2dos().
+
 * Added argument 'quiet' to make(). Renamed argument 'debug' to 'details'.
 
-* Added argument 'gitignore' to taf.skeleton() for writing a .gitignore file,
-  enabled by default.
+* Added argument 'gitignore' to taf.skeleton().
 
 * Improved draft.software() so it supports packages from r-universe. Code
   contributed by Iago Mosqueira.
