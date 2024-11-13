@@ -9,7 +9,25 @@
 #'        TAF package, i.e. \code{library(TAF)}.
 #' @param model.script model script filename, either \code{model.R} (default) or
 #'        \code{method.R}.
-#' @param gitignore whether to write a \file{.gitignore} file.
+#' @param gitignore whether to write TAF entries to a \file{.gitignore} file.
+#'
+#' @details
+#' When \code{gitignore = TRUE}, the following entries will be written to a
+#' \verb{.gitignore} file, appending if the file exists already:
+#' \preformatted{
+#' /boot/data
+#' /boot/library
+#' /boot/software
+#' /data
+#' /model
+#' /output
+#' /report
+#' *.Rproj
+#' .RData
+#' .Rhistory
+#' .Rproj.user
+#' .Ruserdata
+#' }
 #'
 #' @return Full path to analysis directory.
 #'
@@ -64,11 +82,13 @@ taf.skeleton <- function(path = ".", force = FALSE, pkgs = "TAF",
   }
 
   if (gitignore) {
-    ignore <- c("/boot/data", "boot/library", "/boot/software", "/data",
+    ignore <- c("/boot/data", "/boot/library", "/boot/software", "/data",
                 paste0("/", file_path_sans_ext(model.script)), "/output",
                 "/report", "*.Rproj", ".RData", ".Rhistory", ".Rproj.user",
                 ".Ruserdata")
-    write(ignore, ".gitignore")
+    if(file.exists(".gitignore"))
+      ignore <- ignore[!ignore %in% readLines(".gitignore")]
+    write(ignore, ".gitignore", append = TRUE)
   }
 
   invisible(getwd())

@@ -19,13 +19,31 @@ TAF package, i.e. \code{library(TAF)}.}
 \item{model.script}{model script filename, either \code{model.R} (default) or
 \code{method.R}.}
 
-\item{gitignore}{whether to write a \file{.gitignore} file.}
+\item{gitignore}{whether to write TAF entries to a \file{.gitignore} file.}
 }
 \value{
 Full path to analysis directory.
 }
 \description{
 Create initial directories and R scripts for a new TAF analysis.
+}
+\details{
+When \code{gitignore = TRUE}, the following entries will be written to a
+\verb{.gitignore} file, appending if the file exists already:
+\preformatted{
+/boot/data
+/boot/library
+/boot/software
+/data
+/model
+/output
+/report
+*.Rproj
+.RData
+.Rhistory
+.Rproj.user
+.Ruserdata
+}
 }
 \examples{
 \dontrun{
