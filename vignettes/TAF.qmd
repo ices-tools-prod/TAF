@@ -12,3 +12,17 @@ vignette: >
 ---
 
 ## Overview
+
+### Objectives of TAF
+
+### Structured Workflow
+
+### Running a TAF Analysis
+
+## Minimal Example: Simple Linear Regression
+
+## TAF Features
+
+## Online Examples
+
+## References
