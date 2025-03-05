@@ -9,7 +9,7 @@ Authors@R: c(person("Arni", "Magnusson", role=c("aut","cre"), email="thisisarni@
              person("Ibrahim", "Umar", role="ctb"),
              person("Hjalte", "Parner", role="ctb"))
 Imports: grDevices, lattice, methods, stats, tools, utils
-Suggests: knitr
+Suggests: quarto
 LazyData: yes
 Description: General framework to organize data, methods, and results used in
   reproducible scientific analyses. A TAF analysis consists of four scripts
@@ -23,7 +23,7 @@ Description: General framework to organize data, methods, and results used in
   scientific applications.
 License: GPL-3
 URL: https://github.com/ices-tools-prod/TAF
-VignetteBuilder: knitr
+VignetteBuilder: quarto
 Encoding: UTF-8
 RoxygenNote: 7.3.2
 Roxygen: list(old_usage=TRUE)

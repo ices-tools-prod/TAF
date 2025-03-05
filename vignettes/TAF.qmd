@@ -1,0 +1,14 @@
+---
+title:  Introduction to the TAF Package
+author: Arni Magnusson and Colin Millar
+format:
+  html:
+    number-sections: true
+    toc: true
+vignette: >
+  %\VignetteIndexEntry{Introduction to the TAF package}
+  %\VignetteEngine{quarto::html}
+  %\VignetteEncoding{UTF-8}
+---
+
+## Overview
