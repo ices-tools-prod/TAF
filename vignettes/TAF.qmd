@@ -52,24 +52,33 @@ Script     | Purpose
 `output.R` | Extract results of interest
 `report.R` | Plots and tables for report
 
-These scripts are run sequentially in alphabetical order, and each script reads
-from files created in a previous step. Each script
+These scripts share the same general structure, starting with loading packages
+and reading in files, then performing computations and and writing out files.
+They are run sequentially in alphabetical order, where each script reads from
+files created in a previous step.
 
-![](figs/diagram.png){width=70%}
+The initial data that are used in the analysis are declared in a file called
+`DATA.bib`, which is processed by the `taf.boot()` function. During this boot
+procedure, each data entry is processed and the TAF system then makes the data
+available in the `boot/data` folder, where the `data.R` script will read it.
 
-TAF analyses can be full or partial.
+<div style="text-align:center"><img src="figs/diagram.png" width="400"></div>
+
+The `SOFTWARE.bib` file is optional. It is not used in the simple linear
+regression demo (@sec-linear-regression) but is covered in @sec-boot-procedure
+describing the boot procedure in more detail.
 
 ### Running a TAF Analysis
 
 ## Simple Demo
 
-### Linear Regression
+### Linear Regression {#sec-linear-regression}
 
 ### Scripts and Folders
 
 ## Features
 
-### The Boot Procedure
+### The Boot Procedure {#sec-boot-procedure}
 
 ### Utility Functions
 
