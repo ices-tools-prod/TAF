@@ -11,18 +11,68 @@ vignette: >
   %\VignetteEncoding{UTF-8}
 ---
 
-## Overview
+## Introduction
 
-### Objectives of TAF
+### Objectives
 
-### Structured Workflow
+The overarching goal of the Transparent Assessment Framework (TAF) is to support
+*open and reproducible* research. To achieve this goal, the following objectives
+have guided the design of TAF:
+
+1. Provide a standard workflow structure that is general enough for any analysis
+   that can be run from R.
+
+2. Introduce minimal constraints or learning curve, making it easy for a
+   beginner to create a new workflow or convert an existing workflow to TAF
+   format.
+
+3. Enable reviewers to browse the data, model settings, and results, without
+   being experts in R or the specific methods used.
+
+4. Enable anyone to rerun the analysis on another computer and get the same
+   results.
+
+5. Require the scientist to describe the data that are used in the analysis and
+   where they came from.
+
+6. Invite the scientist to document with scripts how they processed the data
+   before feeding them to the model.
+
+7. Invite the scientist to specify which versions of software are used, so the
+   original analysis can be rerun at a later time.
+
+### Design
 
 ### Running a TAF Analysis
 
-## Minimal Example: Simple Linear Regression
+## Simple Demo
 
-## TAF Features
+### Linear Regression
+
+### Scripts and Folders
+
+## Features
+
+### The Boot Procedure
+
+### Utility Functions
+
+## Related Packages
+
+### icesTAF
+
+### makeit
+
+### SOFIA
+
+### targets
 
 ## Online Examples
+
+### ICES
+
+### FAO
+
+### SPC
 
 ## References
