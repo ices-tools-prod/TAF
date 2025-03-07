@@ -32,8 +32,8 @@ have guided the design of TAF:
 4. Enable anyone to rerun the analysis on another computer and get the same
    results.
 
-5. Require the scientist to describe the data that are used in the analysis and
-   where they came from.
+5. Require the scientist to briefly describe the data that are used in the
+   analysis and where they came from.
 
 6. Invite the scientist to document with scripts how they processed the data
    before feeding them to the model.
@@ -52,10 +52,10 @@ Script     | Purpose
 `output.R` | Extract results of interest
 `report.R` | Plots and tables for report
 
-These scripts share the same general structure, starting with loading packages
-and reading in files, then performing computations and and writing out files.
-They are run sequentially in alphabetical order, where each script reads from
-files created in a previous step.
+These scripts all share the same general structure, starting with loading
+packages and reading in files, then performing computations and writing out
+files. They are run sequentially in alphabetical order, where each script reads
+from files created in a previous step.
 
 The initial data that are used in the analysis are declared in a file called
 `DATA.bib`, which is processed by the `taf.boot()` function. During this boot
@@ -66,13 +66,68 @@ available in the `boot/data` folder, where the `data.R` script will read it.
 
 The `SOFTWARE.bib` file is optional. It is not used in the simple linear
 regression demo (@sec-linear-regression) but is covered in @sec-boot-procedure
-describing the boot procedure in more detail.
+where the boot procedure is described in more detail.
 
 ### Running a TAF Analysis
+
+The first step is to start R and make sure that the current working directory is
+set to the location of the TAF scripts, `data.R` etc. Some R editors do this
+automatically when opening an R script and in RStudio there is a menu command:
+*Session - Set Working Directory - To Source File Location*.
+
+All TAF analyses can be run using the following commands in R:
+
+```{r}
+#| warning: false
+
+library(TAF)
+taf.boot()
+source.all()
+```
+
+The `taf.boot()` looks for an existing `boot` directory to set up the data and
+software required for the analysis. Then `source.all()` runs the `data.R`,
+`model.R`, `output.R`, and `report.R` scripts in that order. The invidual
+scripts can also be run using `source()` or equivalently `source.taf()`, or line
+by line in an R editor.
 
 ## Simple Demo
 
 ### Linear Regression {#sec-linear-regression}
+
+To demonstrate how a simple analysis works in TAF, consider a linear regression
+where the *x* and *y* coordinates come from a text file.
+
+The `linreg` example comes with the TAF package and can either be downloaded
+from GitHub,
+
+```{r}
+#| echo: false
+
+unlink("linreg", recursive=TRUE)
+```
+
+```
+git clone https://github.com/ices-tools-prod/TAF
+cd TAF/inst/examples/linreg
+```
+
+or copied from a TAF installation to a convenient place to test and run:
+
+```{r}
+file.copy(system.file("examples/linreg", package="TAF"), ".", recursive=TRUE)
+setwd("linreg")
+dir()
+```
+
+In a file explorer, this analysis consists of a `boot` folder and four TAF
+scripts:
+
+```{r}
+knitr::opts_knit$set(root.dir = 'linreg')
+
+dir()
+```
 
 ### Scripts and Folders
 
@@ -99,5 +154,7 @@ describing the boot procedure in more detail.
 ### FAO
 
 ### SPC
+
+## Creating a TAF Analysis
 
 ## References
