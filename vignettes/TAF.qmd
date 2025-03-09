@@ -45,12 +45,12 @@ have guided the design of TAF:
 
 TAF divides a workflow into four steps:
 
-Script     | Purpose
----------- | ---------------------------
-`data.R`   | Preprocess data
-`model.R`  | Run model
-`output.R` | Extract results of interest
-`report.R` | Plots and tables for report
+Script         | Purpose
+-------------- | ---------------------------
+**`data.R`**   | Preprocess data
+**`model.R`**  | Run model
+**`output.R`** | Extract results of interest
+**`report.R`** | Plots and tables for report
 
 These scripts all share the same general structure, starting with loading
 packages and reading in files, then performing computations and writing out
@@ -60,101 +60,204 @@ from files created in a previous step.
 The initial data that are used in the analysis are declared in a file called
 `DATA.bib`, which is processed by the `taf.boot()` function. During this boot
 procedure, each data entry is processed and the TAF system then makes the data
-available in the `boot/data` folder, where the `data.R` script will read it.
+available in the `boot/data` subfolder, where the `data.R` script will read it.
 
 <div style="text-align:center"><img src="figs/diagram.png" width="400"></div>
 
 The `SOFTWARE.bib` file is optional. It is not used in the simple linear
-regression demo (@sec-linear-regression) but is covered in @sec-boot-procedure
-where the boot procedure is described in more detail.
+regression example below but is covered in @sec-boot-procedure where the boot
+procedure is described in more detail.
 
-### Running a TAF Analysis
+## Running a TAF Analysis
 
-The first step is to start R and make sure that the current working directory is
-set to the location of the TAF scripts, `data.R` etc. Some R editors do this
-automatically when opening an R script and in RStudio there is a menu command:
-*Session - Set Working Directory - To Source File Location*.
+### Linear Regression Example
+
+To demonstrate how a simple analysis works in TAF, consider a linear regression
+where the *x* and *y* coordinates come from a text file. The `linreg` example
+comes with the TAF package and can be copied to a convenient place to test and
+run:
+
+```{r}
+#| include: false
+
+unlink("linreg", recursive=TRUE)
+```
+
+```{r}
+#| output: false
+
+file.copy(system.file("examples/linreg", package="TAF"), ".", recursive=TRUE)
+setwd("linreg")
+```
+
+### Boot and Run
+
+Before running the analysis, the workflow consists of a `boot` folder and four
+TAF scripts:
+
+<div style="text-align:center"><img src="figs/explorer_1.png" width="100"></div>
+
+To run a TAF analysis, the first step is to start R and make sure that the
+current working directory is set to the location of the TAF scripts: `data.R`,
+`model.R`, etc. Some R editors do this automatically when opening an R script
+and in RStudio there is a menu command: *Session - Set Working Directory - To
+Source File Location*.
 
 All TAF analyses can be run using the following commands in R:
 
 ```{r}
-#| warning: false
+#| eval: false
 
 library(TAF)
 taf.boot()
 source.all()
 ```
 
-The `taf.boot()` looks for an existing `boot` directory to set up the data and
-software required for the analysis. Then `source.all()` runs the `data.R`,
-`model.R`, `output.R`, and `report.R` scripts in that order. The invidual
-scripts can also be run using `source()` or equivalently `source.taf()`, or line
-by line in an R editor.
+```{r}
+#| include: false
 
-## Simple Demo
+setwd("linreg")  # this is for the vignette to run, not for the user
+library(TAF)
+taf.boot()
+source.all()
+```
 
-### Linear Regression {#sec-linear-regression}
+The `taf.boot()` function looks for an existing `boot` folder to setup the data
+and software required for the analysis. Then `source.all()` runs the `data.R`,
+`model.R`, `output.R`, and `report.R` scripts in that order. The individual
+scripts can also be run using `source()` or line by line in an R editor.
 
-To demonstrate how a simple analysis works in TAF, consider a linear regression
-where the *x* and *y* coordinates come from a text file.
+After running the analysis, each script has created a corresponding folder,
+`data.R` creating a `data` folder, etc.
 
-The `linreg` example comes with the TAF package and can either be downloaded
-from GitHub,
+<div style="text-align:center"><img src="figs/explorer_2.png" width="100"></div>
+
+### Structured Scripts
+
+The `data.R` script has populated the `data` folder with comma-separated values
+(CSV) files representing the data that are used in the analysis and the
+`model.R` script produced `model` results in a machine-readable format. The
+purpose of the `output.R` script is to read the results from the `model` folder
+and write out CSV files representing the results that are of primary interest.
+Finally, `report.R` reads in the CSV output and produces plots and formatted
+tables, often with rounded numbers, which can be incorporated into a report. The
+`report.R` script can also produce a dynamic document in various formats if the
+scientist writes the script in that way.
+
+It is important to note that TAF does not do any of this by itself. All the work
+is performed by the R scripts that the scientist writes. Typically, a TAF script
+has the following general structure:
 
 ```{r}
-#| echo: false
+#| eval: false
 
-unlink("linreg", recursive=TRUE)
+# What the script does
+
+# Before: file1.csv, file2.rds, file3.spec (infolder)
+# After:  file4.csv, file5.csv, file6.png (outfolder)
+
+library(TAF)
+library(SomePackage)
+
+mkdir("folder")
+
+# Read files from previous step
+dat1 <- read.taf("infolder/file1.csv")
+dat2 <- readRDS("infolder/file2.rds")
+dat3 <- importSpecial("infolder/file3.spec")
+
+# Some computations
+# [...]
+
+# Write out tables and plots
+write.taf(dat4, dir="outfolder")
+write.taf(dat5, dir="outfolder")
+taf.png("file6")
+SpecialPlot(dat6)
+dev.off()
 ```
 
-```
-git clone https://github.com/ices-tools-prod/TAF
-cd TAF/inst/examples/linreg
-```
+A TAF script traditionally starts with a comment section that provides a brief
+description of what the script does, followed by a description of the state
+before and after the script is run, in terms of input and output files. In the
+pseudocode example above, the input files are in various formats that are not
+necessarily CSV format.
 
-or copied from a TAF installation to a convenient place to test and run:
+The next section loads the TAF package and specific packages that are required
+for the analysis. This section may also load functions that the scientist has
+written and stored in a dedicated file that could be called `utilities.R`. This
+is also a convenient time to create the directory for the output files of this
+script. Using the TAF function `mkdir()` rather than the base R function
+`dir.create()` has the minor benefit of not producing a warning if the directory
+already exists, which is sometimes the case.
 
-```{r}
-file.copy(system.file("examples/linreg", package="TAF"), ".", recursive=TRUE)
-setwd("linreg")
-dir()
-```
+Likewise, the TAF function `read.taf()` is similar to the base R function
+`read.csv()` but with some sensible defaults and useful features for typical TAF
+workflows. The RDS file format can be practical to read and write list-like
+objects in R, while `importSpecial()` in the above example is a function
+provided by `SomePackage` to import a software-specific file format. The TAF
+functions `write.taf()` and `taf.png()` are equivalent to the base R functions
+`write.csv()` and `png()` with some sensible defaults and useful features for
+TAF workflows.
 
-In a file explorer, this analysis consists of a `boot` folder and four TAF
-scripts:
+An important observation in computer science (Spolsky 2004) is that it is harder
+to read code than to write it. For analytical work, this poses challenges for
+scientific reviews and the reuse of code at a later time, often by another
+person. TAF addresses this challenge by structuring a workflow in four separate
+scripts, each handling a clear and well-defined task, rather than in one
+monolithic script that does everything.
 
-```{r}
-knitr::opts_knit$set(root.dir = 'linreg')
+A medium-sized scientific workflow might consist of around 80 lines of code in
+`data.R`, 20 lines of code in `model.R`, 80 lines of code in `output.R`, and 80
+lines of code in `report.R`. In a larger workflow, where one of these steps
+might require a few hundred lines of code, TAF invites the scientist to organize
+the work in smaller steps, e.g., a very short `output.R` script could call
+secondary scripts such as `output_parameters.R`, `output_predictions.R`, and
+`output_likelihoods.R`.
 
-dir()
-```
+The CSV file format is default and convenient for saving tables in the `data`,
+`output`, and `report` folders, while the `model` folder contains results in any
+format, often determined by the software used in the analysis. For plots, the
+PNG file format is commonly used in TAF analyses, which can then be incorporated
+into reports in Word, HTML, or other formats. PDF is another format, practical
+for bundling many plots in a multipage file. All other file formats provided by R
+can be used.
 
-### Scripts and Folders
-
-## Features
+## TAF Features
 
 ### The Boot Procedure {#sec-boot-procedure}
 
 ### Utility Functions
 
-## Related Packages
+### Creating a New Analysis
 
-### icesTAF
+## The TAF Community
 
-### makeit
+### Browsing an Existing Analysis
 
-### SOFIA
+### Related Packages
 
-### targets
+icesTAF, makeit, SOFIA, targets
 
-## Online Examples
+### Online Examples
 
-### ICES
+ICES, FAO, SPC
 
-### FAO
+## Summary
 
-### SPC
+No dependencies.
 
-## Creating a TAF Analysis
+## Acknowledgements
+
+ICES folks
+
+FAO folks
+
+SPC folks
 
 ## References
+
+Spolsky, J. 2004. Joel on Software: And on Diverse and Occasionally Related
+Matters That Will Prove of Interest to Software Developers, Designers, and
+Managers, and to Those Who, Whether by Good Fortune or Ill Luck, Work with Them
+in Some Capacity. Berkeley: Apress.
