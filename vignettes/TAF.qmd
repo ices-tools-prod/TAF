@@ -220,9 +220,9 @@ The CSV file format is default and convenient for saving tables in the `data`,
 `output`, and `report` folders, while the `model` folder contains results in any
 format, often determined by the software used in the analysis. For plots, the
 PNG file format is commonly used in TAF analyses, which can then be incorporated
-into reports in Word, HTML, or other formats. PDF is another format, practical
-for bundling many plots in a multipage file. All other file formats provided by R
-can be used.
+into reports in Word, HTML, or other formats. PDF is another file format for
+plots, practical for bundling many plots together in a multipage file. All other
+file formats provided by R can be used.
 
 ## TAF Features
 
