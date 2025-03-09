@@ -5,6 +5,8 @@
 
 * Added function ddim() to show the data dimensions of a table.
 
+* Added function taf.example() to copy an example analysis from the TAF package.
+
 * Added function taf.libraries() to load all packages from TAF library. Code
   contributed by Iago Mosqueira.
 

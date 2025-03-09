@@ -86,7 +86,8 @@ unlink("linreg", recursive=TRUE)
 ```{r}
 #| output: false
 
-file.copy(system.file("examples/linreg", package="TAF"), ".", recursive=TRUE)
+library(TAF)
+taf.example("linreg")
 setwd("linreg")
 ```
 

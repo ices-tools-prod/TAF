@@ -27,6 +27,7 @@
 #'   \code{\link{draft.software}} \tab draft SOFTWARE.bib file\cr
 #'   \code{\link{period}}         \tab paste period string for DATA.bib\cr
 #'   \code{\link{taf.boot}}       \tab set up data files and software\cr
+#'   \code{\link{taf.example}}   \tab copy example analysis from TAF package\cr
 #'   \code{\link{taf.skeleton}}   \tab create empty TAF template
 #' }
 #' \emph{Running scripts:}

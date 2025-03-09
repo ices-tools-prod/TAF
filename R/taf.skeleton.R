@@ -32,6 +32,8 @@
 #' @return Full path to analysis directory.
 #'
 #' @seealso
+#' \code{\link{taf.example}} copies an example analysis from the TAF package.
+#'
 #' \code{\link{package.skeleton}} creates an empty template for a new R package.
 #'
 #' \code{\link{TAF-package}} gives an overview of the package.
