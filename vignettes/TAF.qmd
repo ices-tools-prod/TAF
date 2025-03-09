@@ -227,7 +227,27 @@ can be used.
 
 ### The Boot Procedure {#sec-boot-procedure}
 
+Similar to booting a computer, the TAF boot procedure readies the data and
+software components that are required for upcoming computations. The boot
+procedure takes place inside the `boot` folder, where the `taf.boot()` function
+looks for files called `DATA.bib` (required) and `SOFTWARE.bib` (optional).
+
+In the `linreg` example, the `DATA.bib` contains a single metadata entry:
+
+```
+@Misc{ezekiel.txt,
+  originator = {Mordecai Ezekiel},
+  year       = {1930},
+  title      = {Speed of automobile and distance to stop after signal},
+  source     = {file},
+}
+```
+
+TAF metadata entries follow the BibTeX format (Patashnik 2003)
+
 ### Utility Functions
+
+taf.example()
 
 ### Creating a New Analysis
 
@@ -256,6 +276,8 @@ FAO folks
 SPC folks
 
 ## References
+
+Patashnik, O. 2003. BibTEX yesterday, today, and tomorrow. TUGboat 24:25-30.
 
 Spolsky, J. 2004. Joel on Software: And on Diverse and Occasionally Related
 Matters That Will Prove of Interest to Software Developers, Designers, and
