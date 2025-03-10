@@ -201,6 +201,8 @@ functions `write.taf()` and `taf.png()` are equivalent to the base R functions
 `write.csv()` and `png()` with some sensible defaults and useful features for
 TAF workflows.
 
+### File organization
+
 An important observation in computer science (Spolsky 2004) is that it is harder
 to read code than to write it. For analytical work, this poses challenges for
 scientific reviews and the reuse of code at a later time, often by another
@@ -239,6 +241,8 @@ benefit of using the BibTeX format for TAF metadata is that information about
 all R packages is already available in this format, for example:
 
 ```{r}
+#| eval: false
+
 citation(package="TAF")
 ```
 
@@ -254,8 +258,31 @@ In the `linreg` example, the `DATA.bib` file contains a single metadata entry:
 ```
 
 Most of the metadata are of an informative nature for human consumption and not
-subject to strict rules. This entry informs us that the `ezekiel.txt` data comes
-from Mordecai Ezekiel and was used in an analysis in 1930,
+subject to strict rules. This entry informs us that the data were prepared by
+Mordecai Ezekiel and used in an analysis conducted in 1930. The only metadata
+fields that are parsed by `taf.boot()` are the key `ezekiel.txt` and source =
+`file`.
+
+The source field specifies where data or software originate from. The following
+types of values can be used in the source field:
+
+1. GitHub reference of the form `owner/repo[/subdir]@ref`, identifying a
+   specific version of GitHub resource.
+
+2. URL, identifying a file to download.
+
+3. Boot script that should be run to fetch or produce files.
+
+4. Relative path starting with `initial`, identifying the location of a file or
+   directory provided by the user.
+
+5. Special value `file` or `folder`, indicating a file or folder inside
+   `boot/initial/data` or `boot/initial/software`.
+
+The online TAF [Wiki](https://github.com/ices-taf/doc/wiki/Bib-entries) provides
+more details and examples of metadata entries.
+
+
 
 ### Utility functions
 
