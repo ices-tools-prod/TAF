@@ -1,5 +1,5 @@
 ---
-title:  Introduction to the TAF Package
+title:  Introduction to the TAF package
 author: Arni Magnusson and Colin Millar
 format:
   html:
@@ -68,9 +68,9 @@ The `SOFTWARE.bib` file is optional. It is not used in the simple linear
 regression example below but is covered in @sec-boot-procedure where the boot
 procedure is described in more detail.
 
-## Running a TAF Analysis
+## Running a TAF analysis
 
-### Linear Regression Example
+### Linear regression example
 
 To demonstrate how a simple analysis works in TAF, consider a linear regression
 where the *x* and *y* coordinates come from a text file. The `linreg` example
@@ -91,7 +91,7 @@ taf.example("linreg")
 setwd("linreg")
 ```
 
-### Boot and Run
+### Boot and run
 
 Before running the analysis, the workflow consists of a `boot` folder and four
 TAF scripts:
@@ -133,7 +133,7 @@ After running the analysis, each script has created a corresponding folder,
 
 <div style="text-align:center"><img src="figs/explorer_2.png" width="100"></div>
 
-### Structured Scripts
+### Structured scripts
 
 The `data.R` script has populated the `data` folder with comma-separated values
 (CSV) files representing the data that are used in the analysis and the
@@ -224,16 +224,25 @@ into reports in Word, HTML, or other formats. PDF is another file format for
 plots, practical for bundling many plots together in a multipage file. All other
 file formats provided by R can be used.
 
-## TAF Features
+## TAF features
 
-### The Boot Procedure {#sec-boot-procedure}
+### The boot procedure {#sec-boot-procedure}
 
 Similar to booting a computer, the TAF boot procedure readies the data and
 software components that are required for upcoming computations. The boot
 procedure takes place inside the `boot` folder, where the `taf.boot()` function
 looks for files called `DATA.bib` (required) and `SOFTWARE.bib` (optional).
 
-In the `linreg` example, the `DATA.bib` contains a single metadata entry:
+As indicated by the `bib` file extension, TAF metadata entries follow the BibTeX
+format (Patashnik 2003) originally designed for bibliographic information. The
+benefit of using the BibTeX format for TAF metadata is that information about
+all R packages is already available in this format, for example:
+
+```{r}
+citation(package="TAF")
+```
+
+In the `linreg` example, the `DATA.bib` file contains a single metadata entry:
 
 ```
 @Misc{ezekiel.txt,
@@ -244,23 +253,25 @@ In the `linreg` example, the `DATA.bib` contains a single metadata entry:
 }
 ```
 
-TAF metadata entries follow the BibTeX format (Patashnik 2003)
+Most of the metadata are of an informative nature for human consumption and not
+subject to strict rules. This entry informs us that the `ezekiel.txt` data comes
+from Mordecai Ezekiel and was used in an analysis in 1930,
 
-### Utility Functions
+### Utility functions
 
 taf.example()
 
-### Creating a New Analysis
+### Creating a new analysis
 
-## The TAF Community
+## The TAF community
 
-### Browsing an Existing Analysis
+### Browsing an existing analysis
 
-### Related Packages
+### Related packages
 
 icesTAF, makeit, SOFIA, targets
 
-### Online Examples
+### Online examples
 
 ICES, FAO, SPC
 
