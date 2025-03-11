@@ -279,10 +279,17 @@ types of values can be used in the source field:
 5. Special value `file` or `folder`, indicating a file or folder inside
    `boot/initial/data` or `boot/initial/software`.
 
-The online TAF [Wiki](https://github.com/ices-taf/doc/wiki/Bib-entries) provides
-more details and examples of metadata entries.
+The processing of metadata entries works in the same way for software and data,
+and when software entries point to R packages they are installed in a local
+library, specific for that workflow.
 
+Something about renv and Docker.
 
+The TAF package comes with utility functions `draft.data()` and
+`draft.software()` that facilitate the creation of the `DATA.bib` and
+`SOFTWARE.bib` files. The online TAF
+[Wiki](https://github.com/ices-taf/doc/wiki/Bib-entries) provides more details
+and examples of metadata entries.
 
 ### Utility functions
 
