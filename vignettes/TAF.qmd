@@ -3,7 +3,6 @@ title:  Introduction to the TAF package
 author: Arni Magnusson and Colin Millar
 format:
   html:
-    number-sections: true
     toc: true
 vignette: >
   %\VignetteIndexEntry{Introduction to the TAF package}
@@ -257,33 +256,42 @@ In the `linreg` example, the `DATA.bib` file contains a single metadata entry:
 }
 ```
 
-Most of the metadata are of an informative nature for human consumption and not
-subject to strict rules. This entry informs us that the data were prepared by
-Mordecai Ezekiel and used in an analysis conducted in 1930. The only metadata
-fields that are parsed by `taf.boot()` are the key `ezekiel.txt` and source =
-`file`.
+Most of the metadata are meant to be informative and the values are not subject
+to strict rules. The metadata example above informs us that the data were
+prepared by Mordecai Ezekiel for an analysis conducted in 1930. The only
+metadata fields that are parsed by `taf.boot()` are the reference key
+`ezekiel.txt` and source = `file`.
 
 The source field specifies where data or software originate from. The following
 types of values can be used in the source field:
 
 1. GitHub reference of the form `owner/repo[/subdir]@ref`, identifying a
-   specific version of GitHub resource.
+   specific version of a GitHub resource.
 
 2. URL, identifying a file to download.
 
-3. Boot script that should be run to fetch or produce files.
+3. Special value `script`, indicating that a boot script (a custom R script)
+   should be run to fetch or produce files.
 
 4. Relative path starting with `initial`, identifying the location of a file or
-   directory provided by the user.
+   directory somewhere inside the `boot/initial` folder.
 
-5. Special value `file` or `folder`, indicating a file or folder inside
-   `boot/initial/data` or `boot/initial/software`.
+5. Special value `file` or `folder`, indicating that the file or folder is
+   inside `boot/initial/data` or `boot/initial/software`.
 
-The processing of metadata entries works in the same way for software and data,
-and when software entries point to R packages they are installed in a local
-library, specific for that workflow.
+In the `linreg` example, the boot procedure simply copies `ezekiel.txt` from
+`boot/initial/data` to `boot/data`, where it is now available for subsequent
+computations. In other TAF workflows, `DATA.bib` may bring in data from multiple
+sources, involving local and remote databases, online data repositories, and
+GitHub resources.
 
-Something about renv and Docker.
+When metadata entries in `SOFTWARE.bib` point to R packages, they are installed
+in a local library for that workflow. The `SOFTWARE.bib` file is where the
+workflow author can specify the exact version for key software components that
+were used in the original analysis, pointing to specific releases, tags, or
+commits of each software. To strengthen reproducibility even further, TAF can be
+used in combination with the `renv` package, Docker, or other tools dedicated to
+reproducible research.
 
 The TAF package comes with utility functions `draft.data()` and
 `draft.software()` that facilitate the creation of the `DATA.bib` and
@@ -291,11 +299,39 @@ The TAF package comes with utility functions `draft.data()` and
 [Wiki](https://github.com/ices-taf/doc/wiki/Bib-entries) provides more details
 and examples of metadata entries.
 
-### Utility functions
-
-taf.example()
-
 ### Creating a new analysis
+
+### Overview of functions
+
+Several functions from the TAF package have been mentioned in this introduction:
+
+*Initial TAF steps*
+
+* `draft.data`
+* `draft.software`
+* `taf.boot`
+* `taf.example`
+* `taf.skeleton`
+
+*Running scripts*
+
+- `source.all`
+
+*File management*
+
+- `mkdir`
+- `read.taf`
+- `write.taf`
+
+*Plots*
+
+- `taf.png`
+
+The TAF package provides over 60 functions that can be useful but are not
+required for authoring or running TAF workflows. Every function comes with a
+help page that includes examples and cross-references. Furthermore, typing
+`?TAF` opens a package help page that gives an overview of all the functions in
+the package.
 
 ## The TAF community
 
@@ -323,9 +359,15 @@ SPC folks
 
 ## References
 
-Patashnik, O. 2003. BibTEX yesterday, today, and tomorrow. TUGboat 24:25-30.
+Patashnik, O. 2003. BibTEX yesterday, today, and tomorrow. *TUGboat*, 24,
+25-30.\
+https://tug.org/TUGboat/tb24-1/patashnik.pdf
 
 Spolsky, J. 2004. Joel on Software: And on Diverse and Occasionally Related
 Matters That Will Prove of Interest to Software Developers, Designers, and
 Managers, and to Those Who, Whether by Good Fortune or Ill Luck, Work with Them
-in Some Capacity. Berkeley: Apress.
+in Some Capacity. Berkeley: Apress.\
+https://doi.org/10.1007/978-1-4302-0753-5
+
+Ushey, K. and Hadley Wickham. renv: Project Environments.\
+https://cran.r-project.org/package=renv
