@@ -361,13 +361,13 @@ SPC folks
 
 Patashnik, O. 2003. BibTEX yesterday, today, and tomorrow. *TUGboat*, 24,
 25-30.\
-https://tug.org/TUGboat/tb24-1/patashnik.pdf
+<https://tug.org/TUGboat/tb24-1/patashnik.pdf>
 
-Spolsky, J. 2004. Joel on Software: And on Diverse and Occasionally Related
+Spolsky, J. 2004. *Joel on Software: And on Diverse and Occasionally Related
 Matters That Will Prove of Interest to Software Developers, Designers, and
 Managers, and to Those Who, Whether by Good Fortune or Ill Luck, Work with Them
-in Some Capacity. Berkeley: Apress.\
-https://doi.org/10.1007/978-1-4302-0753-5
+in Some Capacity.* Berkeley: Apress.\
+<https://doi.org/10.1007/978-1-4302-0753-5>
 
 Ushey, K. and Hadley Wickham. renv: Project Environments.\
-https://cran.r-project.org/package=renv
+<https://cran.r-project.org/package=renv>
