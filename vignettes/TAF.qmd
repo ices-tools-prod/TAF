@@ -134,6 +134,8 @@ After running the analysis, each script has created a corresponding folder,
 
 ### Structured scripts
 
+#### General structure
+
 The `data.R` script has populated the `data` folder with comma-separated values
 (CSV) files representing the data that are used in the analysis and the
 `model.R` script produced `model` results in a machine-readable format. The
@@ -158,6 +160,7 @@ has the following general structure:
 
 library(TAF)
 library(SomePackage)
+source("utilities.R")
 
 mkdir("folder")
 
@@ -200,7 +203,7 @@ functions `write.taf()` and `taf.png()` are equivalent to the base R functions
 `write.csv()` and `png()` with some sensible defaults and useful features for
 TAF workflows.
 
-### File organization
+#### File organization
 
 An important observation in computer science (Spolsky 2004) is that it is harder
 to read code than to write it. For analytical work, this poses challenges for
@@ -288,10 +291,8 @@ GitHub resources.
 When metadata entries in `SOFTWARE.bib` point to R packages, they are installed
 in a local library for that workflow. The `SOFTWARE.bib` file is where the
 workflow author can specify the exact version for key software components that
-were used in the original analysis, pointing to specific releases, tags, or
-commits of each software. To strengthen reproducibility even further, TAF can be
-used in combination with the `renv` package, Docker, or other tools dedicated to
-reproducible research.
+were used in the analysis, pointing to specific releases, tags, or commits of
+each software to strengthen reproducibility.
 
 The TAF package comes with utility functions `draft.data()` and
 `draft.software()` that facilitate the creation of the `DATA.bib` and
@@ -300,6 +301,8 @@ The TAF package comes with utility functions `draft.data()` and
 and examples of metadata entries.
 
 ### Creating a new analysis
+
+When authoring a TAF analysis, one can either start from a similar workflow
 
 ### Overview of functions
 
@@ -341,6 +344,14 @@ the package.
 
 icesTAF, makeit, SOFIA, targets
 
+#### renv
+
+Using `SOFTWARE.bib` declarations of software and versions, TAF supports
+reproducibility and allows the workflow to be rerun at a later time and produce
+the same results as the original analysis. Alternatively, TAF can be used in
+combination with the `renv` package (Ushey and Wickham 2025), Docker (Merkel
+2014), or other tools dedicated to reproducible research.
+
 ### Online examples
 
 ICES, FAO, SPC
@@ -359,6 +370,10 @@ SPC folks
 
 ## References
 
+Merkel, D. 2014. Docker: lightweight Linux containers for consistent development
+and deployment. *Linux Journal*, 239, 76-91.\
+<https://dl.acm.org/doi/pdf/10.5555/2600239>
+
 Patashnik, O. 2003. BibTEX yesterday, today, and tomorrow. *TUGboat*, 24,
 25-30.\
 <https://tug.org/TUGboat/tb24-1/patashnik.pdf>
@@ -369,5 +384,6 @@ Managers, and to Those Who, Whether by Good Fortune or Ill Luck, Work with Them
 in Some Capacity.* Berkeley: Apress.\
 <https://doi.org/10.1007/978-1-4302-0753-5>
 
-Ushey, K. and Hadley Wickham. renv: Project Environments.\
+Ushey, K. and Hadley Wickham. 2025. renv: Project Environments. R package
+version 1.1.2.\
 <https://cran.r-project.org/package=renv>
