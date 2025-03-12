@@ -349,8 +349,8 @@ icesTAF, makeit, SOFIA, targets
 Using `SOFTWARE.bib` declarations of software and versions, TAF supports
 reproducibility and allows the workflow to be rerun at a later time and produce
 the same results as the original analysis. Alternatively, TAF can be used in
-combination with the `renv` package (Ushey and Wickham 2025), Docker (Merkel
-2014), or other tools dedicated to reproducible research.
+combination with the `renv` package (Ushey and Wickham 2025), `rig` (Csárdi
+2024), Docker (Merkel 2014), and other tools dedicated to reproducible research.
 
 ### Online examples
 
@@ -369,6 +369,9 @@ FAO folks
 SPC folks
 
 ## References
+
+Csárdi, G. 2024. rig: The R Installation Manager. Version 0.7.0.\
+<https://github.com/r-lib/rig>
 
 Merkel, D. 2014. Docker: lightweight Linux containers for consistent development
 and deployment. *Linux Journal*, 239, 76-91.\
