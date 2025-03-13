@@ -303,8 +303,8 @@ and examples of metadata entries.
 ### Creating a new analysis
 
 When authoring a TAF analysis, one can either start with a similar workflow and
-adapt it to the current analysis or start with an empty workflow. The
-`taf.skeleton()` function creates a new empty workflow, consisting of an empty
+adapt it to the current analysis or start with a new workflow. The
+`taf.skeleton()` function creates a new workflow, consisting of an empty
 `boot/initial/data` folder and the four TAF scripts: `data.R`, `model.R`,
 `output.R`, and `report.R`. Each script provides a simple starting point for the
 analysis, for example, a new `data.R` script contains the following lines:
@@ -319,6 +319,13 @@ library(TAF)
 
 mkdir("data")
 ```
+
+After running `taf.skeleton()` to create a new TAF workflow, the author can
+populate the `boot/initial/data` folder with initial data files and run
+`draft.data(file=TRUE)` to produce a `DATA.bib` file.
+
+The next step is then to run `taf.boot()` to populate the `boot/data` folder and
+start editing the `data.R` script, reading files from the `boot/data` folder.
 
 ### Overview of functions
 

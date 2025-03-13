@@ -31,6 +31,15 @@
 #'
 #' @return Full path to analysis directory.
 #'
+#' @note
+#' After running \code{taf.skeleton()} to create a new TAF workflow, the author
+#' can populate the \code{boot/initial/data} folder with initial data files and
+#' run \code{draft.data(file=TRUE)} to produce a \code{DATA.bib} file.
+#'
+#' The next step is then to run \code{taf.boot()} to populate the
+#' \code{boot/data} folder and start editing the \code{data.R} script, reading
+#' files from the \code{boot/data} folder.
+#'
 #' @seealso
 #' \code{\link{taf.example}} copies an example analysis from the TAF package.
 #'
