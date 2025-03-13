@@ -64,7 +64,7 @@ taf.skeleton <- function(path = ".", force = FALSE, pkgs = "TAF",
   mkdir("boot/initial/data")
 
   # define headers
-  template <- paste0("## %s\n\n## Before:\n## After:\n\n",
+  template <- paste0("# %s\n\n# Before:\n# After:\n\n",
                      paste0("library(", pkgs, ")", collapse = "\n"),
                      "\n\nmkdir(\"%s\")\n\n")
   headers <- list(
