@@ -7,6 +7,8 @@
 #'        working directory.
 #' @param force whether to overwrite existing directory.
 #'
+#' @details Currently, the package comes with one example: \code{"linreg"}.
+#'
 #' @return Full path to directory that was created.
 #'
 #' @note
@@ -34,19 +36,19 @@
 #'
 #' @export
 
-taf.example <- function(name="linreg", path=".", force=FALSE)
+taf.example <- function(name, path=".", force=FALSE)
 {
+  # Handle non-existing example
+  example.dir <- system.file("examples", name, package="TAF")
+  if(!dir.exists(example.dir))
+    stop("example '", name, "' not found in TAF package")
+
   # Handle existing directory
   dest.dir <- file.path(path, name)
   if(dir.exists(dest.dir) && force)
     unlink(dest.dir, recursive=TRUE)
   if(dir.exists(dest.dir) && !force)
     stop("directory ", dest.dir, " exists already; consider force=TRUE")
-
-  # Handle non-existing example
-  example.dir <- system.file("examples", name, package="TAF")
-  if(!dir.exists(example.dir))
-    stop("example '", name, "' not found in TAF package")
 
   # Copy example
   dir.create(path, showWarnings=FALSE, recursive=TRUE)

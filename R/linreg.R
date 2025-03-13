@@ -17,7 +17,7 @@
 #' report.R
 #' }
 #'
-#' After the workflow is run, four new folders contains the output from the TAF
+#' After the workflow is run, four new folders contain the output from the TAF
 #' scripts:
 #'
 #' \preformatted{

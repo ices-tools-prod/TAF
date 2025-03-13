@@ -4,7 +4,7 @@
 \alias{taf.example}
 \title{TAF Example}
 \usage{
-taf.example(name = "linreg", path = ".", force = FALSE)
+taf.example(name, path = ".", force = FALSE)
 }
 \arguments{
 \item{name}{of TAF example analysis.}
@@ -19,6 +19,9 @@ Full path to directory that was created.
 }
 \description{
 Copy example analysis from TAF package.
+}
+\details{
+Currently, the package comes with one example: \code{"linreg"}.
 }
 \note{
 The example analysis is copied from the TAF package directory:
