@@ -21,7 +21,7 @@
 * Improved draft.software() so it supports packages from r-universe. Code
   contributed by Iago Mosqueira.
 
-* Improved taf.boot() so it is not affected by user option "pkgType". Changed
+* Improved taf.boot() so it is not affected by getOption("pkgType"). Changed
   taf.boot() so it handles multiple filenames/URLs in 'source' field, separated
   by comma. Handled by internal function process.entry().
 
