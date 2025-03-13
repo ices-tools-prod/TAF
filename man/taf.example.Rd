@@ -4,8 +4,7 @@
 \alias{taf.example}
 \title{TAF Example}
 \usage{
-taf.example(name = "linreg", path = ".", force = FALSE,
-  gitignore = FALSE)
+taf.example(name = "linreg", path = ".", force = FALSE)
 }
 \arguments{
 \item{name}{of TAF example analysis.}
@@ -14,32 +13,12 @@ taf.example(name = "linreg", path = ".", force = FALSE,
 working directory.}
 
 \item{force}{whether to overwrite existing directory.}
-
-\item{gitignore}{whether to write TAF entries to a \file{.gitignore} file.}
 }
 \value{
 Full path to directory that was created.
 }
 \description{
 Copy example analysis from TAF package.
-}
-\details{
-When \code{gitignore = TRUE}, the following entries will be written to a
-\verb{.gitignore} file:
-\preformatted{
-/boot/data
-/boot/library
-/boot/software
-/data
-/model
-/output
-/report
-*.Rproj
-.RData
-.Rhistory
-.Rproj.user
-.Ruserdata
-}
 }
 \note{
 The example analysis is copied from the TAF package directory:
@@ -49,12 +28,17 @@ dir(system.file("examples", package="TAF"), full=TRUE)
 }
 \examples{
 \dontrun{
-taf.example()
+taf.example("linreg")
+setwd("linreg")
+taf.boot()
+source.all()
 }
 
 }
 \seealso{
 \code{\link{taf.skeleton}} creates an empty TAF template.
+
+\code{\link{linreg}} describes the \code{linreg} example.
 
 \code{\link{TAF-package}} gives an overview of the package.
 }

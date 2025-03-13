@@ -16,6 +16,8 @@
 
 * Added argument 'gitignore' to taf.skeleton().
 
+* Added 'linreg' example, a minimal TAF workflow.
+
 * Improved draft.software() so it supports packages from r-universe. Code
   contributed by Iago Mosqueira.
 

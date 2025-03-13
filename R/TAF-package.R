@@ -89,6 +89,10 @@
 #'   \code{\link{catage.xtab}} \tab crosstab format\cr
 #'   \code{\link{summary.taf}} \tab summary results
 #' }
+#' \emph{Example workflow:}
+#' \tabular{ll}{
+#'   \code{\link{linreg}} \tab simple linear regression
+#' }
 #' \emph{Administrative tools, rarely used in scripts:}
 #' \tabular{ll}{
 #'   \code{\link{check.software}}  \tab check global package versions\cr
