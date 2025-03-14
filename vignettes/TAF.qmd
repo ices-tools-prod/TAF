@@ -377,7 +377,123 @@ combination with the `renv` package (Ushey and Wickham 2025), `rig` (Csárdi
 
 ### Online examples
 
-ICES, FAO, SPC
+#### Introductory notes
+
+#### ICES
+
+ICES maintains four core examples that demonstrate TAF analyses using the
+`icesTAF` package. These simple workflows are used in `icesTAF` workshops and
+system tests.
+
+Example       | **`2015_rjm-347d`**
+------------- | --------------------------------------------------------
+Analysis      | Spotted ray in the North Sea
+Repository    | https://github.com/ices-taf/2015_rjm-347d
+Methods       | ICES method for data-limited stocks
+External deps | 1 CRAN package
+Data sources  | 2 local files
+Results       | 3 tables, 1 plot
+Notes:        | Simple arithmetic, the 'hello world' of icesTAF analyses
+
+Example        **`2015_had-iceg`**
+Analysis       Haddock in Icelandic waters
+Repository     https://github.com/ices-taf/2015_had-iceg
+Methods        Age-structured model, C++ standalone executable
+External deps  -
+Data sources   1 local file
+Results        10 tables, 2 plots
+Notes:         Model executable is in bootstrap/initial/software
+
+Example        **`2016_ple-eche`**
+Analysis       Plaice in the English Channel
+Repository     https://github.com/ices-taf/2016_ple-eche
+Methods        Age-structured model, C++ standalone executable
+External deps  1 CRAN package, 2 GitHub packages, many underlying CRAN packages
+Data sources   2 local files
+Results        14 tables, 2 plots
+Notes:         ggplot2 depends on many packages
+
+Example        **`2016_cod-347d`**
+Analysis       Cod in the North Sea
+Repository     https://github.com/ices-taf/2016_cod-347d
+Methods        Age-structured model, C++ standalone executable
+External deps  1 CRAN package
+Data sources   13 local files
+Results        23 tables, 2 plots
+Notes:         Similar to Icelandic haddock example, just more parts
+
+#### FAO
+
+FAO uses the `sraplus` package to analyze the status of global marine resources.
+This package comes with over 100 package dependencies. The precise number of
+dependencies changes over time, as underlying packages change their
+dependencies. The `sraplus-deps` analysis is a simple workflow that describes
+the dependencies, while the `WorkshopEffortShared` demonstrates the use of
+`sraplus` for analyzing a small dataset.
+
+Example        **`sraplus-deps`**
+Analysis       Dependency analysis of the sraplus package
+Repository     https://github.com/sofia-taf-dev/sraplus-deps
+Methods        Base R package_dependencies function
+External deps  2 GitHub repositories
+Data sources   Online (software project on GitHub)
+Results        2 tables, 1 plot
+Notes          No local data files
+
+Example        **`WorkshopEffortShared`**
+Analysis       SOFIA analysis of the relative status of four marine populations
+Repository     https://github.com/sofia-taf/WorkshopEffortShared
+Methods        sraplus, an R package
+External deps  2 GitHub packages, >100 CRAN packages
+Data sources   4 local files
+Results        6 tables, 16 plots
+Notes          sraplus depends on many packages
+
+#### SPC
+
+SPC uses TAF to make the results of tuna and billfish stock assessments
+available online, for anyone to browse the data and results and/or rerun the
+analysis.
+
+Example        **`ofp-sam-yft-2023-diagnostic`**
+Analysis       Assessment of yellowfin tuna in the Western and Central Pacific
+Repository     https://github.com/PacificCommunity/ofp-sam-yft-2023-diagnostic
+Methods        MULTIFAN-CL, C++ standalone executable
+External deps  2 GitHub packages, many CRAN packages
+Data sources   7 local files
+Results        24 tables, 4 plots
+Notes          TAF analysis is organized inside a subdirectory
+
+#### Arni Magnusson
+
+The following examples demonstrate various uses of TAF beyond fisheries science.
+
+Example        **`corona`**
+Analysis       Analysis of COVID-19 cases and deaths by country
+Repository     https://github.com/arni-magnusson/corona
+Methods        Basic arithmetic and plots, global and selected countries
+External deps  Many CRAN packages
+Data sources   Online (Johns Hopkins on GitHub) and 1 local file
+Results        15 tables, 64 plots
+Notes          Useful at the time to follow the global epidemic
+
+Example        **`weather`**
+Analysis       Compare climate data from selected cities around the world
+Repository     https://github.com/arni-magnusson/weather
+Methods        World map of UV, trigonometry for daylight calculations, etc.
+External deps  3 CRAN packages
+Data sources   Online (NASA Earth Observations website) and 15 local files
+Results        5 tables, 12 plots
+Notes          Winter and summer temperatures, snowfall, humidity, etc.
+
+Example        **`trip`**
+Analysis       Family vacation plan
+Repository     https://github.com/arni-magnusson/trip
+Methods        World map with flight routes, first test case for taf2html()
+External deps  Many CRAN packages
+Data sources   2 local files
+Results        2 tables, 1 map
+Notes          Produces webpage https://arni-magnusson.github.io/trip/
 
 ## Summary
 
