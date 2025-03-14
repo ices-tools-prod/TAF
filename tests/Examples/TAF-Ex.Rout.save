@@ -1,6 +1,6 @@
 
-R version 4.4.2 (2024-10-31) -- "Pile of Leaves"
-Copyright (C) 2024 The R Foundation for Statistical Computing
+R version 4.4.3 (2025-02-28) -- "Trophy Case"
+Copyright (C) 2025 The R Foundation for Statistical Computing
 Platform: x86_64-pc-linux-gnu
 
 R is free software and comes with ABSOLUTELY NO WARRANTY.
@@ -410,7 +410,7 @@ dose supp
 > flush(stderr()); flush(stdout())
 > 
 > ### Name: deps
-> ### Title: List Dependencies
+> ### Title: Dependencies of a Workflow
 > ### Aliases: deps
 > 
 > ### ** Examples
@@ -957,6 +957,38 @@ dose supp
 > 
 > ### ** Examples
 > 
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("pdeps")
+> ### * pdeps
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: pdeps
+> ### Title: Dependencies of a Package
+> ### Aliases: pdeps
+> 
+> ### ** Examples
+> 
+> ## Not run: 
+> ##D # TAF dependencies
+> ##D pdeps("TAF")                # does not depend on non-base packages
+> ##D pdeps("TAF", base=TRUE)     # depends on these base packages
+> ##D pdeps("TAF", reverse=TRUE)  # icesTAF depends on TAF
+> ##D 
+> ##D # Other packages with light dependencies
+> ##D sapply(pdeps(c("data.table", "Rcpp", "renv")), length)
+> ##D 
+> ##D # ggplot2 dependencies
+> ##D pdeps("ggplot2")                   # full list of dependencies
+> ##D pdeps("ggplot2", recursive=FALSE)  # primary dependencies
+> ##D 
+> ##D # Each ggplot2 dependency brings in these secondary dependencies
+> ##D pdeps(pdeps("ggplot2", recursive=FALSE)$ggplot2)
+> ## End(Not run)
 > 
 > 
 > 
@@ -1881,7 +1913,7 @@ detaching ‘package:lattice’
 
 > options(digits = 7L)
 > base::cat("Time elapsed: ", proc.time() - base::get("ptime", pos = 'CheckExEnv'),"\n")
-Time elapsed:  0.234 0.008 0.244 0 0 
+Time elapsed:  0.183 0.006 0.19 0 0 
 > grDevices::dev.off()
 null device 
           1 

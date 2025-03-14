@@ -2,7 +2,7 @@
 % Please edit documentation in R/deps.R
 \name{deps}
 \alias{deps}
-\title{List Dependencies}
+\title{Dependencies of a Workflow}
 \usage{
 deps(path = ".", base = FALSE, installed = TRUE, available = TRUE,
   list = FALSE)
@@ -57,6 +57,8 @@ deps(dir, available=FALSE)  # dependencies that might be unavailable
 }
 \seealso{
 \code{\link{installed.packages}}, \code{\link{available.packages}}.
+
+\code{\link{pdeps}} shows the dependencies of a package.
 
 \code{\link{TAF-package}} gives an overview of the package.
 }

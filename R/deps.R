@@ -1,4 +1,4 @@
-#' List Dependencies
+#' Dependencies of a Workflow
 #'
 #' Search R scripts for packages that are required.
 #'
@@ -28,6 +28,8 @@
 #'
 #' @seealso
 #' \code{\link{installed.packages}}, \code{\link{available.packages}}.
+#'
+#' \code{\link{pdeps}} shows the dependencies of a package.
 #'
 #' \code{\link{TAF-package}} gives an overview of the package.
 #'

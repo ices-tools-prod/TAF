@@ -99,7 +99,7 @@
 #'   \code{\link{clean.data}}      \tab clean boot data\cr
 #'   \code{\link{clean.library}}   \tab clean TAF library\cr
 #'   \code{\link{clean.software}}  \tab clean TAF software\cr
-#'   \code{\link{deps}}            \tab list dependencies\cr
+#'   \code{\link{deps}}            \tab workflow dependencies\cr
 #'   \code{\link{detach.packages}} \tab detach all packages\cr
 #'   \code{\link{dos2unix}}        \tab convert line endings\cr
 #'   \code{\link{download}}        \tab download file\cr
@@ -109,6 +109,7 @@
 #'   \code{\link{is.r.package}}    \tab check if file is an R package\cr
 #'   \code{\link{latin1.to.utf8}}  \tab convert file encoding\cr
 #'   \code{\link{line.endings}}    \tab examine line endings\cr
+#'   \code{\link{pdeps}}           \tab package dependencies\cr
 #'   \code{\link{read.bib}}        \tab read metadata entries\cr
 #'   \code{\link{rmdir}}           \tab remove empty directory\cr
 #'   \code{\link{taf.install}}     \tab install package in TAF library\cr
