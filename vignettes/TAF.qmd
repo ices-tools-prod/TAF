@@ -499,7 +499,7 @@ The following examples demonstrate various uses of TAF beyond fisheries science.
 | ------------- | ------------------------------------------------------------ |
 | Analysis      | Family vacation plan                                         |
 | Repository    | <https://github.com/arni-magnusson/trip>                     |
-| Methods       | World map with flight routes, first test case for taf2html() |
+| Methods       | World map with flight routes, testing R Markdown and HTML    |
 | External deps | Many CRAN packages                                           |
 | Data sources  | 2 local files                                                |
 | Results       | 2 tables, 1 map                                              |
