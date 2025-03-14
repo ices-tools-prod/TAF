@@ -393,7 +393,7 @@ system tests.
 | External deps | 1 CRAN package                                               |
 | Data sources  | 2 local files                                                |
 | Results       | 3 tables, 1 plot                                             |
-| Notes:        | Simple arithmetic, the *hello world* of icesTAF analyses     |
+| Notes         | Simple arithmetic, the *hello world* of icesTAF analyses     |
 
 |               | **2015_had-iceg**                                            |
 | ------------- | ------------------------------------------------------------ |
@@ -403,7 +403,7 @@ system tests.
 | External deps | -                                                            |
 | Data sources  | 1 local file                                                 |
 | Results       | 10 tables, 2 plots                                           |
-| Notes:        | Model executable is in bootstrap/initial/software            |
+| Notes         | Model executable is in bootstrap/initial/software            |
 
 |               | **2016_ple-eche**                                            |
 | ------------- | ------------------------------------------------------------ |
@@ -413,7 +413,7 @@ system tests.
 | External deps | 1 CRAN package, 2 GitHub packages, many CRAN packages        |
 | Data sources  | 2 local files                                                |
 | Results       | 14 tables, 2 plots                                           |
-| Notes:        | ggplot2 depends on many packages                             |
+| Notes         | ggplot2 depends on many packages                             |
 
 |               | **2016_cod-347d**                                            |
 | ------------- | ------------------------------------------------------------ |
@@ -423,7 +423,7 @@ system tests.
 | External deps | 1 CRAN package                                               |
 | Data sources  | 13 local files                                               |
 | Results       | 23 tables, 2 plots                                           |
-| Notes:        | Similar to Icelandic haddock example, just more parts        |
+| Notes         | Similar to Icelandic haddock example, just more parts        |
 
 #### FAO
 
@@ -439,9 +439,9 @@ package and a small dataset.
 | ------------- | ------------------------------------------------------------ |
 | Analysis      | Dependency analysis of the sraplus package                   |
 | Repository    | <https://github.com/sofia-taf-dev/sraplus-deps>              |
-| Methods       | Base R package_dependencies function                         |
-| External deps | 2 GitHub repositories                                        |
-| Data sources  | Online (software project)                                    |
+| Methods       | pdeps(), a function to analyze package dependencies          |
+| External deps | -                                                            |
+| Data sources  | Online (the sraplus software project)                        |
 | Results       | 2 tables, 1 plot                                             |
 | Notes         | No local data files                                          |
 
