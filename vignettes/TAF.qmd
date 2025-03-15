@@ -212,13 +212,15 @@ person. TAF addresses this challenge by structuring a workflow in four separate
 scripts, each handling a clear and well-defined task, rather than in one
 monolithic script that does everything.
 
-A medium-sized scientific workflow might consist of around 80 lines of code in
-`data.R`, 20 lines of code in `model.R`, 80 lines of code in `output.R`, and 80
-lines of code in `report.R`. In a larger workflow, where one of these steps
-might require a few hundred lines of code, TAF invites the scientist to organize
-the work in smaller steps, e.g., a very short `output.R` script could call
-secondary scripts such as `output_parameters.R`, `output_predictions.R`, and
-`output_likelihoods.R`.
+A medium-sized scientific workflow might consist of `data.R`, `model.R`,
+`output.R`, and `report.R`, each around 100 lines of code. In a larger workflow,
+where some of these steps might require a few hundred lines of code, TAF invites
+the scientist to organize the work in smaller steps. For example, a very short
+`output.R` script could call secondary scripts such as `output_parameters.R`,
+`output_predictions.R`, and `output_likelihoods.R`. To keep scripts short and
+readable, the author can write functions and store them inside `utilities.R`,
+allowing lengthy or repeated computations to be performed in a single line in
+the scripts.
 
 The CSV file format is default and convenient for saving tables in the `data`,
 `output`, and `report` folders, while the `model` folder contains results in any
@@ -238,9 +240,9 @@ procedure takes place inside the `boot` folder, where the `taf.boot()` function
 looks for files called `DATA.bib` (required) and `SOFTWARE.bib` (optional).
 
 As indicated by the `bib` file extension, TAF metadata entries follow the BibTeX
-format (Patashnik 2003) originally designed for bibliographic information. The
-benefit of using the BibTeX format for TAF metadata is that information about
-all R packages is already available in this format, for example:
+format (Patashnik 2003) originally designed for bibliographic information. One
+of the benefits of using the BibTeX format for TAF metadata is that information
+about all R packages is already available in this format, for example:
 
 ```{r}
 #| eval: false
@@ -290,7 +292,7 @@ GitHub resources.
 
 When metadata entries in `SOFTWARE.bib` point to R packages, they are installed
 in a local library for that workflow. The `SOFTWARE.bib` file is where the
-workflow author can specify the exact version for key software components that
+workflow author can specify the exact version of key software components that
 were used in the analysis, pointing to specific releases, tags, or commits of
 each software to strengthen reproducibility.
 
@@ -363,6 +365,29 @@ the package.
 
 ### Browsing an existing analysis
 
+Most TAF analyses are organized on GitHub, either in public or private
+repositories, although the TAF design does not require GitHub. Public
+repositories are a common standard for open and reproducible research, while
+private repositories can also be used, e.g., when data are sensitive and cannot
+be shared.
+
+Many TAF repositories contain the workflow in a ready-to-run state that does not
+include the results. This means that anyone browsing that analysis will need to
+run the workflow to see the results, in the same way as the `linreg` example.
+The advantage of this is a guarantee that a repository does not contain scripts
+and results that might be out of sync. On the other hand, uploading the results
+to the repository may be a good choice if the analysis takes a long time to run,
+or to facilitate scientific review without requiring the reviewer to install
+software or learn how to run TAF analyses.
+
+A TAF analysis on GitHub can be reviewed directly in a web browser, where the
+code is presented in a readable format and tables and plots are also easy to
+view. For a fuller review, the analysis can be downloaded or cloned, allowing
+the reviewer to open and analyze the contents of CSV tables in a spreadsheet, R,
+or other statistical software of choice. Furthermore, the reviewer can modify
+and rerun the analysis, evaluating the effect of alternative methods and model
+assumptions.
+
 ### Related packages
 
 icesTAF, makeit, SOFIA, targets
@@ -375,7 +400,42 @@ the same results as the original analysis. Alternatively, TAF can be used in
 combination with the `renv` package (Ushey and Wickham 2025), `rig` (Csárdi
 2024), Docker (Merkel 2014), and other tools dedicated to reproducible research.
 
-### Online examples
+## Summary
+
+No dependencies.
+
+## Acknowledgements
+
+ICES folks
+
+FAO folks
+
+SPC folks
+
+## References
+
+Csárdi, G. 2024. rig: The R Installation Manager. Version 0.7.0.\
+<https://github.com/r-lib/rig>
+
+Merkel, D. 2014. Docker: lightweight Linux containers for consistent development
+and deployment. *Linux Journal*, 239, 76-91.\
+<https://dl.acm.org/doi/pdf/10.5555/2600239>
+
+Patashnik, O. 2003. BibTEX yesterday, today, and tomorrow. *TUGboat*, 24,
+25-30.\
+<https://tug.org/TUGboat/tb24-1/patashnik.pdf>
+
+Spolsky, J. 2004. *Joel on Software: And on Diverse and Occasionally Related
+Matters That Will Prove of Interest to Software Developers, Designers, and
+Managers, and to Those Who, Whether by Good Fortune or Ill Luck, Work with Them
+in Some Capacity.* Berkeley: Apress.\
+<https://doi.org/10.1007/978-1-4302-0753-5>
+
+Ushey, K. and Hadley Wickham. 2025. renv: Project Environments. R package
+version 1.1.2.\
+<https://cran.r-project.org/package=renv>
+
+## Appendix: Online examples
 
 #### Introductory notes
 
@@ -504,38 +564,3 @@ The following examples demonstrate various uses of TAF beyond fisheries science.
 | Data sources  | 2 local files                                                |
 | Results       | 2 tables, 1 map                                              |
 | Notes         | Creates the webpage <https://arni-magnusson.github.io/trip/> |
-
-## Summary
-
-No dependencies.
-
-## Acknowledgements
-
-ICES folks
-
-FAO folks
-
-SPC folks
-
-## References
-
-Csárdi, G. 2024. rig: The R Installation Manager. Version 0.7.0.\
-<https://github.com/r-lib/rig>
-
-Merkel, D. 2014. Docker: lightweight Linux containers for consistent development
-and deployment. *Linux Journal*, 239, 76-91.\
-<https://dl.acm.org/doi/pdf/10.5555/2600239>
-
-Patashnik, O. 2003. BibTEX yesterday, today, and tomorrow. *TUGboat*, 24,
-25-30.\
-<https://tug.org/TUGboat/tb24-1/patashnik.pdf>
-
-Spolsky, J. 2004. *Joel on Software: And on Diverse and Occasionally Related
-Matters That Will Prove of Interest to Software Developers, Designers, and
-Managers, and to Those Who, Whether by Good Fortune or Ill Luck, Work with Them
-in Some Capacity.* Berkeley: Apress.\
-<https://doi.org/10.1007/978-1-4302-0753-5>
-
-Ushey, K. and Hadley Wickham. 2025. renv: Project Environments. R package
-version 1.1.2.\
-<https://cran.r-project.org/package=renv>
