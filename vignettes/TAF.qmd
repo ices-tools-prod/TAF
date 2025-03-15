@@ -371,9 +371,9 @@ repositories are a common standard for open and reproducible research, while
 private repositories can also be used, e.g., when data are sensitive and cannot
 be shared.
 
-Many TAF repositories contain the workflow in a ready-to-run state that does not
-include the results. This means that anyone browsing that analysis will need to
-run the workflow to see the results, in the same way as the `linreg` example.
+TAF repositories often contain the workflow in a ready-to-run state that does
+not include the results. This means that anyone browsing that analysis will need
+to run the workflow to see the results, in the same way as the `linreg` example.
 The advantage of this is a guarantee that a repository does not contain scripts
 and results that might be out of sync. On the other hand, uploading the results
 to the repository may be a good choice if the analysis takes a long time to run,
