@@ -455,6 +455,8 @@ collection of tools to facilitate this work.
 
 #### targets
 
+Landau (2021)
+
 #### renv
 
 Using `SOFTWARE.bib` declarations of software and versions, TAF supports
@@ -486,6 +488,13 @@ Food and Agriculture Organization (FAO). (2024).
 Action.*
 Rome.\
 <https://doi.org/10.4060/cd0683en>
+
+Landau, W.M. (2021).
+The targets R package: a dynamic Make-like function-oriented pipeline toolkit
+for reproducibility and high-performance computing.
+*Journal of Open Source Software*, 6(57), 2959.\
+<https://doi.org/10.21105/joss.02959>,
+<https://cran.r-project.org/package=targets>
 
 Magnusson, A. (2023).
 makeit: Run R Scripts if Needed. R package version 1.0.1.\
