@@ -3,9 +3,9 @@
 #' Run an R script if underlying files have changed, otherwise do nothing.
 #'
 #' @param recipe script filename.
-#' @param prereq one or more underlying files, required by the script. For
-#'        example, data files, scripts, or \code{NULL}.
-#' @param target one or more output files, produced by the script. Directory
+#' @param prereq one or more files required by the script. For example, data
+#'        files, scripts, or \code{NULL}.
+#' @param target one or more output files produced by the script. Directory
 #'        names can also be used.
 #' @param include whether to automatically include the script itself as a
 #'        prerequisite file. This means that if the script file has been
@@ -19,6 +19,15 @@
 #' @param quiet whether to suppress messages.
 #' @param \dots passed to \code{engine}.
 #'
+#' @details
+#' A \code{make()} call has the general form
+#' \preformatted{
+#' make("analysis.R", "input.dat", "output.dat")
+#' }
+#' which can be read aloud as:
+#'
+#' \dQuote{script \emph{x} uses \emph{y} to produce \emph{z}}
+#'
 #' @return \code{TRUE} or \code{FALSE}, indicating whether the script was run.
 #'
 #' @note
@@ -29,8 +38,10 @@
 #' then the script is run.
 #'
 #' @references
-#' Stallman, R. M. \emph{et al.} An introduction to makefiles. Chapter 2 in the
-#' \emph{\href{https://www.gnu.org/software/make/manual/}{GNU Make manual}}.
+#' Stallman, R. M. \emph{et al}.
+#' An introduction to makefiles.
+#' Chapter 2 in the \emph{\href{https://www.gnu.org/software/make/manual/}{GNU
+#' Make manual}}.
 #'
 #' @seealso
 #' \code{\link{source}} runs any R script, \code{\link{source.taf}} is more
@@ -42,6 +53,9 @@
 #' that have already been run.
 #'
 #' \code{\link{TAF-package}} gives an overview of the package.
+#'
+#' The \pkg{makeit} package provides a similar \code{make} function, along with
+#' a vignette containing annotated examples and a discussion.
 #'
 #' @examples
 #' \dontrun{
@@ -56,18 +70,32 @@
 make <- function(recipe, prereq, target, include=TRUE, engine=source,
                  details=FALSE, force=FALSE, recon=FALSE, quiet=TRUE, ...)
 {
+  # Validate recipe
+  if(length(recipe) != 1 || !is.character(recipe) || !file.exists(recipe))
+    stop("'recipe' must be an existing script filename")
+
+  # Validate prereq
   if(include)
     prereq <- union(prereq, recipe)
+  if(is.null(prereq))
+    stop("'prereq' must not be NULL, unless include=TRUE")
+  if(!all(file.exists(prereq)))
+    stop("missing prerequisite file '", prereq[!file.exists(prereq)][1], "'")
+
+  # Validate target
+  if(!is.character(target) || any(nchar(target)) == 0)
+    stop("'target' must be one or more valid filenames")
+
   if(details)
     print(data.frame(Object=c(rep("target",length(target)),
                               rep("prereq",length(prereq))),
                      File=c(target,prereq),
                      Modified=file.mtime(c(target,prereq))))
-  if(!all(file.exists(prereq)))
-    stop("missing prerequisite file '", prereq[!file.exists(prereq)][1], "'")
+
   if(force ||
      !all(file.exists(target)) ||
      min(file.mtime(target)) < max(file.mtime(prereq)))
+    # oldest output is older than newest input
   {
     if(!quiet)
       message("Running ", recipe)
@@ -81,5 +109,6 @@ make <- function(recipe, prereq, target, include=TRUE, engine=source,
       message("Nothing to be done")
     out <- FALSE
   }
+
   invisible(out)
 }

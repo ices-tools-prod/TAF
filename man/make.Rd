@@ -10,10 +10,10 @@ make(recipe, prereq, target, include = TRUE, engine = source,
 \arguments{
 \item{recipe}{script filename.}
 
-\item{prereq}{one or more underlying files, required by the script. For
-example, data files, scripts, or \code{NULL}.}
+\item{prereq}{one or more files required by the script. For example, data
+files, scripts, or \code{NULL}.}
 
-\item{target}{one or more output files, produced by the script. Directory
+\item{target}{one or more output files produced by the script. Directory
 names can also be used.}
 
 \item{include}{whether to automatically include the script itself as a
@@ -40,6 +40,15 @@ running the R script.}
 \description{
 Run an R script if underlying files have changed, otherwise do nothing.
 }
+\details{
+A \code{make()} call has the general form
+\preformatted{
+make("analysis.R", "input.dat", "output.dat")
+}
+which can be read aloud as:
+
+\dQuote{script \emph{x} uses \emph{y} to produce \emph{z}}
+}
 \note{
 This function provides functionality similar to makefile rules, to determine
 whether a script should be (re)run or not.
@@ -57,8 +66,10 @@ make("model.R", "data/input.dat", "model/results.dat", details=TRUE)
 
 }
 \references{
-Stallman, R. M. \emph{et al.} An introduction to makefiles. Chapter 2 in the
-\emph{\href{https://www.gnu.org/software/make/manual/}{GNU Make manual}}.
+Stallman, R. M. \emph{et al}.
+An introduction to makefiles.
+Chapter 2 in the \emph{\href{https://www.gnu.org/software/make/manual/}{GNU
+Make manual}}.
 }
 \seealso{
 \code{\link{source}} runs any R script, \code{\link{source.taf}} is more
@@ -70,4 +81,7 @@ similar to the \code{source} functions, except they avoid repeating tasks
 that have already been run.
 
 \code{\link{TAF-package}} gives an overview of the package.
+
+The \pkg{makeit} package provides a similar \code{make} function, along with
+a vignette containing annotated examples and a discussion.
 }
