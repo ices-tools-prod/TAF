@@ -14,9 +14,9 @@ vignette: >
 
 ### Objectives
 
-The overarching goal of the Transparent Assessment Framework (TAF) is to support
-*open and reproducible* research. To achieve this goal, the following objectives
-have guided the design of TAF:
+The overarching goal of the Transparent Assessment Framework (TAF, Magnusson and
+Millar 2023) is to support *open and reproducible* research. To achieve this
+goal, the following objectives have guided the design of TAF:
 
 1. Provide a standard workflow structure that is general enough for any analysis
    that can be run from R.
@@ -393,10 +393,15 @@ assumptions.
 #### icesTAF
 
 The development of TAF workflows started in 2016 when the authors of this
-vignette were hired as full-time developers at ICES. In 2017, the first version
-of the `icesTAF` package was released on CRAN, followed by a steady rate of
-version updates. In 2021-2022, the package was split into two separate but
-related packages:
+vignette were hired as full-time developers at the International Council for the
+Exploration of the Sea (ICES), an international organization with 20 member
+countries collaborating in marine science. The aim was to develop a new
+framework for organizing ICES analyses, improving reviewability and
+reproducibility.
+
+In 2017, the first version of the `icesTAF` package was released on CRAN,
+followed by later version updates. In 2021-2022, the package was split into two
+separate but related packages:
 
 1. `TAF` provides the core functionality and has no package dependencies.
 
@@ -435,6 +440,19 @@ vignette (Magnusson 2023) contains annotated examples and a discussion.
 
 #### SOFIA
 
+The UN Food and Agriculture Organization (FAO) monitors the status of global
+marine resources and publishes a summary report (FAO 2024) every two years,
+known as SOFIA. The work behind this publication involves organizing and
+conducting analyses of hundreds of fish and invertebrate stocks from all the
+world's oceans.
+
+FAO is currently undertaking a methodological update that leverages advancements
+in computing and data availability to enhance the understanding of the state of
+the world's fish stocks (Sharma 2023). One part of this restructuring is the
+adoption of TAF, which provides a standard structure that supports open and
+reproducible research. The SOFIA package (Magnusson and Sharma 2024) is a
+collection of tools to facilitate this work.
+
 #### targets
 
 #### renv
@@ -463,10 +481,24 @@ Csárdi, G. (2024).
 rig: The R Installation Manager. Version 0.7.0.\
 <https://github.com/r-lib/rig>
 
+Food and Agriculture Organization (FAO). (2024).
+*The State of World Fisheries and Aquaculture 2024: Blue Transformation in
+Action.*
+Rome.\
+<https://doi.org/10.4060/cd0683en>
+
 Magnusson, A. (2023).
 Getting started with the `makeit` package.\
 <https://cran.r-project.org/web/packages/makeit/vignettes/makeit.html>
 
+Magnusson, A. and Millar, C. (2023).
+TAF: Transparent Assessment Framework for Reproducible Research. R package
+version 4.2.0.\
+<https://cran.r-project.org/package=TAF>
+
+Magnusson, A. and Sharma, R. (2024).
+SOFIA: Tools to Work with SOFIA Analyses. R package version 2.1.3.\
+<https://github.com/sofia-taf/SOFIA>
 
 Merkel, D. (2014).
 Docker: lightweight Linux containers for consistent development and deployment.
@@ -477,6 +509,15 @@ Patashnik, O. (2003).
 BibTEX yesterday, today, and tomorrow.
 *TUGboat*, 24, 25-30.\
 <https://tug.org/TUGboat/tb24-1/patashnik.pdf>
+
+Sharma, R. (2023).
+The state of world fishery resources: Expanding efforts to determine the status
+of global fish stocks.
+*Research Outreach*.\
+<https://researchoutreach.org/wp-content/uploads/2023/05/Rishi-Sharma.pdf>
+
+Maurer, J, (2023) Exploring the transfer of antibiotic resistance genes within
+poultry litter, Research Outreach, 139. DOI: 10.32907/RO-139-5548310309
 
 Spolsky, J. (2004).
 *Joel on Software: And on Diverse and Occasionally Related Matters That Will
