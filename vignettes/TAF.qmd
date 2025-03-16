@@ -390,7 +390,52 @@ assumptions.
 
 ### Related packages
 
-icesTAF, makeit, SOFIA, targets
+#### icesTAF
+
+The development of TAF workflows started in 2016 when the authors of this
+vignette were hired as full-time developers at ICES. In 2017, the first version
+of the `icesTAF` package was released on CRAN, followed by a steady rate of
+version updates. In 2021-2022, the package was split into two separate but
+related packages:
+
+1. `TAF` provides the core functionality and has no package dependencies.
+
+2. `icesTAF` includes all of `TAF` and adds additional features that are
+   primarily used within ICES and may depend on external packages.
+
+ICES workflows use the `icesTAF` package, benefiting from access to a dedicated
+ICES TAF server, ICES databases, and other infrastructure. Other workflows that
+are not related to ICES use the smaller `TAF` package and reap the various
+benefits of zero package dependencies.
+
+The development and maintenance of `TAF` and `icesTAF` is tightly synchronized,
+with new CRAN releases occurring within days of each other and using the same
+version number.
+
+### makeit
+
+While `icesTAF` is the ancestor and superset of `TAF`, the `makeit` package is a
+descendant and a subset. The TAF function `make()` dates back to 2017 and is a
+powerful tool to run only the parts of a workflow where the underlying files
+have changed. For example, after plot scripts are modified, those scripts should
+be rerun to update the plots in seconds, without rerunning the entire workflow
+that might take minutes or hours.
+
+The TAF package contains the `make()` function, along with the related
+`make.taf()` and `make.all()` functions. These tools are not promoted for
+general use in TAF tutorials or introductory workshops, but they are useful for
+working with TAF at scale, managing, checking, and debugging a large number of
+workflows, providing support to multiple users at the same time, etc.
+
+As the name implies, the `make()` function is closely based on the shell command
+of the same name (Stallman et al. 2023) but implemented in R. As a generally
+useful tool beyond the context of TAF workflows, the `make()` function was
+packaged and released on CRAN in a package called `makeit` in 2023. The package
+vignette (Magnusson 2023) contains annotated examples and a discussion.
+
+#### SOFIA
+
+#### targets
 
 #### renv
 
@@ -414,25 +459,39 @@ SPC folks
 
 ## References
 
-Csárdi, G. 2024. rig: The R Installation Manager. Version 0.7.0.\
+Csárdi, G. (2024).
+rig: The R Installation Manager. Version 0.7.0.\
 <https://github.com/r-lib/rig>
 
-Merkel, D. 2014. Docker: lightweight Linux containers for consistent development
-and deployment. *Linux Journal*, 239, 76-91.\
+Magnusson, A. (2023).
+Getting started with the `makeit` package.\
+<https://cran.r-project.org/web/packages/makeit/vignettes/makeit.html>
+
+
+Merkel, D. (2014).
+Docker: lightweight Linux containers for consistent development and deployment.
+*Linux Journal*, 239, 76-91.\
 <https://dl.acm.org/doi/pdf/10.5555/2600239>
 
-Patashnik, O. 2003. BibTEX yesterday, today, and tomorrow. *TUGboat*, 24,
-25-30.\
+Patashnik, O. (2003).
+BibTEX yesterday, today, and tomorrow.
+*TUGboat*, 24, 25-30.\
 <https://tug.org/TUGboat/tb24-1/patashnik.pdf>
 
-Spolsky, J. 2004. *Joel on Software: And on Diverse and Occasionally Related
-Matters That Will Prove of Interest to Software Developers, Designers, and
-Managers, and to Those Who, Whether by Good Fortune or Ill Luck, Work with Them
-in Some Capacity.* Berkeley: Apress.\
+Spolsky, J. (2004).
+*Joel on Software: And on Diverse and Occasionally Related Matters That Will
+Prove of Interest to Software Developers, Designers, and Managers, and to Those
+Who, Whether by Good Fortune or Ill Luck, Work with Them in Some Capacity.*
+Berkeley: Apress.\
 <https://doi.org/10.1007/978-1-4302-0753-5>
 
-Ushey, K. and Hadley Wickham. 2025. renv: Project Environments. R package
-version 1.1.2.\
+Stallman, R.M., McGrath, R., and Smith, P.D. (2023).
+*The GNU Make Reference Manual.*
+Version 4.4.1.\
+<https://www.gnu.org/software/make/manual/make.html>
+
+Ushey, K. and Wickham, H. (2025).
+renv: Project Environments. R package version 1.1.2.\
 <https://cran.r-project.org/package=renv>
 
 ## Appendix: Online examples
