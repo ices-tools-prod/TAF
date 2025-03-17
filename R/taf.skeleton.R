@@ -97,9 +97,10 @@ taf.skeleton <- function(path = ".", force = FALSE, pkgs = "TAF",
                 paste0("/", file_path_sans_ext(model.script)), "/output",
                 "/report", "*.Rproj", ".RData", ".Rhistory", ".Rproj.user",
                 ".Ruserdata")
-    if(file.exists(".gitignore"))
+    if (file.exists(".gitignore"))
       ignore <- ignore[!ignore %in% readLines(".gitignore")]
-    write(ignore, ".gitignore", append = TRUE)
+    if (length(ignore) > 0)
+      write(ignore, ".gitignore", append = TRUE)
   }
 
   invisible(getwd())
