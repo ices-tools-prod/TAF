@@ -17,8 +17,6 @@
 #' git.name(owner=FALSE)
 #' }
 #'
-#' @importFrom tools file_path_as_absolute
-#'
 #' @export
 
 git.name <- function(path=".", owner=TRUE, warn=TRUE)
