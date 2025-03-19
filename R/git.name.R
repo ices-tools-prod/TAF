@@ -25,7 +25,8 @@ git.name <- function(path=".", owner=TRUE, warn=TRUE)
   filename <- file.path(path, ".git/config")
   if(!file.exists(filename))
   {
-    warning("file '", filename, "' not found")
+    if(warn)
+      warning("file '", filename, "' not found")
     return("")
   }
   config <- readLines(filename)
