@@ -10,7 +10,7 @@
 #' installed packages are \dfn{ready}, i.e., at least as new as the version
 #' required in \verb{SOFTWARE.bib}.
 #'
-#' A warning is raised if any installed packages are older than required.
+#' A warning is generated if any installed packages are older than required.
 #'
 #' @note
 #' Generally, TAF installs R packages that are declared in \verb{SOFTWARE.bib}
