@@ -1,4 +1,3 @@
-data-raw
 .travis.yml
 README.md
 ^.*\.Rproj$

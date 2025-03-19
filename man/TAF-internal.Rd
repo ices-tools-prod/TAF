@@ -2,7 +2,7 @@
 % Please edit documentation in R/TAF-internal.R, R/boot.dir.R, R/boot.exists.R,
 %   R/download.github.R, R/ds.file.R, R/ds.package.R, R/model.dir.R,
 %   R/model.script.R, R/parse.repo.R, R/process.bibfile.R, R/process.entry.R,
-%   R/taf.install.R, R/taf.pixels.R
+%   R/taf.install.R
 \name{TAF-internal}
 \alias{TAF-internal}
 \alias{boot.dir}
@@ -18,7 +18,6 @@
 \alias{process.bibfile}
 \alias{process.entry}
 \alias{already.in.taf.library}
-\alias{taf.pixels}
 \title{Various TAF Helper Functions}
 \usage{
 boot.dir()
