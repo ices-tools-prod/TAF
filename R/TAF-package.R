@@ -20,9 +20,6 @@
 #' \href{https://cran.r-project.org/package=icesTAF}{icesTAF} package and other
 #' scientific applications.
 #'
-#' \if{html}{\figure{diagram.png}{options: width="600" alt="diagram"}}
-#' \if{latex}{\figure{diagram.pdf}{options: width=8cm}}
-#'
 #' @details
 #' \emph{Initial TAF steps:}
 #' \tabular{ll}{
