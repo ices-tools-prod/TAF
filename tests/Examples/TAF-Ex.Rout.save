@@ -1549,6 +1549,25 @@ dose supp
 > 
 > 
 > cleanEx()
+> nameEx("taf.readme")
+> ### * taf.readme
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: taf.readme
+> ### Title: TAF Readme
+> ### Aliases: taf.readme
+> 
+> ### ** Examples
+> 
+> ## Not run: 
+> ##D taf.readme()
+> ## End(Not run)
+> 
+> 
+> 
+> 
+> cleanEx()
 > nameEx("taf.session")
 > ### * taf.session
 > 
@@ -1933,7 +1952,7 @@ detaching ‘package:lattice’
 
 > options(digits = 7L)
 > base::cat("Time elapsed: ", proc.time() - base::get("ptime", pos = 'CheckExEnv'),"\n")
-Time elapsed:  0.221 0.01 0.229 0 0 
+Time elapsed:  0.21 0.006 0.218 0 0 
 > grDevices::dev.off()
 null device 
           1 

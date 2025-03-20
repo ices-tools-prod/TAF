@@ -14,6 +14,8 @@
 * Added function taf.libraries() to load all packages from TAF library. Code
   contributed by Iago Mosqueira.
 
+* Added function taf.readme() to draft an introductory README.md.
+
 * Added argument 'force' to dos2unix() and unix2dos().
 
 * Added argument 'quiet' to make(). Renamed argument 'debug' to 'details'.
