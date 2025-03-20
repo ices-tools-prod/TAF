@@ -22,7 +22,7 @@ Read the Git repository name from the \code{.git} folder.
 \examples{
 \dontrun{
 git.repo()
-git.repo(owner=FALSE)
+git.repo(owner=TRUE)
 }
 
 }

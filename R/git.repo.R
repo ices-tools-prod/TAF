@@ -14,7 +14,7 @@
 #' @examples
 #' \dontrun{
 #' git.repo()
-#' git.repo(owner=FALSE)
+#' git.repo(owner=TRUE)
 #' }
 #'
 #' @export
