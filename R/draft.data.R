@@ -90,8 +90,7 @@ draft.data <- function(originator=NULL, year=format(Sys.time(),"%Y"),
   data.scripts <- file_path_sans_ext(data.scripts)
   entries <- c(data.files, data.scripts)
   if(length(entries) == 0)
-    stop("no data (boot/initial/data/*) ",
-         "or data scripts (boot/*.R) found")
+    stop("no data (boot/initial/data/*) or data scripts (boot/*.R) found")
   if(is.null(source))
   {
     source <- rep(c("file","script"),
