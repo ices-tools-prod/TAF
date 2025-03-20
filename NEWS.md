@@ -5,6 +5,8 @@
 
 * Added function ddim() to show the data dimensions of a table.
 
+* Added function draft.readme() to draft an introductory README.md.
+
 * Added function git.repo() to read a Git repository name.
 
 * Added function pdeps() to analyze the dependencies of a CRAN package.
@@ -13,8 +15,6 @@
 
 * Added function taf.libraries() to load all packages from TAF library. Code
   contributed by Iago Mosqueira.
-
-* Added function taf.readme() to draft an introductory README.md.
 
 * Added argument 'force' to dos2unix() and unix2dos().
 

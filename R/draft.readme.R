@@ -1,4 +1,4 @@
-#' TAF Readme
+#' Draft Readme
 #'
 #' Draft an introductory \code{README.md} that describes how to run a TAF
 #' analysis.
@@ -18,12 +18,12 @@
 #'
 #' @examples
 #' \dontrun{
-#' taf.readme()
+#' draft.readme()
 #' }
 #'
 #' @export
 
-taf.readme <- function(path=".", title=NULL, force=FALSE)
+draft.readme <- function(path=".", title=NULL, force=FALSE)
 {
   # Process repo name
   repo <- git.repo(path)
