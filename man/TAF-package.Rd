@@ -107,7 +107,7 @@ scientific applications.
   \code{\link{download.github}} \tab download repository\cr
   \code{\link{file.encoding}}   \tab examine file encoding\cr
   \code{\link{get.remote.sha}}  \tab look up SHA code\cr
-  \code{\link{git.name}}        \tab read Git repository name\cr
+  \code{\link{git.repo}}        \tab read Git repository name\cr
   \code{\link{is.r.package}}    \tab check if file is an R package\cr
   \code{\link{latin1.to.utf8}}  \tab convert file encoding\cr
   \code{\link{line.endings}}    \tab examine line endings\cr

@@ -1,4 +1,4 @@
-#' Git Name
+#' Git Repo
 #'
 #' Read the Git repository name from the \code{.git} folder.
 #'
@@ -13,13 +13,13 @@
 #'
 #' @examples
 #' \dontrun{
-#' git.name()
-#' git.name(owner=FALSE)
+#' git.repo()
+#' git.repo(owner=FALSE)
 #' }
 #'
 #' @export
 
-git.name <- function(path=".", owner=TRUE, warn=TRUE)
+git.repo <- function(path=".", owner=FALSE, warn=FALSE)
 {
   # Read config file
   filename <- file.path(path, ".git/config")

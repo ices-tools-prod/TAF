@@ -5,7 +5,7 @@
 
 * Added function ddim() to show the data dimensions of a table.
 
-* Added function git.name() to read the name of a Git repository.
+* Added function git.repo() to read a Git repository name.
 
 * Added function pdeps() to analyze the dependencies of a CRAN package.
 
