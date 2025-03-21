@@ -4,29 +4,43 @@
 \alias{draft.readme}
 \title{Draft Readme}
 \usage{
-draft.readme(path = ".", title = NULL, force = FALSE)
+draft.readme(title = NULL, file = "")
 }
 \arguments{
-\item{path}{directory of a TAF analysis.}
-
 \item{title}{title to display at the top of the `README.md` page.}
 
-\item{force}{whether to overwrite an existing \code{README.md} file.}
+\item{file}{optional filename to save the draft readme to a file. The value
+\code{TRUE} can be used as shorthand for \code{"README.md"}.}
 }
 \value{
-No return value, called for side effects.
+Character vector of class \verb{Bibtex}.
 }
 \description{
 Draft an introductory \code{README.md} that describes how to run a TAF
 analysis.
 }
 \details{
-The default value of \code{title = NULL} uses the Git repository name as a
+The default value \code{title = NULL} uses the Git repository name as a
 placeholder title.
+
+The default value \code{file = ""} prints the initial draft in the console,
+instead of writing it to a file. The output can then be pasted into a file to
+edit further, without accidentally overwriting an existing file.
+}
+\note{
+Although the output is Markdown text, the \verb{Bibtex} class is used for
+convenient display in the console.
 }
 \examples{
 \dontrun{
+# Print in console
 draft.readme()
+
+# Export to file
+draft.readme(file=TRUE)
+
+# Specify title
+draft.readme("Yellowfin tuna in the western and central Pacific")
 }
 
 }

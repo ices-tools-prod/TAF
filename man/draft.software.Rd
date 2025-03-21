@@ -31,7 +31,7 @@ from. This can be a GitHub reference of the form
 \item{append}{whether to append metadata entries to an existing file.}
 }
 \value{
-Object of class \verb{Bibtex}.
+Character vector of class \verb{Bibtex}.
 }
 \description{
 Create an initial draft version of a \file{SOFTWARE.bib} metadata file.

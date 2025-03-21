@@ -41,7 +41,7 @@
 #' instead of writing it to a file. The output can then be pasted into a file to
 #' edit further, without accidentally overwriting an existing metadata file.
 #'
-#' @return Object of class \verb{Bibtex}.
+#' @return Character vector of class \verb{Bibtex}.
 #'
 #' @note
 #' This function is intended to be called from the top directory of a TAF

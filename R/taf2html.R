@@ -3,7 +3,7 @@
 #' Convert a TAF table to HTML code and optionally write to a file.
 #'
 #' @param x a data frame in TAF format.
-#' @param file a filename, or special values \code{NULL} or \code{""}.
+#' @param file a filename, or special value \code{""}.
 #' @param align a string (or a vector of strings) specifying alignment of data
 #'        cells.
 #' @param header a string (or a vector strings) specifying alignment of header
@@ -31,11 +31,15 @@
 #' \code{style="text-align:center"} could be shortened to \code{class="L"} if a
 #' corresponding class has been defined in CSS.
 #'
-#' Instead of using \code{file} to pass a filename, it can have the special
-#' value \code{file = NULL} to return the HTML code as a vector of strings or
-#' \code{file = ""} (the default) to show the HTML in the console.
+#' The default value \code{file = ""} prints the HTML code in the console,
+#' instead of writing it to a file. The output can then be pasted into a file to
+#' edit further, without accidentally overwriting an existing file.
 #'
-#' @return \code{NULL}, or a vector of strings if \code{file = NULL}.
+#' @return Character vector of class \verb{Bibtex}.
+#'
+#' @note
+#' Although the output is HTML code, the \verb{Bibtex} class is used for
+#' convenient display in the console.
 #'
 #' @note
 #' The resulting HTML conforms to the HTML5 standard and aims for compact
@@ -93,11 +97,19 @@ taf2html <- function(x, file="", align="", header=align,
   for(i in seq_len(nrow(x)))
     tbody[i] <- paste0("  <tr>", paste0(td, x[i,], collapse=""))
 
-  ## Finalize
+  ## Finalize object
   out <- c("<table>", thead, tbody, "</table>")
+  class(out) <- "Bibtex"
 
-  if(is.null(file))
+  ## 3  Export
+  ## No write() when file="", to ensure quiet assignment x <- draft.data()
+  if(file == "")
+  {
     out
+  }
   else
-    cat(out, sep="\n", file=file, append=append)
+  {
+    write(out, file=file, append=append)
+    invisible(out)
+  }
 }

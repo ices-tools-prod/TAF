@@ -1,5 +1,5 @@
 
-R Under development (unstable) (2025-03-16 r87984) -- "Unsuffered Consequences"
+R version 4.4.3 (2025-02-28) -- "Trophy Case"
 Copyright (C) 2025 The R Foundation for Statistical Computing
 Platform: x86_64-pc-linux-gnu
 
@@ -592,7 +592,14 @@ dose supp
 > ### ** Examples
 > 
 > ## Not run: 
+> ##D # Print in console
 > ##D draft.readme()
+> ##D 
+> ##D # Export to file
+> ##D draft.readme(file=TRUE)
+> ##D 
+> ##D # Specify title
+> ##D draft.readme("Yellowfin tuna in the western and central Pacific")
 > ## End(Not run)
 > 
 > 
@@ -1952,7 +1959,7 @@ detaching ‘package:lattice’
 
 > options(digits = 7L)
 > base::cat("Time elapsed: ", proc.time() - base::get("ptime", pos = 'CheckExEnv'),"\n")
-Time elapsed:  0.228 0.009 0.239 0 0 
+Time elapsed:  0.213 0.01 0.223 0 0 
 > grDevices::dev.off()
 null device 
           1 
