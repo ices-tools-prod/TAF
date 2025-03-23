@@ -549,7 +549,9 @@ renv: Project Environments. R package version 1.1.2.\
 
 ICES maintains four core examples that demonstrate TAF analyses using the
 `icesTAF` package. These simple workflows are used in `icesTAF` workshops and
-system tests.
+system tests. They use only core TAF functions, so the `library(icesTAF)` call
+at the top of each script could be replaced with `library(TAF)` and produce the
+same results.
 
 |               | **2015_rjm-347d**                                            |
 | ------------- | ------------------------------------------------------------ |
