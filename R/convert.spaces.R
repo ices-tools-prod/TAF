@@ -30,10 +30,10 @@
 
 convert.spaces <- function(file, sep="_")
 {
-  ## Include both glob matches and filenames without asterisk,
-  ## in case some filenames without asterisk are not found
+  # Include both glob matches and filenames without asterisk,
+  # in case some filenames without asterisk are not found
   from <- sort(unique(c(Sys.glob(file), file[!grepl("\\*", file)])))
-  ## If file is "A B/x y.txt" then convert to "A B/x_y.txt"
+  # If file is "A B/x y.txt" then convert to "A B/x_y.txt"
   from <- from[grep(" |%20", basename(from))]
 
   to <- file.path(dirname(from), gsub(" |%20", sep, basename(from)))

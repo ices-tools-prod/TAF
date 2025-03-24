@@ -60,7 +60,7 @@ make.taf <- function(script, ...)
 
 #' @export
 
-## Equivalent spelling
+# Equivalent spelling
 
 makeTAF <- function(...)
 {

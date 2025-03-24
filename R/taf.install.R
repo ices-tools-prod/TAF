@@ -85,7 +85,7 @@ taf.install <- function(targz=NULL, lib=taf.boot.path("library"), quiet=FALSE)
 #'
 #' @export
 
-## Check whether requested package is already installed in the TAF library
+# Check whether requested package is already installed in the TAF library
 
 already.in.taf.library <- function(targz, lib)
 {

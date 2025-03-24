@@ -42,7 +42,7 @@
 
 clean <- function(dirs=c("data", model.dir(), "output", "report"), force=FALSE)
 {
-  ## Convert "boot/" to "boot", so clean("boot/") doesn't go wild
+  # Convert "boot/" to "boot", so clean("boot/") doesn't go wild
   dirs <- sub("/$", "", dirs)
 
   if("boot" %in% dirs || "bootstrap" %in% dirs)

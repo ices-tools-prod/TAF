@@ -46,18 +46,18 @@
 read.taf <- function(file, check.names=FALSE, stringsAsFactors=FALSE,
                      fileEncoding="UTF-8", ...)
 {
-  ## Ensure file is either single dirname or only filenames
+  # Ensure file is either single dirname or only filenames
   if(length(file) > 1 && any(dir.exists(file)))
     stop("'file' must be of length 1 when it is a directory name")
   if(length(file) == 1 && dir.exists(file))
   {
     file <- dir(file, pattern="\\.csv$", full.names=TRUE)
-    ## Ensure file is not a dirname without CSV files
+    # Ensure file is not a dirname without CSV files
     if(length(file) == 0)
       stop("directory contains no CSV files")
   }
 
-  ## Now ready to import one or more CSV files
+  # Now ready to import one or more CSV files
   if(length(file) > 1)
   {
     out <- lapply(file, read.taf, check.names=check.names,

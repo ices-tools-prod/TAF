@@ -57,11 +57,11 @@ clean.library <- function(folder="boot/library", quiet=FALSE, force=FALSE)
     bib <- read.bib(file.path(folder, "../SOFTWARE.bib"))
     for(pkg in dir(folder))
     {
-      ## Read sha.inst, the SHA for an installed package
+      # Read sha.inst, the SHA for an installed package
       sha.inst <- packageDescription(pkg, lib.loc=folder)$RemoteSha
       if(is.null(sha.inst))
         sha.inst <- "Not listed"
-      ## Read sha.bib, the corresponding SHA from SOFTWARE.bib
+      # Read sha.bib, the corresponding SHA from SOFTWARE.bib
       if(pkg %in% names(bib))
       {
         repo <- bib[[pkg]]$source
@@ -75,7 +75,7 @@ clean.library <- function(folder="boot/library", quiet=FALSE, force=FALSE)
       {
         sha.bib <- "Not listed"
       }
-      ## If installed package is either a mismatch or not listed, then remove it
+      # If installed package is either a mismatch or not listed, then remove it
       if(sha.inst != sha.bib)
       {
         unlink(file.path(folder, pkg), recursive=TRUE)

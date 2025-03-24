@@ -2,7 +2,7 @@
 #'
 #' @export
 
-## Model script name
+# Model script name
 
 model.script <- function()
 {

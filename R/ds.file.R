@@ -4,13 +4,13 @@
 #'
 #' @export
 
-## Helper function for draft.software
+# Helper function for draft.software
 
 ds.file <- function(package, author, year, title, version, source)
 {
   key <- file_path_sans_ext(basename(package), compression=TRUE)
 
-  ## Treat null and NA (from mapply) the same, must test null first
+  # Treat null and NA (from mapply) the same, must test null first
   author <- if(is.null(author) || is.na(author)) NULL else author
   year <- if(is.null(year) || is.na(year)) NULL else year
   title <- if(is.null(title) || is.na(title)) NULL else title

@@ -2,7 +2,7 @@
 #'
 #' @export
 
-## Boot directory exists
+# Boot directory exists
 
 boot.exists <- function()
 {

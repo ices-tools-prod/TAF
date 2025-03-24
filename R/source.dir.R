@@ -53,7 +53,7 @@ source.dir <- function(dir, pattern="\\.[r|R]$", all.files=FALSE,
 
 #' @export
 
-## Equivalent spelling
+# Equivalent spelling
 
 sourceDir <- function(...)
 {

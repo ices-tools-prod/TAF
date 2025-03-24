@@ -62,7 +62,7 @@ deps <- function(path=".", base=FALSE, installed=TRUE, available=TRUE,
   code <- lapply(files, readLines)
   names(code) <- basename(files)
 
-  ## Look for loaded packages and pkg::object calls
+  # Look for loaded packages and pkg::object calls
   pattern <- ".*(library|require)\\(\"?'? *([A-Za-z0-9.]+).*"
   p.load <- lapply(code, grep, pattern=pattern, value=TRUE)
   p.load <- gsub(pattern, "\\2", unlist(p.load))
@@ -70,7 +70,7 @@ deps <- function(path=".", base=FALSE, installed=TRUE, available=TRUE,
   p.obj <- lapply(code, grep, pattern=pattern, value=TRUE)
   p.obj <- gsub(pattern, "\\1", unlist(p.obj))
 
-  ## Combine all packages, maybe exclude base/installed/available
+  # Combine all packages, maybe exclude base/installed/available
   pkgs <- c(p.load, p.obj)
   if(!base)
     pkgs <- pkgs[!(pkgs %in% rownames(installed.packages(priority="high")))]
@@ -79,7 +79,7 @@ deps <- function(path=".", base=FALSE, installed=TRUE, available=TRUE,
   if(!available)
     pkgs <- pkgs[!(pkgs %in% rownames(available.packages()))]
 
-  ## Format output
+  # Format output
   names(pkgs) <- sub("[0-9]*$", "", names(pkgs))
   pkgs <- sort(pkgs)
   pkgs <- if(list) split(unname(pkgs), names(pkgs)) else unique(unname(pkgs))

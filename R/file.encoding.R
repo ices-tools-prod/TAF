@@ -43,11 +43,11 @@ file.encoding <- function(file)
   if(!file.exists(file))
     stop("file not found")
 
-  ## Examine file using the 'file' shell command
+  # Examine file using the 'file' shell command
   info <- try(system(paste("file", shQuote(file)), intern=TRUE,
                      ignore.stderr=TRUE), silent=TRUE)
 
-  ## Return latin1, UTF-8, unknown, or NA
+  # Return latin1, UTF-8, unknown, or NA
   out <- if(grepl(":.*ISO-8859",info)) "latin1"
          else if(grepl(":.*UTF-8",info)) "UTF-8"
          else if(inherits(info, "try-error")) NA_character_

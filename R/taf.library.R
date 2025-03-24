@@ -43,8 +43,8 @@
 
 taf.library <- function(package, messages=FALSE, warnings=FALSE)
 {
-  ## If taf.library() is called from boot data script, the working directory is
-  ## root/boot/data/scriptname; change to root temporarily
+  # If taf.library() is called from boot data script, the working directory is
+  # root/boot/data/scriptname; change to root temporarily
   if(basename(dirname(dirname(getwd()))) %in% c("boot","bootstrap"))
   {
     owd <- setwd("../../.."); on.exit(setwd(owd))
@@ -61,7 +61,7 @@ taf.library <- function(package, messages=FALSE, warnings=FALSE)
   if(!(package %in% installed))
     stop("there is no package '", package, "' in boot/library")
 
-  ## Add bootstrap/library to lib path, using that rather than external library
+  # Add bootstrap/library to lib path, using that rather than external library
   opath <- .libPaths()
   .libPaths(c(file.path(boot.dir(),"library"), opath))
   on.exit(.libPaths(opath), add=TRUE)

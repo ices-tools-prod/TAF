@@ -49,11 +49,11 @@
 pdeps <- function(packages, recursive=TRUE, reverse=FALSE, base=FALSE,
                   installed=TRUE, available=TRUE, sort=FALSE, ...)
 {
-  ## Get all package dependencies
+  # Get all package dependencies
   pkgs <- package_dependencies(packages, recursive=recursive,
                                reverse=reverse, ...)
 
-  ## Maybe exclude base/installed/available
+  # Maybe exclude base/installed/available
   if(!base)
     pkgs <- lapply(pkgs, function(p)
       p[!(p %in% rownames(installed.packages(priority="high")))])
@@ -64,7 +64,7 @@ pdeps <- function(packages, recursive=TRUE, reverse=FALSE, base=FALSE,
     pkgs <-
       lapply(pkgs, function(p) p[!(p %in% rownames(available.packages()))])
 
-  ## Format output
+  # Format output
   if(sort)
     pkgs <- lapply(pkgs, sort)
 

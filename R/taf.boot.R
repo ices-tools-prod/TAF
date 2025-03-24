@@ -102,7 +102,7 @@ taf.boot <- function(software=TRUE, data=TRUE, clean=TRUE, force=FALSE,
 
   out <- c(SOFTWARE.bib=FALSE, DATA.bib=FALSE)
 
-  ## 0  Process config
+  # 0  Process config
   if(dir.exists(file.path(boot.dir(), "initial/config")))
   {
     if(clean)
@@ -112,16 +112,16 @@ taf.boot <- function(software=TRUE, data=TRUE, clean=TRUE, force=FALSE,
     cp(file.path(boot.dir(), "initial/config"), ".")
   }
 
-  ## 1  Process software
+  # 1  Process software
   if(software && file.exists(file.path(boot.dir(), "SOFTWARE.bib")))
     out["SOFTWARE.bib"] <-
       process.bibfile("software", clean=clean, quiet=quiet, ...)
 
-  ## 2  Process data
+  # 2  Process data
   if(data && file.exists(file.path(boot.dir(), "DATA.bib")))
     out["DATA.bib"] <- process.bibfile("data", clean=clean, quiet=quiet, ...)
 
-  ## Remove empty folders
+  # Remove empty folders
   rmdir(file.path(boot.dir(), c("data", "library", "software")), recursive=TRUE)
   rmdir(file.path(boot.dir(), "library:"), recursive=TRUE)  # sometimes in Linux
 
@@ -133,7 +133,7 @@ taf.boot <- function(software=TRUE, data=TRUE, clean=TRUE, force=FALSE,
 
 #' @export
 
-## Equivalent spelling
+# Equivalent spelling
 
 taf.bootstrap <- function(...)
 {

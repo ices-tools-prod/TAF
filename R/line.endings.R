@@ -23,14 +23,14 @@
 
 line.endings <- function(file)
 {
-  ## Read file as bytes
+  # Read file as bytes
   bytes <- readBin(file, what="raw", n=1e4, endian="little")
   bytes <- paste(bytes, collapse=" ")
 
-  ## Check if file contains CRLF (0d 0a)
+  # Check if file contains CRLF (0d 0a)
   CRLF <- grepl("0d 0a", bytes)
 
-  ## Return string
+  # Return string
   out <- if(CRLF) "Dos" else "Unix"
   out
 }

@@ -72,7 +72,7 @@ draft.readme <- function(title=NULL, file="")
     file <- "README.md"
   if(identical(file, FALSE))
     file <- ""
-  ## No write() when file="", to ensure quiet assignment x <- draft.readme()
+  # No write() when file="", to ensure quiet assignment x <- draft.readme()
   if(file == "")
   {
     out
