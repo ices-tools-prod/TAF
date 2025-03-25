@@ -77,10 +77,10 @@ taf.skeleton <- function(path = ".", force = FALSE, pkgs = "TAF",
                      paste0("library(", pkgs, ")", collapse = "\n"),
                      "\n\nmkdir(\"%s\")\n\n")
   headers <- list(
-    data = "Preprocess data, write TAF data tables",
+    data = "Prepare data, write CSV data tables",
     model = "Run analysis, write model results",
-    output = "Extract results of interest, write TAF output tables",
-    report = "Prepare plots and tables for report")
+    output = "Extract results of interest, write CSV output tables",
+    report = "Produce plots and tables for report")
   if (model.script %in% c("method", "method.R")) {
     names(headers)[2] <- "method"
   }

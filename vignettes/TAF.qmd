@@ -44,12 +44,12 @@ goal, the following objectives have guided the design of TAF:
 
 TAF divides a workflow into four steps:
 
-| Script         | Purpose                     |
-| -------------- | --------------------------- |
-| **`data.R`**   | Preprocess data             |
-| **`model.R`**  | Run model                   |
-| **`output.R`** | Extract results of interest |
-| **`report.R`** | Plots and tables for report |
+| Script         | Purpose                           |
+| -------------- | --------------------------------- |
+| **`data.R`**   | Prepare data, write CSV tables    |
+| **`model.R`**  | Run model                         |
+| **`output.R`** | Extract results, write CSV tables |
+| **`report.R`** | Plots and tables for report       |
 
 These scripts all share the same general structure, starting with loading
 packages and reading in files, then performing computations and writing out
