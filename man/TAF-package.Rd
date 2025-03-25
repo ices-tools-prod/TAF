@@ -105,6 +105,7 @@ scientific applications.
   \code{\link{dos2unix}}        \tab convert line endings\cr
   \code{\link{download}}        \tab download file\cr
   \code{\link{download.github}} \tab download repository\cr
+  \code{\link{draft.readme}}    \tab draft introductory readme\cr
   \code{\link{file.encoding}}   \tab examine file encoding\cr
   \code{\link{get.remote.sha}}  \tab look up SHA code\cr
   \code{\link{git.repo}}        \tab read Git repository name\cr

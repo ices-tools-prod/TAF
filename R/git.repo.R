@@ -4,11 +4,15 @@
 #'
 #' @param path top directory of a Git repository.
 #' @param owner whether to include the repository owner name.
-#' @param warn whether to raise a warning include the repository owner name.
+#' @param warn whether to generate a warning if no \verb{.git/config} file is
+#'        found.
 #'
 #' @return String of the format \code{"[owner]/repo"}.
 #'
 #' @seealso
+#' \code{\link{draft.readme}} calls \code{git.repo} to include the repository
+#' name in the \verb{README.md}.
+#'
 #' \code{\link{TAF-package}} gives an overview of the package.
 #'
 #' @examples

@@ -45,5 +45,7 @@ draft.readme("Yellowfin tuna in the western and central Pacific")
 
 }
 \seealso{
+\code{\link{git.repo}} reads the Git repository name.
+
 \code{\link{TAF-package}} gives an overview of the package.
 }

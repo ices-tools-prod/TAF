@@ -22,6 +22,8 @@
 #' convenient display in the console.
 #'
 #' @seealso
+#' \code{\link{git.repo}} reads the Git repository name.
+#'
 #' \code{\link{TAF-package}} gives an overview of the package.
 #'
 #' @examples

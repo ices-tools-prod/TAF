@@ -11,7 +11,8 @@ git.repo(path = ".", owner = FALSE, warn = FALSE)
 
 \item{owner}{whether to include the repository owner name.}
 
-\item{warn}{whether to raise a warning include the repository owner name.}
+\item{warn}{whether to generate a warning if no \verb{.git/config} file is
+found.}
 }
 \value{
 String of the format \code{"[owner]/repo"}.
@@ -27,5 +28,8 @@ git.repo(owner=TRUE)
 
 }
 \seealso{
+\code{\link{draft.readme}} calls \code{git.repo} to include the repository
+name in the \verb{README.md}.
+
 \code{\link{TAF-package}} gives an overview of the package.
 }
