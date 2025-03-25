@@ -41,7 +41,6 @@
 #' Although the output is HTML code, the \verb{Bibtex} class is used for
 #' convenient display in the console.
 #'
-#' @note
 #' The resulting HTML conforms to the HTML5 standard and aims for compact
 #' output, omitting optional closing tags and rendering each row of data as one
 #' row of HTML code.
