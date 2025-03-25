@@ -1,6 +1,6 @@
-#' Read TAF Table from File
+#' Read TAF Table
 #'
-#' Read a TAF table from a file into a data frame.
+#' Read from a CSV file into a data frame.
 #'
 #' @param file a filename.
 #' @param check.names whether to enforce regular column names, e.g. convert
@@ -14,8 +14,8 @@
 #' read many tables in one call.
 #'
 #' @return
-#' A data frame in TAF format, or a list of data frames if \code{file} is a
-#' directory or a vector of filenames.
+#' A data frame, or a list of data frames if \code{file} is a directory or a
+#' vector of filenames.
 #'
 #' @note
 #' This function gives a warning when column names are missing or duplicated. It
@@ -25,7 +25,7 @@
 #' \code{\link{read.csv}} is the underlying function used to read a table from a
 #' file.
 #'
-#' \code{\link{write.taf}} writes a TAF table to a file.
+#' \code{\link{write.taf}} writes a data frame to a CSV file.
 #'
 #' \code{\link{TAF-package}} gives an overview of the package.
 #'

@@ -1,8 +1,8 @@
-#' Write TAF Table to File
+#' Write TAF Table
 #'
-#' Write a TAF table to a file.
+#' Write a data frame to a CSV file.
 #'
-#' @param x a data frame in TAF format.
+#' @param x a data frame.
 #' @param file a filename.
 #' @param dir an optional directory name.
 #' @param quote whether to quote strings.
@@ -36,9 +36,9 @@
 #' \code{\link{write.csv}} is the underlying function used to write a table to a
 #' file.
 #'
-#' \code{\link{read.taf}} reads a TAF table from a file into a data frame.
+#' \code{\link{read.taf}} reads from a CSV file into a data frame.
 #'
-#' \code{\link{taf2html}} converts TAF table to HTML.
+#' \code{\link{taf2html}} converts a data frame to HTML.
 #'
 #' \code{\link{TAF-package}} gives an overview of the package.
 #'

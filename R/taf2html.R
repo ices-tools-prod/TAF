@@ -1,8 +1,8 @@
 #' Convert TAF Table to HTML
 #'
-#' Convert a TAF table to HTML code and optionally write to a file.
+#' Convert a data frame to HTML code and optionally write to a file.
 #'
-#' @param x a data frame in TAF format.
+#' @param x a data frame.
 #' @param file a filename, or special value \code{""}.
 #' @param align a string (or a vector of strings) specifying alignment of data
 #'        cells.
@@ -46,7 +46,7 @@
 #' row of HTML code.
 #'
 #' @seealso
-#' \code{\link{write.taf}} writes a TAF table to a file.
+#' \code{\link{write.taf}} writes a data frame to a CSV file.
 #'
 #' \code{\link{TAF-package}} gives an overview of the package.
 #'

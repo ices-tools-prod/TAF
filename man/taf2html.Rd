@@ -10,7 +10,7 @@ taf2html(x, file = "", align = "", header = align,
   right = "style=\\"text-align:right\\"", append = FALSE)
 }
 \arguments{
-\item{x}{a data frame in TAF format.}
+\item{x}{a data frame.}
 
 \item{file}{a filename, or special value \code{""}.}
 
@@ -34,7 +34,7 @@ cells.}
 Character vector of class \verb{Bibtex}.
 }
 \description{
-Convert a TAF table to HTML code and optionally write to a file.
+Convert a data frame to HTML code and optionally write to a file.
 }
 \details{
 The \code{align} argument can be a vector of strings to specify
@@ -77,7 +77,7 @@ taf2html(catage.taf, "catage.html", align=c("L","R","R","R","R"),
 
 }
 \seealso{
-\code{\link{write.taf}} writes a TAF table to a file.
+\code{\link{write.taf}} writes a data frame to a CSV file.
 
 \code{\link{TAF-package}} gives an overview of the package.
 }

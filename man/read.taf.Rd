@@ -2,7 +2,7 @@
 % Please edit documentation in R/read.taf.R
 \name{read.taf}
 \alias{read.taf}
-\title{Read TAF Table from File}
+\title{Read TAF Table}
 \usage{
 read.taf(file, check.names = FALSE, stringsAsFactors = FALSE,
   fileEncoding = "UTF-8", ...)
@@ -20,11 +20,11 @@ column name \code{"3"} to \code{"X3"}.}
 \item{\dots}{passed to \code{read.csv}.}
 }
 \value{
-A data frame in TAF format, or a list of data frames if \code{file} is a
-directory or a vector of filenames.
+A data frame, or a list of data frames if \code{file} is a directory or a
+vector of filenames.
 }
 \description{
-Read a TAF table from a file into a data frame.
+Read from a CSV file into a data frame.
 }
 \details{
 Alternatively, \code{file} can be a directory or a vector of filenames, to
@@ -48,7 +48,7 @@ file.remove("catage.csv")
 \code{\link{read.csv}} is the underlying function used to read a table from a
 file.
 
-\code{\link{write.taf}} writes a TAF table to a file.
+\code{\link{write.taf}} writes a data frame to a CSV file.
 
 \code{\link{TAF-package}} gives an overview of the package.
 }

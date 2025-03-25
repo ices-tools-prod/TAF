@@ -50,14 +50,14 @@ scientific applications.
   \code{\link{os.linux}}       \tab operating system\cr
   \code{\link{os.macos}}       \tab operating system\cr
   \code{\link{os.windows}}     \tab operating system\cr
-  \code{\link{read.taf}}       \tab read TAF table from file\cr
+  \code{\link{read.taf}}       \tab read from CSV file\cr
   \code{\link{source.dir}}     \tab read all \code{*.R} files\cr
   \code{\link{taf.boot.path}}  \tab construct path to boot folder\cr
   \code{\link{taf.data.path}}  \tab construct path to boot data files\cr
   \code{\link{taf.library}}    \tab load package from TAF library\cr
   \code{\link{taf.libraries}}  \tab load all packages from TAF library\cr
   \code{\link{taf.unzip}}      \tab unzip file\cr
-  \code{\link{write.taf}}      \tab write TAF table to file
+  \code{\link{write.taf}}      \tab write to CSV file
 }
 \emph{Tables:}
 \tabular{ll}{
@@ -69,7 +69,7 @@ scientific applications.
   \code{\link{plus}}      \tab rename plus group column\cr
   \code{\link{rnd}}       \tab round column values\cr
   \code{\link{sam2taf}}   \tab convert SAM to TAF\cr
-  \code{\link{taf2html}}  \tab convert TAF to HTML\cr
+  \code{\link{taf2html}}  \tab convert data frame to HTML\cr
   \code{\link{taf2long}}  \tab convert TAF to long format\cr
   \code{\link{taf2xtab}}  \tab convert TAF to crosstab\cr
   \code{\link{tt}}        \tab transpose TAF table\cr

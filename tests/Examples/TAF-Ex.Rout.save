@@ -1122,7 +1122,7 @@ dose supp
 > flush(stderr()); flush(stdout())
 > 
 > ### Name: read.taf
-> ### Title: Read TAF Table from File
+> ### Title: Read TAF Table
 > ### Aliases: read.taf
 > 
 > ### ** Examples
@@ -1822,7 +1822,7 @@ dose supp
 > flush(stderr()); flush(stdout())
 > 
 > ### Name: write.taf
-> ### Title: Write TAF Table to File
+> ### Title: Write TAF Table
 > ### Aliases: write.taf
 > 
 > ### ** Examples
@@ -1959,7 +1959,7 @@ detaching ‘package:lattice’
 
 > options(digits = 7L)
 > base::cat("Time elapsed: ", proc.time() - base::get("ptime", pos = 'CheckExEnv'),"\n")
-Time elapsed:  0.213 0.01 0.223 0 0 
+Time elapsed:  0.17 0.008 0.178 0 0 
 > grDevices::dev.off()
 null device 
           1 
