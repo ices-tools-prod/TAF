@@ -49,14 +49,14 @@
 #'   \code{\link{os.linux}}       \tab operating system\cr
 #'   \code{\link{os.macos}}       \tab operating system\cr
 #'   \code{\link{os.windows}}     \tab operating system\cr
-#'   \code{\link{read.taf}}       \tab read from CSV file\cr
+#'   \code{\link{read.taf}}       \tab read CSV file\cr
 #'   \code{\link{source.dir}}     \tab read all \code{*.R} files\cr
 #'   \code{\link{taf.boot.path}}  \tab construct path to boot folder\cr
 #'   \code{\link{taf.data.path}}  \tab construct path to boot data files\cr
 #'   \code{\link{taf.library}}    \tab load package from TAF library\cr
 #'   \code{\link{taf.libraries}}  \tab load all packages from TAF library\cr
 #'   \code{\link{taf.unzip}}      \tab unzip file\cr
-#'   \code{\link{write.taf}}      \tab write to CSV file
+#'   \code{\link{write.taf}}      \tab write CSV file
 #' }
 #' \emph{Tables:}
 #' \tabular{ll}{
