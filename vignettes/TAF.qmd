@@ -388,7 +388,7 @@ or other statistical software of choice. Furthermore, the reviewer can modify
 and rerun the analysis, evaluating the effect of alternative methods and model
 assumptions.
 
-### Related packages
+### Related R packages
 
 #### icesTAF
 
@@ -427,7 +427,7 @@ be rerun to update the plots in seconds, without rerunning the entire workflow
 that might take minutes or hours.
 
 The TAF package contains the `make()` function, along with the related
-`make.taf()` and `make.all()` functions. These tools are not promoted for
+`make.taf()` and `make.all()` functions. These expert tools are not promoted for
 general use in TAF tutorials or introductory workshops, but they are useful for
 working with TAF at scale, managing, checking, and debugging a large number of
 workflows, providing support to multiple users at the same time, etc.
