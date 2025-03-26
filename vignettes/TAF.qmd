@@ -512,7 +512,7 @@ SOFIA: Tools to Work with SOFIA Analyses. R package version 2.1.3.\
 Merkel, D. (2014).
 Docker: lightweight Linux containers for consistent development and deployment.
 *Linux Journal*, 239, 76-91.\
-<https://dl.acm.org/doi/pdf/10.5555/2600239>
+https://dl.acm.org/doi/pdf/10.5555/2600239
 
 Patashnik, O. (2003).
 BibTEX yesterday, today, and tomorrow.
