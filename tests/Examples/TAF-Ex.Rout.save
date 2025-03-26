@@ -37,6 +37,8 @@ Type 'q()' to quit R.
 > ### ** Examples
 > 
 > ## Not run: 
+> ##D taf.example("linreg")
+> ##D setwd("linreg")
 > ##D taf.boot()
 > ##D source.all()
 > ## End(Not run)
@@ -1959,7 +1961,7 @@ detaching ‘package:lattice’
 
 > options(digits = 7L)
 > base::cat("Time elapsed: ", proc.time() - base::get("ptime", pos = 'CheckExEnv'),"\n")
-Time elapsed:  0.17 0.008 0.178 0 0 
+Time elapsed:  0.172 0.011 0.185 0 0 
 > grDevices::dev.off()
 null device 
           1 

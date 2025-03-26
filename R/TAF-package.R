@@ -139,7 +139,8 @@
 #'
 #' @examples
 #' \dontrun{
-#' library(TAF)
+#' taf.example("linreg")
+#' setwd("linreg")
 #' taf.boot()
 #' source.all()
 #' }
