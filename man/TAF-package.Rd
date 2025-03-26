@@ -15,11 +15,18 @@ writing out files for the next step.
 Convenience functions are provided to version control the required data and
 software, run analyses, clean residues from previous runs, manage files,
 manipulate tables, and produce figures. With a focus on stability and
-reproducible analyses, the TAF package comes with no dependencies.
-
-TAF forms a base layer for the
+reproducible analyses, the TAF package comes with no dependencies. TAF forms
+a base layer for the
 \href{https://cran.r-project.org/package=icesTAF}{icesTAF} package and other
 scientific applications.
+
+The following diagram describes the general workflow of every TAF analysis:
+
+\if{html}{\figure{diagram.png}{options: width="400" alt="diagram"}}
+\if{latex}{\figure{diagram.pdf}{options: width=10cm}}
+
+See \code{vignette("TAF")} for more detailed coverage on how to organize and
+run TAF workflows.
 }
 \details{
 \emph{Initial TAF steps:}
@@ -125,20 +132,16 @@ scientific applications.
 }
 \examples{
 \dontrun{
+library(TAF)
 taf.boot()
 source.all()
 }
 }
-\references{
+\seealso{
+See \code{vignette("TAF")} for an introduction to the TAF package.
+
 The \href{https://github.com/ices-taf/doc/wiki}{TAF Wiki} provides additional
 help resources.
-}
-\seealso{
-Useful links:
-\itemize{
-  \item \url{https://github.com/ices-tools-prod/TAF}
-}
-
 }
 \author{
 Arni Magnusson, Colin Millar, and Iago Mosqueira.
