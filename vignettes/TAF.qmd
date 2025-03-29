@@ -569,6 +569,13 @@ renv: Project Environments. R package version 1.1.2.\
 
 #### Introductory notes
 
+The online examples listed below come from international organizations where TAF
+has been adopted to organize reproducible workflows and present data, methods,
+and results as open science. The organizations are the International Council for
+the Exploration of the Sea (ICES), UN Food and Agriculture Organization (FAO),
+and the Pacific Community (SPC). These examples are followed by a collection of
+workflows covering areas outside of fisheries science.
+
 #### ICES
 
 ICES maintains four core examples that demonstrate TAF analyses using the
@@ -663,19 +670,30 @@ the analysis.
 | Results       | 24 tables, 4 plots                                           |
 | Notes         | TAF analysis is organized inside a subdirectory              |
 
-#### Arni's collection
+#### Various
 
-The following examples demonstrate various uses of TAF beyond fisheries science.
+The following examples demonstrate various uses of TAF covering areas outside of
+fisheries science.
+
+|               | **taf-four-minutes**                                         |
+| ------------- | ------------------------------------------------------------ |
+| Analysis      | Comparison between TAF and targets                           |
+| Repository    | <https://github.com/ices-taf-dev/taf-four-minutes>           |
+| Methods       | Linear regression                                            |
+| External deps | Many CRAN packages                                           |
+| Data sources  | 1 local file                                                 |
+| Results       | 2 tables, 1 plot                                             |
+| Notes         | Tidyverse workflow                                           |
 
 |               | **corona**                                                   |
 | ------------- | ------------------------------------------------------------ |
-| Analysis      | Analysis of COVID-19 cases and deaths by country             |
+| Analysis      | COVID-19 cases and deaths by country                         |
 | Repository    | <https://github.com/arni-magnusson/corona>                   |
 | Methods       | Basic arithmetic and plots, global and selected countries    |
 | External deps | Many CRAN packages                                           |
-| Data sources  | Online (Johns Hopkins) and 1 local file                      |
+| Data sources  | Online (Johns Hopkins University) and 1 local file           |
 | Results       | 15 tables, 64 plots                                          |
-| Notes         | Useful during the global epidemic to view the actual data    |
+| Notes         | Useful during the global epidemic to view the latest data    |
 
 |               | **weather**                                                  |
 | ------------- | ------------------------------------------------------------ |
