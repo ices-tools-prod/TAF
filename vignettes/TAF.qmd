@@ -399,32 +399,31 @@ countries collaborating in marine science. The aim was to develop a new
 framework for organizing ICES analyses, improving reviewability and
 reproducibility.
 
-In 2017, the first version of the `icesTAF` package was released on CRAN,
-followed by later version updates. In 2021-2022, the package was split into two
-separate but related packages:
+In 2017, the first version of the `icesTAF` package (Millar and Magnusson 2023)
+was released on CRAN, followed by later version updates. In 2021-2022, the
+package was split into two separate but related packages:
 
-1. `TAF` provides the core functionality and has no package dependencies.
+1. TAF provides the core functionality and has no package dependencies.
 
-2. `icesTAF` includes all of `TAF` and adds additional features that are
-   primarily used within ICES and may depend on external packages.
+2. icesTAF loads all of TAF and adds additional features that are primarily
+   used within ICES and may depend on external packages.
 
-ICES workflows use the `icesTAF` package, benefiting from access to a dedicated
+ICES workflows use the icesTAF package, benefiting from access to a dedicated
 ICES TAF server, ICES databases, and other infrastructure. Other workflows that
-are not related to ICES use the smaller `TAF` package and reap the various
+are not related to ICES use the smaller TAF package and reap the various
 benefits of zero package dependencies.
 
-The development and maintenance of `TAF` and `icesTAF` is tightly synchronized,
-with new CRAN releases occurring within days of each other and using the same
-version number.
+The development and maintenance of TAF and icesTAF is tightly synchronized, with
+new CRAN releases occurring within days of each other and using the same version
+number.
 
 ### makeit
 
-While `icesTAF` is the ancestor and superset of `TAF`, the `makeit` package is a
-descendant and a subset. The TAF function `make()` dates back to 2017 and is a
-powerful tool to run only the parts of a workflow where the underlying files
-have changed. For example, after plot scripts are modified, those scripts should
-be rerun to update the plots in seconds, without rerunning the entire workflow
-that might take minutes or hours.
+The `make()` function, a part of the TAF package since 2017, is a powerful tool
+to run only the parts of a workflow where the underlying files have changed. For
+example, after plot scripts are modified, those scripts should be rerun to
+update the plots in seconds, without rerunning the entire workflow that might
+take minutes or hours.
 
 The TAF package contains the `make()` function, along with the related
 `make.taf()` and `make.all()` functions. These expert tools are not promoted for
@@ -435,8 +434,8 @@ workflows, providing support to multiple users at the same time, etc.
 As the name implies, the `make()` function is closely based on the shell command
 of the same name (Stallman et al. 2023) but implemented in R. As a generally
 useful tool beyond the context of TAF workflows, the `make()` function was
-packaged and released on CRAN in a package called `makeit` in 2023. The package
-(Magnusson 2023) contains annotated examples and a discussion.
+eventually packaged and released on CRAN in its own package called `makeit`
+in 2023. The package contains annotated examples and a discussion.
 
 #### SOFIA
 
@@ -455,7 +454,27 @@ collection of tools to facilitate this work.
 
 #### targets
 
-Landau (2021)
+The `targets` package (Laundau 2021) has somewhat similar objectives as TAF, to
+organize and run computational workflows. A key distinction between the packages
+is that in TAF the user organizes their workflow by writing *scripts* that
+produce *files*, but in `targets` the user organizes their workflow by writing
+*functions* that produce *objects*, to be passed to the next step. Thus, the two
+packages present two different paradigms with a similar end result.
+
+A TAF workflow structure is predetermined, as the main scripts will always be
+named `data.R`, `model.R`, `output.R`, and `report.R`. After running a TAF
+analysis, one can always expect to find the data and results in CSV format in
+the corresponding `data`, `output`, and `report` folders. In contrast, the
+`targets` package does not confine the user to a predetermined workflow design,
+and tables containing data and results are generally accessed by the user as R
+objects rather than files.
+
+The `targets` package requires a higher level of R expertise than TAF, both for
+the author to design a workflow using interconnected functions, and for a
+reviewer to browse the data, model settings, and results. The utility functions
+that come with TAF are for basic data and file management, while the utility
+functions that come with `targets` are for parallel computations and a variety
+of cloud services.
 
 #### renv
 
@@ -513,6 +532,11 @@ Merkel, D. (2014).
 Docker: lightweight Linux containers for consistent development and deployment.
 *Linux Journal*, 239, 76-91.\
 https://dl.acm.org/doi/pdf/10.5555/2600239
+
+Millar C. and A. Magnusson. (2023).
+icesTAF: Functions to Support the ICES Transparent Assessment Framework.
+R package version 4.2.0.\
+<https://cran.r-project.org/package=icesTAF>
 
 Patashnik, O. (2003).
 BibTEX yesterday, today, and tomorrow.
