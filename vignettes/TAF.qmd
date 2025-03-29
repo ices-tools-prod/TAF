@@ -64,8 +64,8 @@ available in the `boot/data` subfolder, where the `data.R` script will read it.
 <div style="text-align:center"><img src="figs/diagram.png" width="400"></div>
 
 The `SOFTWARE.bib` file is optional. It is not used in the simple linear
-regression example below but is covered in @sec-boot-procedure where the boot
-procedure is described in more detail.
+regression example below but its functionality is covered in the <a
+href="#the-boot-procedure">boot procedure</a> section below.
 
 ## Running a TAF analysis
 
@@ -232,7 +232,7 @@ file formats provided by R can be used.
 
 ## TAF features
 
-### The boot procedure {#sec-boot-procedure}
+### The boot procedure
 
 Similar to booting a computer, the TAF boot procedure readies the data and
 software components that are required for upcoming computations. The boot
@@ -417,7 +417,7 @@ The development and maintenance of TAF and icesTAF is tightly synchronized, with
 new CRAN releases occurring within days of each other and using the same version
 number.
 
-### makeit
+#### makeit
 
 The `make()` function, a part of the TAF package since 2017, is a powerful tool
 to run only the parts of a workflow where the underlying files have changed. For
@@ -486,7 +486,31 @@ combination with the `renv` package (Ushey and Wickham 2025), `rig` (Csárdi
 
 ## Summary
 
-No dependencies.
+A common question about TAF is "Can TAF do *X*?", where *X* is some desired
+functionality. The answer is yes, if it can be done using R scripts, but TAF is
+not going to do it by itself. Generally speaking, the only work performed by TAF
+is what the scripts contain. Luckily, R scripts can do a wide variety of things,
+including running software written in other languages than R.
+
+TAF is especially designed to showcase the final form of a scientific analysis.
+There are essentially three paths to produce a TAF analysis: (1) starting the
+from scratch using `taf.skeleton()`, (2) starting from a template such as
+`taf.example("linreg")` or another existing TAF analysis, or (3) encapsulating
+an already completed analysis, to strengthen reproducibility and reviewability.
+
+Incremental development of TAF analyses usually takes place in a GitHub
+repository that can be kept private while the work is ongoing and then made
+public once the analysis is ready for presentation. Among the <a
+href="#appendix-online-examples">online examples</a>, one-off analyses such as
+*corona*, *weather*, and *trip* are created from scratch, while ICES and SOFIA
+analyses are often based on existing templates.
+
+The SPC analyses of yellowfin and albacore tuna are examples where the actual
+analysis is conducted independent of TAF using Bash shell scripts, but TAF
+scripts are added afterwards to extract and showcase the data and results of the
+analysis in CSV format. This is especially helpful for the scientific committee
+reviewing the assessments, as well as anyone else who would like to browse and
+possibly use these public data.
 
 ## Acknowledgements
 
@@ -609,7 +633,7 @@ same results.
 | Analysis      | Plaice in the English Channel                                |
 | Repository    | <https://github.com/ices-taf/2016_ple-eche>                  |
 | Methods       | Age-structured model, C++ standalone executable              |
-| External deps | 1 CRAN package, 2 GitHub packages, many CRAN packages        |
+| External deps | 2 GitHub packages, many CRAN packages                        |
 | Data sources  | 2 local files                                                |
 | Results       | 14 tables, 2 plots                                           |
 | Notes         | ggplot2 depends on many packages                             |
@@ -654,6 +678,16 @@ package and a small dataset.
 | Results       | 6 tables, 16 plots                                           |
 | Notes         | sraplus depends on many packages                             |
 
+|               | **WorkshopEffortByStock**                                    |
+| ------------- | ------------------------------------------------------------ |
+| Analysis      | FAO analysis of the relative status of marine stocks         |
+| Repository    | <https://github.com/sofia-taf/WorkshopEffortByStock>         |
+| Methods       | sraplus, an R package                                        |
+| External deps | 2 GitHub packages, >100 CRAN packages                        |
+| Data sources  | 4 local files                                                |
+| Results       | 6 tables, 16 plots                                           |
+| Notes         | sraplus depends on many packages                             |
+
 #### SPC
 
 SPC uses TAF to make the results of tuna and billfish stock assessments
@@ -668,6 +702,16 @@ the analysis.
 | External deps | 2 GitHub packages, many CRAN packages                        |
 | Data sources  | 7 local files                                                |
 | Results       | 24 tables, 4 plots                                           |
+| Notes         | TAF analysis is organized inside a subdirectory              |
+
+|               | **ofp-sam-alb-2024-diagnostic**                              |
+| ------------- | ------------------------------------------------------------ |
+| Analysis      | South Pacific Albacore tuna                                  |
+| Repository|<https://github.com/PacificCommunity/ofp-sam-alb-2024-diagnostic> |
+| Methods       | Age-structured model, C++ standalone executable              |
+| External deps | 2 GitHub packages, many CRAN packages                        |
+| Data sources  | 7 local files                                                |
+| Results       | 22 tables, 4 plots                                           |
 | Notes         | TAF analysis is organized inside a subdirectory              |
 
 #### Various
@@ -697,7 +741,7 @@ fisheries science.
 
 |               | **weather**                                                  |
 | ------------- | ------------------------------------------------------------ |
-| Analysis      | Compare climate data from selected cities around the world   |
+| Analysis      | Compare climate in selected cities around the world          |
 | Repository    | <https://github.com/arni-magnusson/weather>                  |
 | Methods       | World map of UV, trigonometry for sunrise calculations, etc. |
 | External deps | 3 CRAN packages                                              |
