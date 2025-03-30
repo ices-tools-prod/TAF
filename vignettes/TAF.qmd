@@ -488,29 +488,34 @@ combination with the `renv` package (Ushey and Wickham 2025), `rig` (Csárdi
 
 A common question about TAF is "Can TAF do *X*?", where *X* is some desired
 functionality. The answer is yes, if it can be done using R scripts, but TAF is
-not going to do it by itself. Generally speaking, the only work performed by TAF
-is what the scripts contain. Luckily, R scripts can do a wide variety of things,
-including running software written in other languages than R.
+not going to do it by itself. The work performed by TAF is what the author has
+written in the scripts. Thanks to the general nature of the R language, R
+scripts can do a wide variety of things, including running software written in
+other languages than R.
 
-TAF is especially designed to showcase the final form of a scientific analysis.
-There are essentially three paths to produce a TAF analysis: (1) starting the
-from scratch using `taf.skeleton()`, (2) starting from a template such as
-`taf.example("linreg")` or another existing TAF analysis, or (3) encapsulating
-an already completed analysis, to strengthen reproducibility and reviewability.
+There are essentially three paths to produce a TAF analysis: (1) start from
+scratch using `taf.skeleton()`, (2) start from a template such as
+`taf.example("linreg")` or another existing TAF analysis, or (3) add TAF scripts
+to an already completed analysis, to strengthen its reproducibility and
+reviewability.
+
+Among the <a href="#appendix-online-examples">online examples</a>, one-off
+analyses such as *corona*, *weather*, and *trip* are created from scratch, while
+ICES and SOFIA analyses are often based on existing templates. The SPC analyses
+of yellowfin and albacore tuna are examples where the model development and
+model fitting is conducted independent of TAF using Bash shell scripts, but TAF
+scripts are added afterwards to showcase the data and results of the analysis in
+CSV format. This is especially helpful for the scientific committee reviewing
+the analyses, as well as anyone else who would like to browse and use these
+public data.
 
 Incremental development of TAF analyses usually takes place in a GitHub
 repository that can be kept private while the work is ongoing and then made
-public once the analysis is ready for presentation. Among the <a
-href="#appendix-online-examples">online examples</a>, one-off analyses such as
-*corona*, *weather*, and *trip* are created from scratch, while ICES and SOFIA
-analyses are often based on existing templates.
-
-The SPC analyses of yellowfin and albacore tuna are examples where the actual
-analysis is conducted independent of TAF using Bash shell scripts, but TAF
-scripts are added afterwards to extract and showcase the data and results of the
-analysis in CSV format. This is especially helpful for the scientific committee
-reviewing the assessments, as well as anyone else who would like to browse and
-possibly use these public data.
+public once the analysis is ready for presentation. The skipjack growth analysis
+is an example where only the scripts can be made public, as the data are
+sensitive and cannot be shared. Sharing the scripts allows review and reuse of
+the methods used in the analysis and the TAF repository serves as a technical
+annex of the published report (Macdonald et al. 2025).
 
 ## Acknowledgements
 
@@ -538,6 +543,10 @@ for reproducibility and high-performance computing.
 *Journal of Open Source Software*, 6(57), 2959.\
 <https://doi.org/10.21105/joss.02959>,
 <https://cran.r-project.org/package=targets>
+
+Macdonald, J. et al. (2025, in prep).
+Skipjack growth analysis. Report to be presented to the Scientific Committee of
+the Western and Central Pacific Fisheries Commission (WCPFC) in August 2025.
 
 Magnusson, A. (2023).
 makeit: Run R Scripts if Needed. R package version 1.0.1.\
@@ -690,9 +699,8 @@ package and a small dataset.
 
 #### SPC
 
-SPC uses TAF to make the results of tuna and billfish stock assessments
-available online, inviting anyone to browse the data and results and/or rerun
-the analysis.
+SPC uses TAF to make the results of tuna and billfish analyses available online,
+inviting anyone to browse the data and results and/or rerun the analysis.
 
 |               | **ofp-sam-yft-2023-diagnostic**                              |
 | ------------- | ------------------------------------------------------------ |
@@ -713,6 +721,16 @@ the analysis.
 | Data sources  | 7 local files                                                |
 | Results       | 22 tables, 4 plots                                           |
 | Notes         | TAF analysis is organized inside a subdirectory              |
+
+|               | **ofp-sam-skj-2025-tag-growth-public**                       |
+| ------------- | ------------------------------------------------------------ |
+| Analysis      | Skipjack tuna growth analysis                                |
+| Repository|<https://github.com/PacificCommunity/ofp-sam-skj-2025-tag-growth-public>|
+| Methods       | Comparison of growth models fitting to tags and otolith data |
+| External deps | 4 CRAN packages                                              |
+| Data sources  | 3 local files                                                |
+| Results       | 34 tables, 10 plots                                          |
+| Notes         | Public repository includes only scripts, not sensitive data  |
 
 #### Various
 
