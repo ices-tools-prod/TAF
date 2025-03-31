@@ -356,8 +356,8 @@ Several functions from the TAF package have been mentioned in this introduction:
 
 - `taf.png`
 
-The TAF package provides many additional functions that can be useful but are
-not required for authoring or running TAF workflows. Every function comes with a
+The TAF package provides many other functions that can be useful but are not
+required for authoring or running TAF workflows. Every function comes with a
 help page that includes examples and cross-references. Furthermore, typing
 `?TAF` opens a package help page that gives an overview of all the functions in
 the package, grouped by functionality.
