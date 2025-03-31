@@ -31,7 +31,7 @@
   taf.boot() so it handles multiple filenames/URLs in 'source' field, separated
   by comma. Handled by internal function process.entry().
 
-* Changed taf.skeleton() so it uses a single # character for comments.
+* Changed taf.skeleton() so it produces slightly simpler header comments.
 
 
 
