@@ -534,16 +534,26 @@ The TAF <a href="#design">design</a> is intuitive and practical, dividing any
 analysis into four steps, which makes the code easy to organize, read,
 understand, adapt, and extend. For the scientist, the modular scripts offer a
 separation of concerns, task-oriented focus, and a structure that facilitates
-revisiting and debugging code. For scientific workplaces and organizations,
-adopting an <em>agreed way to work</em> on analytical workflows can greatly
-enhance teamwork, review processes, and institutional memory when new staff
+revisiting and debugging code. For scientific workplaces and organizations, TAF
+can provide an <em>agreed way to work</em> on analytical workflows that can
+enhance collaboration, review processes, and institutional memory when new staff
 inherit earlier workflows.
 
-TAF is intentionally low tech, simply running four scripts one after the other,
-but the simple design allows it to be paired with specialized or new and
-upcoming technologies.
+TAF itself is intentionally low tech, simply running four scripts one after the
+other, and this basic design allows it to be paired with specialized software of
+arbitrary complexity. Custom boot scripts can be written to fetch data and set
+up software, and the TAF scripts can apply any technologies available to R, as
+well as running external software. If the need arises, TAF could also be
+implemented in Python or some other language, as a simple native library that
+would run data, model, output, and report scripts, independent of R.
 
-report: R Markdown, Quarto, Shiny
+The last step of a TAF workflow, the `report.R` script, can be omitted if the
+CSV tables produced by `output.R` are the only results needed, but many TAF
+analyses use the report step to produce plots and formatted tables. The report
+step can also be used to produce dynamic reports or interactive media, using R
+Markdown, Quarto, Shiny, or other methods. The simple and general design of TAF,
+independent from specific technologies, has proven both stable and easy to adapt
+to a continually evolving ecosystem of available software.
 
 ## Acknowledgements
 
