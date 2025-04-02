@@ -557,11 +557,15 @@ to a continually evolving ecosystem of available software.
 
 ## Acknowledgements
 
-ICES folks
-
-FAO folks
-
-SPC folks
+We are grateful for the support from our ICES colleagues, Lotte Worsøe Clausen,
+Neil Holdsworth, Nils Olav Handegard, and Iago Mosqueira for overseeing the TAF
+development project, Alexandros Kokkalis, Ibrahim Umar, and Hjalte Parner for
+contributing code, and Cecilia Kvaavik and Luca Lamoni for supporting the ICES
+TAF user community. We thank Rishi Sharma and Pedro Barros at FAO for their
+support and for selecting TAF for analyzing the status of global marine
+resources. We also thank Paul Hamer and Graham Pilling at SPC for their support
+and for selecting TAF for making the data and results from Pacific tuna and
+billfish analyses available as open science.
 
 ## References
 
