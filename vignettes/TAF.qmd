@@ -490,9 +490,9 @@ combination with the `renv` package (Ushey and Wickham 2025), `rig` (Csárdi
 A common question about TAF is "Can TAF do *X*?", where *X* is some desired
 functionality. The answer is yes, if it can be done using R scripts, but TAF is
 not going to do it by itself. The work performed by TAF is what the scientist
-has written in the scripts. Thanks to the general nature of the R language, R
-scripts can do a wide variety of things, including running software written in
-other languages than R.
+has written in the scripts. Thanks to the general nature of the R language and a
+wide selection of packages, R scripts can do a wide variety of things, including
+running software written in other languages than R.
 
 Incremental development of TAF analyses usually takes place in a GitHub
 repository that can be kept private while the work is ongoing and then made
@@ -531,13 +531,13 @@ committee reviewing the analyses, as well as anyone else who would like to
 browse and use these public data.
 
 The TAF <a href="#design">design</a> is intuitive and practical, dividing any
-analysis into four steps, which makes the code easy to organize, read,
-understand, adapt, and extend. For the scientist, the modular scripts offer a
-separation of concerns, task-oriented focus, and a structure that facilitates
-revisiting and debugging code. For scientific workplaces and organizations, TAF
-can provide an <em>agreed way to work</em> on analytical workflows that can
-enhance collaboration, review processes, and institutional memory when new staff
-inherit earlier workflows.
+analysis into four steps, which makes the code easy to organize, read, extend,
+and reuse. For the scientist, the modular scripts offer a task-oriented focus,
+separation of concerns, and a structure that facilitates revisiting and
+debugging code. For international organizations and scientific workplaces, TAF
+can provide an agreed way to work on analytical workflows that can enhance
+collaboration, review processes, and institutional memory when new staff inherit
+earlier workflows.
 
 TAF itself is intentionally low tech, simply running four scripts one after the
 other, and this basic design allows it to be paired with specialized software of
@@ -547,11 +547,11 @@ well as running external software. If the need arises, TAF could also be
 implemented in Python or some other language, as a simple native library that
 would run data, model, output, and report scripts, independent of R.
 
-The last step of a TAF workflow, the `report.R` script, can be omitted if the
-CSV tables produced by `output.R` are the only results needed, but many TAF
-analyses use the report step to produce plots and formatted tables. The report
-step can also be used to produce dynamic reports or interactive media, using R
-Markdown, Quarto, Shiny, or other methods. The simple and general design of TAF,
+The last step of a TAF workflow, the report step, can be omitted if the CSV
+tables produced by `output.R` are the only results needed, but many TAF analyses
+use the report step to produce plots and formatted tables. The report step can
+also be used to produce dynamic reports or interactive media, using R Markdown,
+Quarto, Shiny, or other methods. The simple and general design of TAF,
 independent from specific technologies, has proven both stable and easy to adapt
 to a continually evolving ecosystem of available software.
 
