@@ -2,13 +2,13 @@
 % Please edit documentation in R/write.taf.R
 \name{write.taf}
 \alias{write.taf}
-\title{Write TAF Table to File}
+\title{Write TAF Table}
 \usage{
 write.taf(x, file = NULL, dir = NULL, quote = FALSE, row.names = FALSE,
   fileEncoding = "UTF-8", underscore = TRUE, ...)
 }
 \arguments{
-\item{x}{a data frame in TAF format.}
+\item{x}{a data frame.}
 
 \item{file}{a filename.}
 
@@ -29,7 +29,7 @@ write.taf(x, file = NULL, dir = NULL, quote = FALSE, row.names = FALSE,
 No return value, called for side effects.
 }
 \description{
-Write a TAF table to a file.
+Write a data frame to a CSV file.
 }
 \details{
 Alternatively, \code{x} can be a list of data frames or a string vector of
@@ -63,9 +63,9 @@ file.remove("catage.csv")
 \code{\link{write.csv}} is the underlying function used to write a table to a
 file.
 
-\code{\link{read.taf}} reads a TAF table from a file into a data frame.
+\code{\link{read.taf}} reads from a CSV file into a data frame.
 
-\code{\link{taf2html}} converts TAF table to HTML.
+\code{\link{taf2html}} converts a data frame to HTML.
 
 \code{\link{TAF-package}} gives an overview of the package.
 }

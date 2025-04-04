@@ -41,7 +41,7 @@
 #' instead of writing it to a file. The output can then be pasted into a file to
 #' edit further, without accidentally overwriting an existing metadata file.
 #'
-#' @return Object of class \verb{Bibtex}.
+#' @return Character vector of class \verb{Bibtex}.
 #'
 #' @note
 #' This function is intended to be called from the top directory of a TAF
@@ -82,7 +82,7 @@ draft.data <- function(originator=NULL, year=format(Sys.time(),"%Y"),
                        data.files=dir(taf.boot.path("initial/data")),
                        data.scripts=dir(boot.dir(),pattern="\\.R$"))
 {
-  ## TAF:::access.vocab is a string vector of allowed 'access' values
+  # TAF:::access.vocab is a string vector of allowed 'access' values
   if(!is.character(access) || !all(as.character(access) %in% access.vocab))
     stop("'access' values must be \"",
          paste(access.vocab, collapse="\", \""), "\"")
@@ -90,8 +90,7 @@ draft.data <- function(originator=NULL, year=format(Sys.time(),"%Y"),
   data.scripts <- file_path_sans_ext(data.scripts)
   entries <- c(data.files, data.scripts)
   if(length(entries) == 0)
-    stop("no data (boot/initial/data/*) ",
-         "or data scripts (boot/*.R) found")
+    stop("no data (boot/initial/data/*) or data scripts (boot/*.R) found")
   if(is.null(source))
   {
     source <- rep(c("file","script"),
@@ -101,7 +100,7 @@ draft.data <- function(originator=NULL, year=format(Sys.time(),"%Y"),
     source[folder] <- "folder"
   }
 
-  ## 1  Assemble metadata
+  # 1  Assemble metadata
   line1 <- paste0("@Misc{", entries, ",")
   line2 <- paste0("  originator = {", originator, "},")
   line3 <- paste0("  year       = {", year, "},")
@@ -112,7 +111,7 @@ draft.data <- function(originator=NULL, year=format(Sys.time(),"%Y"),
   line8 <- "}"
   line9 <- ""
 
-  ## 2  Combine and format
+  # 2  Combine and format
   out <- data.frame(line1, line2, line3, line4, line5, line6, line7, line8,
                     line9)
   out <- c(t(out))
@@ -121,12 +120,12 @@ draft.data <- function(originator=NULL, year=format(Sys.time(),"%Y"),
   out <- out[-length(out)]  # remove empty line at end
   class(out) <- "Bibtex"
 
-  ## 3  Export
+  # 3  Export
   if(identical(file, TRUE))
     file <- file.path(boot.dir(), "DATA.bib")
   if(identical(file, FALSE))
     file <- ""
-  ## No write() when file="", to ensure quiet assignment x <- draft.data()
+  # No write() when file="", to ensure quiet assignment x <- draft.data()
   if(file == "")
   {
     out

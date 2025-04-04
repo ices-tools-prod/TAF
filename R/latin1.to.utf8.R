@@ -35,14 +35,14 @@ latin1.to.utf8 <- function(file, force=FALSE)
     return(invisible(NULL))
   }
 
-  ## Remember original line endings
+  # Remember original line endings
   ole <- line.endings(file)
 
-  ## Convert file encoding latin1 -> UTF-8
+  # Convert file encoding latin1 -> UTF-8
   txt <- readLines(file, encoding="latin1")
   txt <- iconv(txt, from="latin1", to="UTF-8")
   writeLines(txt, file, useBytes=TRUE)
 
-  ## Retain original line endings
+  # Retain original line endings
   switch(ole, Dos=unix2dos(file), Unix=dos2unix(file))
 }

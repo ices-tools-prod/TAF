@@ -1,6 +1,6 @@
-#' Read TAF Table from File
+#' Read TAF Table
 #'
-#' Read a TAF table from a file into a data frame.
+#' Read from a CSV file into a data frame.
 #'
 #' @param file a filename.
 #' @param check.names whether to enforce regular column names, e.g. convert
@@ -14,8 +14,8 @@
 #' read many tables in one call.
 #'
 #' @return
-#' A data frame in TAF format, or a list of data frames if \code{file} is a
-#' directory or a vector of filenames.
+#' A data frame, or a list of data frames if \code{file} is a directory or a
+#' vector of filenames.
 #'
 #' @note
 #' This function gives a warning when column names are missing or duplicated. It
@@ -25,7 +25,7 @@
 #' \code{\link{read.csv}} is the underlying function used to read a table from a
 #' file.
 #'
-#' \code{\link{write.taf}} writes a TAF table to a file.
+#' \code{\link{write.taf}} writes a data frame to a CSV file.
 #'
 #' \code{\link{TAF-package}} gives an overview of the package.
 #'
@@ -46,18 +46,18 @@
 read.taf <- function(file, check.names=FALSE, stringsAsFactors=FALSE,
                      fileEncoding="UTF-8", ...)
 {
-  ## Ensure file is either single dirname or only filenames
+  # Ensure file is either single dirname or only filenames
   if(length(file) > 1 && any(dir.exists(file)))
     stop("'file' must be of length 1 when it is a directory name")
   if(length(file) == 1 && dir.exists(file))
   {
     file <- dir(file, pattern="\\.csv$", full.names=TRUE)
-    ## Ensure file is not a dirname without CSV files
+    # Ensure file is not a dirname without CSV files
     if(length(file) == 0)
       stop("directory contains no CSV files")
   }
 
-  ## Now ready to import one or more CSV files
+  # Now ready to import one or more CSV files
   if(length(file) > 1)
   {
     out <- lapply(file, read.taf, check.names=check.names,

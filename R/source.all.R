@@ -45,7 +45,7 @@ source.all <- function(...)
 
 #' @export
 
-## Equivalent spelling
+# Equivalent spelling
 
 sourceAll <- function(...)
 {

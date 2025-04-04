@@ -2,7 +2,7 @@
 #'
 #' @export
 
-## Model directory name
+# Model directory name
 
 model.dir <- function()
 {

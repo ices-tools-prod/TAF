@@ -49,7 +49,7 @@ download.github <- function(repo, dir=".", quiet=FALSE)
   if(!grepl("@", repo))
     repo <- paste0(repo, "@master")
 
-  ## 1  Parse repo string
+  # 1  Parse repo string
   spec <- parse.repo(repo)
   sha.full <- get.remote.sha(spec$username, spec$repo, spec$ref, seven=FALSE)
   sha <- substring(sha.full, 1, 7)
@@ -59,7 +59,7 @@ download.github <- function(repo, dir=".", quiet=FALSE)
   subdir <- spec$subdir
   subtargz <- paste0(subdir, "_", sha, ".tar.gz")  # subdir_sha.tar.gz
 
-  ## 2  Download
+  # 2  Download
   if(subdir=="" && file.exists(targz))  # no subdir, targz exists
   {
     if(!quiet)
@@ -79,7 +79,7 @@ download.github <- function(repo, dir=".", quiet=FALSE)
 
   outfile <- if(subdir == "") targz else subtargz
 
-  ## 3  Add entries to DESCRIPTION file if we downloaded an R package
+  # 3  Add entries to DESCRIPTION file if we downloaded an R package
   if(basename(getwd()) == "software")
   {
     if(is.r.package(outfile, spec=spec))
@@ -95,24 +95,24 @@ download.github <- function(repo, dir=".", quiet=FALSE)
 #'
 #' @export
 
-## Extract subdir from bigger repo
+# Extract subdir from bigger repo
 
 extract.subdir <- function(targz, subtargz, subdir)
 {
   repdir <- sub("/.*", "", untar(targz,list=TRUE)[1])  # top dir inside targz
   unlink(repdir, recursive=TRUE)  # remove folder if it already exists
 
-  ## Sometimes the repo and subdir have the same name
+  # Sometimes the repo and subdir have the same name
   if(repdir != subdir)  # if repdir == subdir, then we have already
   {                     # downloaded this package and extracted the subdir
     untar(targz, file.path(repdir, subdir))  # extract subdir
     file.remove(targz)
 
-    ## Move boot/software/repdir/subdir to boot/software/subdir
+    # Move boot/software/repdir/subdir to boot/software/subdir
     file.rename(file.path(repdir, subdir), subdir)
     rmdir(repdir)
 
-    ## Compress subdir as subdir_sha.tar.gz
+    # Compress subdir as subdir_sha.tar.gz
     tar(subtargz, subdir, compression="gzip")
     unlink(subdir, recursive=TRUE, force=TRUE)
   }
@@ -124,7 +124,7 @@ extract.subdir <- function(targz, subtargz, subdir)
 #'
 #' @export
 
-## Add entries to DESCRIPTION file
+# Add entries to DESCRIPTION file
 
 stamp.description <- function(targz, spec, sha.full)
 {

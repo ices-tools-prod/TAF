@@ -39,7 +39,7 @@
 
 clean.boot <- function(force=FALSE)
 {
-  ## An odd directory called 'library:' can appear in Linux
+  # An odd directory called 'library:' can appear in Linux
   unlink(file.path(boot.dir(),"library:"), recursive=TRUE)
 
   clean.data(file.path(boot.dir(),"data"), force=force)

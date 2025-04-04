@@ -41,12 +41,6 @@ library(TAF)
 ?TAF
 ```
 
-References
-----------
-
-ICES Transparent Assessment Framework:
-* https://taf.ices.dk
-
 Development
 -----------
 

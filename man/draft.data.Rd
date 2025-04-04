@@ -43,7 +43,7 @@ files inside \verb{boot/initial/data}.}
 \verb{*.R} files in the \verb{boot} folder.}
 }
 \value{
-Object of class \verb{Bibtex}.
+Character vector of class \verb{Bibtex}.
 }
 \description{
 Create an initial draft version of a \file{DATA.bib} metadata file.

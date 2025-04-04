@@ -31,7 +31,18 @@
 #'
 #' @return Full path to analysis directory.
 #'
+#' @note
+#' After running \code{taf.skeleton()} to create a new TAF workflow, the author
+#' can populate the \code{boot/initial/data} folder with initial data files and
+#' run \code{draft.data(file=TRUE)} to produce a \code{DATA.bib} file.
+#'
+#' The next step is then to run \code{taf.boot()} to populate the
+#' \code{boot/data} folder and start editing the \code{data.R} script, reading
+#' files from the \code{boot/data} folder.
+#'
 #' @seealso
+#' \code{\link{taf.example}} copies an example analysis from the TAF package.
+#'
 #' \code{\link{package.skeleton}} creates an empty template for a new R package.
 #'
 #' \code{\link{TAF-package}} gives an overview of the package.
@@ -62,14 +73,14 @@ taf.skeleton <- function(path = ".", force = FALSE, pkgs = "TAF",
   mkdir("boot/initial/data")
 
   # define headers
-  template <- paste0("## %s\n\n## Before:\n## After:\n\n",
+  template <- paste0("# %s\n\n# Before:\n# After:\n\n",
                      paste0("library(", pkgs, ")", collapse = "\n"),
                      "\n\nmkdir(\"%s\")\n\n")
   headers <- list(
-    data = "Preprocess data, write TAF data tables",
+    data = "Prepare data, write CSV data tables",
     model = "Run analysis, write model results",
-    output = "Extract results of interest, write TAF output tables",
-    report = "Prepare plots and tables for report")
+    output = "Extract results of interest, write CSV output tables",
+    report = "Produce plots and tables for report")
   if (model.script %in% c("method", "method.R")) {
     names(headers)[2] <- "method"
   }
@@ -86,9 +97,10 @@ taf.skeleton <- function(path = ".", force = FALSE, pkgs = "TAF",
                 paste0("/", file_path_sans_ext(model.script)), "/output",
                 "/report", "*.Rproj", ".RData", ".Rhistory", ".Rproj.user",
                 ".Ruserdata")
-    if(file.exists(".gitignore"))
+    if (file.exists(".gitignore"))
       ignore <- ignore[!ignore %in% readLines(".gitignore")]
-    write(ignore, ".gitignore", append = TRUE)
+    if (length(ignore) > 0)
+      write(ignore, ".gitignore", append = TRUE)
   }
 
   invisible(getwd())

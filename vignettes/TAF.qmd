@@ -1,0 +1,814 @@
+---
+title:  Introduction to the TAF package
+author: Arni Magnusson and Colin Millar
+format:
+  html:
+    toc: true
+vignette: >
+  %\VignetteIndexEntry{Introduction to the TAF package}
+  %\VignetteEngine{quarto::html}
+  %\VignetteEncoding{UTF-8}
+---
+
+## Introduction
+
+### Objectives
+
+The overarching goal of the Transparent Assessment Framework (TAF, Magnusson and
+Millar 2023) is to support *open and reproducible* research. To achieve this
+goal, the following objectives have guided the design of TAF:
+
+1. Provide a standard workflow structure that is general enough for any analysis
+   that can be run from R.
+
+2. Introduce minimal constraints or learning curve, making it easy for a
+   beginner to create a new workflow or convert an existing workflow to TAF
+   format.
+
+3. Enable reviewers to browse the data, model settings, and results, without
+   being experts in R or the specific methods used.
+
+4. Enable anyone to rerun the analysis on another computer and get the same
+   results.
+
+5. Require the scientist to briefly describe the data that are used in the
+   analysis and where they came from.
+
+6. Invite the scientist to document with scripts how they processed the data
+   before feeding them to the model.
+
+7. Invite the scientist to specify which versions of software are used, so the
+   original analysis can be rerun at a later time.
+
+### Design
+
+TAF divides a workflow into four steps:
+
+| Script         | Purpose                           |
+| -------------- | --------------------------------- |
+| **`data.R`**   | Prepare data, write CSV tables    |
+| **`model.R`**  | Run model                         |
+| **`output.R`** | Extract results, write CSV tables |
+| **`report.R`** | Plots and tables for report       |
+
+These scripts all share the same general structure, starting with loading
+packages and reading in files, then performing computations and writing out
+files. They are run sequentially in alphabetical order, where each script reads
+from files created in a previous step.
+
+The initial data that are used in the analysis are declared in a file called
+`DATA.bib`, which is processed by the `taf.boot()` function. During this boot
+procedure, each data entry is processed and the TAF system then makes the data
+available in the `boot/data` subfolder, where the `data.R` script will read it.
+
+<div style="text-align:center"><img src="figs/diagram.png" width="400"></div>
+
+The `SOFTWARE.bib` file is optional. It is not used in the linear regression
+example below, but its functionality is covered in the <a
+href="#the-boot-procedure">boot procedure</a> section below.
+
+## Running a TAF analysis
+
+### Linear regression example
+
+To demonstrate how a TAF analysis works, consider a simple linear regression
+where the *x* and *y* coordinates come from a text file. The `linreg` example
+comes with the TAF package and can be copied to a convenient place to test and
+run:
+
+```{r}
+#| include: false
+
+unlink("linreg", recursive=TRUE)
+```
+
+```{r}
+#| output: false
+
+library(TAF)
+taf.example("linreg")
+setwd("linreg")
+```
+
+### Boot and run
+
+Before running the analysis, the workflow consists of a `boot` folder and four
+TAF scripts:
+
+<div style="text-align:center"><img src="figs/explorer_1.png" width="100"></div>
+
+To run a TAF analysis, the first step is to start R and make sure that the
+current working directory is set to the location of the TAF scripts: `data.R`,
+`model.R`, etc. Some R editors do this automatically when opening an R script
+and in RStudio there is a menu command: *Session - Set Working Directory - To
+Source File Location*.
+
+All TAF analyses can be run using the following commands in R:
+
+```{r}
+#| eval: false
+
+library(TAF)
+taf.boot()
+source.all()
+```
+
+```{r}
+#| include: false
+
+setwd("linreg")  # this is for the vignette to run, not for the user
+library(TAF)
+taf.boot()
+source.all()
+```
+
+The `taf.boot()` function looks for an existing `boot` folder to setup the data
+and software required for the analysis. Then `source.all()` runs the `data.R`,
+`model.R`, `output.R`, and `report.R` scripts in that order. The individual
+scripts can also be run using `source()` or line by line in an R editor.
+
+After running the analysis, each script has created a corresponding folder,
+`data.R` creating a `data` folder, etc.
+
+<div style="text-align:center"><img src="figs/explorer_2.png" width="100"></div>
+
+### Structured scripts
+
+#### General structure
+
+The `data.R` script has populated the `data` folder with comma-separated values
+(CSV) files representing the data that are used in the analysis and the
+`model.R` script produced `model` results in a machine-readable format. The
+purpose of the `output.R` script is to read the results from the `model` folder
+and write out CSV files representing the results that are of primary interest.
+Finally, `report.R` reads in the CSV output and produces plots and formatted
+tables, often with rounded numbers, which can be incorporated into a report. The
+`report.R` script can also produce a dynamic document in various formats if the
+scientist writes the script in that way.
+
+It is important to note that TAF does not do any of this by itself. All the work
+is performed by the R scripts that the scientist writes. Typically, a TAF script
+has the following general structure:
+
+```{r}
+#| eval: false
+
+# What the script does
+
+# Before: file1.csv, file2.rds, file3.spec (infolder)
+# After:  file4.csv, file5.csv, file6.png (outfolder)
+
+library(TAF)
+library(SomePackage)
+source("utilities.R")
+
+mkdir("folder")
+
+# Read files from previous step
+dat1 <- read.taf("infolder/file1.csv")
+dat2 <- readRDS("infolder/file2.rds")
+dat3 <- importSpecial("infolder/file3.spec")
+
+# Some computations
+# [...]
+
+# Write out tables and plots
+write.taf(dat4, dir="outfolder")
+write.taf(dat5, dir="outfolder")
+taf.png("file6")
+SpecialPlot(dat6)
+dev.off()
+```
+
+A TAF script traditionally starts with a comment section that provides a brief
+description of what the script does, followed by a description of the state
+before and after the script is run, in terms of input and output files. In the
+pseudocode example above, the input files are in various formats that are not
+necessarily CSV format.
+
+The next section loads the TAF package and specific packages that are required
+for the analysis. This section may also load functions that the scientist has
+written and stored in a dedicated file that could be called `utilities.R`. This
+is also a convenient time to create the directory for the output files of this
+script. Using the TAF function `mkdir()` rather than the base R function
+`dir.create()` has the minor benefit of not producing a warning if the directory
+already exists, which is sometimes the case.
+
+Likewise, the TAF function `read.taf()` is similar to the base R function
+`read.csv()` but with some sensible defaults and useful features for typical TAF
+workflows. The RDS file format can be practical to read and write list-like
+objects in R, while `importSpecial()` in the above example is a function
+provided by `SomePackage` to import a software-specific file format. The TAF
+functions `write.taf()` and `taf.png()` are equivalent to the base R functions
+`write.csv()` and `png()` with some sensible defaults and useful features for
+TAF workflows.
+
+#### File organization
+
+An important observation in computer science (Spolsky 2004) is that it is harder
+to read code than to write it. For analytical work, this poses challenges for
+scientific reviews and the reuse of code at a later time, often by another
+person. TAF addresses this challenge by structuring a workflow in four separate
+scripts, each handling a clear and well-defined task, rather than in one
+monolithic script that does everything.
+
+A medium-sized scientific workflow might consist of `data.R`, `model.R`,
+`output.R`, and `report.R`, each around 100 lines of code. In a larger workflow,
+where some of these steps might require a few hundred lines of code, TAF invites
+the scientist to organize the work in smaller steps. For example, a very short
+`output.R` script could call secondary scripts such as `output_parameters.R`,
+`output_predictions.R`, and `output_likelihoods.R`. To keep scripts short and
+readable, the scientist can write functions and store them inside `utilities.R`,
+allowing lengthy or repeated computations to be performed in a single line in
+the scripts.
+
+The CSV file format is default and convenient for saving tables in the `data`,
+`output`, and `report` folders, while the `model` folder contains results in any
+format, often determined by the software used in the analysis. For plots, the
+PNG file format is commonly used in TAF analyses, which can then be incorporated
+into reports in Word, HTML, or other formats. PDF is another file format for
+plots, practical for bundling many plots together in a multipage file. All other
+file formats provided by R can be used.
+
+## TAF features
+
+### The boot procedure
+
+Similar to booting a computer, the TAF boot procedure readies the data and
+software components that are required for subsequent computations. The boot
+procedure takes place inside the `boot` folder, where the `taf.boot()` function
+looks for files called `DATA.bib` (required) and `SOFTWARE.bib` (optional).
+
+As indicated by the `bib` file extension, TAF metadata entries follow the BibTeX
+format (Patashnik 2003) originally designed for bibliographic information. One
+of the benefits of using the BibTeX format for TAF metadata is that information
+about all R packages is already available in this format, for example:
+
+```{r}
+#| eval: false
+
+citation(package="TAF")
+```
+
+In the `linreg` example, the `DATA.bib` file contains a single metadata entry:
+
+```
+@Misc{ezekiel.txt,
+  originator = {Mordecai Ezekiel},
+  year       = {1930},
+  title      = {Speed of automobile and distance to stop after signal},
+  source     = {file},
+}
+```
+
+Most of the metadata are meant to be informative and the values are not subject
+to strict rules. The metadata example above informs us that the data were
+prepared by Mordecai Ezekiel for an analysis conducted in 1930. The only
+metadata fields that are parsed by `taf.boot()` are the reference key
+`ezekiel.txt` and source = `file`.
+
+The source field specifies where data or software originate from. The following
+types of values can be used in the source field:
+
+1. GitHub reference of the form `owner/repo[/subdir]@ref`, identifying a
+   specific version of a GitHub resource.
+
+2. URL, identifying a file to download.
+
+3. Special value `script`, indicating that a boot script (a custom R script)
+   should be run to fetch or produce files.
+
+4. Relative path starting with `initial`, identifying the location of a file or
+   directory somewhere inside the `boot/initial` folder.
+
+5. Special value `file` or `folder`, indicating that the file or folder is
+   inside `boot/initial/data` or `boot/initial/software`.
+
+In the `linreg` example, the boot procedure simply copies `ezekiel.txt` from
+`boot/initial/data` to `boot/data`, where it is now available for subsequent
+computations. In other TAF workflows, `DATA.bib` may bring in data from multiple
+sources, involving local and remote databases, online data repositories, and
+GitHub resources.
+
+When metadata entries in `SOFTWARE.bib` point to R packages, they are installed
+in a local library for that workflow. The `SOFTWARE.bib` file is where the
+scientist can specify the exact version of key software components that were
+used in the analysis, pointing to specific releases, tags, or commits of each
+software to strengthen reproducibility.
+
+The TAF package comes with utility functions `draft.data()` and
+`draft.software()` that facilitate the creation of the `DATA.bib` and
+`SOFTWARE.bib` files. The online TAF
+[Wiki](https://github.com/ices-taf/doc/wiki/Bib-entries) provides more details
+and examples of metadata entries.
+
+### Creating a new analysis
+
+When authoring a TAF analysis, one can either start with a similar workflow and
+adapt it to the current analysis or start with a new workflow. The
+`taf.skeleton()` function creates a new workflow, consisting of an empty
+`boot/initial/data` folder and the four TAF scripts: `data.R`, `model.R`,
+`output.R`, and `report.R`. Each script provides a starting point for that step
+of the analysis, for example, a new `data.R` script contains the following
+lines:
+
+```
+# Prepare data, write TAF data tables
+
+# Before:
+# After:
+
+library(TAF)
+
+mkdir("data")
+```
+
+After running `taf.skeleton()` to create a new TAF workflow, the scientist can
+populate the `boot/initial/data` folder with initial data files and run
+`draft.data(file=TRUE)` to produce a `DATA.bib` file.
+
+The next step is then to run `taf.boot()` to populate the `boot/data` folder and
+start editing the `data.R` script, reading files from the `boot/data` folder.
+
+### Overview of functions
+
+Several functions from the TAF package have been mentioned in this introduction:
+
+*Initial TAF steps*
+
+* `draft.data`
+* `draft.software`
+* `taf.boot`
+* `taf.example`
+* `taf.skeleton`
+
+*Running scripts*
+
+- `source.all`
+
+*File management*
+
+- `mkdir`
+- `read.taf`
+- `write.taf`
+
+*Plots*
+
+- `taf.png`
+
+The TAF package provides many additional functions that can be useful but are
+not required for authoring or running TAF workflows. Every function comes with a
+help page that includes examples and cross-references. Furthermore, typing
+`?TAF` opens a package help page that gives an overview of all the functions in
+the package, grouped by functionality.
+
+## The TAF community
+
+### Browsing an existing analysis
+
+Most TAF analyses are organized on GitHub, either in public or private
+repositories, although the TAF design does not require GitHub. Public
+repositories are a common standard for open and reproducible research, while
+private repositories can also be used, e.g., when data are sensitive and cannot
+be shared.
+
+TAF repositories often contain the workflow in a ready-to-run state that does
+not include the results. This means that anyone browsing that analysis will need
+to run the workflow to see the results, in the same way as the `linreg` example.
+The advantage of this is a guarantee that a repository does not contain scripts
+and results that might be out of sync. On the other hand, uploading the results
+to the repository may be a good choice if the analysis takes a long time to run,
+or to facilitate scientific review without requiring the reviewer to install
+software or learn how to run TAF analyses.
+
+A TAF analysis on GitHub can be reviewed directly in a web browser, where the
+code is presented in a readable format and tables and plots are also easy to
+view. For a fuller review, the analysis can be downloaded or cloned, allowing
+the reviewer to open and analyze the contents of CSV tables in a spreadsheet, R,
+or other statistical software of choice. Furthermore, the reviewer can modify
+and rerun the analysis, evaluating the effect of alternative methods and model
+assumptions.
+
+### Related R packages
+
+#### icesTAF
+
+The development of TAF workflows started in 2016 when the authors of this
+vignette were hired as full-time developers at the International Council for the
+Exploration of the Sea (ICES), an international organization with 20 member
+countries collaborating in marine science. The aim was to develop a new
+framework for organizing ICES analyses, improving reviewability and
+reproducibility.
+
+In 2017, the first version of the `icesTAF` package (Millar and Magnusson 2023)
+was released on CRAN, followed by later version updates. In 2021-2022, the
+package was split into two separate but related packages:
+
+1. TAF provides the core functionality and has no package dependencies.
+
+2. icesTAF loads all of TAF and adds additional features that are primarily used
+   within ICES and may depend on external packages.
+
+ICES workflows use the icesTAF package, benefiting from access to a dedicated
+ICES TAF server, ICES databases, and other infrastructure. Other workflows that
+are not related to ICES use the smaller TAF package and reap the various
+benefits of zero package dependencies.
+
+The development and maintenance of TAF and icesTAF is tightly synchronized, with
+new CRAN releases occurring within days of each other and using the same version
+number.
+
+#### makeit
+
+The `make()` function, a part of the TAF package since 2017, is a powerful tool
+to run only the parts of a workflow where the underlying files have changed. For
+example, after plot scripts are modified, those scripts should be rerun to
+update the plots in seconds, without rerunning the entire workflow that might
+take minutes or hours.
+
+The TAF package contains the `make()` function, along with the related
+`make.taf()` and `make.all()` functions. These expert tools are not promoted for
+general use in TAF tutorials or introductory workshops, but they are useful for
+working with TAF at scale, managing, checking, and debugging a large number of
+workflows, providing support to multiple users at the same time, etc.
+
+As the name implies, the `make()` function is closely based on the shell command
+of the same name (Stallman et al. 2023) but implemented in R. As a generally
+useful tool beyond the context of TAF workflows, the `make()` function was
+eventually packaged and released on CRAN in its own package called `makeit`
+in 2023. The package contains annotated examples and a discussion.
+
+#### SOFIA
+
+The UN Food and Agriculture Organization (FAO) monitors the status of global
+marine resources and publishes a summary report (FAO 2024) every two years,
+known as SOFIA. The work behind this publication involves organizing and
+conducting analyses of hundreds of fish and invertebrate stocks from all the
+world's oceans.
+
+FAO is currently undertaking a methodological update that leverages advancements
+in computing and data availability to enhance the understanding of the state of
+the world's fish stocks (Sharma 2023). One part of this restructuring is the
+adoption of TAF, which provides a standard structure that supports open and
+reproducible research. The SOFIA package (Magnusson and Sharma 2024) is a
+collection of tools to facilitate this work.
+
+#### targets
+
+The `targets` package (Laundau 2021) has somewhat similar objectives as TAF, to
+organize and run computational workflows. A key distinction between the packages
+is that in TAF the user organizes their workflow by writing *scripts* that
+produce *files*, but in `targets` the user organizes their workflow by writing
+*functions* that produce *objects*, to be passed to the next step. Thus, the two
+packages present two different paradigms with a similar end result.
+
+A TAF workflow structure is predetermined, as the main scripts will always be
+named `data.R`, `model.R`, `output.R`, and `report.R`. After running a TAF
+analysis, one can always expect to find the data and results in CSV format in
+the `data`, `output`, and `report` folders. In contrast, the `targets` package
+does not confine the user to a predetermined workflow design, and tables
+containing data and results are generally accessed by the user as R objects
+rather than files.
+
+The `targets` package requires a higher level of R expertise than TAF, both for
+the scientist to design a workflow using interconnected functions, and for a
+reviewer to browse the data, model settings, and results. The utility functions
+that come with TAF are for basic data and file management, while the utility
+functions that come with `targets` are for parallel computations and a variety
+of cloud services.
+
+#### renv
+
+Using `SOFTWARE.bib` declarations of software and versions, TAF supports
+reproducibility and allows the workflow to be rerun at a later time and produce
+the same results as the original analysis. Alternatively, TAF can be used in
+combination with the `renv` package (Ushey and Wickham 2025), `rig` (Csárdi
+2024), Docker (Merkel 2014), and other tools dedicated to reproducible research.
+
+## Summary
+
+A common question about TAF is "Can TAF do *X*?", where *X* is some desired
+functionality. The answer is yes, if it can be done using R scripts, but TAF is
+not going to do it by itself. The work performed by TAF is what the scientist
+has written in the scripts. Thanks to the general nature of the R language, R
+scripts can do a wide variety of things, including running software written in
+other languages than R.
+
+Incremental development of TAF analyses usually takes place in a GitHub
+repository that can be kept private while the work is ongoing and then made
+public once the analysis is ready for presentation. There are essentially three
+paths to produce a TAF analysis: (1) start from scratch using `taf.skeleton()`,
+(2) start from a template such as `taf.example("linreg")` or another existing
+TAF analysis, or (3) add TAF scripts to an already completed analysis, to
+strengthen its reproducibility and reviewability.
+
+Among the online examples, one-off analyses such as <a
+href="#corona">corona</a>, <a href="#weather">weather</a>, and <a
+href="#trip">trip</a> are created from scratch, while <a href="#ices">ICES</a>
+and <a href="#fao">FAO</a> analyses are often based on existing templates. The
+SPC analyses of <a href="#yellowfin">yellowfin</a> and <a
+href="#albacore">albacore</a> tuna are examples where the model development and
+model fitting is conducted independent of TAF using Bash shell scripts, but TAF
+scripts are added afterwards to showcase the data and results of the analysis.
+
+The <a href="#skipjack">skipjack</a> growth analysis is an example where only
+the scripts can be made public, as the data are sensitive and cannot be shared.
+Sharing the scripts allows review and reuse of the methods used in the analysis
+and the TAF repository serves as a technical annex of the published report. The
+initial data should be included in the TAF repository if the data are not
+sensitive, allowing anyone to rerun the analysis and explore modifications of
+the analysis.
+
+For review purposes, the folders produced by running the TAF analysis can also
+be uploaded, allowing anyone to browse the <a
+href="https://github.com/PacificCommunity/ofp-sam-yft-2023-diagnostic/tree/main/TAF/data">data</a>
+and <a
+href="https://github.com/PacificCommunity/ofp-sam-yft-2023-diagnostic/tree/main/TAF/output">output</a>
+in CSV format, along with <a
+href="https://github.com/PacificCommunity/ofp-sam-yft-2023-diagnostic/tree/main/TAF/report">plots</a>,
+typically in PNG or PDF format. This is especially helpful for a scientific
+committee reviewing the analyses, as well as anyone else who would like to
+browse and use these public data.
+
+The TAF <a href="#design">design</a> is intuitive and practical, dividing any
+analysis into four steps, which makes the code easy to organize, read,
+understand, adapt, and extend. For the scientist, the modular scripts offer a
+separation of concerns, task-oriented focus, and a structure that facilitates
+revisiting and debugging code. For scientific workplaces and organizations,
+adopting an <em>agreed way to work</em> on analytical workflows can greatly
+enhance teamwork, review processes, and institutional memory when new staff
+inherit earlier workflows.
+
+TAF is intentionally low tech, simply running four scripts one after the other,
+but the simple design allows it to be paired with specialized or new and
+upcoming technologies.
+
+report: R Markdown, Quarto, Shiny
+
+## Acknowledgements
+
+ICES folks
+
+FAO folks
+
+SPC folks
+
+## References
+
+Csárdi, G. (2024).
+rig: The R Installation Manager. Version 0.7.0.\
+<https://github.com/r-lib/rig>
+
+Food and Agriculture Organization (FAO). (2024).
+*The State of World Fisheries and Aquaculture 2024: Blue Transformation in
+Action.*
+Rome.\
+<https://doi.org/10.4060/cd0683en>
+
+Landau, W.M. (2021).
+The targets R package: a dynamic Make-like function-oriented pipeline toolkit
+for reproducibility and high-performance computing.
+*Journal of Open Source Software*, 6(57), 2959.\
+<https://doi.org/10.21105/joss.02959>,
+<https://cran.r-project.org/package=targets>
+
+Magnusson, A. (2023).
+makeit: Run R Scripts if Needed. R package version 1.0.1.\
+<https://cran.r-project.org/package=makeit>
+
+Magnusson, A. and Millar, C. (2023).
+TAF: Transparent Assessment Framework for Reproducible Research. R package
+version 4.2.0.\
+<https://cran.r-project.org/package=TAF>
+
+Magnusson, A. and Sharma, R. (2024).
+SOFIA: Tools to Work with SOFIA Analyses. R package version 2.1.3.\
+<https://github.com/sofia-taf/SOFIA>
+
+Merkel, D. (2014).
+Docker: lightweight Linux containers for consistent development and deployment.
+*Linux Journal*, 239, 76-91.\
+https://dl.acm.org/doi/pdf/10.5555/2600239
+
+Millar C. and A. Magnusson. (2023).
+icesTAF: Functions to Support the ICES Transparent Assessment Framework.
+R package version 4.2.0.\
+<https://cran.r-project.org/package=icesTAF>
+
+Patashnik, O. (2003).
+BibTEX yesterday, today, and tomorrow.
+*TUGboat*, 24, 25-30.\
+<https://tug.org/TUGboat/tb24-1/patashnik.pdf>
+
+Sharma, R. (2023).
+The state of world fishery resources: Expanding efforts to determine the status
+of global fish stocks.
+*Research Outreach*.\
+<https://researchoutreach.org/wp-content/uploads/2023/05/Rishi-Sharma.pdf>
+
+Spolsky, J. (2004).
+*Joel on Software: And on Diverse and Occasionally Related Matters That Will
+Prove of Interest to Software Developers, Designers, and Managers, and to Those
+Who, Whether by Good Fortune or Ill Luck, Work with Them in Some Capacity.*
+Berkeley: Apress.\
+<https://doi.org/10.1007/978-1-4302-0753-5>
+
+Stallman, R.M., McGrath, R., and Smith, P.D. (2023).
+*The GNU Make Reference Manual.*
+Version 4.4.1.\
+<https://www.gnu.org/software/make/manual/make.html>
+
+Ushey, K. and Wickham, H. (2025).
+renv: Project Environments. R package version 1.1.2.\
+<https://cran.r-project.org/package=renv>
+
+## Appendix: Online examples
+
+#### Introductory notes
+
+The online examples listed below come from international organizations where TAF
+has been adopted to organize reproducible workflows and present data, methods,
+and results as open science. The organizations are the International Council for
+the Exploration of the Sea (ICES), UN Food and Agriculture Organization (FAO),
+and the Pacific Community (SPC). These examples are followed by a collection of
+workflows covering domains outside of fisheries science.
+
+#### ICES
+
+ICES maintains four core examples that demonstrate TAF analyses using the
+`icesTAF` package. These simple workflows are used in `icesTAF` workshops and
+system tests. They use only core TAF functions, so the `library(icesTAF)` call
+at the top of each script could be replaced with `library(TAF)` and produce the
+same results.
+
+|               | **2015_rjm-347d**                                            |
+| ------------- | ------------------------------------------------------------ |
+| Analysis      | Spotted ray in the North Sea                                 |
+| Repository    | <https://github.com/ices-taf/2015_rjm-347d>                  |
+| Methods       | ICES method for data-limited stocks                          |
+| External deps | 1 CRAN package                                               |
+| Data sources  | 2 local files                                                |
+| Results       | 3 tables, 1 plot                                             |
+| Notes         | Simple arithmetic, the *hello world* of icesTAF analyses     |
+
+|               | **2015_had-iceg**                                            |
+| ------------- | ------------------------------------------------------------ |
+| Analysis      | Haddock in Icelandic waters                                  |
+| Repository    | <https://github.com/ices-taf/2015_had-iceg>                  |
+| Methods       | Age-structured model, C++ standalone executable              |
+| External deps | -                                                            |
+| Data sources  | 1 local file                                                 |
+| Results       | 10 tables, 2 plots                                           |
+| Notes         | Model executable is in bootstrap/initial/software            |
+
+|               | **2016_ple-eche**                                            |
+| ------------- | ------------------------------------------------------------ |
+| Analysis      | Plaice in the English Channel                                |
+| Repository    | <https://github.com/ices-taf/2016_ple-eche>                  |
+| Methods       | Age-structured model, C++ standalone executable              |
+| External deps | 2 GitHub packages, many CRAN packages                        |
+| Data sources  | 2 local files                                                |
+| Results       | 14 tables, 2 plots                                           |
+| Notes         | ggplot2 depends on many packages                             |
+
+|               | **2016_cod-347d**                                            |
+| ------------- | ------------------------------------------------------------ |
+| Analysis      | Cod in the North Sea                                         |
+| Repository    | <https://github.com/ices-taf/2016_cod-347d>                  |
+| Methods       | Age-structured model, C++ standalone executable              |
+| External deps | 1 CRAN package                                               |
+| Data sources  | 13 local files                                               |
+| Results       | 23 tables, 2 plots                                           |
+| Notes         | Similar to Icelandic haddock example, just more parts        |
+
+#### FAO
+
+FAO uses the `SOFIA` and `sraplus` packages to analyze the status of global
+marine resources. The `sraplus` package comes with over 100 package
+dependencies. The precise number of dependencies changes over time, as
+underlying packages change their dependencies. The `sraplus-deps` analysis is a
+simple workflow that describes the dependencies, while the
+`WorkshopEffortShared` demonstrates a SOFIA-TAF analysis using the `sraplus`
+package and a small dataset.
+
+|               | **sraplus-deps**                                             |
+| ------------- | ------------------------------------------------------------ |
+| Analysis      | Dependency analysis of the sraplus package                   |
+| Repository    | <https://github.com/sofia-taf-dev/sraplus-deps>              |
+| Methods       | pdeps(), a function to analyze package dependencies          |
+| External deps | -                                                            |
+| Data sources  | Online (the sraplus software project)                        |
+| Results       | 2 tables, 1 plot                                             |
+| Notes         | No local data files                                          |
+
+|               | **WorkshopEffortShared**                                     |
+| ------------- | ------------------------------------------------------------ |
+| Analysis      | FAO analysis of the relative status of marine stocks         |
+| Repository    | <https://github.com/sofia-taf/WorkshopEffortShared>          |
+| Methods       | sraplus, an R package                                        |
+| External deps | 2 GitHub packages, >100 CRAN packages                        |
+| Data sources  | 4 local files                                                |
+| Results       | 6 tables, 16 plots                                           |
+| Notes         | sraplus depends on many packages                             |
+
+|               | **WorkshopEffortByStock**                                    |
+| ------------- | ------------------------------------------------------------ |
+| Analysis      | FAO analysis of the relative status of marine stocks         |
+| Repository    | <https://github.com/sofia-taf/WorkshopEffortByStock>         |
+| Methods       | sraplus, an R package                                        |
+| External deps | 2 GitHub packages, >100 CRAN packages                        |
+| Data sources  | 4 local files                                                |
+| Results       | 6 tables, 16 plots                                           |
+| Notes         | sraplus depends on many packages                             |
+
+#### SPC
+
+SPC uses TAF to make the results of tuna and billfish analyses available online,
+inviting anyone to browse the data and results and/or rerun the analysis.
+
+<div id="yellowfin">
+|               | **ofp-sam-yft-2023-diagnostic**                              |
+| ------------- | ------------------------------------------------------------ |
+| Analysis      | Yellowfin tuna in the Western and Central Pacific            |
+| Repository|<https://github.com/PacificCommunity/ofp-sam-yft-2023-diagnostic> |
+| Methods       | Age-structured model, C++ standalone executable              |
+| External deps | 2 GitHub packages, many CRAN packages                        |
+| Data sources  | 7 local files                                                |
+| Results       | 24 tables, 4 plots                                           |
+| Notes         | TAF analysis is organized inside a subdirectory              |
+</div>
+
+<div id="albacore">
+|               | **ofp-sam-alb-2024-diagnostic**                              |
+| ------------- | ------------------------------------------------------------ |
+| Analysis      | South Pacific Albacore tuna                                  |
+| Repository|<https://github.com/PacificCommunity/ofp-sam-alb-2024-diagnostic> |
+| Methods       | Age-structured model, C++ standalone executable              |
+| External deps | 2 GitHub packages, many CRAN packages                        |
+| Data sources  | 7 local files                                                |
+| Results       | 22 tables, 4 plots                                           |
+| Notes         | TAF analysis is organized inside a subdirectory              |
+</div>
+
+<div id="skipjack">
+|               | **ofp-sam-skj-2025-tag-growth-public**                       |
+| ------------- | ------------------------------------------------------------ |
+| Analysis      | Skipjack tuna growth analysis                                |
+| Repository|<https://github.com/PacificCommunity/ofp-sam-skj-2025-tag-growth-public>|
+| Methods       | Comparison of growth models fitting to tags and otolith data |
+| External deps | 4 CRAN packages                                              |
+| Data sources  | 3 local files                                                |
+| Results       | 34 tables, 10 plots                                          |
+| Notes         | Public repository includes only scripts, not sensitive data  |
+</div>
+
+#### Various
+
+The following examples demonstrate various uses of TAF covering domains outside
+of fisheries science.
+
+|               | **taf-four-minutes**                                         |
+| ------------- | ------------------------------------------------------------ |
+| Analysis      | Comparison between TAF and targets                           |
+| Repository    | <https://github.com/ices-taf-dev/taf-four-minutes>           |
+| Methods       | Linear regression                                            |
+| External deps | Many CRAN packages                                           |
+| Data sources  | 1 local file                                                 |
+| Results       | 2 tables, 1 plot                                             |
+| Notes         | Tidyverse workflow                                           |
+
+<div id="corona">
+|               | **corona**                                                   |
+| ------------- | ------------------------------------------------------------ |
+| Analysis      | COVID-19 cases and deaths by country                         |
+| Repository    | <https://github.com/arni-magnusson/corona>                   |
+| Methods       | Basic arithmetic and plots, global and selected countries    |
+| External deps | Many CRAN packages                                           |
+| Data sources  | Online (Johns Hopkins University) and 1 local file           |
+| Results       | 15 tables, 64 plots                                          |
+| Notes         | Useful during the global epidemic to view the latest data    |
+</div>
+
+<div id="weather">
+|               | **weather**                                                  |
+| ------------- | ------------------------------------------------------------ |
+| Analysis      | Compare climate in selected cities around the world          |
+| Repository    | <https://github.com/arni-magnusson/weather>                  |
+| Methods       | World map of UV, trigonometry for sunrise calculations, etc. |
+| External deps | 3 CRAN packages                                              |
+| Data sources  | Online (NASA Earth Observations) and 15 local files          |
+| Results       | 5 tables, 12 plots                                           |
+| Notes         | Winter and summer temperatures, snowfall, humidity, etc.     |
+</div>
+
+<div id="trip">
+|               | **trip**                                                     |
+| ------------- | ------------------------------------------------------------ |
+| Analysis      | Family vacation plan                                         |
+| Repository    | <https://github.com/arni-magnusson/trip>                     |
+| Methods       | World map with flight routes, testing R Markdown and HTML    |
+| External deps | Many CRAN packages                                           |
+| Data sources  | 2 local files                                                |
+| Results       | 2 tables, 1 map                                              |
+| Notes         | Creates the webpage <https://arni-magnusson.github.io/trip/> |
+</div>

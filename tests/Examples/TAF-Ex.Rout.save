@@ -1,6 +1,6 @@
 
-R version 4.4.1 (2024-06-14) -- "Race for Your Life"
-Copyright (C) 2024 The R Foundation for Statistical Computing
+R version 4.4.3 (2025-02-28) -- "Trophy Case"
+Copyright (C) 2025 The R Foundation for Statistical Computing
 Platform: x86_64-pc-linux-gnu
 
 R is free software and comes with ABSOLUTELY NO WARRANTY.
@@ -37,6 +37,8 @@ Type 'q()' to quit R.
 > ### ** Examples
 > 
 > ## Not run: 
+> ##D taf.example("linreg")
+> ##D setwd("linreg")
 > ##D taf.boot()
 > ##D source.all()
 > ## End(Not run)
@@ -410,7 +412,7 @@ dose supp
 > flush(stderr()); flush(stdout())
 > 
 > ### Name: deps
-> ### Title: List Dependencies
+> ### Title: Dependencies of a Workflow
 > ### Aliases: deps
 > 
 > ### ** Examples
@@ -580,6 +582,32 @@ dose supp
 > 
 > 
 > cleanEx()
+> nameEx("draft.readme")
+> ### * draft.readme
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: draft.readme
+> ### Title: Draft Readme
+> ### Aliases: draft.readme
+> 
+> ### ** Examples
+> 
+> ## Not run: 
+> ##D # Print in console
+> ##D draft.readme()
+> ##D 
+> ##D # Export to file
+> ##D draft.readme(file=TRUE)
+> ##D 
+> ##D # Specify title
+> ##D draft.readme("Yellowfin tuna in the western and central Pacific")
+> ## End(Not run)
+> 
+> 
+> 
+> 
+> cleanEx()
 > nameEx("draft.software")
 > ### * draft.software
 > 
@@ -695,6 +723,26 @@ dose supp
 > 
 > 
 > cleanEx()
+> nameEx("git.repo")
+> ### * git.repo
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: git.repo
+> ### Title: Git Repo
+> ### Aliases: git.repo
+> 
+> ### ** Examples
+> 
+> ## Not run: 
+> ##D git.repo()
+> ##D git.repo(owner=TRUE)
+> ## End(Not run)
+> 
+> 
+> 
+> 
+> cleanEx()
 > nameEx("is.r.package")
 > ### * is.r.package
 > 
@@ -770,6 +818,27 @@ dose supp
 > ##D line.endings(file)
 > ## End(Not run)
 > 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("linreg")
+> ### * linreg
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: linreg
+> ### Title: Linear Regression
+> ### Aliases: linreg
+> 
+> ### ** Examples
+> 
+> ## Not run: 
+> ##D taf.example("linreg")
+> ##D setwd("linreg")
+> ##D taf.boot()
+> ##D source.all()
+> ## End(Not run)
 > 
 > 
 > 
@@ -941,6 +1010,38 @@ dose supp
 > 
 > 
 > cleanEx()
+> nameEx("pdeps")
+> ### * pdeps
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: pdeps
+> ### Title: Dependencies of a Package
+> ### Aliases: pdeps
+> 
+> ### ** Examples
+> 
+> ## Not run: 
+> ##D # TAF dependencies
+> ##D pdeps("TAF")                # does not depend on non-base packages
+> ##D pdeps("TAF", base=TRUE)     # depends on these base packages
+> ##D pdeps("TAF", reverse=TRUE)  # icesTAF depends on TAF
+> ##D 
+> ##D # Other packages with light dependencies
+> ##D sapply(pdeps(c("data.table", "Rcpp", "renv")), length)
+> ##D 
+> ##D # ggplot2 dependencies
+> ##D pdeps("ggplot2")                   # full list of dependencies
+> ##D pdeps("ggplot2", recursive=FALSE)  # primary dependencies
+> ##D 
+> ##D # Each ggplot2 dependency brings in these secondary dependencies
+> ##D pdeps(pdeps("ggplot2", recursive=FALSE)$ggplot2)
+> ## End(Not run)
+> 
+> 
+> 
+> 
+> cleanEx()
 > nameEx("period")
 > ### * period
 > 
@@ -1023,7 +1124,7 @@ dose supp
 > flush(stderr()); flush(stdout())
 > 
 > ### Name: read.taf
-> ### Title: Read TAF Table from File
+> ### Title: Read TAF Table
 > ### Aliases: read.taf
 > 
 > ### ** Examples
@@ -1334,6 +1435,28 @@ dose supp
 [1] "boot/data"
 > taf.data.path("example.dat")
 [1] "boot/data/example.dat"
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("taf.example")
+> ### * taf.example
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: taf.example
+> ### Title: TAF Example
+> ### Aliases: taf.example
+> 
+> ### ** Examples
+> 
+> ## Not run: 
+> ##D taf.example("linreg")
+> ##D setwd("linreg")
+> ##D taf.boot()
+> ##D source.all()
+> ## End(Not run)
 > 
 > 
 > 
@@ -1701,7 +1824,7 @@ dose supp
 > flush(stderr()); flush(stdout())
 > 
 > ### Name: write.taf
-> ### Title: Write TAF Table to File
+> ### Title: Write TAF Table
 > ### Aliases: write.taf
 > 
 > ### ** Examples
@@ -1838,7 +1961,7 @@ detaching ‘package:lattice’
 
 > options(digits = 7L)
 > base::cat("Time elapsed: ", proc.time() - base::get("ptime", pos = 'CheckExEnv'),"\n")
-Time elapsed:  0.176 0.005 0.185 0 0 
+Time elapsed:  0.172 0.011 0.185 0 0 
 > grDevices::dev.off()
 null device 
           1 

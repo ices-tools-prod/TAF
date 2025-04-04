@@ -1,8 +1,8 @@
-#' Write TAF Table to File
+#' Write TAF Table
 #'
-#' Write a TAF table to a file.
+#' Write a data frame to a CSV file.
 #'
-#' @param x a data frame in TAF format.
+#' @param x a data frame.
 #' @param file a filename.
 #' @param dir an optional directory name.
 #' @param quote whether to quote strings.
@@ -36,9 +36,9 @@
 #' \code{\link{write.csv}} is the underlying function used to write a table to a
 #' file.
 #'
-#' \code{\link{read.taf}} reads a TAF table from a file into a data frame.
+#' \code{\link{read.taf}} reads from a CSV file into a data frame.
 #'
-#' \code{\link{taf2html}} converts TAF table to HTML.
+#' \code{\link{taf2html}} converts a data frame to HTML.
 #'
 #' \code{\link{TAF-package}} gives an overview of the package.
 #'
@@ -58,7 +58,7 @@
 write.taf <- function(x, file=NULL, dir=NULL, quote=FALSE, row.names=FALSE,
                       fileEncoding="UTF-8", underscore=TRUE, ...)
 {
-  ## 1  Handle many tables
+  # 1  Handle many tables
   if(is.character(x) && length(x)>1)
     return(invisible(sapply(x, write.taf, file=NULL, dir=dir, quote=quote,
                             row.names=row.names, fileEncoding=fileEncoding,
@@ -73,7 +73,7 @@ write.taf <- function(x, file=NULL, dir=NULL, quote=FALSE, row.names=FALSE,
                             underscore=underscore, ...)))
   }
 
-  ## 2  Handle one table
+  # 2  Handle one table
   if(is.character(x) && length(x)==1)
   {
     if(is.null(file))
@@ -83,7 +83,7 @@ write.taf <- function(x, file=NULL, dir=NULL, quote=FALSE, row.names=FALSE,
   if(is.null(x))
     stop("x should be a data frame (or a list of data frames), not NULL")
 
-  ## 3  Prepare file path
+  # 3  Prepare file path
   if(is.null(file))
   {
     file <- deparse(substitute(x))
@@ -94,7 +94,7 @@ write.taf <- function(x, file=NULL, dir=NULL, quote=FALSE, row.names=FALSE,
   if(!is.null(dir) && file!="")
     file <- file.path(sub("[/\\]+$","",dir), file)  # remove trailing slash
 
-  ## 4  Check column names and data entries
+  # 4  Check column names and data entries
   if(any(names(x)=="") && dirname(file)!="report")
     warning("column ", which(names(x)=="")[1], " has no name")
   if(any(duplicated(names(x))) && dirname(file)!="report")
@@ -108,7 +108,7 @@ write.taf <- function(x, file=NULL, dir=NULL, quote=FALSE, row.names=FALSE,
     stop("unexpected comma in row ", row, ", consider quote=TRUE")
   }
 
-  ## 5  Export
+  # 5  Export
   write.csv(x, file=file, quote=quote, row.names=row.names,
             fileEncoding=fileEncoding, ...)
 }

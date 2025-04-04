@@ -4,16 +4,16 @@
 #'
 #' @export
 
-## Helper function for draft.software
+# Helper function for draft.software
 
 ds.package <- function(package, author, year, title, version, source)
 {
-  ## 1  Bibliographic info: author, year, title, details
+  # 1  Bibliographic info: author, year, title, details
   cit <- citation(package, lib.loc=c(file.path(boot.dir(), "library"),
                                      .libPaths()))[1]
   bib <- as.list(toBibtex(cit))
   key <- sub(",$", paste0(package,","), bib[[1]])  # add package name
-  ## Treat null and NA (from mapply) the same, must test null first
+  # Treat null and NA (from mapply) the same, must test null first
   author <- if(is.null(author) || is.na(author)) bib$author
             else paste0("  author = {", author, "},")
   year <- if(is.null(year) || is.na(year)) bib$year
@@ -32,7 +32,7 @@ ds.package <- function(package, author, year, title, version, source)
                     thesis=c(bib$type, bib$school),
                     c(bib$edition, bib$doi))
 
-  ## 2  Package info: version, source
+  # 2  Package info: version, source
   pkg <- packageDescription(package, lib.loc=c(file.path(boot.dir(), "library"),
                                                .libPaths()))
   repotype <- if(isTRUE(pkg$Repository == "CRAN")) "CRAN"
@@ -63,7 +63,7 @@ ds.package <- function(package, author, year, title, version, source)
   }
   source <- paste0("  source = {", source, "},")
 
-  ## 3  Combine and format metadata
+  # 3  Combine and format metadata
   fields <- c(author, year, title, details, version, source)
   fields <- strsplit(fields, "=")  # align at equals sign
   fields <- paste0(format(sapply(fields,"[",1)), "=", sapply(fields,"[",2))

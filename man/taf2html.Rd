@@ -10,9 +10,9 @@ taf2html(x, file = "", align = "", header = align,
   right = "style=\\"text-align:right\\"", append = FALSE)
 }
 \arguments{
-\item{x}{a data frame in TAF format.}
+\item{x}{a data frame.}
 
-\item{file}{a filename, or special values \code{NULL} or \code{""}.}
+\item{file}{a filename, or special value \code{""}.}
 
 \item{align}{a string (or a vector of strings) specifying alignment of data
 cells.}
@@ -31,10 +31,10 @@ cells.}
 \item{append}{whether to append to an existing file.}
 }
 \value{
-\code{NULL}, or a vector of strings if \code{file = NULL}.
+Character vector of class \verb{Bibtex}.
 }
 \description{
-Convert a TAF table to HTML code and optionally write to a file.
+Convert a data frame to HTML code and optionally write to a file.
 }
 \details{
 The \code{align} argument can be a vector of strings to specify
@@ -53,11 +53,14 @@ familiar with cascading style sheets (CSS). For example, the long-winded
 \code{style="text-align:center"} could be shortened to \code{class="L"} if a
 corresponding class has been defined in CSS.
 
-Instead of using \code{file} to pass a filename, it can have the special
-value \code{file = NULL} to return the HTML code as a vector of strings or
-\code{file = ""} (the default) to show the HTML in the console.
+The default value \code{file = ""} prints the HTML code in the console,
+instead of writing it to a file. The output can then be pasted into a file to
+edit further, without accidentally overwriting an existing file.
 }
 \note{
+Although the output is HTML code, the \verb{Bibtex} class is used for
+convenient display in the console.
+
 The resulting HTML conforms to the HTML5 standard and aims for compact
 output, omitting optional closing tags and rendering each row of data as one
 row of HTML code.
@@ -74,7 +77,7 @@ taf2html(catage.taf, "catage.html", align=c("L","R","R","R","R"),
 
 }
 \seealso{
-\code{\link{write.taf}} writes a TAF table to a file.
+\code{\link{write.taf}} writes a data frame to a CSV file.
 
 \code{\link{TAF-package}} gives an overview of the package.
 }

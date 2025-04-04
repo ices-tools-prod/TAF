@@ -89,7 +89,7 @@ source.taf <- function(script, rm=FALSE, clean=TRUE, detach=FALSE, taf=NULL,
 
 #' @export
 
-## Equivalent spelling
+# Equivalent spelling
 
 sourceTAF <- function(...)
 {

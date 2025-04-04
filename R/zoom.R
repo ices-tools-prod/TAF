@@ -95,7 +95,7 @@ zoom.trellis <- function(x, size=1, main=1.2*size, lab=size, axis=size,
     {
       side <- names(x$legend)[1]
       x$legend[[side]]$args$key$cex.title <- legend
-      ## Sometimes cex, key$cex, or key$text$cex ... just set them all
+      # Sometimes cex, key$cex, or key$text$cex ... just set them all
       x$legend[[side]]$args$cex <- legend
       x$legend[[side]]$args$key$cex <- legend
       x$legend[[side]]$args$key$text$cex <- legend

@@ -1,9 +1,17 @@
-# TAF 4.3.0 (2024-06-11)
+# TAF 4.3.0 (development)
 
 * Added function check.software() to check global package versions - an
   administrative tool for special cases. Code contributed by Iago Mosqueira.
 
 * Added function ddim() to show the data dimensions of a table.
+
+* Added function draft.readme() to draft an introductory README.md.
+
+* Added function git.repo() to read a Git repository name.
+
+* Added function pdeps() to analyze the dependencies of a CRAN package.
+
+* Added function taf.example() to copy an example analysis from the TAF package.
 
 * Added function taf.libraries() to load all packages from TAF library. Code
   contributed by Iago Mosqueira.
@@ -14,12 +22,16 @@
 
 * Added argument 'gitignore' to taf.skeleton().
 
+* Added 'linreg' example, a minimal TAF workflow.
+
 * Improved draft.software() so it supports packages from r-universe. Code
   contributed by Iago Mosqueira.
 
-* Improved taf.boot() so it is not affected by user option "pkgType". Changed
+* Improved taf.boot() so it is not affected by getOption("pkgType"). Changed
   taf.boot() so it handles multiple filenames/URLs in 'source' field, separated
   by comma. Handled by internal function process.entry().
+
+* Changed taf.skeleton() so it produces slightly simpler header comments.
 
 
 

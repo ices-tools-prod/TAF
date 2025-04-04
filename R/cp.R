@@ -50,8 +50,8 @@
 
 cp <- function(from, to, move=FALSE, ignore=FALSE, overwrite=TRUE, quiet=TRUE)
 {
-  ## Include both glob matches and filenames without asterisk,
-  ## in case some filenames without asterisk are not found
+  # Include both glob matches and filenames without asterisk,
+  # in case some filenames without asterisk are not found
   from <- sort(unique(c(Sys.glob(from), from[!grepl("\\*", from)])))
 
   if(!quiet)
@@ -62,10 +62,10 @@ cp <- function(from, to, move=FALSE, ignore=FALSE, overwrite=TRUE, quiet=TRUE)
 
   if(move)
   {
-    ## Safeguard 1: destination must have file_ext or exist as dir
+    # Safeguard 1: destination must have file_ext or exist as dir
     if(any(file_ext(to)=="" & !dir.exists(to)))
       stop("when moving, 'to' must have file extension or exist as directory")
-    ## Safeguard 2: many-one, dir must exist
+    # Safeguard 2: many-one, dir must exist
     if(length(from)>1 && length(to)==1 && !dir.exists(to))
       stop("when moving many -> one, 'to' must be an existing directory")
   }

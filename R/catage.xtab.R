@@ -39,7 +39,6 @@
 #'
 #' \code{\link{TAF-package}} gives an overview of the package.
 #'
-#'
 #' @examples
 #' catage.xtab
 #' xtab2taf(catage.xtab)

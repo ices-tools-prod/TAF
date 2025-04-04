@@ -47,7 +47,7 @@ make.all <- function(...)
 
 #' @export
 
-## Equivalent spelling
+# Equivalent spelling
 
 makeAll <- function(...)
 {

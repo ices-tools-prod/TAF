@@ -39,7 +39,7 @@
 #' instead of writing it to a file. The output can then be pasted into a file to
 #' edit further, without accidentally overwriting an existing metadata file.
 #'
-#' @return Object of class \verb{Bibtex}.
+#' @return Character vector of class \verb{Bibtex}.
 #'
 #' @note
 #' After creating the initial draft, the user can complete the \verb{version},
@@ -79,7 +79,7 @@ draft.software <- function(package, author=NULL, year=NULL, title=NULL,
 {
   if(length(package) > 1)
   {
-    ## Process many packages - mapply requires conversion of NULL to NA
+    # Process many packages - mapply requires conversion of NULL to NA
     author <- if(is.null(author)) NA else author
     year <- if(is.null(year)) NA else year
     title <- if(is.null(title)) NA else title
@@ -88,7 +88,7 @@ draft.software <- function(package, author=NULL, year=NULL, title=NULL,
     z <- mapply(draft.software, package=package, author=author, year=year,
                 title=title, version=version, source=source, SIMPLIFY=FALSE)
     out <- list()
-    ## Add newline between entries
+    # Add newline between entries
     for(i in seq_along(z))
     {
       out[[2*i-1]] <- z[[i]]
@@ -98,7 +98,7 @@ draft.software <- function(package, author=NULL, year=NULL, title=NULL,
     out <- out[-length(out)] # remove empty line at end
     class(out) <- "Bibtex"
   }
-  ## 1  GitHub repo
+  # 1  GitHub repo
   else if(grepl("@", package))
   {
     targz <- download.github(package, file.path(boot.dir(), "software"))
@@ -106,29 +106,29 @@ draft.software <- function(package, author=NULL, year=NULL, title=NULL,
                 lib=file.path(boot.dir(), "library"))
     spec <- parse.repo(package)
     package <- if(spec$subdir=="") spec$repo else spec$subdir
-    ## Pass source=NULL, to get a GitHub reference instead of trunk name
+    # Pass source=NULL, to get a GitHub reference instead of trunk name
     out <- ds.package(package=package, author=author, year=year, title=title,
                       version=version, source=NULL)
   }
-  ## 2  Boot folder or file
+  # 2  Boot folder or file
   else if(dirname(package) == file.path(boot.dir(), "initial/software"))
   {
     out <- ds.file(package=package, author=author, year=year, title=title,
                    version=version, source=source)
   }
-  ## 3  Installed package
+  # 3  Installed package
   else
   {
     out <- ds.package(package=package, author=author, year=year, title=title,
                       version=version, source=source)
   }
 
-  ## Export
+  # Export
   if(identical(file, TRUE))
     file <- file.path(boot.dir(), "SOFTWARE.bib")
   if(identical(file, FALSE))
     file <- ""
-  ## No write() when file="", to ensure quiet assignment x <- draft.software()
+  # No write() when file="", to ensure quiet assignment x <- draft.software()
   if(file == "")
   {
     out

@@ -1,7 +1,3 @@
-.travis.yml
-README.md
-^.*\.Rproj$
-^\.Rproj\.user$
+^diagram$
+^README.md$
 ^LICENSE$
-^cran-comments\.md$
-^CRAN-RELEASE$

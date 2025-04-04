@@ -1,0 +1,50 @@
+#' @name linreg
+#'
+#' @title Linear Regression
+#'
+#' @description
+#' Minimal TAF workflow, a simple linear regression where the \emph{x} and
+#' \emph{y} coordinates come from a text file.
+#'
+#' Before the workflow is run, it consists of four scripts and a \code{boot}
+#' folder:
+#'
+#' \preformatted{
+#' [boot]
+#' data.R
+#' model.R
+#' output.R
+#' report.R
+#' }
+#'
+#' After the workflow is run, four new folders contain the output from the TAF
+#' scripts:
+#'
+#' \preformatted{
+#' [boot]
+#' [data]
+#' [model]
+#' [output]
+#' [report]
+#' data.R
+#' model.R
+#' output.R
+#' report.R
+#' }
+#'
+#' @seealso
+#' \code{\link[datasets]{cars}} describes the dataset.
+#'
+#' \code{\link{taf.example}} copies an example analysis from the TAF package.
+#'
+#' \code{\link{TAF-package}} gives an overview of the package.
+#'
+#' @examples
+#' \dontrun{
+#' taf.example("linreg")
+#' setwd("linreg")
+#' taf.boot()
+#' source.all()
+#' }
+
+NA

@@ -50,17 +50,17 @@ rmdir <- function(path, recursive=FALSE)
     }
     else
     {
-      ## Not an existing directory
+      # Not an existing directory
       if(!dir.exists(path))
       {
         code <- FALSE
       }
-      ## Not an empty directory
+      # Not an empty directory
       else if(length(dir(path,all.files=TRUE,no..=TRUE)) > 0)
       {
         code <- FALSE
       }
-      ## Existing and empty
+      # Existing and empty
       else
       {
         unlink(path, recursive=TRUE)

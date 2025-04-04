@@ -15,11 +15,18 @@ writing out files for the next step.
 Convenience functions are provided to version control the required data and
 software, run analyses, clean residues from previous runs, manage files,
 manipulate tables, and produce figures. With a focus on stability and
-reproducible analyses, the TAF package comes with no dependencies.
-
-TAF forms a base layer for the
+reproducible analyses, the TAF package comes with no dependencies. TAF forms
+a base layer for the
 \href{https://cran.r-project.org/package=icesTAF}{icesTAF} package and other
 scientific applications.
+
+The following diagram describes the general workflow of every TAF analysis:
+
+\if{html}{\figure{diagram.png}{options: width="400" alt="diagram"}}
+\if{latex}{\figure{diagram.pdf}{options: width=10cm}}
+
+See \code{vignette("TAF")} for more detailed coverage on how to organize and
+run TAF workflows.
 }
 \details{
 \emph{Initial TAF steps:}
@@ -28,6 +35,7 @@ scientific applications.
   \code{\link{draft.software}} \tab draft SOFTWARE.bib file\cr
   \code{\link{period}}         \tab paste period string for DATA.bib\cr
   \code{\link{taf.boot}}       \tab set up data files and software\cr
+  \code{\link{taf.example}}    \tab copy example analysis from TAF package\cr
   \code{\link{taf.skeleton}}   \tab create empty TAF template
 }
 \emph{Running scripts:}
@@ -49,14 +57,14 @@ scientific applications.
   \code{\link{os.linux}}       \tab operating system\cr
   \code{\link{os.macos}}       \tab operating system\cr
   \code{\link{os.windows}}     \tab operating system\cr
-  \code{\link{read.taf}}       \tab read TAF table from file\cr
+  \code{\link{read.taf}}       \tab read CSV file\cr
   \code{\link{source.dir}}     \tab read all \code{*.R} files\cr
   \code{\link{taf.boot.path}}  \tab construct path to boot folder\cr
   \code{\link{taf.data.path}}  \tab construct path to boot data files\cr
   \code{\link{taf.library}}    \tab load package from TAF library\cr
   \code{\link{taf.libraries}}  \tab load all packages from TAF library\cr
   \code{\link{taf.unzip}}      \tab unzip file\cr
-  \code{\link{write.taf}}      \tab write TAF table to file
+  \code{\link{write.taf}}      \tab write CSV file
 }
 \emph{Tables:}
 \tabular{ll}{
@@ -68,7 +76,7 @@ scientific applications.
   \code{\link{plus}}      \tab rename plus group column\cr
   \code{\link{rnd}}       \tab round column values\cr
   \code{\link{sam2taf}}   \tab convert SAM to TAF\cr
-  \code{\link{taf2html}}  \tab convert TAF to HTML\cr
+  \code{\link{taf2html}}  \tab convert data frame to HTML\cr
   \code{\link{taf2long}}  \tab convert TAF to long format\cr
   \code{\link{taf2xtab}}  \tab convert TAF to crosstab\cr
   \code{\link{tt}}        \tab transpose TAF table\cr
@@ -89,22 +97,29 @@ scientific applications.
   \code{\link{catage.xtab}} \tab crosstab format\cr
   \code{\link{summary.taf}} \tab summary results
 }
+\emph{Example workflow:}
+\tabular{ll}{
+  \code{\link{linreg}} \tab simple linear regression
+}
 \emph{Administrative tools, rarely used in scripts:}
 \tabular{ll}{
   \code{\link{check.software}}  \tab check global package versions\cr
   \code{\link{clean.data}}      \tab clean boot data\cr
   \code{\link{clean.library}}   \tab clean TAF library\cr
   \code{\link{clean.software}}  \tab clean TAF software\cr
-  \code{\link{deps}}            \tab list dependencies\cr
+  \code{\link{deps}}            \tab workflow dependencies\cr
   \code{\link{detach.packages}} \tab detach all packages\cr
   \code{\link{dos2unix}}        \tab convert line endings\cr
   \code{\link{download}}        \tab download file\cr
   \code{\link{download.github}} \tab download repository\cr
+  \code{\link{draft.readme}}    \tab draft introductory readme\cr
   \code{\link{file.encoding}}   \tab examine file encoding\cr
   \code{\link{get.remote.sha}}  \tab look up SHA code\cr
+  \code{\link{git.repo}}        \tab read Git repository name\cr
   \code{\link{is.r.package}}    \tab check if file is an R package\cr
   \code{\link{latin1.to.utf8}}  \tab convert file encoding\cr
   \code{\link{line.endings}}    \tab examine line endings\cr
+  \code{\link{pdeps}}           \tab package dependencies\cr
   \code{\link{read.bib}}        \tab read metadata entries\cr
   \code{\link{rmdir}}           \tab remove empty directory\cr
   \code{\link{taf.install}}     \tab install package in TAF library\cr
@@ -117,29 +132,18 @@ scientific applications.
 }
 \examples{
 \dontrun{
+taf.example("linreg")
+setwd("linreg")
 taf.boot()
 source.all()
 }
 }
-\references{
-Development site: \url{https://github.com/ices-tools-prod/TAF}.
-
-ICES Transparent Assessment Framework: \url{https://taf.ices.dk}.
-
-To explore example TAF stock assessments, see the introductory
-\href{https://www.youtube.com/watch?v=FweJbr9hfdY}{video} and
-\href{https://github.com/ices-taf/doc/blob/master/tutorial-1/README.md}{tutorial}.
+\seealso{
+See \code{vignette("TAF")} for an introduction to the TAF package.
 
 The \href{https://github.com/ices-taf/doc/wiki}{TAF Wiki} provides additional
 help resources.
 }
-\seealso{
-Useful links:
-\itemize{
-  \item \url{https://github.com/ices-tools-prod/TAF}
-}
-
-}
 \author{
-Arni Magnusson and Colin Millar.
+Arni Magnusson, Colin Millar, and Iago Mosqueira.
 }
