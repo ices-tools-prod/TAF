@@ -357,10 +357,11 @@ Several functions from the TAF package have been mentioned in this introduction:
 - `taf.png`
 
 The TAF package provides many other functions that can be useful but are not
-required for authoring or running TAF workflows. Every function comes with a
-help page that includes examples and cross-references. Furthermore, typing
-`?TAF` opens a package help page that gives an overview of all the functions in
-the package, grouped by functionality.
+required for authoring or running TAF workflows. Several TAF functions are
+designed to support running the same analysis across different operating systems
+and locales, and every function comes with a help page that includes examples
+and cross-references. Furthermore, typing `?TAF` opens a package help page that
+gives an overview of all the functions in the package, grouped by functionality.
 
 ## The TAF community
 
@@ -479,13 +480,26 @@ of cloud services.
 
 #### renv
 
-Using `SOFTWARE.bib` declarations of software and versions, TAF supports
-reproducibility and allows the workflow to be rerun at a later time and produce
-the same results as the original analysis. Alternatively, TAF can be used in
-combination with the `renv` package (Ushey and Wickham 2025), `rig` (Csárdi
-2024), Docker (Merkel 2014), and other tools dedicated to reproducible research.
+The `renv` package (Ushey and Wickham 2025) allows the scientist to save
+information about all R packages and their version when used in an analysis,
+with the intention to allow the workflow to be rerun at a later time and produce
+the same results as the original analysis. The `renv` package only looks at R
+packages, but for long-term reproducibility there is a wider domain of software
+that can change over time, such as the version of R, external software used in
+the analysis, and the operating system.
 
-## Summary
+The built-in approach in TAF is to focus the documentation in `SOFTWARE.bib`
+only on the key software used in the analysis. Calling `taf.boot()` will then
+set up these packages and software in a local boot folder. In our experience
+with TAF, if the scientist has declared the exact version of key software
+components that were used in the analysis inside the `SOFTWARE.bib` file, then
+it is relatively easy to rerun some years later.
+
+Alternatively, TAF can be used in combination with the `renv` package, `rig`
+(Csárdi 2024), Docker (Merkel 2014), and other tools dedicated to reproducible
+research.
+
+## Discussion
 
 ### Contents of a TAF analysis
 
