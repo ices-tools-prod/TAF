@@ -548,10 +548,10 @@ implemented in Python or some other language, as a simple native library that
 would run data, model, output, and report scripts, independent of R.
 
 The last step of a TAF workflow, the report step, can be omitted if the CSV
-tables produced by `output.R` are the only results needed, but many TAF analyses
-use the report step to produce plots and formatted tables. The report step can
-also be used to produce dynamic reports or interactive media, using R Markdown,
-Quarto, Shiny, or other methods. The simple and general design of TAF,
+tables produced by the output step are the only results needed, but most TAF
+analyses use the report step to produce plots and formatted tables. The report
+step can also be used to produce dynamic reports or interactive media, using R
+Markdown, Quarto, Shiny, or other methods. The simple and general design of TAF,
 independent from specific technologies, has proven both stable and easy to adapt
 to a continually evolving ecosystem of available software.
 
