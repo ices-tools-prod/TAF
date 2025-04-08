@@ -58,11 +58,8 @@ run TAF workflows.
   \code{\link{os.macos}}       \tab operating system\cr
   \code{\link{os.windows}}     \tab operating system\cr
   \code{\link{read.taf}}       \tab read CSV file\cr
-  \code{\link{source.dir}}     \tab read all \code{*.R} files\cr
-  \code{\link{taf.boot.path}}  \tab construct path to boot folder\cr
-  \code{\link{taf.data.path}}  \tab construct path to boot data files\cr
+  \code{\link{source.dir}}     \tab source all \code{*.R} files\cr
   \code{\link{taf.library}}    \tab load package from TAF library\cr
-  \code{\link{taf.libraries}}  \tab load all packages from TAF library\cr
   \code{\link{taf.unzip}}      \tab unzip file\cr
   \code{\link{write.taf}}      \tab write CSV file
 }
@@ -101,7 +98,7 @@ run TAF workflows.
 \tabular{ll}{
   \code{\link{linreg}} \tab simple linear regression
 }
-\emph{Administrative tools, rarely used in scripts:}
+\emph{Administrative or specialized tools:}
 \tabular{ll}{
   \code{\link{check.software}}  \tab check global package versions\cr
   \code{\link{clean.data}}      \tab clean boot data\cr
@@ -122,8 +119,11 @@ run TAF workflows.
   \code{\link{pdeps}}           \tab package dependencies\cr
   \code{\link{read.bib}}        \tab read metadata entries\cr
   \code{\link{rmdir}}           \tab remove empty directory\cr
+  \code{\link{taf.boot.path}}   \tab construct path to boot folder\cr
+  \code{\link{taf.data.path}}   \tab construct path to boot data files\cr
   \code{\link{taf.install}}     \tab install package in TAF library\cr
   \code{\link{taf.libPaths}}    \tab add TAF library to search path\cr
+  \code{\link{taf.libraries}}   \tab load all packages from TAF library\cr
   \code{\link{taf.session}}     \tab show session information\cr
   \code{\link{taf.sources}}     \tab list metadata entries\cr
   \code{\link{unix2dos}}        \tab convert line endings\cr
