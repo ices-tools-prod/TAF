@@ -656,7 +656,9 @@ Ushey, K. and Wickham, H. (2025).
 renv: Project Environments. R package version 1.1.2.\
 <https://cran.r-project.org/package=renv>
 
-## Appendix: Online examples
+## Appendix
+
+### Online examples
 
 #### Introductory notes
 
