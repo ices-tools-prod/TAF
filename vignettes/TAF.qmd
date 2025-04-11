@@ -571,9 +571,9 @@ analyses use the report step to produce plots and formatted tables. The report
 step can also be used to produce dynamic reports or interactive media, using R
 Markdown, Quarto, Shiny, or other methods.
 
-The simple and general design of TAF, independent from specific technologies,
-has proven both stable and easy to adapt to a continually evolving ecosystem of
-available software.
+The simple and general design of TAF, compatible with a wide range of
+technologies while dependent on none, has proven both stable and easy to adapt
+to a continually evolving ecosystem of available software.
 
 ## Acknowledgements
 
