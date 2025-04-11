@@ -495,9 +495,9 @@ with TAF, if the scientist has declared the exact version of key software
 components that were used in the analysis inside the `SOFTWARE.bib` file, then
 it is relatively easy to rerun some years later.
 
-Alternatively, TAF can be used in combination with the `renv` package, `rig`
-(Csárdi 2024), Docker (Merkel 2014), and other tools dedicated to reproducible
-research.
+For analyses where `SOFTWARE.bib` is not the right tool to manage software
+versions, TAF can be used in combination with the `renv` package, `rig` (Csárdi
+2024), Docker (Merkel 2014), and other tools dedicated to reproducible research.
 
 ## Discussion
 
