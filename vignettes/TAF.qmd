@@ -687,6 +687,8 @@ same results.
 | Results       | 3 tables, 1 plot                                             |
 | Notes         | Simple arithmetic, the *hello world* of icesTAF analyses     |
 
+<br>
+
 |               | **2015_had-iceg**                                            |
 | ------------- | ------------------------------------------------------------ |
 | Analysis      | Haddock in Icelandic waters                                  |
@@ -697,6 +699,8 @@ same results.
 | Results       | 10 tables, 2 plots                                           |
 | Notes         | Model executable is in bootstrap/initial/software            |
 
+<br>
+
 |               | **2016_ple-eche**                                            |
 | ------------- | ------------------------------------------------------------ |
 | Analysis      | Plaice in the English Channel                                |
@@ -706,6 +710,8 @@ same results.
 | Data sources  | 2 local files                                                |
 | Results       | 14 tables, 2 plots                                           |
 | Notes         | ggplot2 depends on many packages                             |
+
+<br>
 
 |               | **2016_cod-347d**                                            |
 | ------------- | ------------------------------------------------------------ |
@@ -737,6 +743,8 @@ package and a small dataset.
 | Results       | 2 tables, 1 plot                                             |
 | Notes         | No local data files                                          |
 
+<br>
+
 |               | **WorkshopEffortShared**                                     |
 | ------------- | ------------------------------------------------------------ |
 | Analysis      | FAO analysis of the relative status of marine stocks         |
@@ -746,6 +754,8 @@ package and a small dataset.
 | Data sources  | 4 local files                                                |
 | Results       | 6 tables, 16 plots                                           |
 | Notes         | sraplus depends on many packages                             |
+
+<br>
 
 |               | **WorkshopEffortByStock**                                    |
 | ------------- | ------------------------------------------------------------ |
@@ -774,6 +784,8 @@ inviting anyone to browse the data and results and/or rerun the analysis.
 | Notes         | TAF analysis is organized inside a subdirectory              |
 </div>
 
+<br>
+
 <div id="albacore">
 |               | **ofp-sam-alb-2024-diagnostic**                              |
 | ------------- | ------------------------------------------------------------ |
@@ -785,6 +797,8 @@ inviting anyone to browse the data and results and/or rerun the analysis.
 | Results       | 22 tables, 4 plots                                           |
 | Notes         | TAF analysis is organized inside a subdirectory              |
 </div>
+
+<br>
 
 <div id="skipjack">
 |               | **ofp-sam-skj-2025-tag-growth-public**                       |
@@ -813,6 +827,8 @@ of fisheries science.
 | Results       | 2 tables, 1 plot                                             |
 | Notes         | Tidyverse workflow                                           |
 
+<br>
+
 <div id="corona">
 |               | **corona**                                                   |
 | ------------- | ------------------------------------------------------------ |
@@ -825,6 +841,8 @@ of fisheries science.
 | Notes         | Useful during the global epidemic to view the latest data    |
 </div>
 
+<br>
+
 <div id="weather">
 |               | **weather**                                                  |
 | ------------- | ------------------------------------------------------------ |
@@ -836,6 +854,8 @@ of fisheries science.
 | Results       | 5 tables, 12 plots                                           |
 | Notes         | Winter and summer temperatures, snowfall, humidity, etc.     |
 </div>
+
+<br>
 
 <div id="trip">
 |               | **trip**                                                     |
