@@ -437,7 +437,8 @@ As the name implies, the `make()` function is closely based on the shell command
 of the same name (Stallman et al. 2023) but implemented in R. As a generally
 useful tool beyond the context of TAF workflows, the `make()` function was
 eventually packaged and released on CRAN in its own package called `makeit`
-in 2023. The package contains annotated examples and a discussion.
+in 2023. The `makeit` package (Magnusson 2025) contains annotated examples and a
+discussion.
 
 #### SOFIA
 
@@ -606,8 +607,8 @@ for reproducibility and high-performance computing.
 <https://doi.org/10.21105/joss.02959>,
 <https://cran.r-project.org/package=targets>
 
-Magnusson, A. (2023).
-makeit: Run R Scripts if Needed. R package version 1.0.1.\
+Magnusson, A. (2025).
+makeit: Run R Scripts if Needed. R package version 1.0.2.\
 <https://cran.r-project.org/package=makeit>
 
 Magnusson, A. and Millar, C. (2023).
