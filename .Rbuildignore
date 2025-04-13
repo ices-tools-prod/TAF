@@ -1,3 +1,5 @@
 ^diagram$
 ^README.md$
 ^LICENSE$
+^inst/doc/figs$
+^inst/doc/.*\.tex$
