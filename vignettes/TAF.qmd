@@ -290,6 +290,17 @@ computations. In other TAF workflows, `DATA.bib` may bring in data from multiple
 sources, involving local and remote databases, online data repositories, and
 GitHub resources.
 
+It's worth noting that although CSV is the default file format for tables
+produced by the `data.R` and `output.R` scripts, the initial data files inside
+`boot/initial/data` folder can be in any format. The recommendation in TAF is to
+use the original format that the scientist received the data in, and use TAF
+scripts to document the entire data import and preparation. Initial data files
+can thus be a combination of text files (`.csv`, `.dat`, `.txt`), R data files
+(`.rds`, `.RData`), zip archives (`.zip`, `.tar.gz`), spreadsheets (`.xlsx`,
+`.ods`), and so on. Better still, boot scripts can be used to query databases or
+fetch data from online resources that often have some level of data quality
+checks and documentation.
+
 When metadata entries in `SOFTWARE.bib` point to R packages, they are installed
 in a local library for that workflow. The `SOFTWARE.bib` file is where the
 scientist can specify the exact version of key software components that were
@@ -561,10 +572,10 @@ earlier workflows.
 TAF itself is intentionally low tech, simply running four scripts one after the
 other, and this basic design allows it to be paired with specialized software of
 arbitrary complexity. Custom boot scripts can be written to fetch data and set
-up software, and the TAF scripts can apply any technologies available to R, as
-well as running external software. If the need arises, TAF could also be
-implemented in Python or some other language, as a simple native library that
-would run data, model, output, and report scripts, independent of R.
+up specific software, and the TAF scripts can apply any technologies available
+to R, which may include running external software. If the need arises, TAF could
+also be implemented in Python or some other language, as a simple native library
+that would run data, model, output, and report scripts, independent of R.
 
 The last step of a TAF workflow, the report step, can be omitted if the CSV
 tables produced by the output step are the only results needed, but most TAF
