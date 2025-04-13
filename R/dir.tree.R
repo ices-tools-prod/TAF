@@ -56,7 +56,7 @@ dir.tree <- function(path = ".") {
     out[-(1:tail(which(depth == d), 1))] <- "s"
     out[tail(which(depth == d), 1)] <- "e"
     out[depth < d] <- ""
-    # if there is a l followed by "" or s it should be c("s", "")
+    # if there is a l followed by "" or s it should be "s"
     for (i in rev(which(out == "l"))) {
       if (out[i+1] %in% c("", "s")) {
         out[i] <- "s"

@@ -5,9 +5,15 @@
 #' @param ... arguments passed on to \link{install.packages}
 #' @param path a directory or file containing R scripts.
 #'
+#' @details
+#'
+#' This function additionally looks in the TAF boot directory for packages
+#' that are required by the TAF boot process (i.e. called from a boot script).
+#'
 #' @seealso
 #'
 #' \link{deps}
+#' \link{install.packages}
 #'
 #' @examples
 #' \dontrun{
@@ -23,8 +29,9 @@
 #'
 #' # list dependencies
 #' deps()
+#' deps(taf.boot.path())
 #'
-#' # install dependencies
+#' # install (uninstalled) dependencies
 #' install.deps()
 #' }
 #'

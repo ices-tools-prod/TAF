@@ -14,6 +14,10 @@ install.deps(path = ".", ...)
 \description{
 Search R scripts for packages that are required and install them.
 }
+\details{
+This function additionally looks in the TAF boot directory for packages
+that are required by the TAF boot process (i.e. called from a boot script).
+}
 \examples{
 \dontrun{
 
@@ -28,12 +32,14 @@ setwd("2019_san.sa.6-master")
 
 # list dependencies
 deps()
+deps(taf.boot.path())
 
-# install dependencies
+# install (uninstalled) dependencies
 install.deps()
 }
 
 }
 \seealso{
 \link{deps}
+\link{install.packages}
 }
