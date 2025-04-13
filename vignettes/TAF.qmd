@@ -63,8 +63,8 @@ available in the `boot/data` subfolder, where the `data.R` script will read it.
 
 <div style="text-align:center"><img src="figs/diagram.png" width="400"></div>
 
-The `SOFTWARE.bib` file is optional. It is not used in the linear regression
-example below, but its functionality is covered in the <a
+The `SOFTWARE.bib` file is optional. It is not used in the following linear
+regression example, but its functionality is covered in the <a
 href="#the-boot-procedure">boot procedure</a> section below.
 
 ## Running a TAF analysis
