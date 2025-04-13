@@ -33,7 +33,9 @@
 
 * Changed taf.skeleton() so it produces slightly simpler header comments.
 
+* Added dir.tree() from icesTAF to show the directory tree.
 
+* Added install.deps() to install all dependencies of a TAF analysis.
 
 
 # TAF 4.2.0 (2023-03-20)
