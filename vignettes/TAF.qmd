@@ -290,17 +290,6 @@ computations. In other TAF workflows, `DATA.bib` may bring in data from multiple
 sources, involving local and remote databases, online data repositories, and
 GitHub resources.
 
-It's worth noting that although CSV is the default file format for tables
-produced by the `data.R` and `output.R` scripts, the initial data files inside
-`boot/initial/data` folder can be in any format. The recommendation in TAF is to
-use the original format that the scientist received the data in, and use TAF
-scripts to document the entire data import and preparation. Initial data files
-can thus be a combination of text files (`.csv`, `.dat`, `.txt`), R data files
-(`.rds`, `.RData`), zip archives (`.zip`, `.tar.gz`), spreadsheets (`.xlsx`,
-`.ods`), and so on. Better still, boot scripts can be used to query databases or
-fetch data from online resources that often have some level of data quality
-checks and documentation.
-
 When metadata entries in `SOFTWARE.bib` point to R packages, they are installed
 in a local library for that workflow. The `SOFTWARE.bib` file is where the
 scientist can specify the exact version of key software components that were
@@ -521,6 +510,17 @@ not going to do it by itself. The work performed by TAF is what the scientist
 has written in the scripts. Thanks to the general nature of the R language and
 the extensive selection of available packages, R scripts can do a wide variety
 of things, including running software written in other languages than R.
+
+It's worth noting that although CSV is the default file format for tables
+produced by the `data.R` and `output.R` scripts, the files inside the
+`boot/initial/data` folder can be in any format. The recommendation in TAF is to
+use the original format that the scientist received the data in, and then use
+TAF scripts to document the entire data import and preparation. Initial data
+files can thus be a combination of text files (`.csv`, `.dat`, `.txt`), R data
+files (`.rds`, `.RData`), zip archives (`.zip`, `.tar.gz`), spreadsheets
+(`.xlsx`, `.ods`), and so on. Better still, boot scripts can be used to query
+databases or fetch data from online resources that often have some level of data
+quality checks and documentation.
 
 Incremental development of TAF analyses usually takes place in a GitHub
 repository that can be kept private while the work is ongoing and then made
