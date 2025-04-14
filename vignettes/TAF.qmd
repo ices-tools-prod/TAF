@@ -122,7 +122,7 @@ taf.boot()
 source.all()
 ```
 
-The `taf.boot()` function looks for an existing `boot` folder to setup the data
+The `taf.boot()` function looks for an existing `boot` folder to set up the data
 and software required for the analysis. Then `source.all()` runs the `data.R`,
 `model.R`, `output.R`, and `report.R` scripts in that order. The individual
 scripts can also be run using `source()` or line by line in an R editor.
