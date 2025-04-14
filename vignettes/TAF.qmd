@@ -98,7 +98,7 @@ TAF scripts:
 <div style="text-align:center"><img src="figs/explorer_1.png" width="100"></div>
 
 To run a TAF analysis, the first step is to start R and make sure that the
-current working directory is set to the location of the TAF scripts: `data.R`,
+current working directory is set to the location of the TAF scripts `data.R`,
 `model.R`, etc. Some R editors do this automatically when opening an R script
 and in RStudio there is a menu command: *Session - Set Working Directory - To
 Source File Location*.
