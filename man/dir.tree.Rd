@@ -2,29 +2,26 @@
 % Please edit documentation in R/dir.tree.R
 \name{dir.tree}
 \alias{dir.tree}
-\title{Print a directory tree}
+\title{Directory Tree}
 \usage{
-dir.tree(path = ".")
+dir.tree(path = ".", style = "unix")
 }
 \arguments{
-\item{path}{the directory for which the listing is to be shown}
+\item{path}{the directory to show.}
 }
 \description{
-Print the directory tree and file contents in a pretty way
+Show directory structure and file contents in a tree format.
 }
 \examples{
 \dontrun{
-
-library(TAF)
-
-# make the TAF structure and print
-tmpdir <- tempfile()
-taf.skeleton(tmpdir)
-dir.tree(tmpdir)
+path <- system.file("examples", package="TAF")
+dir.tree(path)
 }
-
 
 }
 \seealso{
-\link{list.files}
+\link{dir} is the underlying base function that returns directories and files
+as strings.
+
+\code{\link{TAF-package}} gives an overview of the package.
 }

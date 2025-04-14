@@ -1,38 +1,31 @@
-#' Print a directory tree
+#' Directory Tree
 #'
-#' Print the directory tree and file contents in a pretty way
+#' Show directory structure and file contents in a tree format.
 #'
-#' @param path the directory for which the listing is to be shown
+#' @param path the directory to show.
 #'
 #' @seealso
+#' \link{dir} is the underlying base function that returns directories and files
+#' as strings.
 #'
-#' \link{list.files}
+#' \code{\link{TAF-package}} gives an overview of the package.
 #'
 #' @examples
 #' \dontrun{
-#'
-#' library(TAF)
-#'
-#' # make the TAF structure and print
-#' tmpdir <- tempfile()
-#' taf.skeleton(tmpdir)
-#' dir.tree(tmpdir)
+#' path <- system.file("examples", package="TAF")
+#' dir.tree(path)
 #' }
 #'
-#'
 #' @importFrom utils tail
+#'
 #' @export
 
-dir.tree <- function(path = ".") {
+dir.tree <- function(path = ".", style = "unix") {
   od <- setwd(path)
   on.exit(setwd(od))
 
   # get skeleton path structure
-  paths <-
-    list.files(
-      ".",
-      recursive = TRUE, full.names = TRUE, include.dirs = TRUE
-    )
+  paths <- dir(".", recursive = TRUE, full.names = TRUE, include.dirs = TRUE)
 
   # prettify list.files output
   splitpaths <- strsplit(paths, "/")
@@ -68,12 +61,15 @@ dir.tree <- function(path = ".") {
         out[i] <- "e"
       }
     }
-
     out
   }
 
   # chars for tree structure
-  chars <- c(e = " \u00B0--", s = "    ", c = " \u00A6--", l = " \u00A6   ")
+  chars <- switch(
+    style,
+    ascii = c(e = " +--", s = "    ", c = " +--", l = " |   "),
+    unicode = c(e = "\u2514\u2500\u2500 ", s = "    ",
+                c = "\u251c\u2500\u2500 ", l = "\u2502   "))
   link <- sapply(2:max(depth), linkchar)
   link[] <- chars[link]
   link[is.na(link)] <- ""
@@ -89,5 +85,6 @@ dir.tree <- function(path = ".") {
   tree <- data.frame(tree)
   names(tree) <- ""
 
-  print(tree, row.names = FALSE)
+  write.table(tree, quote=FALSE, col.names=FALSE, row.names=FALSE)
+  invisible(tree)
 }
