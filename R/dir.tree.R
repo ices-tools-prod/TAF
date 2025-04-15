@@ -20,12 +20,12 @@
 #'
 #' @export
 
-dir.tree <- function(path = ".", style = "unix") {
+dir.tree <- function(path = ".", ascii = FALSE) {
   od <- setwd(path)
   on.exit(setwd(od))
 
   # get skeleton path structure
-  paths <- dir(".", recursive = TRUE, full.names = TRUE, include.dirs = TRUE)
+  paths <- dir(recursive = TRUE, full.names = TRUE, include.dirs = TRUE)
 
   # prettify list.files output
   splitpaths <- strsplit(paths, "/")
@@ -65,11 +65,11 @@ dir.tree <- function(path = ".", style = "unix") {
   }
 
   # chars for tree structure
-  chars <- switch(
-    style,
-    ascii = c(e = " +--", s = "    ", c = " +--", l = " |   "),
-    unicode = c(e = "\u2514\u2500\u2500 ", s = "    ",
-                c = "\u251c\u2500\u2500 ", l = "\u2502   "))
+  chars <- if(ascii)
+             c(e = "+-- ", s = "    ", c = " +--", l = " |   ")
+           else
+             c(e = "\u2514\u2500\u2500 ", s = "    ",
+               c = "\u251c\u2500\u2500 ", l = "\u2502   ")
   link <- sapply(2:max(depth), linkchar)
   link[] <- chars[link]
   link[is.na(link)] <- ""
