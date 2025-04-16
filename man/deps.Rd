@@ -8,7 +8,7 @@ deps(path = ".", base = FALSE, installed = TRUE, available = TRUE,
   list = FALSE)
 }
 \arguments{
-\item{path}{a directory or file containing R scripts.}
+\item{path}{a directory or file containing R code.}
 
 \item{base}{whether to include base packages in the output.}
 

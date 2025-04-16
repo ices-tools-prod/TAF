@@ -2,44 +2,46 @@
 % Please edit documentation in R/install.deps.R
 \name{install.deps}
 \alias{install.deps}
-\title{Install package dependencies of a TAF analysis}
+\title{Install Dependencies}
 \usage{
 install.deps(path = ".", ...)
 }
 \arguments{
-\item{path}{a directory or file containing R scripts.}
+\item{path}{a directory or file containing R code.}
 
-\item{...}{arguments passed on to \link{install.packages}}
+\item{...}{passed to \code{install.packages}.}
 }
 \description{
-Search R scripts for packages that are required and install them.
+Search R scripts for packages that are required and install those that are
+not already installed. The default install location is the same as
+\code{install.packages}.
 }
 \details{
-This function additionally looks in the TAF boot directory for packages
-that are required by the TAF boot process (i.e. called from a boot script).
+This function also looks in the TAF boot directory for packages that are
+required by the TAF boot process, i.e., called from a boot script.
 }
 \examples{
 \dontrun{
-
-library(TAF)
-
 # Download a TAF analysis
-download("https://github.com/ices-taf/2019_san.sa.6/archive/refs/heads/master.zip")
+download(file.path("https://github.com/ices-taf/2019_san.sa.6",
+                   "archive/refs/heads/master.zip"))
 unzip("master.zip")
-
-# move into analysis folder
 setwd("2019_san.sa.6-master")
 
-# list dependencies
+# List dependencies
 deps()
 deps(taf.boot.path())
 
-# install (uninstalled) dependencies
+# Install dependencies that are not already installed
 install.deps()
 }
 
 }
 \seealso{
-\link{deps}
-\link{install.packages}
+\code{\link{install.packages}} is the underlying function to install
+packages.
+
+\code{\link{deps}} searches R scripts for packages that are required.
+
+\code{\link{TAF-package}} gives an overview of the package.
 }
