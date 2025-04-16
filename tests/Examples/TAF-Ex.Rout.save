@@ -454,6 +454,28 @@ dose supp
 > 
 > 
 > cleanEx()
+> nameEx("dir.tree")
+> ### * dir.tree
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: dir.tree
+> ### Title: Directory Tree
+> ### Aliases: dir.tree
+> 
+> ### ** Examples
+> 
+> ## Not run: 
+> ##D path <- system.file("examples", package="TAF")
+> ##D dir.tree(path)
+> ##D dir.tree(path, ascii=TRUE)
+> ##D cbind(dir(recursive=TRUE, include.dirs=TRUE))
+> ## End(Not run)
+> 
+> 
+> 
+> 
+> cleanEx()
 > nameEx("div")
 > ### * div
 > 
@@ -737,6 +759,40 @@ dose supp
 > ## Not run: 
 > ##D git.repo()
 > ##D git.repo(owner=TRUE)
+> ## End(Not run)
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("install.deps")
+> ### * install.deps
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: install.deps
+> ### Title: Install package dependencies of a TAF analysis
+> ### Aliases: install.deps
+> 
+> ### ** Examples
+> 
+> ## Not run: 
+> ##D 
+> ##D library(TAF)
+> ##D 
+> ##D # Download a TAF analysis
+> ##D download("https://github.com/ices-taf/2019_san.sa.6/archive/refs/heads/master.zip")
+> ##D unzip("master.zip")
+> ##D 
+> ##D # move into analysis folder
+> ##D setwd("2019_san.sa.6-master")
+> ##D 
+> ##D # list dependencies
+> ##D deps()
+> ##D deps(taf.boot.path())
+> ##D 
+> ##D # install (uninstalled) dependencies
+> ##D install.deps()
 > ## End(Not run)
 > 
 > 
@@ -1961,7 +2017,7 @@ detaching ‘package:lattice’
 
 > options(digits = 7L)
 > base::cat("Time elapsed: ", proc.time() - base::get("ptime", pos = 'CheckExEnv'),"\n")
-Time elapsed:  0.172 0.011 0.185 0 0 
+Time elapsed:  0.175 0.009 0.185 0 0 
 > grDevices::dev.off()
 null device 
           1 

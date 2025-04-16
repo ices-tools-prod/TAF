@@ -20,7 +20,7 @@
 #' cbind(dir(recursive=TRUE, include.dirs=TRUE))
 #' }
 #'
-#' @importFrom utils tail
+#' @importFrom utils tail write.table
 #'
 #' @export
 
