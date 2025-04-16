@@ -1,8 +1,10 @@
 #' Directory Tree
 #'
-#' Show directory structure and file contents in a tree format.
+#' Show directory structure and files in a tree format.
 #'
 #' @param path the directory to show.
+#' @param ascii whether to limit the diagram to ASCII characters, helpful when
+#'        using terminals that do not support UTF-8 encoding.
 #'
 #' @seealso
 #' \link{dir} is the underlying base function that returns directories and files
@@ -14,6 +16,8 @@
 #' \dontrun{
 #' path <- system.file("examples", package="TAF")
 #' dir.tree(path)
+#' dir.tree(path, ascii=TRUE)
+#' cbind(dir(recursive=TRUE, include.dirs=TRUE))
 #' }
 #'
 #' @importFrom utils tail
@@ -66,7 +70,7 @@ dir.tree <- function(path = ".", ascii = FALSE) {
 
   # chars for tree structure
   chars <- if(ascii)
-             c(e = "+-- ", s = "    ", c = " +--", l = " |   ")
+             c(e = "+-- ", s = "    ", c = "+-- ", l = "|   ")
            else
              c(e = "\u2514\u2500\u2500 ", s = "    ",
                c = "\u251c\u2500\u2500 ", l = "\u2502   ")

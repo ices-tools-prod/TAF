@@ -98,7 +98,7 @@ run TAF workflows.
 \tabular{ll}{
   \code{\link{linreg}} \tab simple linear regression
 }
-\emph{Administrative or specialized tools:}
+\emph{Administrative or auxiliary tools:}
 \tabular{ll}{
   \code{\link{check.software}}  \tab check global package versions\cr
   \code{\link{clean.data}}      \tab clean boot data\cr
@@ -106,6 +106,7 @@ run TAF workflows.
   \code{\link{clean.software}}  \tab clean TAF software\cr
   \code{\link{deps}}            \tab workflow dependencies\cr
   \code{\link{detach.packages}} \tab detach all packages\cr
+  \code{\link{dir.tree}}        \tab show directory structure\cr
   \code{\link{dos2unix}}        \tab convert line endings\cr
   \code{\link{download}}        \tab download file\cr
   \code{\link{download.github}} \tab download repository\cr

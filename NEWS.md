@@ -5,9 +5,13 @@
 
 * Added function ddim() to show the data dimensions of a table.
 
+* Added function dir.tree() to show directory structure and files.
+
 * Added function draft.readme() to draft an introductory README.md.
 
 * Added function git.repo() to read a Git repository name.
+
+* Added install.deps() to install all dependencies of a TAF analysis.
 
 * Added function pdeps() to analyze the dependencies of a CRAN package.
 
@@ -33,9 +37,7 @@
 
 * Changed taf.skeleton() so it produces slightly simpler header comments.
 
-* Added dir.tree() from icesTAF to show the directory tree.
 
-* Added install.deps() to install all dependencies of a TAF analysis.
 
 
 # TAF 4.2.0 (2023-03-20)

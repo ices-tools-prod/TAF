@@ -4,18 +4,23 @@
 \alias{dir.tree}
 \title{Directory Tree}
 \usage{
-dir.tree(path = ".", style = "unix")
+dir.tree(path = ".", ascii = FALSE)
 }
 \arguments{
 \item{path}{the directory to show.}
+
+\item{ascii}{whether to limit the diagram to ASCII characters, helpful when
+using terminals that do not support UTF-8 encoding.}
 }
 \description{
-Show directory structure and file contents in a tree format.
+Show directory structure and files in a tree format.
 }
 \examples{
 \dontrun{
 path <- system.file("examples", package="TAF")
 dir.tree(path)
+dir.tree(path, ascii=TRUE)
+cbind(dir(recursive=TRUE, include.dirs=TRUE))
 }
 
 }
