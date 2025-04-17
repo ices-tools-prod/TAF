@@ -155,8 +155,8 @@ has the following general structure:
 
 # What the script does
 
-# Before: file1.csv, file2.rds, file3.spec (infolder)
-# After:  file4.csv, file5.csv, file6.png (outfolder)
+# Before: file1.csv, file2.rds, file3.spec (previous)
+# After:  file4.csv, file5.csv, file6.png (folder)
 
 library(TAF)
 library(SomePackage)
@@ -165,16 +165,16 @@ source("utilities.R")
 mkdir("folder")
 
 # Read files from previous step
-dat1 <- read.taf("infolder/file1.csv")
-dat2 <- readRDS("infolder/file2.rds")
-dat3 <- importSpecial("infolder/file3.spec")
+dat1 <- read.taf("previous/file1.csv")
+dat2 <- readRDS("previous/file2.rds")
+dat3 <- importSpecial("previous/file3.spec")
 
 # Some computations
 # [...]
 
 # Write out tables and plots
-write.taf(dat4, dir="outfolder")
-write.taf(dat5, dir="outfolder")
+write.taf(dat4, dir="folder")
+write.taf(dat5, dir="folder")
 taf.png("file6")
 SpecialPlot(dat6)
 dev.off()

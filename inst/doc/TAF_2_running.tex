@@ -77,11 +77,11 @@
   \begin{itemize}
     \item[] All TAF analyses can be run using the following commands in
     R:\\[2ex]
-    \begin{tt}
-      \qquad{\blue library}(TAF)\\
-      \qquad{\blue taf.boot}()\\
-      \qquad{\blue source.all}()\\[3ex]
-    \end{tt}
+    \begin{itemize}\tt\item[]
+      {\blue library}(TAF)\\
+      {\blue taf.boot}()\\
+      {\blue source.all}()\\[3ex]
+    \end{itemize}
     \item[] The {\tt\blue taf.boot()} function looks for an existing boot folder
     to set up the\\ data and software required for the analysis.\\[3ex]
     Then {\tt\blue source.all()} runs the {\tt data.R}, {\tt model.R}
@@ -106,12 +106,76 @@
     \column{0.12\textwidth}
     \includegraphics[width=\textwidth]{explorer_1}
     \column{0.06\textwidth}
-    \vspace{4ex}
-    \centering\green\large$\Rightarrow$
+    \vspace{7ex}
+    \centering\darkgray\large$\Rightarrow$
     \column{0.12\textwidth}
     \includegraphics[width=\textwidth]{explorer_2}
     \column{0.3\textwidth}
   \end{columns}
+\end{frame}
+
+% ______________________________________________________________________________
+
+\begin{frame}{Structured scripts}\small
+  The {\tt\darkblue data.R} script has populated the {\tt data} folder with
+  comma-separated\\
+  values (CSV) files representing the
+  {\green data that are used in the analysis} and the\\
+  {\tt model.R} script produced model results in a machine-readable
+  format.\\[3ex]
+
+  The purpose of the {\tt\darkblue output.R} script is to
+  {\green read the results} from the model\\
+  folder and write out CSV files representing the results that are of primary
+  interest.\\[3ex]
+
+  Finally, {\tt\darkblue report.R} reads in the CSV output and produces
+  {\green plots and formatted\\
+    tables}, often with rounded numbers, which can be incorporated into a
+  report.\\[3ex]
+
+  The {\tt\darkblue report.R} script can also produce a
+  {\green dynamic document} in various formats\\
+  if the scientist writes the script in that way.\\[3ex]
+
+  It is important to note that TAF does not do any of this by itself. All the work\\
+  is performed by the R scripts that the scientist writes.\\[3ex]
+\end{frame}
+
+% ______________________________________________________________________________
+
+\begin{frame}{Structured scripts}\small
+  Typically, a TAF script has the following general structure:\\[3ex]\tt\fns
+  \begin{itemize}\item[]
+    \begin{gray}
+      \# What the script does\\[1em]
+      \# Before: file1.csv, file2.rds, file3.spec (previous)\\
+      \# After:  file4.csv, file5.csv, file6.png (folder)\\[1em]
+    \end{gray}
+    {\blue library}(TAF)\\
+    {\blue library}(SomePackage)\\
+    {\blue source}("utilities.R")\\[1em]
+    {\blue mkdir}("folder")\\[3ex]
+  \end{itemize}
+\end{frame}
+
+% ______________________________________________________________________________
+
+\begin{frame}{Structured scripts}\small
+  \begin{itemize}\item[]\tt\fns
+    {\gray \# Read files from previous step}\\
+    dat1 <- {\blue read.taf}("previous/file1.csv")\\
+    dat2 <- {\blue readRDS}("previous/file2.rds")\\
+    dat3 <- {\blue importSpecial}("previous/file3.spec")\\[1em]
+    {\gray \# Some computations}\\
+    {\gray \# [...]}\\[1em]
+    {\gray \# Write out tables and plots}\\
+    {\blue write.taf}(dat4, dir="folder")\\
+    {\blue write.taf}(dat5, dir="folder")\\
+    {\blue taf.png}("file6")\\
+    {\blue SpecialPlot}(dat6)\\
+    {\blue dev.off}()\\[3ex]
+  \end{itemize}
 \end{frame}
 
 \end{document}
