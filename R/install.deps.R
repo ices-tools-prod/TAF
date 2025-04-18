@@ -5,9 +5,6 @@
 #' \code{install.packages}.
 #'
 #' @param path a directory or file containing R code.
-#' @param taf.boot logical. If \code{TRUE} (the default), install
-#'          packages in SOFTWARE.bib prior to checking installed
-#'          packages.
 #' @param ... passed to \code{install.packages}.
 #'
 #' @details
@@ -45,14 +42,12 @@
 #'
 #' @export
 
-install.deps <- function(path = ".", taf.boot = TRUE, ...) {
+install.deps <- function(path = ".", ...) {
   od <- setwd(path)
   on.exit(setwd(od))
 
-  if (taf.boot) {
-    taf.boot(software = TRUE, data = FALSE)
-  }
-  taf_packages <- installed.packages(taf.boot.path("library"))[, "Package"]
+  sources <- taf.sources(type = "software")
+  taf_packages <- names(sources)[grepl("@", sapply(sources, "[[", "source"))]
 
   taf_script_deps <- deps(installed = FALSE)
   boot_deps <- deps(taf.boot.path(), installed = FALSE)

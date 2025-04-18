@@ -4,14 +4,10 @@
 \alias{install.deps}
 \title{Install Dependencies}
 \usage{
-install.deps(path = ".", taf.boot = TRUE, ...)
+install.deps(path = ".", ...)
 }
 \arguments{
 \item{path}{a directory or file containing R code.}
-
-\item{taf.boot}{logical. If \code{TRUE} (the default), install
-packages in SOFTWARE.bib prior to checking installed
-packages.}
 
 \item{...}{passed to \code{install.packages}.}
 }
