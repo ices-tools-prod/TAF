@@ -302,6 +302,10 @@ The TAF package comes with utility functions `draft.data()` and
 [Wiki](https://github.com/ices-taf/doc/wiki/Bib-entries) provides more details
 and examples of metadata entries.
 
+### The flow of data
+
+<div style="text-align:center"><img src="figs/data.png" width="640"></div>
+
 ### Creating a new analysis
 
 When authoring a TAF analysis, one can either start with a similar workflow and
