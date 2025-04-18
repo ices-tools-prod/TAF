@@ -4,12 +4,17 @@
 #' not already installed. The default install location is the same as
 #' \code{install.packages}.
 #'
-#' @param ... passed to \code{install.packages}.
 #' @param path a directory or file containing R code.
+#' @param taf.boot logical. If \code{TRUE} (the default), install
+#'          packages in SOFTWARE.bib prior to checking installed
+#'          packages.
+#' @param ... passed to \code{install.packages}.
 #'
 #' @details
 #' This function also looks in the TAF boot directory for packages that are
 #' required by the TAF boot process, i.e., called from a boot script.
+#'
+#' In addition it runs taf.boot on SOFTWARE.bib to install any special packages that may not be available on CRAN.
 #'
 #' @seealso
 #' \code{\link{install.packages}} is the underlying function to install
@@ -40,12 +45,20 @@
 #'
 #' @export
 
-install.deps <- function(path = ".", ...) {
+install.deps <- function(path = ".", taf.boot = TRUE, ...) {
   od <- setwd(path)
   on.exit(setwd(od))
+
+  if (taf.boot) {
+    taf.boot(software = TRUE, data = FALSE)
+  }
+  taf_packages <- installed.packages(taf.boot.path("library"))[, "Package"]
 
   taf_script_deps <- deps(installed = FALSE)
   boot_deps <- deps(taf.boot.path(), installed = FALSE)
 
-  install.packages(unique(c(taf_script_deps, boot_deps)), ...)
+  required_deps <-
+    setdiff(unique(c(taf_script_deps, boot_deps)), taf_packages)
+
+  install.packages(required_deps, ...)
 }

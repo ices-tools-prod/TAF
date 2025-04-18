@@ -4,10 +4,14 @@
 \alias{install.deps}
 \title{Install Dependencies}
 \usage{
-install.deps(path = ".", ...)
+install.deps(path = ".", taf.boot = TRUE, ...)
 }
 \arguments{
 \item{path}{a directory or file containing R code.}
+
+\item{taf.boot}{logical. If \code{TRUE} (the default), install
+packages in SOFTWARE.bib prior to checking installed
+packages.}
 
 \item{...}{passed to \code{install.packages}.}
 }
@@ -19,6 +23,8 @@ not already installed. The default install location is the same as
 \details{
 This function also looks in the TAF boot directory for packages that are
 required by the TAF boot process, i.e., called from a boot script.
+
+In addition it runs taf.boot on SOFTWARE.bib to install any special packages that may not be available on CRAN.
 }
 \examples{
 \dontrun{
