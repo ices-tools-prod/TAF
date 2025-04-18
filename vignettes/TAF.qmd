@@ -276,7 +276,8 @@ types of values can be used in the source field:
 2. URL, identifying a file to download.
 
 3. Special value `script`, indicating that a boot script (a custom R script)
-   should be run to fetch or produce files.
+   should be run to fetch or produce files, e.g., by querying local or online
+   databases.
 
 4. Relative path starting with `initial`, identifying the location of a file or
    directory somewhere inside the `boot/initial` folder.
