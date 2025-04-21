@@ -371,7 +371,7 @@ populate the `boot/initial/data` folder with initial data files and run
 `draft.data(file=TRUE)` to produce a `DATA.bib` file.
 
 The next step is then to run `taf.boot()` to populate the `boot/data` folder and
-start editing the `data.R` script, reading files from the `boot/data` folder.
+start editing the `data.R` script.
 
 ### Overview of functions
 
