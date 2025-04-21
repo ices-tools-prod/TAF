@@ -356,7 +356,7 @@ folder and the four TAF scripts: `data.R`, `model.R`, `output.R`, and
 for example, a new `data.R` script contains the following lines:
 
 ```
-# Prepare data, write TAF data tables
+# Prepare data, write CSV data tables
 
 # Before:
 # After:
