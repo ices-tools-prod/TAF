@@ -305,7 +305,46 @@ and examples of metadata entries.
 
 ### The flow of data
 
+In the `linreg` example, the original data file `ezekiel.txt` is inside the
+`boot/initial/data` folder. When the boot procedure
+is run, it finds the data declaration of `ezekiel.txt` inside the `DATA.bib`
+file and copies it to a new folder called `boot/data`.
+
+There are several important differences between the `boot/initial/data` folder
+and the `boot/data` folder:
+
+- The `boot/initial/data` folder is where the scientist can make initial data
+  files available that are not coming from online data repositories.
+
+- The `boot/data` folder is machine-generated and its contents should not be
+  manually edited by the user. This folder will be regenerated and overwritten
+  whenever the boot procedure is run.
+
+- The contents of the `boot/data` folder are guaranteed to come with descriptive
+  metadata that are declared in the `DATA.bib` file. The purpose of the metadata
+  is to elevate the level of data quality and transparency.
+
+- The `data.R` TAF script reads from the `boot/data` folder and not from
+  `boot/initial/data`.
+
 <div style="text-align:center"><img src="figs/data.png" width="640"></div>
+
+The next step in the data flow is the `data` folder. It is created by the
+`data.R` script and contains files created by the script. The expectation by
+reviewers is to find CSV files in this folder, representing the data used in the
+analysis. It may also contain input files in model-specific format that are
+machine-readable, unlike the human-readable CSV files.
+
+Being a minimal example, the `data.R` script in the `linreg` analysis does not
+filter or restructure the data, but simply reads in `boot/data/ezekiel.txt` and
+writes out a CSV representation as `data/ezekiel.csv`. The `data` folder can be
+used to produce plots, although the convention in most TAF analyses is to use
+the `report` folder for plotting both data and results.
+
+The `model` step reads from the `data` folder but can also read files in a
+model-specific format from the `boot/data` folder. The `output` folder contains
+CSV representations of the model results. Finally, the `report` folder contains
+formatted tables and plots, reading from the data and output steps.
 
 ### Creating a new analysis
 
