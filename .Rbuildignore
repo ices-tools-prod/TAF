@@ -2,4 +2,5 @@
 ^README.md$
 ^LICENSE$
 ^inst/doc/figs$
-^inst/doc/.*\.tex$
+^inst/doc/TAF_[0-9]_.*\.pdf$
+^inst/doc/TAF_[0-9]_.*\.tex$
