@@ -324,7 +324,7 @@ and the `boot/data` folder:
   metadata that are declared in the `DATA.bib` file. The purpose of the metadata
   is to elevate the level of data quality and transparency.
 
-- The `data.R` TAF script reads from the `boot/data` folder and not from
+- The `data.R` script reads from the `boot/data` folder and not from
   `boot/initial/data`.
 
 <div style="text-align:center"><img src="figs/data.png" width="640"></div>
