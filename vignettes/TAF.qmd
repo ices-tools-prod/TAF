@@ -348,13 +348,12 @@ formatted tables and plots, reading from the data and output steps.
 
 ### Creating a new analysis
 
-When authoring a TAF analysis, one can either start with a similar workflow and
-adapt it to the current analysis or start with a new workflow. The
-`taf.skeleton()` function creates a new workflow, consisting of an empty
-`boot/initial/data` folder and the four TAF scripts: `data.R`, `model.R`,
-`output.R`, and `report.R`. Each script provides a starting point for that step
-of the analysis, for example, a new `data.R` script contains the following
-lines:
+When authoring a TAF analysis, one can either start with a new workflow or from
+a similar workflow and adapt it to the current analysis. The `taf.skeleton()`
+function creates a new workflow, consisting of an empty `boot/initial/data`
+folder and the four TAF scripts: `data.R`, `model.R`, `output.R`, and
+`report.R`. Each script provides a starting point for that step of the analysis,
+for example, a new `data.R` script contains the following lines:
 
 ```
 # Prepare data, write TAF data tables
