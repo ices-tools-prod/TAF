@@ -468,7 +468,6 @@ dose supp
 > ## Not run: 
 > ##D path <- system.file("examples", package="TAF")
 > ##D dir.tree(path)
-> ##D dir.tree(path, ascii=TRUE)
 > ##D cbind(dir(recursive=TRUE, include.dirs=TRUE))
 > ## End(Not run)
 > 
@@ -2013,7 +2012,7 @@ detaching ‘package:lattice’
 
 > options(digits = 7L)
 > base::cat("Time elapsed: ", proc.time() - base::get("ptime", pos = 'CheckExEnv'),"\n")
-Time elapsed:  0.173 0.01 0.184 0 0 
+Time elapsed:  0.179 0.011 0.189 0 0 
 > grDevices::dev.off()
 null device 
           1 

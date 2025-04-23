@@ -19,6 +19,8 @@ not already installed. The default install location is the same as
 \details{
 This function also looks in the TAF boot directory for packages that are
 required by the TAF boot process, i.e., called from a boot script.
+
+In addition it runs taf.boot on SOFTWARE.bib to install any special packages that may not be available on CRAN.
 }
 \examples{
 \dontrun{
