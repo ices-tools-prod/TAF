@@ -557,9 +557,9 @@ of things, including running software written in other languages than R.
 Incremental development of TAF analyses usually takes place in a GitHub
 repository that can be kept private while the work is ongoing and then made
 public once the analysis is ready for presentation. There are essentially three
-paths to produce a TAF analysis: (1) start from scratch using `taf.skeleton()`,
-(2) start from a template such as `taf.example("linreg")` or another existing
-TAF analysis, or (3) add TAF scripts to an already completed analysis that was
+paths to produce a TAF analysis: 1) start from scratch using `taf.skeleton()`,
+2) start from a template such as `taf.example("linreg")` or another existing TAF
+analysis, or 3) add TAF scripts to an already completed analysis that was
 independent of TAF, to strengthen its reproducibility and reviewability.
 
 Among the online examples, one-off analyses such as <a
