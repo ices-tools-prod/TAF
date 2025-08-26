@@ -76,6 +76,7 @@
 #'   \code{\link{taf2long}}  \tab convert TAF to long format\cr
 #'   \code{\link{taf2xtab}}  \tab convert TAF to crosstab\cr
 #'   \code{\link{tt}}        \tab transpose TAF table\cr
+#'   \code{\link{wide2long}} \tab convert wide to long format\cr
 #'   \code{\link{xtab2long}} \tab convert crosstab to long format\cr
 #'   \code{\link{xtab2taf}}  \tab convert crosstab to TAF
 #' }
@@ -90,6 +91,7 @@
 #' \tabular{ll}{
 #'   \code{\link{catage.long}} \tab long format\cr
 #'   \code{\link{catage.taf}}  \tab TAF format\cr
+#'   \code{\link{catage.wide}} \tab wide format\cr
 #'   \code{\link{catage.xtab}} \tab crosstab format\cr
 #'   \code{\link{summary.taf}} \tab summary results
 #' }

@@ -1,19 +1,20 @@
 #' @docType data
 #'
-#' @name catage.taf
+#' @name catage.wide
 #'
-#' @title Catch at Age in TAF Format
+#' @title Catch at Age in Wide Format
 #'
 #' @description
-#' Small catch-at-age table to describe a TAF format data frame to store
-#' year-age values.
+#' Catch-at-age table to describe a wide format data frame to store
+#' area-year-age values.
 #'
 #' @usage
-#' catage.taf
+#' catage.wide
 #'
 #' @format
-#' Data frame containing five columns:
+#' Data frame containing six columns:
 #' \tabular{ll}{
+#'   \code{Area} \tab area\cr
 #'   \code{Year} \tab year\cr
 #'   \code{1}    \tab number of one-year-olds in the catch (millions)\cr
 #'   \code{2}    \tab number of two-year-olds in the catch (millions)\cr
@@ -23,7 +24,9 @@
 #'
 #' @details
 #' The data are an excerpt (first years and ages) from the catch-at-age table
-#' for North Sea cod from the ICES (2016) assessment.
+#' for North Sea cod from the ICES (2016) assessment. Catches in \sQuote{area 1}
+#' are the original data, while \sQuote{area 2} contains the same values
+#' multiplied by two.
 #'
 #' @source
 #' ICES (2016).
@@ -33,20 +36,15 @@
 #' \doi{10.17895/ices.pub.5329}.
 #'
 #' @seealso
-#' \code{\link{catage.long}} and \code{\link{catage.xtab}} describe alternative
-#' table formats.
+#' \code{\link{catage.taf}} describes the TAF format.
 #'
-#' \code{\link{taf2long}} and \code{\link{taf2xtab}} convert a TAF table to
-#' alternative formats.
-#'
-#' \code{\link{wide2long}} converts a wide table to long format.
+#' \code{\link{taf2long}} converts a TAF table to long format.
 #'
 #' \code{\link{TAF-package}} gives an overview of the package.
 #'
 #'
 #' @examples
-#' catage.taf
-#' taf2long(catage.taf)
-#' taf2xtab(catage.taf)
+#' catage.wide
+#' wide2long(catage.wide)
 
 NA

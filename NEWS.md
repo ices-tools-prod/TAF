@@ -11,7 +11,7 @@
 
 * Added function git.repo() to read a Git repository name.
 
-* Added install.deps() to install all dependencies of a TAF analysis.
+* Added function install.deps() to install all dependencies of a TAF analysis.
 
 * Added function pdeps() to analyze the dependencies of a CRAN package.
 
@@ -20,11 +20,15 @@
 * Added function taf.libraries() to load all packages from TAF library. Code
   contributed by Iago Mosqueira.
 
+* Added function wide2long() to convert from wide to long table format.
+
 * Added argument 'force' to dos2unix() and unix2dos().
 
 * Added argument 'quiet' to make(). Renamed argument 'debug' to 'details'.
 
 * Added argument 'gitignore' to taf.skeleton().
+
+* Added example data frame catage.wide to demonstrate a wide table format.
 
 * Added 'linreg' example, a minimal TAF workflow.
 

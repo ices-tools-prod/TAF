@@ -32,5 +32,7 @@ long formats.
 
 \code{\link{long2taf}} converts a long table to TAF format.
 
+\code{\link{wide2long}} converts a wide table to long format.
+
 \code{\link{TAF-package}} gives an overview of the package.
 }
