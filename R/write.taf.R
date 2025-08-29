@@ -106,7 +106,7 @@ write.taf <- function(x, file=NULL, dir=NULL, quote=FALSE, row.names=FALSE,
     warning("data frame has zero rows")
   if(nrow(x)>0 && !quote && any(comma))
   {
-    row <- which(apply(comma, 1, any))[1]
+    row <- if(is.matrix(comma)) which(apply(comma, 1, any))[1] else 1
     stop("unexpected comma in row ", row, ", consider quote=TRUE")
   }
 
