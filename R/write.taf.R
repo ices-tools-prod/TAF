@@ -59,6 +59,8 @@ write.taf <- function(x, file=NULL, dir=NULL, quote=FALSE, row.names=FALSE,
                       fileEncoding="UTF-8", underscore=TRUE, ...)
 {
   # 1  Handle many tables
+  if(is.data.frame(x) && ncol(x)==0)
+    stop("data frame has zero columns")
   if(is.character(x) && length(x)>1)
     return(invisible(sapply(x, write.taf, file=NULL, dir=dir, quote=quote,
                             row.names=row.names, fileEncoding=fileEncoding,
@@ -74,6 +76,7 @@ write.taf <- function(x, file=NULL, dir=NULL, quote=FALSE, row.names=FALSE,
   }
 
   # 2  Handle one table
+  message("2")
   if(is.character(x) && length(x)==1)
   {
     if(is.null(file))
@@ -84,6 +87,7 @@ write.taf <- function(x, file=NULL, dir=NULL, quote=FALSE, row.names=FALSE,
     stop("x should be a data frame (or a list of data frames), not NULL")
 
   # 3  Prepare file path
+  message("3")
   if(is.null(file))
   {
     file <- deparse(substitute(x))
