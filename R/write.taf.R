@@ -76,7 +76,6 @@ write.taf <- function(x, file=NULL, dir=NULL, quote=FALSE, row.names=FALSE,
   }
 
   # 2  Handle one table
-  message("2")
   if(is.character(x) && length(x)==1)
   {
     if(is.null(file))
@@ -87,7 +86,6 @@ write.taf <- function(x, file=NULL, dir=NULL, quote=FALSE, row.names=FALSE,
     stop("x should be a data frame (or a list of data frames), not NULL")
 
   # 3  Prepare file path
-  message("3")
   if(is.null(file))
   {
     file <- deparse(substitute(x))
