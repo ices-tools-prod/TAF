@@ -1,4 +1,4 @@
-# TAF 4.3.0 (development)
+# TAF 4.3.0 (2025-09-02)
 
 * Added function check.software() to check global package versions - an
   administrative tool for special cases. Code contributed by Iago Mosqueira.
@@ -39,7 +39,9 @@
   taf.boot() so it handles multiple filenames/URLs in 'source' field, separated
   by comma. Handled by internal function process.entry().
 
-* Changed taf.skeleton() so it produces slightly simpler header comments.
+* Changed taf.skeleton() so it sets 'pkgs' to either "TAF" or "icesTAF",
+  depending on whether the icesTAF package is attached. The header comments
+  produced by taf.skeletion() have also been simplified.
 
 
 

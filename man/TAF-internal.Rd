@@ -2,7 +2,7 @@
 % Please edit documentation in R/TAF-internal.R, R/boot.dir.R, R/boot.exists.R,
 %   R/download.github.R, R/ds.file.R, R/ds.package.R, R/model.dir.R,
 %   R/model.script.R, R/parse.repo.R, R/process.bibfile.R, R/process.entry.R,
-%   R/taf.install.R
+%   R/taf.install.R, R/taf.skeleton.R
 \name{TAF-internal}
 \alias{TAF-internal}
 \alias{boot.dir}
@@ -18,6 +18,7 @@
 \alias{process.bibfile}
 \alias{process.entry}
 \alias{already.in.taf.library}
+\alias{taf.pkg}
 \title{Various TAF Helper Functions}
 \usage{
 boot.dir()
@@ -46,6 +47,8 @@ process.entry(bib, clean = FALSE, comma.split = TRUE, force = FALSE,
   quiet = FALSE)
 
 already.in.taf.library(targz, lib)
+
+taf.pkg()
 }
 \description{
 These functions are called by user-level functions. The functionality is

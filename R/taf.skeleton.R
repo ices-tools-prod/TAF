@@ -5,8 +5,9 @@
 #' @param path where to create initial directories and R scripts. The default is
 #'        the current working directory.
 #' @param force whether to overwrite existing scripts.
-#' @param pkgs packages to load at the start of each script. The default is the
-#'        TAF package, i.e. \code{library(TAF)}.
+#' @param pkgs packages to load at the start of each script. The default is
+#'        either \code{"TAF"} (if the icesTAF package is not attached) or
+#'        \code{"icesTAF"} (if icesTAF is attached).
 #' @param model.script model script filename, either \code{model.R} (default) or
 #'        \code{method.R}.
 #' @param gitignore whether to write TAF entries to a \file{.gitignore} file.
@@ -54,7 +55,7 @@
 #'
 #' @export
 
-taf.skeleton <- function(path = ".", force = FALSE, pkgs = "TAF",
+taf.skeleton <- function(path = ".", force = FALSE, pkgs = taf.pkg(),
                          model.script = "model.R", gitignore = TRUE)
 {
   # only overwrite files if force = TRUE
@@ -104,4 +105,19 @@ taf.skeleton <- function(path = ".", force = FALSE, pkgs = "TAF",
   }
 
   invisible(getwd())
+}
+
+#' @rdname TAF-internal
+#'
+#' @export
+
+# Returns either "TAF" (if icesTAF is not attached) or "icesTAF" (if icesTAF is
+# attached)
+
+taf.pkg <- function()
+{
+  if("package:icesTAF" %in% search())
+    "icesTAF"
+  else
+    "TAF"
 }
