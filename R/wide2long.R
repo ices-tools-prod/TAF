@@ -33,7 +33,7 @@
 
 wide2long <- function(x, names=c("Age", "Value"))
 {
-  cols <- grepv("[0-9]", names(x), invert=TRUE)
+  cols <- grep("[0-9]", names(x), value=TRUE, invert=TRUE)
   rowlab <- apply(x[cols], 1, paste, collapse = "|")
   x <- x[!names(x) %in% cols]
   row.names(x) <- rowlab
