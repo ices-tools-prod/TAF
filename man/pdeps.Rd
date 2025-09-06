@@ -22,7 +22,7 @@ pdeps(packages, recursive = TRUE, reverse = FALSE, base = FALSE,
 
 \item{sort}{whether to sort package dependencies.}
 
-\item{\dots}{passed to \code{package_dependencies}.}
+\item{...}{passed to \code{package_dependencies}.}
 }
 \value{
 Names of packages that are required by \code{package}.

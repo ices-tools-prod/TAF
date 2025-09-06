@@ -8,7 +8,7 @@
 source.all(...)
 }
 \arguments{
-\item{\dots}{passed to \code{\link{source.taf}}.}
+\item{...}{passed to \code{\link{source.taf}}.}
 }
 \value{
 Logical vector, indicating which scripts ran without errors.

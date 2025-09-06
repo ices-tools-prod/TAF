@@ -2,7 +2,7 @@
 #'
 #' Run core TAF scripts in current directory.
 #'
-#' @param \dots passed to \code{\link{source.taf}}.
+#' @param ... passed to \code{\link{source.taf}}.
 #'
 #' @return Logical vector, indicating which scripts ran without errors.
 #'

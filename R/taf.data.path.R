@@ -4,7 +4,7 @@
 #' regardless of whether the current working directory is the TAF root, the
 #' \code{boot} folder, or a subfolder inside \code{boot}.
 #'
-#' @param \dots filenames inside \code{boot/data}.
+#' @param ... filenames inside \code{boot/data}.
 #' @param fsep path separator to use instead of the default forward slash.
 #'
 #' @return Relative path, or a vector of paths.

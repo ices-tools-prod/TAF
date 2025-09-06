@@ -23,7 +23,7 @@ write.taf(x, file = NULL, dir = NULL, quote = FALSE, row.names = FALSE,
 \item{underscore}{whether automatically generated filenames (when
 \code{file = NULL}) should use underscore separators instead of dots.}
 
-\item{\dots}{passed to \code{write.csv}.}
+\item{...}{passed to \code{write.csv}.}
 }
 \value{
 No return value, called for side effects.

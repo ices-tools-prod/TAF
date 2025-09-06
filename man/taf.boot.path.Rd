@@ -7,7 +7,7 @@
 taf.boot.path(..., fsep = .Platform$file.sep)
 }
 \arguments{
-\item{\dots}{names of folders or files to append to the result.}
+\item{...}{names of folders or files to append to the result.}
 
 \item{fsep}{path separator to use instead of the default forward slash.}
 }

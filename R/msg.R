@@ -2,7 +2,7 @@
 #'
 #' Show a message, as well as the current time.
 #'
-#' @param \dots passed to \code{message}.
+#' @param ... passed to \code{message}.
 #'
 #' @return No return value, called for side effects.
 #'

@@ -26,7 +26,7 @@ on the TAF server. Any other value of \code{taf} is ignored.}
 
 \item{quiet}{whether to suppress messages reporting progress.}
 
-\item{\dots}{passed to \code{process.entry}.}
+\item{...}{passed to \code{process.entry}.}
 }
 \value{
 Logical vector indicating which metadata files were processed.

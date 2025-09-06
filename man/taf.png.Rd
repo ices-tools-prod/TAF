@@ -17,7 +17,7 @@ taf.png(filename, width = 1600, height = 1200, res = 200, ...)
 \item{res}{resolution determining the text size, line width, plot symbol
 size, etc.}
 
-\item{\dots}{passed to \code{png}.}
+\item{...}{passed to \code{png}.}
 }
 \value{
 No return value, called for side effects.

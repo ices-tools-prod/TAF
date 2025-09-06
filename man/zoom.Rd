@@ -14,7 +14,7 @@ zoom(x, ...)
 \arguments{
 \item{x}{a lattice plot of class \code{"trellis"}.}
 
-\item{\dots}{further arguments, currently ignored.}
+\item{...}{further arguments, currently ignored.}
 
 \item{size}{text size multiplier.}
 

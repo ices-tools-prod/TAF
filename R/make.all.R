@@ -2,7 +2,7 @@
 #'
 #' Run core TAF scripts that have changed, or if previous steps were rerun.
 #'
-#' @param \dots passed to \code{\link{make.taf}}.
+#' @param ... passed to \code{\link{make.taf}}.
 #'
 #' @return Logical vector indicating which scripts were run.
 #'

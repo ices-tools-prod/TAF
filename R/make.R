@@ -17,7 +17,7 @@
 #' @param recon whether to return \code{TRUE} or \code{FALSE}, without actually
 #'        running the R script.
 #' @param quiet whether to suppress messages.
-#' @param \dots passed to \code{engine}.
+#' @param ... passed to \code{engine}.
 #'
 #' @details
 #' A \code{make()} call has the general form

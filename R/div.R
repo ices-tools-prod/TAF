@@ -6,7 +6,7 @@
 #' @param cols column names, or column indices.
 #' @param by a number to divide with.
 #' @param grep whether \code{cols} is a regular expression.
-#' @param \dots passed to \code{grep()}.
+#' @param ... passed to \code{grep()}.
 #'
 #' @return
 #' A data frame similar to \code{x}, after dividing columns \code{cols} by the

@@ -7,7 +7,7 @@
 #' @param height image height.
 #' @param res resolution determining the text size, line width, plot symbol
 #'        size, etc.
-#' @param \dots passed to \code{png}.
+#' @param ... passed to \code{png}.
 #'
 #' @details
 #' The \code{filename} can be passed without the preceding

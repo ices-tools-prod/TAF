@@ -12,7 +12,7 @@
 #' @param legend size of legend labels (default is \code{0.9 * size}).
 #' @param splom size of scatterplot matrix diagonal labels (default is
 #'        \code{0.9 * size}).
-#' @param \dots further arguments, currently ignored.
+#' @param ... further arguments, currently ignored.
 #'
 #' @details
 #' Pass \code{NULL} for any argument to avoid changing the size of that text

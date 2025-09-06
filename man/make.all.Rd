@@ -8,7 +8,7 @@
 make.all(...)
 }
 \arguments{
-\item{\dots}{passed to \code{\link{make.taf}}.}
+\item{...}{passed to \code{\link{make.taf}}.}
 }
 \value{
 Logical vector indicating which scripts were run.

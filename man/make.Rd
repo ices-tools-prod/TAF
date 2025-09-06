@@ -32,7 +32,7 @@ running the R script.}
 
 \item{quiet}{whether to suppress messages.}
 
-\item{\dots}{passed to \code{engine}.}
+\item{...}{passed to \code{engine}.}
 }
 \value{
 \code{TRUE} or \code{FALSE}, indicating whether the script was run.

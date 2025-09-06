@@ -9,7 +9,7 @@
 #' @param installed whether to include installed packages.
 #' @param available whether to include available packages.
 #' @param sort whether to sort package dependencies.
-#' @param \dots passed to \code{package_dependencies}.
+#' @param ... passed to \code{package_dependencies}.
 #'
 #' @return Names of packages that are required by \code{package}.
 #'

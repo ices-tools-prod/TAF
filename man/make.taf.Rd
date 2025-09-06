@@ -10,7 +10,7 @@ make.taf(script, ...)
 \arguments{
 \item{script}{TAF script filename.}
 
-\item{\dots}{passed to \code{\link{make}} and \code{\link{source.taf}}.}
+\item{...}{passed to \code{\link{make}} and \code{\link{source.taf}}.}
 }
 \value{
 \code{TRUE} or \code{FALSE}, indicating whether the script was run.

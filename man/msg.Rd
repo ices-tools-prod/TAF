@@ -7,7 +7,7 @@
 msg(...)
 }
 \arguments{
-\item{\dots}{passed to \code{message}.}
+\item{...}{passed to \code{message}.}
 }
 \value{
 No return value, called for side effects.

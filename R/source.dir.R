@@ -7,7 +7,7 @@
 #' @param all.files passed to \code{dir} when selecting files.
 #' @param recursive passed to \code{dir} when selecting files.
 #' @param quiet whether to suppress messages.
-#' @param \dots passed to \code{source} when sourcing files.
+#' @param ... passed to \code{source} when sourcing files.
 #'
 #' @details
 #' The \code{dir} argument can also be a vector of filenames, instead of a

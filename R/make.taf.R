@@ -4,7 +4,7 @@
 #' older than the directory of the previous TAF step.
 #'
 #' @param script TAF script filename.
-#' @param \dots passed to \code{\link{make}} and \code{\link{source.taf}}.
+#' @param ... passed to \code{\link{make}} and \code{\link{source.taf}}.
 #'
 #' @return \code{TRUE} or \code{FALSE}, indicating whether the script was run.
 #'

@@ -15,7 +15,7 @@ div(x, cols, by = 1000, grep = FALSE, ...)
 
 \item{grep}{whether \code{cols} is a regular expression.}
 
-\item{\dots}{passed to \code{grep()}.}
+\item{...}{passed to \code{grep()}.}
 }
 \value{
 A data frame similar to \code{x}, after dividing columns \code{cols} by the

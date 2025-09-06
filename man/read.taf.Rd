@@ -17,7 +17,7 @@ column name \code{"3"} to \code{"X3"}.}
 
 \item{fileEncoding}{character encoding of input file.}
 
-\item{\dots}{passed to \code{read.csv}.}
+\item{...}{passed to \code{read.csv}.}
 }
 \value{
 A data frame, or a list of data frames if \code{file} is a directory or a

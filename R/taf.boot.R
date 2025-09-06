@@ -14,7 +14,7 @@
 #'        \code{data}, \code{clean}, and \code{force} to \code{TRUE}, as is done
 #'        on the TAF server. Any other value of \code{taf} is ignored.
 #' @param quiet whether to suppress messages reporting progress.
-#' @param \dots passed to \code{process.entry}.
+#' @param ... passed to \code{process.entry}.
 #'
 #' @details
 #' If \code{clean = TRUE} then:

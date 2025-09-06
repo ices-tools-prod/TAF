@@ -10,7 +10,7 @@
 #' @param fileEncoding character encoding for output file.
 #' @param underscore whether automatically generated filenames (when
 #'        \code{file = NULL}) should use underscore separators instead of dots.
-#' @param \dots passed to \code{write.csv}.
+#' @param ... passed to \code{write.csv}.
 #'
 #' @details
 #' Alternatively, \code{x} can be a list of data frames or a string vector of

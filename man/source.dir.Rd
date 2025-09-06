@@ -19,7 +19,7 @@ source.dir(dir, pattern = "\\\\.[r|R]$", all.files = FALSE,
 
 \item{quiet}{whether to suppress messages.}
 
-\item{\dots}{passed to \code{source} when sourcing files.}
+\item{...}{passed to \code{source} when sourcing files.}
 }
 \value{
 Names of sourced files.

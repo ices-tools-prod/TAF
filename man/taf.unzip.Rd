@@ -15,7 +15,7 @@ taf.unzip(zipfile, files = NULL, exdir = ".", unzip = NULL, ...)
 
 \item{unzip}{extraction method to use, see details below.}
 
-\item{\dots}{passed to \code{\link{unzip}}.}
+\item{...}{passed to \code{\link{unzip}}.}
 }
 \value{
 No return value, called for side effects.

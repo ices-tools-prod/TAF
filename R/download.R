@@ -10,7 +10,7 @@
 #' @param destfile destination path and filename (optional, overrides
 #'        \code{dir}).
 #' @param quiet whether to suppress messages.
-#' @param \dots passed to \code{download.file}.
+#' @param ... passed to \code{download.file}.
 #'
 #' @details
 #' With the default mode \code{"wb"} the file is downloaded in binary mode (see

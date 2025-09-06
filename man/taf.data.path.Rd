@@ -7,7 +7,7 @@
 taf.data.path(..., fsep = .Platform$file.sep)
 }
 \arguments{
-\item{\dots}{filenames inside \code{boot/data}.}
+\item{...}{filenames inside \code{boot/data}.}
 
 \item{fsep}{path separator to use instead of the default forward slash.}
 }

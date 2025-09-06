@@ -15,7 +15,7 @@ rnd(x, cols, digits = 0, grep = FALSE, ...)
 
 \item{grep}{whether \code{cols} is a regular expression.}
 
-\item{\dots}{passed to \code{grep()}.}
+\item{...}{passed to \code{grep()}.}
 }
 \value{
 A data frame similar to \code{x}, after rounding columns \code{cols} to the

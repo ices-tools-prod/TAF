@@ -4,7 +4,7 @@
 #' the current working directory is the TAF root, the \code{boot} folder, or a
 #' subfolder inside \code{boot}.
 #'
-#' @param \dots names of folders or files to append to the result.
+#' @param ... names of folders or files to append to the result.
 #' @param fsep path separator to use instead of the default forward slash.
 #'
 #' @return Relative path, or a vector of paths.

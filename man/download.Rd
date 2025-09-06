@@ -22,7 +22,7 @@ file has no filename extension).}
 
 \item{quiet}{whether to suppress messages.}
 
-\item{\dots}{passed to \code{download.file}.}
+\item{...}{passed to \code{download.file}.}
 }
 \value{
 No return value, called for side effects.

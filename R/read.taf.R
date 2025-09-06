@@ -7,7 +7,7 @@
 #'        column name \code{"3"} to \code{"X3"}.
 #' @param stringsAsFactors whether to import strings as factors.
 #' @param fileEncoding character encoding of input file.
-#' @param \dots passed to \code{read.csv}.
+#' @param ... passed to \code{read.csv}.
 #'
 #' @details
 #' Alternatively, \code{file} can be a directory or a vector of filenames, to
