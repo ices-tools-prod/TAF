@@ -1,3 +1,10 @@
+# TAF 4.3.1 (2025-09-02)
+
+* Changed internal implementation of wide2long() to support older versions of R.
+
+
+
+
 # TAF 4.3.0 (2025-09-02)
 
 * Added function check.software() to check global package versions - an
