@@ -1,4 +1,4 @@
-# TAF 4.3.1 (2025-09-02)
+# TAF 4.3.1 (2025-09-18)
 
 * Changed internal implementation of wide2long() to support older versions of R.
 
