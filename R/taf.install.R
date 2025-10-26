@@ -55,28 +55,66 @@
 #'
 #' @export
 
-taf.install <- function(targz=NULL, lib=taf.boot.path("library"), quiet=FALSE)
+taf.install <- function(targz = NULL, lib = "boot/library", quiet = FALSE)
 {
-  if(is.null(targz))
+  if (is.null(targz))
     targz <- dir(file.path(boot.dir(), "software"),
-                 pattern="_[0-9a-f]{7}\\.tar\\.gz", full.names=TRUE)
-
+                 pattern = "_[0-9a-f]{7}\\.tar\\.gz",
+                 full.names = TRUE)
+  
   mkdir(lib)
-
-  for(tgz in targz)
-  {
-    pkg <- sub(".*/(.*)_.*", "\\1", tgz)     # path/pkg_sha.tar.gz -> pkg
-    sha <- sub(".*_(.*?)\\..*", "\\1", tgz)  # path/pkg_sha.tar.gz -> sha
-
-    if(!already.in.taf.library(tgz, lib))
-    {
-      install.packages(tgz, lib=lib, repos=NULL, type="source", quiet=quiet)
-    }
-    else if(!quiet)
-    {
+  
+  for (tgz in targz) {
+    pkg <- sub(".*/(.*)_.*", "\\1", tgz)
+    sha <- sub(".*_(.*?)\\..*", "\\1", tgz)
+    
+    if (!already.in.taf.library(tgz, lib)) {
+      
+      # --- THIS BIT IS CHANGED ---
+      # Extract to temporary directory to handle GitHub's naming conventions
+      temp_dir <- tempfile("taf_install_")
+      dir.create(temp_dir)
+      
+      tryCatch({
+        # Extract the tarball
+        untar(tgz, exdir = temp_dir)
+        
+        # Find the actual extracted directory name
+        extracted_dirs <- list.dirs(temp_dir, full.names = FALSE, recursive = FALSE)
+        
+        if (length(extracted_dirs) == 0) {
+          stop("Failed to extract package from ", basename(tgz))
+        }
+        
+        # Use the first extracted directory
+        extracted_path <- file.path(temp_dir, extracted_dirs[1])
+        
+        # Verify it's a valid R package
+        if (!file.exists(file.path(extracted_path, "DESCRIPTION"))) {
+          stop("No DESCRIPTION file found in ", basename(tgz))
+        }
+        
+        # Install from the actual extracted directory
+        install.packages(extracted_path,
+                        lib = lib,
+                        repos = NULL,
+                        type = "source",
+                        quiet = quiet)
+        
+      }, error = function(e) {
+        stop("Failed to install ", basename(tgz), ": ", e$message, call. = FALSE)
+      }, finally = {
+        # Clean up temporary directory
+        unlink(temp_dir, recursive = TRUE)
+      })
+      # --- END OF CHANGES ---
+      
+    } else if (!quiet) {
       message("  Skipping install of '", basename(tgz), "' (already in place).")
     }
   }
+  
+  invisible(NULL)
 }
 
 #' @rdname TAF-internal
