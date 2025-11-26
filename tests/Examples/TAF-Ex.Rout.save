@@ -1146,6 +1146,12 @@ dose supp
 > ##D 
 > ##D # Each ggplot2 dependency brings in these secondary dependencies
 > ##D pdeps(pdeps("ggplot2", recursive=FALSE)$ggplot2)
+> ##D 
+> ##D # For local packages not on CRAN, the 'db' argument can be useful
+> ##D pdeps("stockassessment")
+> ##D pdeps("stockassessment", db=installed.packages())
+> ##D pdeps("FLCore")
+> ##D pdeps("FLCore", db=installed.packages())
 > ## End(Not run)
 > 
 > 
@@ -2121,7 +2127,7 @@ detaching ‘package:lattice’
 
 > options(digits = 7L)
 > base::cat("Time elapsed: ", proc.time() - base::get("ptime", pos = 'CheckExEnv'),"\n")
-Time elapsed:  0.222 0.01 0.23 0 0 
+Time elapsed:  0.218 0.01 0.228 0 0 
 > grDevices::dev.off()
 null device 
           1 
