@@ -27,7 +27,7 @@ Search R scripts for packages that are required.
 }
 \details{
 The files analyzed are those with the file extensions \code{.R}, \code{.r},
-\code{.Rmd}, and \code{.rmd}.
+\code{.Rmd}, \code{.rmd}, and \code{qmd},
 }
 \note{
 Package names are matched based on four patterns:\preformatted{
