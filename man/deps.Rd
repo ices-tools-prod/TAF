@@ -23,10 +23,10 @@ Names of packages as a vector, or in list format if \code{list=TRUE}. If no
 dependencies are found, the return value is \code{NULL}.
 }
 \description{
-Search R scripts for packages that are required.
+Scan R scripts for packages that are required.
 }
 \details{
-The files analyzed are those with the file extensions \code{.R}, \code{.r},
+The files scanned are those with the file extensions \code{.R}, \code{.r},
 \code{.Rmd}, \code{.rmd}, and \code{qmd},
 }
 \note{
@@ -36,8 +36,8 @@ require(*)
 *::object
 *:::object}
 
-The search algorithm may return false-positive dependencies if these patterns
-occur inside if-clauses, strings, comments, etc.
+The scanning algorithm may return false-positive dependencies if these
+patterns occur inside if-clauses, strings, comments, etc.
 }
 \examples{
 \dontrun{

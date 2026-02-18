@@ -1,3 +1,10 @@
+# Development
+
+* Changed deps() to include .qmd files when scanning code.
+
+
+
+
 # TAF 4.3.1 (2025-09-18)
 
 * Changed internal implementation of wide2long() to support older versions of R.

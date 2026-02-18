@@ -1,6 +1,6 @@
 #' Dependencies of a Workflow
 #'
-#' Search R scripts for packages that are required.
+#' Scan R scripts for packages that are required.
 #'
 #' @param path a directory or file containing R code.
 #' @param base whether to include base packages in the output.
@@ -9,7 +9,7 @@
 #' @param list whether to return packages in list format, split by script.
 #'
 #' @details
-#' The files analyzed are those with the file extensions \code{.R}, \code{.r},
+#' The files scanned are those with the file extensions \code{.R}, \code{.r},
 #' \code{.Rmd}, \code{.rmd}, and \code{qmd},
 #'
 #' @return
@@ -23,8 +23,8 @@
 #' *::object
 #' *:::object}
 #'
-#' The search algorithm may return false-positive dependencies if these patterns
-#' occur inside if-clauses, strings, comments, etc.
+#' The scanning algorithm may return false-positive dependencies if these
+#' patterns occur inside if-clauses, strings, comments, etc.
 #'
 #' @seealso
 #' \code{\link{installed.packages}}, \code{\link{available.packages}}.
