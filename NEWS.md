@@ -1,6 +1,8 @@
 # Development
 
-* Changed deps() to include .qmd files when scanning code.
+* Improved deps() to include .qmd files when scanning code.
+
+* Improved write.taf() to detect commas in column names.
 
 
 

@@ -101,6 +101,11 @@ write.taf <- function(x, file=NULL, dir=NULL, quote=FALSE, row.names=FALSE,
     warning("column ", which(names(x)=="")[1], " has no name")
   if(any(duplicated(names(x))) && dirname(file)!="report")
     warning("duplicated column name: ", names(x)[duplicated(names(x))][1])
+  if(any(grepl(",", names(x))) && !quote)
+  {
+    badname <- grep(",", names(x), value=TRUE)[1]
+    stop("unexpected comma in column name '", badname, "', consider quote=TRUE")
+  }
   comma <- sapply(x, grepl, pattern=",")
   if(nrow(x) == 0)
     warning("data frame has zero rows")
