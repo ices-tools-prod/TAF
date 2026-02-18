@@ -39,6 +39,12 @@
 #'
 #' # Each ggplot2 dependency brings in these secondary dependencies
 #' pdeps(pdeps("ggplot2", recursive=FALSE)$ggplot2)
+#'
+#' # For local packages not on CRAN, the 'db' argument can be useful
+#' pdeps("stockassessment")
+#' pdeps("stockassessment", db=installed.packages())
+#' pdeps("FLCore")
+#' pdeps("FLCore", db=installed.packages())
 #' }
 #'
 #' @importFrom tools package_dependencies
