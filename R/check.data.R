@@ -1,15 +1,15 @@
 check.data <- function()
 {
-  bib.entries <- read.bib("boot/DATA.bib")
+  entries <- read.bib("boot/DATA.bib")
 
   checks <-
-    sapply(bib.entries, function(entry) {
-      if (entry$source == "file") {
-        file.exists(file.path("boot", "data", entry$key))
-      } else if (entry$source %in% c("folder", "script")) {
-        if (dir.exists(file.path("boot", "data", entry$key))) {
+    sapply(entries, function(x) {
+      if (x$source == "file") {
+        file.exists(file.path("boot", "data", x$key))
+      } else if (x$source %in% c("folder", "script")) {
+        if (dir.exists(file.path("boot", "data", x$key))) {
           # check if folder/script contains any files
-          length(list.files(file.path("boot", "data", entry$key), recursive = TRUE)) > 0
+          length(dir(file.path("boot", "data", x$key), recursive = TRUE)) > 0
         } else {
           FALSE
         }
