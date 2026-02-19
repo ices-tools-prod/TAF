@@ -1,4 +1,4 @@
-check.data <- function()
+check.data <- function(quiet = FALSE)
 {
   boot <- boot.dir()
   entries <- read.bib(file.path(boot, "DATA.bib"))
@@ -23,11 +23,17 @@ check.data <- function()
   if (any(!checks, na.rm = TRUE)) {
     missing <- names(checks)[!checks]
     warning("boot folder is out of sync")
-    message("The following data entries are missing:")
-    message(paste("  -", missing, collapse = "\n"))
-    message("Run taf.boot() to update the boot folder")
+    if (!quiet) {
+      message("The following data entries are missing:")
+      message(paste("  -", missing, collapse = "\n"))
+      message("Run taf.boot() to update the boot folder")
+    }
   }
   else {
-    message("All data entries in ", boot, "/DATA.bib are present")
+    if (!quiet) {
+      message("All entries in ", boot, "/DATA.bib are present")
+    }
   }
+
+  invisible(checks)
 }
