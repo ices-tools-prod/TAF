@@ -22,13 +22,12 @@ check.data <- function()
 
   if (any(!checks, na.rm = TRUE)) {
     missing <- names(checks)[!checks]
-    message(
-      "- Project boot folder is out of sync:\n  The following data entries are missing:\n",
-      paste("  -", missing, collapse = "\n"),
-      "\n  Run `taf.boot()` to update the boot folder with the missing data entries."
-    )
+    warning("boot folder is out of sync")
+    message("The following data entries are missing:")
+    message(paste("  -", missing, collapse = "\n"))
+    message("Run taf.boot() to update the boot folder")
   }
   else {
-    message("- All data entries in ", boot, "/DATA.bib are present")
+    message("All data entries in ", boot, "/DATA.bib are present")
   }
 }
