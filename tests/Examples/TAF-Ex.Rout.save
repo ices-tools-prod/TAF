@@ -1,5 +1,5 @@
 
-R version 4.5.1 (2025-06-13) -- "Great Square Root"
+R version 4.5.2 (2025-10-31) -- "[Not] Part in a Rumble"
 Copyright (C) 2025 The R Foundation for Statistical Computing
 Platform: x86_64-pc-linux-gnu
 
@@ -264,6 +264,26 @@ Type 'q()' to quit R.
 6 1968  36.915 106.373 42.569 12.330
 7 1969   5.434  32.840 31.532 13.641
 8 1970 107.177  42.403 18.547 13.272
+> 
+> 
+> 
+> cleanEx()
+> nameEx("check.data")
+> ### * check.data
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: check.data
+> ### Title: Check DATA.bib Entries
+> ### Aliases: check.data
+> 
+> ### ** Examples
+> 
+> ## Not run: 
+> ##D check.data()
+> ##D check.data(quiet=TRUE)
+> ## End(Not run)
+> 
 > 
 > 
 > 
@@ -2127,7 +2147,7 @@ detaching ‘package:lattice’
 
 > options(digits = 7L)
 > base::cat("Time elapsed: ", proc.time() - base::get("ptime", pos = 'CheckExEnv'),"\n")
-Time elapsed:  0.218 0.01 0.228 0 0 
+Time elapsed:  0.218 0.008 0.226 0 0 
 > grDevices::dev.off()
 null device 
           1 

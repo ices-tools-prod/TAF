@@ -23,11 +23,15 @@
 #' in the global R library, outside the TAF library.
 #'
 #' @seealso
+#' \code{\link{check.data}} checks \verb{DATA.bib} entries.
+#'
 #' \code{\link{taf.boot}} and \code{\link{taf.library}} are the general tools to
 #' install and load packages of the correct version in the TAF library.
 #'
 #' \code{\link{update.packages}} can be used to update packages in the general R
 #' library to the newest version available on CRAN.
+#'
+#' \code{\link{TAF-package}} gives an overview of the package.
 #'
 #' @examples
 #' \dontrun{

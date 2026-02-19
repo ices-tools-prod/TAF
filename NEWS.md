@@ -1,4 +1,6 @@
-# Development
+# TAF 4.4.0 (development)
+
+* Added function check.data() to check DATA.bib entries.
 
 * Improved deps() to include .qmd files when scanning code.
 
