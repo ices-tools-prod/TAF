@@ -1,7 +1,7 @@
 check.data <- function()
 {
   boot <- boot.dir()
-  entries <- read.bib(file.path(boot, "DATA.bib")
+  entries <- read.bib(file.path(boot, "DATA.bib"))
 
   checks <-
     sapply(entries, function(x) {
