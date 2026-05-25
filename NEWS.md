@@ -2,7 +2,8 @@
 
 * Added function check.data() to check DATA.bib entries.
 
-* Improved deps() to include .Rnw and .qmd files when scanning code.
+* Improved deps() to include .Rnw and .qmd files when scanning code, and to
+  ignore comment lines.
 
 * Improved write.taf() to detect commas in column names.
 
