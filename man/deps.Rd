@@ -26,8 +26,8 @@ dependencies are found, the return value is \code{NULL}.
 Scan R scripts for packages that are required.
 }
 \details{
-The files scanned are those with the file extensions \code{.R}, \code{.r},
-\code{.Rmd}, \code{.rmd}, and \code{qmd},
+The files scanned are those with the file extensions \code{.R}, \code{.Rmd},
+\code{Rnw}, and \code{qmd}.
 }
 \note{
 Package names are matched based on four patterns:\preformatted{

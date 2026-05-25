@@ -9,8 +9,8 @@
 #' @param list whether to return packages in list format, split by script.
 #'
 #' @details
-#' The files scanned are those with the file extensions \code{.R}, \code{.r},
-#' \code{.Rmd}, \code{.rmd}, and \code{qmd},
+#' The files scanned are those with the file extensions \code{.R}, \code{.Rmd},
+#' \code{Rnw}, and \code{qmd}.
 #'
 #' @return
 #' Names of packages as a vector, or in list format if \code{list=TRUE}. If no
@@ -56,7 +56,7 @@ deps <- function(path=".", base=FALSE, installed=TRUE, available=TRUE,
                  list=FALSE)
 {
   files <- if(dir.exists(path))
-             dir(path, pattern="\\.(R|Rmd|r|rmd|qmd)$", full.names=TRUE)
+             dir(path, pattern="\\.(R|Rmd|Rnw|r|rmd|rnw|qmd)$", full.names=TRUE)
            else
              path
   code <- lapply(files, readLines)
