@@ -4,7 +4,7 @@
 \alias{write.list}
 \title{Write List}
 \usage{
-write.list(x, file = "", ncolumns = 1, sep = " ", prefix = "")
+write.list(x, file = "", ncolumns = 1, sep = " ", prefix = "# ")
 }
 \arguments{
 \item{x}{a list containing atomic elements.}
@@ -44,7 +44,7 @@ write.list(x)
 write.list(x, ncolumns=NULL)
 write.list(x, ncolumns=3)
 write.list(x, ncolumns=3, sep=",")
-write.list(x, prefix="# ")
+write.list(x, prefix="$")
 
 \dontrun{
 write.list(x, "list.dat")

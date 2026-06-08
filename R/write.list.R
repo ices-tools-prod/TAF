@@ -37,7 +37,7 @@
 #' write.list(x, ncolumns=NULL)
 #' write.list(x, ncolumns=3)
 #' write.list(x, ncolumns=3, sep=",")
-#' write.list(x, prefix="# ")
+#' write.list(x, prefix="$")
 #'
 #' \dontrun{
 #' write.list(x, "list.dat")
@@ -45,7 +45,7 @@
 #'
 #' @export
 
-write.list <- function(x, file="", ncolumns=1, sep=" ", prefix="")
+write.list <- function(x, file="", ncolumns=1, sep=" ", prefix="# ")
 {
   # Confirm that x is a list of atomic elements
   if(!is.list(x))
