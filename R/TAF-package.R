@@ -60,6 +60,7 @@
 #'   \code{\link{source.dir}}     \tab source all \code{*.R} files\cr
 #'   \code{\link{taf.library}}    \tab load package from TAF library\cr
 #'   \code{\link{taf.unzip}}      \tab unzip file\cr
+#'   \code{\link{write.list}}     \tab write list to file\cr
 #'   \code{\link{write.taf}}      \tab write CSV file
 #' }
 #' \emph{Tables:}

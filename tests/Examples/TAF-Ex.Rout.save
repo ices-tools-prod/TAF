@@ -1,6 +1,6 @@
 
-R version 4.5.2 (2025-10-31) -- "[Not] Part in a Rumble"
-Copyright (C) 2025 The R Foundation for Statistical Computing
+R version 4.6.0 (2026-04-24) -- "Because it was There"
+Copyright (C) 2026 The R Foundation for Statistical Computing
 Platform: x86_64-pc-linux-gnu
 
 R is free software and comes with ABSOLUTELY NO WARRANTY.
@@ -2004,6 +2004,120 @@ dose supp
 > 
 > 
 > cleanEx()
+> nameEx("write.list")
+> ### * write.list
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: write.list
+> ### Title: Write List
+> ### Aliases: write.list
+> 
+> ### ** Examples
+> 
+> x <- list(a=pi, b=month.name, c=stack.loss)
+> 
+> write.list(x)
+a
+3.141593
+
+b
+January
+February
+March
+April
+May
+June
+July
+August
+September
+October
+November
+December
+
+c
+42 37 37 28 18
+18 19 20 15 14
+14 13 11 12 8
+7 8 8 9 15
+15
+> write.list(x, ncolumns=c(1,2,3))
+a
+3.141593
+
+b
+January February
+March April
+May June
+July August
+September October
+November December
+
+c
+42 37 37
+28 18 18
+19 20 15
+14 14 13
+11 12 8
+7 8 8
+9 15 15
+> write.list(x, sep=",")
+a
+3.141593
+
+b
+January
+February
+March
+April
+May
+June
+July
+August
+September
+October
+November
+December
+
+c
+42,37,37,28,18
+18,19,20,15,14
+14,13,11,12,8
+7,8,8,9,15
+15
+> write.list(x, section="# ")
+# a
+3.141593
+
+# b
+January
+February
+March
+April
+May
+June
+July
+August
+September
+October
+November
+December
+
+# c
+42 37 37 28 18
+18 19 20 15 14
+14 13 11 12 8
+7 8 8 9 15
+15
+> 
+> ## Not run: 
+> ##D write.list(x, "list.dat")
+> ## End(Not run)
+> 
+> 
+> 
+> 
+> cleanEx()
 > nameEx("write.taf")
 > ### * write.taf
 > 
@@ -2147,7 +2261,7 @@ detaching ‘package:lattice’
 
 > options(digits = 7L)
 > base::cat("Time elapsed: ", proc.time() - base::get("ptime", pos = 'CheckExEnv'),"\n")
-Time elapsed:  0.218 0.008 0.226 0 0 
+Time elapsed:  0.186 0.009 0.195 0 0 
 > grDevices::dev.off()
 null device 
           1 
