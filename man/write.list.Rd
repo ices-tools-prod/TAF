@@ -38,7 +38,7 @@ columns for other data types, in the same way as \code{\link{write}} does.
 }
 \examples{
 x <- list(pi=pi, month=month.name, value=stack.loss,
-          country=c("Bay of Biscay", "Kattegat", "North Sea"))
+          area=c("Bay of Biscay", "Kattegat", "North Sea"))
 
 write.list(x)
 write.list(x, ncolumns=NULL)
