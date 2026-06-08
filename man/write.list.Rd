@@ -4,8 +4,7 @@
 \alias{write.list}
 \title{Write List}
 \usage{
-write.list(x, file = "", ncolumns = NULL, append = FALSE, sep = " ",
-  section = "")
+write.list(x, file = "", ncolumns = 1, sep = " ", prefix = "")
 }
 \arguments{
 \item{x}{a list containing atomic elements.}
@@ -14,11 +13,9 @@ write.list(x, file = "", ncolumns = NULL, append = FALSE, sep = " ",
 
 \item{ncolumns}{the number of columns to write the data in.}
 
-\item{append}{whether to append to an existing file.}
-
 \item{sep}{a string used to separate columns.}
 
-\item{section}{a string to use before section labels.}
+\item{prefix}{a string prefix to use before element names.}
 }
 \value{
 No return value, called for side effects.
@@ -30,16 +27,24 @@ Write a list to a text file.
 The default value \code{file = ""} prints the list in the console, allowing
 the user to preview alternative formats before writing the list to a file.
 
-The default value \code{ncolumns = NULL} uses 1 column for strings and 5
+The default value \code{ncolumns = 1} writes one data value per line. This is
+the only format supported by \code{\link{read.list}} and therefore
+recommended if importing the list back into R is relevant. Other formats
+using \code{ncolumns} and \code{sep} can improve human readability if
+importing back into R is not relevant.
+
+The special value \code{ncolumns = NULL} uses 1 column for strings and 5
 columns for other data types, in the same way as \code{\link{write}} does.
 }
 \examples{
-x <- list(a=pi, b=month.name, c=stack.loss)
+x <- list(pi=pi, month=month.name, value=stack.loss,
+          country=c("Bay of Biscay", "Kattegat", "North Sea"))
 
 write.list(x)
-write.list(x, ncolumns=c(1,2,3))
-write.list(x, sep=",")
-write.list(x, section="# ")
+write.list(x, ncolumns=NULL)
+write.list(x, ncolumns=3)
+write.list(x, ncolumns=3, sep=",")
+write.list(x, prefix="# ")
 
 \dontrun{
 write.list(x, "list.dat")
