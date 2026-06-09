@@ -59,6 +59,12 @@ write.list <- function(x, file="", ncolumns=1, sep=" ", prefix="# ")
   else
     ncolumns <- rep(ncolumns, length.out=length(x))
 
+  # Make sure no data values start with prefix
+  check <- sapply(x, grepv, pattern=paste0("^", prefix))
+  check <- check[sapply(check, length) > 0]
+  if(length(check) > 0)
+    stop(paste0(names(check)[1], " '", check[[1]][1], "' starts with prefix"))
+
   # Prepare labels
   labels <- paste0(prefix, names(x))
 
