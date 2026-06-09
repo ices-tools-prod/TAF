@@ -1254,6 +1254,190 @@ dose supp
 > 
 > 
 > cleanEx()
+> nameEx("read.list")
+> ### * read.list
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: read.list
+> ### Title: Read List
+> ### Aliases: read.list
+> 
+> ### ** Examples
+> 
+> x <- list(pi=pi, month=month.name, value=stack.loss,
++           country=c("Bay of Biscay", "Kattegat", "North Sea"))
+> 
+> write.list(x)
+# pi
+3.141593
+
+# month
+January
+February
+March
+April
+May
+June
+July
+August
+September
+October
+November
+December
+
+# value
+42
+37
+37
+28
+18
+18
+19
+20
+15
+14
+14
+13
+11
+12
+8
+7
+8
+8
+9
+15
+15
+
+# country
+Bay of Biscay
+Kattegat
+North Sea
+> write.list(x, ncolumns=NULL)
+# pi
+3.141593
+
+# month
+January
+February
+March
+April
+May
+June
+July
+August
+September
+October
+November
+December
+
+# value
+42 37 37 28 18
+18 19 20 15 14
+14 13 11 12 8
+7 8 8 9 15
+15
+
+# country
+Bay of Biscay
+Kattegat
+North Sea
+> write.list(x, ncolumns=3)
+# pi
+3.141593
+
+# month
+January February March
+April May June
+July August September
+October November December
+
+# value
+42 37 37
+28 18 18
+19 20 15
+14 14 13
+11 12 8
+7 8 8
+9 15 15
+
+# country
+Bay of Biscay Kattegat North Sea
+> write.list(x, ncolumns=3, sep=",")
+# pi
+3.141593
+
+# month
+January,February,March
+April,May,June
+July,August,September
+October,November,December
+
+# value
+42,37,37
+28,18,18
+19,20,15
+14,14,13
+11,12,8
+7,8,8
+9,15,15
+
+# country
+Bay of Biscay,Kattegat,North Sea
+> write.list(x, prefix="# ")
+# pi
+3.141593
+
+# month
+January
+February
+March
+April
+May
+June
+July
+August
+September
+October
+November
+December
+
+# value
+42
+37
+37
+28
+18
+18
+19
+20
+15
+14
+14
+13
+11
+12
+8
+7
+8
+8
+9
+15
+15
+
+# country
+Bay of Biscay
+Kattegat
+North Sea
+> 
+> ## Not run: 
+> ##D write.list(x, "list.dat")
+> ## End(Not run)
+> 
+> 
+> 
+> 
+> cleanEx()
 > nameEx("read.taf")
 > ### * read.taf
 > 
@@ -2015,13 +2199,14 @@ dose supp
 > 
 > ### ** Examples
 > 
-> x <- list(a=pi, b=month.name, c=stack.loss)
+> x <- list(pi=pi, month=month.name, value=stack.loss,
++           area=c("Bay of Biscay", "Kattegat", "North Sea"))
 > 
 > write.list(x)
-a
+# pi
 3.141593
 
-b
+# month
 January
 February
 March
@@ -2035,25 +2220,73 @@ October
 November
 December
 
-c
+# value
+42
+37
+37
+28
+18
+18
+19
+20
+15
+14
+14
+13
+11
+12
+8
+7
+8
+8
+9
+15
+15
+
+# area
+Bay of Biscay
+Kattegat
+North Sea
+> write.list(x, ncolumns=NULL)
+# pi
+3.141593
+
+# month
+January
+February
+March
+April
+May
+June
+July
+August
+September
+October
+November
+December
+
+# value
 42 37 37 28 18
 18 19 20 15 14
 14 13 11 12 8
 7 8 8 9 15
 15
-> write.list(x, ncolumns=c(1,2,3))
-a
+
+# area
+Bay of Biscay
+Kattegat
+North Sea
+> write.list(x, ncolumns=3)
+# pi
 3.141593
 
-b
-January February
-March April
-May June
-July August
-September October
-November December
+# month
+January February March
+April May June
+July August September
+October November December
 
-c
+# value
 42 37 37
 28 18 18
 19 20 15
@@ -2061,11 +2294,35 @@ c
 11 12 8
 7 8 8
 9 15 15
-> write.list(x, sep=",")
-a
+
+# area
+Bay of Biscay Kattegat North Sea
+> write.list(x, ncolumns=3, sep=",")
+# pi
 3.141593
 
-b
+# month
+January,February,March
+April,May,June
+July,August,September
+October,November,December
+
+# value
+42,37,37
+28,18,18
+19,20,15
+14,14,13
+11,12,8
+7,8,8
+9,15,15
+
+# area
+Bay of Biscay,Kattegat,North Sea
+> write.list(x, prefix="$")
+$pi
+3.141593
+
+$month
 January
 February
 March
@@ -2079,36 +2336,33 @@ October
 November
 December
 
-c
-42,37,37,28,18
-18,19,20,15,14
-14,13,11,12,8
-7,8,8,9,15
+$value
+42
+37
+37
+28
+18
+18
+19
+20
 15
-> write.list(x, section="# ")
-# a
-3.141593
-
-# b
-January
-February
-March
-April
-May
-June
-July
-August
-September
-October
-November
-December
-
-# c
-42 37 37 28 18
-18 19 20 15 14
-14 13 11 12 8
-7 8 8 9 15
+14
+14
+13
+11
+12
+8
+7
+8
+8
+9
 15
+15
+
+$area
+Bay of Biscay
+Kattegat
+North Sea
 > 
 > ## Not run: 
 > ##D write.list(x, "list.dat")
@@ -2261,7 +2515,7 @@ detaching ‘package:lattice’
 
 > options(digits = 7L)
 > base::cat("Time elapsed: ", proc.time() - base::get("ptime", pos = 'CheckExEnv'),"\n")
-Time elapsed:  0.186 0.009 0.195 0 0 
+Time elapsed:  0.232 0.008 0.24 0 0 
 > grDevices::dev.off()
 null device 
           1 

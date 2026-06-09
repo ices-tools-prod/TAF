@@ -54,13 +54,11 @@ run TAF workflows.
   \code{\link{convert.spaces}} \tab convert spaces\cr
   \code{\link{cp}}             \tab copy files\cr
   \code{\link{mkdir}}          \tab create directory\cr
-  \code{\link{os.linux}}       \tab operating system\cr
-  \code{\link{os.macos}}       \tab operating system\cr
-  \code{\link{os.windows}}     \tab operating system\cr
+  \code{\link{read.list}}      \tab read list from file\cr
   \code{\link{read.taf}}       \tab read CSV file\cr
   \code{\link{source.dir}}     \tab source all \code{*.R} files\cr
-  \code{\link{taf.library}}    \tab load package from TAF library\cr
   \code{\link{taf.unzip}}      \tab unzip file\cr
+  \code{\link{taf2html}}       \tab convert data frame to HTML\cr
   \code{\link{write.list}}     \tab write list to file\cr
   \code{\link{write.taf}}      \tab write CSV file
 }
@@ -74,7 +72,6 @@ run TAF workflows.
   \code{\link{plus}}      \tab rename plus group column\cr
   \code{\link{rnd}}       \tab round column values\cr
   \code{\link{sam2taf}}   \tab convert SAM to TAF\cr
-  \code{\link{taf2html}}  \tab convert data frame to HTML\cr
   \code{\link{taf2long}}  \tab convert TAF to long format\cr
   \code{\link{taf2xtab}}  \tab convert TAF to crosstab\cr
   \code{\link{tt}}        \tab transpose TAF table\cr
@@ -122,6 +119,9 @@ run TAF workflows.
   \code{\link{is.r.package}}    \tab check if file is an R package\cr
   \code{\link{latin1.to.utf8}}  \tab convert file encoding\cr
   \code{\link{line.endings}}    \tab examine line endings\cr
+  \code{\link{os.linux}}        \tab operating system\cr
+  \code{\link{os.macos}}        \tab operating system\cr
+  \code{\link{os.windows}}      \tab operating system\cr
   \code{\link{pdeps}}           \tab package dependencies\cr
   \code{\link{read.bib}}        \tab read metadata entries\cr
   \code{\link{rmdir}}           \tab remove empty directory\cr
@@ -130,6 +130,7 @@ run TAF workflows.
   \code{\link{taf.install}}     \tab install package in TAF library\cr
   \code{\link{taf.libPaths}}    \tab add TAF library to search path\cr
   \code{\link{taf.libraries}}   \tab load all packages from TAF library\cr
+  \code{\link{taf.library}}     \tab load package from TAF library\cr
   \code{\link{taf.session}}     \tab show session information\cr
   \code{\link{taf.sources}}     \tab list metadata entries\cr
   \code{\link{unix2dos}}        \tab convert line endings\cr

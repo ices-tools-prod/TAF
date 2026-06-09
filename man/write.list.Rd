@@ -36,6 +36,15 @@ importing back into R is not relevant.
 The special value \code{ncolumns = NULL} uses 1 column for strings and 5
 columns for other data types, in the same way as \code{\link{write}} does.
 }
+\note{
+The \code{write.list} function can be useful to produce a human-readable text
+file containing a simple list, which can be imported back into R using
+\code{\link{read.list}}.
+
+Other pathways, such as \code{\link{saveRDS}}, \code{\link{dput}}, or JSON,
+are better suited for large or complex lists when human readability is not a
+priority.
+}
 \examples{
 x <- list(pi=pi, month=month.name, value=stack.loss,
           area=c("Bay of Biscay", "Kattegat", "North Sea"))
@@ -52,6 +61,8 @@ write.list(x, "list.dat")
 
 }
 \seealso{
+\code{\link{read.list}} reads a list from a text file.
+
 \code{\link{write}} is the underlying function used to write data values to a
 file.
 

@@ -2,7 +2,8 @@
 
 * Added function check.data() to check DATA.bib entries.
 
-* Added function write.list() to write a list to a file.
+* Added functions read.list() and write.list() to read and write a simple list
+  to a file.
 
 * Improved deps() to include .Rnw and .qmd files when scanning code, and to
   ignore #comment lines.

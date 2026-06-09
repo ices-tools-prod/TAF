@@ -23,7 +23,18 @@
 #'
 #' @return No return value, called for side effects.
 #'
+#' @note
+#' The \code{write.list} function can be useful to produce a human-readable text
+#' file containing a simple list, which can be imported back into R using
+#' \code{\link{read.list}}.
+#'
+#' Other pathways, such as \code{\link{saveRDS}}, \code{\link{dput}}, or JSON,
+#' are better suited for large or complex lists when human readability is not a
+#' priority.
+#'
 #' @seealso
+#' \code{\link{read.list}} reads a list from a text file.
+#'
 #' \code{\link{write}} is the underlying function used to write data values to a
 #' file.
 #'
