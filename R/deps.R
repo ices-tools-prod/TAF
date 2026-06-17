@@ -62,7 +62,7 @@ deps <- function(path=".", base=FALSE, installed=TRUE, available=TRUE,
   code <- lapply(files, readLines)
   names(code) <- basename(files)
 
-  # Look for loaded packages and pkg::object calls
+  # Look for attached packages and pkg::object calls
   pattern <- ".*(library|require)\\(\"?'? *([A-Za-z0-9.]+).*"
   p.load <- lapply(code, grep, pattern=pattern, value=TRUE)
   p.load <- lapply(p.load, function(x)
