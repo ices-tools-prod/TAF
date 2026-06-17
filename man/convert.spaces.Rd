@@ -7,7 +7,7 @@
 convert.spaces(file, sep = "_")
 }
 \arguments{
-\item{file}{filename, e.g. \code{"file name.csv"}, \code{"*.csv"}, or
+\item{file}{filename, e.g., \code{"file name.csv"}, \code{"*.csv"}, or
 \code{"dir/*"}.}
 
 \item{sep}{character to use instead of spaces.}

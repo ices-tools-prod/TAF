@@ -18,7 +18,7 @@ publication year of the cited manual/article/etc.}
 
 \item{title}{title or short description of the software.}
 
-\item{version}{string to specify details about the version, e.g. GitHub
+\item{version}{string to specify details about the version, e.g., GitHub
 branch and commit date.}
 
 \item{source}{string to specify where the software are copied/downloaded

@@ -2,7 +2,7 @@
 #'
 #' Convert spaces in filenames.
 #'
-#' @param file filename, e.g. \code{"file name.csv"}, \code{"*.csv"}, or
+#' @param file filename, e.g., \code{"file name.csv"}, \code{"*.csv"}, or
 #'        \code{"dir/*"}.
 #' @param sep character to use instead of spaces.
 #'

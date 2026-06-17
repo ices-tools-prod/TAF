@@ -32,7 +32,7 @@ dependencies, the user can specify a vector of package filenames to install.
 The \code{taf.boot} procedure downloads and installs R packages, without
 requiring the user to run \code{taf.install}. The main reason for a TAF user
 to run \code{taf.install} directly is to initialize and run a TAF analysis
-without running the boot procedure, e.g. to avoid updating the underlying
+without running the boot procedure, e.g., to avoid updating the underlying
 datasets and software.
 
 After installing the package, this function writes the remote SHA reference

@@ -8,7 +8,7 @@
 #' @param year year when this version of the software was released, or the
 #'        publication year of the cited manual/article/etc.
 #' @param title title or short description of the software.
-#' @param version string to specify details about the version, e.g. GitHub
+#' @param version string to specify details about the version, e.g., GitHub
 #'        branch and commit date.
 #' @param source string to specify where the software are copied/downloaded
 #'        from. This can be a GitHub reference of the form

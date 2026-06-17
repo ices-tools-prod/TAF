@@ -28,7 +28,7 @@ file has no filename extension).}
 No return value, called for side effects.
 }
 \description{
-Download a file in binary mode, e.g. a model executable.
+Download a file in binary mode, e.g., a model executable.
 }
 \details{
 With the default mode \code{"wb"} the file is downloaded in binary mode (see

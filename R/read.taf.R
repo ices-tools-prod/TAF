@@ -3,7 +3,7 @@
 #' Read from a CSV file into a data frame.
 #'
 #' @param file a filename.
-#' @param check.names whether to enforce regular column names, e.g. convert
+#' @param check.names whether to enforce regular column names, e.g., convert
 #'        column name \code{"3"} to \code{"X3"}.
 #' @param stringsAsFactors whether to import strings as factors.
 #' @param fileEncoding character encoding of input file.

@@ -11,7 +11,7 @@ draft.data(originator = NULL, year = format(Sys.time(), "\%Y"),
   data.scripts = dir(boot.dir(), pattern = "\\\\.R$"))
 }
 \arguments{
-\item{originator}{who prepared the data, e.g. a working group acronym.}
+\item{originator}{who prepared the data, e.g., a working group acronym.}
 
 \item{year}{year of the analysis when the data were used. The default is the
 current year.}

@@ -2,7 +2,7 @@
 #'
 #' Create an initial draft version of a \file{DATA.bib} metadata file.
 #'
-#' @param originator who prepared the data, e.g. a working group acronym.
+#' @param originator who prepared the data, e.g., a working group acronym.
 #' @param year year of the analysis when the data were used. The default is the
 #'        current year.
 #' @param title description of the data, including survey names or the like.

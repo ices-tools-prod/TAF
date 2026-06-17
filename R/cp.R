@@ -3,7 +3,7 @@
 #' Copy or move files, overwriting existing files if necessary, and returning
 #' the result invisibly.
 #'
-#' @param from source filenames, e.g. \code{*.csv}.
+#' @param from source filenames, e.g., \code{*.csv}.
 #' @param to destination filenames, or directory.
 #' @param move whether to move instead of copy.
 #' @param ignore whether to suppress error if source file does not exist.

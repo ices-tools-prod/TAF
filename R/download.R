@@ -1,6 +1,6 @@
 #' Download File
 #'
-#' Download a file in binary mode, e.g. a model executable.
+#' Download a file in binary mode, e.g., a model executable.
 #'
 #' @param url URL of file to download.
 #' @param dir directory to download to.

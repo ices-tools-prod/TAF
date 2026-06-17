@@ -8,7 +8,7 @@ cp(from, to, move = FALSE, ignore = FALSE, overwrite = TRUE,
   quiet = TRUE)
 }
 \arguments{
-\item{from}{source filenames, e.g. \code{*.csv}.}
+\item{from}{source filenames, e.g., \code{*.csv}.}
 
 \item{to}{destination filenames, or directory.}
 

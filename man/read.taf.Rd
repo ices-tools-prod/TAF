@@ -10,7 +10,7 @@ read.taf(file, check.names = FALSE, stringsAsFactors = FALSE,
 \arguments{
 \item{file}{a filename.}
 
-\item{check.names}{whether to enforce regular column names, e.g. convert
+\item{check.names}{whether to enforce regular column names, e.g., convert
 column name \code{"3"} to \code{"X3"}.}
 
 \item{stringsAsFactors}{whether to import strings as factors.}

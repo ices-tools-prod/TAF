@@ -56,7 +56,7 @@ clean.software <- function(folder="boot/software", quiet=FALSE, force=FALSE)
     bib <- read.bib(file.path(folder, "../SOFTWARE.bib"))
     for(file in dir(folder, full.names=TRUE))
     {
-      # Check if filename looks like GitHub software, e.g. model_13579bd.tar.gz
+      # Check if filename looks like GitHub software, e.g., model_13579bd.tar.gz
       if(grepl("_[a-f0-9]{7}\\.tar\\.gz", substring(file, nchar(file)-14)))
       {
         # Read sha.file, the SHA for a software file
@@ -78,7 +78,7 @@ clean.software <- function(folder="boot/software", quiet=FALSE, force=FALSE)
         # If software file is either a mismatch or not listed, then remove it
         delete <- sha.file != sha.bib
       }
-      else  # filename is either a folder or plain file, e.g. model or model.exe
+      else  # filename is either folder or plain file, e.g., model or model.exe
       {
         delete <- !(basename(file) %in% names(bib))
       }
