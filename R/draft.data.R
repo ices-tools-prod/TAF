@@ -12,7 +12,8 @@
 #'        data do not cover specific years, this metadata field can be
 #'        suppressed using \code{period = FALSE}.
 #' @param access data access code: \code{"OSPAR"}, \code{"Public"}, or
-#'        \code{"Restricted"}.
+#'        \code{"Restricted"}. The \code{access} field is required for
+#'        \code{icesTAF} workflows and ignored for non-ICES workflows.
 #' @param source where the data are copied/downloaded from. This can be a URL,
 #'        filename, or a special value: \code{"file"}, \code{"folder"}, or
 #'        \code{"script"}.
@@ -82,11 +83,13 @@ draft.data <- function(originator=NULL, year=format(Sys.time(),"%Y"),
                        data.files=dir(taf.boot.path("initial/data")),
                        data.scripts=dir(boot.dir(),pattern="\\.R$"))
 {
-  # TAF:::access.vocab is a string vector of allowed 'access' values
-  if(!is.character(access) || !all(as.character(access) %in% access.vocab))
-    stop("'access' values must be \"",
-         paste(access.vocab, collapse="\", \""), "\"")
-
+  if(taf.pkg() == "icesTAF")
+  {
+    # TAF:::access.vocab is a string vector of allowed 'access' values
+    if(!is.character(access) || !all(as.character(access) %in% access.vocab))
+      stop("'access' values must be \"",
+           paste(access.vocab, collapse="\", \""), "\"")
+  }
   data.scripts <- file_path_sans_ext(data.scripts)
   entries <- c(data.files, data.scripts)
   if(length(entries) == 0)
@@ -117,6 +120,8 @@ draft.data <- function(originator=NULL, year=format(Sys.time(),"%Y"),
   out <- c(t(out))
   if(identical(period, FALSE))
     out <- out[substr(out,3,8) != "period"]  # remove 'period' line if FALSE
+  if(taf.pkg() != "icesTAF")
+    out <- out[substr(out,3,8) != "access"]  # remove 'access' for non-ICES TAF
   out <- out[-length(out)]  # remove empty line at end
   class(out) <- "Bibtex"
 

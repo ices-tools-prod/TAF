@@ -25,7 +25,8 @@ data do not cover specific years, this metadata field can be
 suppressed using \code{period = FALSE}.}
 
 \item{access}{data access code: \code{"OSPAR"}, \code{"Public"}, or
-\code{"Restricted"}.}
+\code{"Restricted"}. The \code{access} field is required for
+\code{icesTAF} workflows and ignored for non-ICES workflows.}
 
 \item{source}{where the data are copied/downloaded from. This can be a URL,
 filename, or a special value: \code{"file"}, \code{"folder"}, or
