@@ -69,7 +69,8 @@ write.list <- function(x, file="", ncolumns=1, sep=" ", prefix="# ", as.is=FALSE
   # Handle the simple case of as.is = TRUE
   if(as.is)
   {
-    write(capture.output(x), file=file)
+    txt <- trimws(capture.output(x))
+    write(txt, file=file)
     return(invisible(NULL))  # early
   }
 
