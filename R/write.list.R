@@ -7,6 +7,8 @@
 #' @param ncolumns the number of columns to write the data in.
 #' @param sep a string used to separate columns.
 #' @param prefix a string prefix to use before element names.
+#' @param as.is whether to simply capture the output of printing \code{x} to the
+#'        console in standard R format and write that to the \code{file}.
 #'
 #' @details
 #' The default value \code{file = ""} prints the list in the console, allowing
@@ -15,11 +17,15 @@
 #' The default value \code{ncolumns = 1} writes one data value per line. This is
 #' the only format supported by \code{\link{read.list}} and therefore
 #' recommended if importing the list back into R is relevant. Other formats
-#' using \code{ncolumns} and \code{sep} can improve human readability if
+#' using \code{ncolumns} and \code{as.is} can improve human readability if
 #' importing back into R is not relevant.
 #'
 #' The special value \code{ncolumns = NULL} uses 1 column for strings and 5
 #' columns for other data types, in the same way as \code{\link{write}} does.
+#'
+#' The \code{as.is = TRUE} format is affected by R session options such as
+#' \code{width} and \code{digits}, but is not affected by the function arguments
+#' \code{ncolumns}, \code{sep}, and \code{prefix}.
 #'
 #' @return No return value, called for side effects.
 #'
@@ -54,10 +60,19 @@
 #' write.list(x, "list.dat")
 #' }
 #'
+#' @importFrom utils capture.output
+#'
 #' @export
 
-write.list <- function(x, file="", ncolumns=1, sep=" ", prefix="# ")
+write.list <- function(x, file="", ncolumns=1, sep=" ", prefix="# ", as.is=FALSE)
 {
+  # Handle the simple case of as.is = TRUE
+  if(as.is)
+  {
+    write(capture.output(x), file=file)
+    return(invisible(NULL))  # early
+  }
+
   # Confirm that x is a list of atomic elements
   if(!is.list(x))
     stop("'x' should be a list")

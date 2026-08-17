@@ -4,7 +4,8 @@
 \alias{write.list}
 \title{Write List}
 \usage{
-write.list(x, file = "", ncolumns = 1, sep = " ", prefix = "# ")
+write.list(x, file = "", ncolumns = 1, sep = " ", prefix = "# ",
+  as.is = FALSE)
 }
 \arguments{
 \item{x}{a list containing atomic elements.}
@@ -16,6 +17,9 @@ write.list(x, file = "", ncolumns = 1, sep = " ", prefix = "# ")
 \item{sep}{a string used to separate columns.}
 
 \item{prefix}{a string prefix to use before element names.}
+
+\item{as.is}{whether to simply capture the output of printing \code{x} to the
+console in standard R format and write that to the \code{file}.}
 }
 \value{
 No return value, called for side effects.
@@ -30,11 +34,15 @@ the user to preview alternative formats before writing the list to a file.
 The default value \code{ncolumns = 1} writes one data value per line. This is
 the only format supported by \code{\link{read.list}} and therefore
 recommended if importing the list back into R is relevant. Other formats
-using \code{ncolumns} and \code{sep} can improve human readability if
+using \code{ncolumns} and \code{as.is} can improve human readability if
 importing back into R is not relevant.
 
 The special value \code{ncolumns = NULL} uses 1 column for strings and 5
 columns for other data types, in the same way as \code{\link{write}} does.
+
+The \code{as.is = TRUE} format is affected by R session options such as
+\code{width} and \code{digits}, but is not affected by the function arguments
+\code{ncolumns}, \code{sep}, and \code{prefix}.
 }
 \note{
 The \code{write.list} function can be useful to produce a human-readable text
