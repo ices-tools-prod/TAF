@@ -13,6 +13,9 @@
 
 * Improved write.taf() to detect commas in column names.
 
+* Changed clean() so it only cleans the boot directory and TAF directories. If
+  the user specifies other directories or files, they will be ignored.
+
 * Changed draft.data() so the 'access' field is used for icesTAF workflows only.
 
 
