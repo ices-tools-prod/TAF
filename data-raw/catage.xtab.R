@@ -4,3 +4,5 @@ catage.xtab <- data.frame(
 "3"=c( 7.028, 20.118,  17.646,  29.766, 32.689,  42.569, 31.532,  18.547),
 "4"=c( 3.519,  4.285,   9.135,   6.153, 11.205,  12.330, 13.641,  13.272),
 row.names=1963:1970, check.names=FALSE)
+
+save(catage.xtab, file="../data/catage.xtab.rda", version=2, compress="xz")

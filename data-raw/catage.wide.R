@@ -4,3 +4,5 @@ catage.wide <- data.frame(Area=rep(1:2, each=4), Year=rep(1963:1966, 2),
 "3"=c( 7.028, 20.118,  17.646,  29.766,  14.056, 40.236,  35.292,  59.532),
 "4"=c( 3.519,  4.285,   9.135,   6.153,   7.038,  8.570,  18.270,  12.306),
 check.names=FALSE)
+
+save(catage.wide, file="../data/catage.wide.rda", version=2, compress="xz")
