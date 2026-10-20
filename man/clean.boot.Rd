@@ -7,8 +7,8 @@
 clean.boot(force = FALSE)
 }
 \arguments{
-\item{force}{passed to \code{clean.data}, \code{clean.library}, and
-\code{clean.software}.}
+\item{force}{whether to fully remove \verb{boot/data}, \verb{boot/library},
+and \verb{boot/software}.}
 }
 \value{
 No return value, called for side effects.

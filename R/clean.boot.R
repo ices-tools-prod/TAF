@@ -3,8 +3,8 @@
 #' Clean the boot directory using \code{clean.data}, \code{clean.library}, and
 #' \code{clean.software}.
 #'
-#' @param force passed to \code{clean.data}, \code{clean.library}, and
-#'        \code{clean.software}.
+#' @param force whether to fully remove \verb{boot/data}, \verb{boot/library},
+#'        and \verb{boot/software}.
 #'
 #' @return No return value, called for side effects.
 #'
