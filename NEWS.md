@@ -1,5 +1,8 @@
 # TAF 4.4.0 (development)
 
+* Added function boot.and.run() to boot and run a TAF analysis, possibly from a
+  different directory.
+
 * Added function check.data() to check DATA.bib entries.
 
 * Added functions read.list() and write.list() to read and write a simple list

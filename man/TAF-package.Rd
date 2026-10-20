@@ -100,6 +100,7 @@ run TAF workflows.
 }
 \emph{Administrative or auxiliary tools:}
 \tabular{ll}{
+  \code{\link{boot.and.run}}    \tab boot and run TAF analysis\cr
   \code{\link{check.data}}      \tab check \verb{DATA.bib} entries\cr
   \code{\link{check.software}}  \tab check \verb{SOFTWARE.bib} versions\cr
   \code{\link{clean.data}}      \tab clean boot data\cr

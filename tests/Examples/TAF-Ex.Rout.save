@@ -1,5 +1,5 @@
 
-R version 4.6.0 (2026-04-24) -- "Because it was There"
+R version 4.6.1 (2026-06-24) -- "Happy Hop"
 Copyright (C) 2026 The R Foundation for Statistical Computing
 Platform: x86_64-pc-linux-gnu
 
@@ -42,6 +42,32 @@ Type 'q()' to quit R.
 > ##D taf.boot()
 > ##D source.all()
 > ## End(Not run)
+> 
+> 
+> 
+> cleanEx()
+> nameEx("boot.and.run")
+> ### * boot.and.run
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: boot.and.run
+> ### Title: Boot and Run
+> ### Aliases: boot.and.run
+> 
+> ### ** Examples
+> 
+> ## Not run: 
+> ##D # Run selected analyses
+> ##D boot.and.run("analysis_1")
+> ##D boot.and.run("analysis_2")
+> ##D boot.and.run("different/directory/analysis_3")
+> ##D 
+> ##D # Run all analyses in current directory
+> ##D dirs <- dir()[dir.exists(dir())]
+> ##D result <- sapply(dirs, boot.and.run)
+> ## End(Not run)
+> 
 > 
 > 
 > 
@@ -2515,7 +2541,7 @@ detaching ‘package:lattice’
 
 > options(digits = 7L)
 > base::cat("Time elapsed: ", proc.time() - base::get("ptime", pos = 'CheckExEnv'),"\n")
-Time elapsed:  0.232 0.008 0.24 0 0 
+Time elapsed:  0.124 0.003 0.127 0 0 
 > grDevices::dev.off()
 null device 
           1 
