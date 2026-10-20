@@ -44,7 +44,8 @@
 download.github <- function(repo, dir=".", quiet=FALSE)
 {
   mkdir(dir)  # boot/software
-  owd <- setwd(dir); on.exit(setwd(owd))
+  owd <- setwd(dir)
+  on.exit(setwd(owd))
 
   if(!grepl("@", repo))
     repo <- paste0(repo, "@master")

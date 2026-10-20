@@ -47,7 +47,8 @@ taf.library <- function(package, messages=FALSE, warnings=FALSE)
   # root/boot/data/scriptname; change to root temporarily
   if(basename(dirname(dirname(getwd()))) %in% c("boot","bootstrap"))
   {
-    owd <- setwd("../../.."); on.exit(setwd(owd))
+    owd <- setwd("../../..")
+    on.exit(setwd(owd))
   }
 
   if(!dir.exists(file.path(boot.dir(),"library")))
