@@ -46,5 +46,8 @@ result <- sapply(dirs, boot.and.run)
 
 \code{\link{source.all}} runs the TAF scripts.
 
+\code{\link{clean.analysis}} cleans a TAF analysis, possibly from a different
+directory.
+
 \code{\link{TAF-package}} gives an overview of the package.
 }

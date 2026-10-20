@@ -354,6 +354,32 @@ Type 'q()' to quit R.
 > 
 > 
 > cleanEx()
+> nameEx("clean.analysis")
+> ### * clean.analysis
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: clean.analysis
+> ### Title: Clean TAF Analysis
+> ### Aliases: clean.analysis
+> 
+> ### ** Examples
+> 
+> ## Not run: 
+> ##D # Clean selected analyses
+> ##D clean.analysis("analysis_1")
+> ##D clean.analysis("analysis_2")
+> ##D clean.analysis("different/directory/analysis_3")
+> ##D 
+> ##D # Clean all analyses in current directory
+> ##D dirs <- dir()[dir.exists(dir())]
+> ##D result <- sapply(dirs, clean.analysis)
+> ## End(Not run)
+> 
+> 
+> 
+> 
+> cleanEx()
 > nameEx("clean.boot")
 > ### * clean.boot
 > 
@@ -2541,7 +2567,7 @@ detaching ‘package:lattice’
 
 > options(digits = 7L)
 > base::cat("Time elapsed: ", proc.time() - base::get("ptime", pos = 'CheckExEnv'),"\n")
-Time elapsed:  0.124 0.003 0.127 0 0 
+Time elapsed:  0.119 0.009 0.128 0 0 
 > grDevices::dev.off()
 null device 
           1 
