@@ -11,7 +11,7 @@
 #' The \verb{model} directory may also be named \verb{method} and is cleaned in
 #' the same way.
 #'
-#' @return No return value, called for side effects.
+#' @return Logical \code{TRUE}, invisibly.
 #'
 #' @note
 #' The purpose of removing the directories is to make sure that subsequent TAF
@@ -56,4 +56,6 @@ clean <- function(dirs=c("data", model.dir(), "output", "report"), force=FALSE)
   taf.dirs <- c("data", model.dir(), "output", "report")
   dirs <- intersect(dirs, taf.dirs)
   unlink(dirs, recursive=TRUE)
+
+  invisible(TRUE)
 }

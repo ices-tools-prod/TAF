@@ -13,7 +13,7 @@ clean(dirs = c("data", model.dir(), "output", "report"), force = FALSE)
 \code{"boot"}.}
 }
 \value{
-No return value, called for side effects.
+Logical \code{TRUE}, invisibly.
 }
 \description{
 Remove TAF directories: \verb{data}, \verb{model}, \verb{output}, and
