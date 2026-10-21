@@ -70,7 +70,7 @@ source.taf <- function(script, rm=FALSE, clean=TRUE, detach=FALSE, taf=NULL,
   if(clean && dir.exists(file_path_sans_ext(script)))
     clean(file_path_sans_ext(script))
   if(detach)
-    detach.packages(quiet=quiet)
+    detach.packages(quiet=TRUE)  # suppress detach messages but keep msg(script)
   if(!quiet)
     msg(script, " running...")
 
