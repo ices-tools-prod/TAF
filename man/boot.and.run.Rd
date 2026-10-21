@@ -4,7 +4,7 @@
 \alias{boot.and.run}
 \title{Boot and Run}
 \usage{
-boot.and.run(dir = ".", clean = TRUE, force = TRUE, make = FALSE)
+boot.and.run(dir = ".", clean = TRUE, force = TRUE, make = FALSE, ...)
 }
 \arguments{
 \item{dir}{directory containing TAF analysis.}
@@ -16,6 +16,8 @@ analysis.}
 \item{force}{passed to \code{\link{clean.boot}}.}
 
 \item{make}{whether to run \code{make.all} instead of \code{source.all}.}
+
+\item{...}{passed to \code{source.all} or \code{make.all}.}
 }
 \value{
 \code{TRUE} (invisibly) if the TAF analysis ran without errors.

@@ -8,6 +8,7 @@
 #'        analysis.
 #' @param force passed to \code{\link{clean.boot}}.
 #' @param make whether to run \code{make.all} instead of \code{source.all}.
+#' @param ... passed to \code{source.all} or \code{make.all}.
 #'
 #' @return \code{TRUE} (invisibly) if the TAF analysis ran without errors.
 #'
@@ -42,7 +43,7 @@
 #'
 #' @export
 
-boot.and.run <- function(dir=".", clean=TRUE, force=TRUE, make=FALSE)
+boot.and.run <- function(dir=".", clean=TRUE, force=TRUE, make=FALSE, ...)
 {
   owd <- setwd(dir)
   on.exit(setwd(owd))
@@ -52,9 +53,9 @@ boot.and.run <- function(dir=".", clean=TRUE, force=TRUE, make=FALSE)
 
   # Run
   if(make)
-    make.all(clean=clean)
+    make.all(clean=clean, ...)
   else
-    source.all(clean=clean)
+    source.all(clean=clean, ...)
 
   invisible(TRUE)
 }
