@@ -13,7 +13,7 @@ taf.boot(software = TRUE, data = TRUE, clean = TRUE, force = FALSE,
 
 \item{data}{whether to process \verb{DATA.bib}.}
 
-\item{clean}{whether to \code{\link{clean}} directories during the boot
+\item{clean}{whether to \link[=clean.boot]{clean} directories during the boot
 procedure.}
 
 \item{force}{whether to remove existing \verb{boot/data},

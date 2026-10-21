@@ -5,7 +5,7 @@
 #'
 #' @param software whether to process \verb{SOFTWARE.bib}.
 #' @param data whether to process \verb{DATA.bib}.
-#' @param clean whether to \code{\link{clean}} directories during the boot
+#' @param clean whether to \link[=clean.boot]{clean} directories during the boot
 #'        procedure.
 #' @param force whether to remove existing \verb{boot/data},
 #'        \verb{boot/library}, and \verb{boot/software} directories before the
