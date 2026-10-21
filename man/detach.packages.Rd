@@ -13,8 +13,7 @@ detach.packages(quiet = FALSE)
 Names of detached packages.
 }
 \description{
-Detach all non-base packages that have been attached using \code{library} or
-\code{taf.library}.
+Detach all packages other than \verb{TAF}, \verb{icesTAF}, and base packages.
 }
 \examples{
 \dontrun{
@@ -25,7 +24,9 @@ detach.packages()
 \seealso{
 \code{\link{detach}} is the underlying base function to detach a package.
 
-\code{\link{taf.library}} loads a package from \verb{boot/library}.
+\code{\link{library}} loads a package from the global library.
+
+\code{\link{taf.library}} loads a package from the local \verb{boot/library}.
 
 \code{\link{TAF-package}} gives an overview of the package.
 }

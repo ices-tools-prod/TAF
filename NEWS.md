@@ -16,6 +16,8 @@
 
 * Improved write.taf() to detect commas in column names.
 
+* Changed detach.packages() so TAF and icesTAF are not detached.
+
 * Changed draft.data() so the 'access' field is used for icesTAF workflows only.
 
 
