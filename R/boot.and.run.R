@@ -7,6 +7,7 @@
 #'        \verb{model}, \verb{output}, and \verb{report} before running the
 #'        analysis.
 #' @param force passed to \code{\link{clean.boot}}.
+#' @param make whether to run \code{make.all} instead of \code{source.all}.
 #'
 #' @return \code{TRUE} (invisibly) if the TAF analysis ran without errors.
 #'
@@ -20,7 +21,7 @@
 #' @seealso
 #' \code{\link{taf.boot}} runs the boot procedure.
 #'
-#' \code{\link{source.all}} runs the TAF scripts.
+#' \code{\link{source.all}} and \code{\link{make.all}} run the TAF scripts.
 #'
 #' \code{\link{clean.analysis}} cleans a TAF analysis, possibly from a different
 #' directory.
@@ -41,13 +42,19 @@
 #'
 #' @export
 
-boot.and.run <- function(dir=".", clean=TRUE, force=TRUE)
+boot.and.run <- function(dir=".", clean=TRUE, force=TRUE, make=FALSE)
 {
   owd <- setwd(dir)
   on.exit(setwd(owd))
 
+  # Boot
   taf.boot(clean=clean, force=force)
-  source.all(clean=clean)
+
+  # Run
+  if(make)
+    make.all(clean=clean)
+  else
+    source.all(clean=clean)
 
   invisible(TRUE)
 }

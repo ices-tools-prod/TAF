@@ -4,7 +4,7 @@
 \alias{boot.and.run}
 \title{Boot and Run}
 \usage{
-boot.and.run(dir = ".", clean = TRUE, force = TRUE)
+boot.and.run(dir = ".", clean = TRUE, force = TRUE, make = FALSE)
 }
 \arguments{
 \item{dir}{directory containing TAF analysis.}
@@ -14,6 +14,8 @@ boot.and.run(dir = ".", clean = TRUE, force = TRUE)
 analysis.}
 
 \item{force}{passed to \code{\link{clean.boot}}.}
+
+\item{make}{whether to run \code{make.all} instead of \code{source.all}.}
 }
 \value{
 \code{TRUE} (invisibly) if the TAF analysis ran without errors.
@@ -44,7 +46,7 @@ result <- sapply(dirs, boot.and.run)
 \seealso{
 \code{\link{taf.boot}} runs the boot procedure.
 
-\code{\link{source.all}} runs the TAF scripts.
+\code{\link{source.all}} and \code{\link{make.all}} run the TAF scripts.
 
 \code{\link{clean.analysis}} cleans a TAF analysis, possibly from a different
 directory.
