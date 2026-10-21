@@ -45,16 +45,12 @@ clean <- function(dirs=c("data", model.dir(), "output", "report"), force=FALSE)
   # Convert "boot/" to "boot", so clean("boot/") doesn't go wild
   dirs <- sub("/$", "", dirs)
 
-  # Clean boot directory
-  if("boot" %in% dirs || "bootstrap" %in% dirs)
+  if(boot.dir() %in% dirs)
   {
     clean.boot(force=force)
     dirs <- dirs[dirs != boot.dir()]
   }
 
-  # Clean TAF directories
-  taf.dirs <- c("data", model.dir(), "output", "report")
-  dirs <- intersect(dirs, taf.dirs)
   unlink(dirs, recursive=TRUE)
 
   invisible(TRUE)
